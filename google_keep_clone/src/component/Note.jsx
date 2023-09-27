@@ -75,6 +75,12 @@ export default function Note() {
             description: description,
             completed: false,
             color: getRandomColor(),
+            user:{
+                userId: 1,
+                email: 'email',
+                firstName: 'Name',
+                lastName: 'last'
+            }
         };
 
         if (modalMode === 'create') {

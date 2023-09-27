@@ -3,13 +3,11 @@ package com.notes.keep.service;
 import com.notes.keep.model.Notes;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.NotesRepository;
+import com.notes.keep.repository.UserRepository;
 import com.notes.keep.utils.FormatDateTime;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -17,23 +15,38 @@ public class NotesService {
     private final NotesRepository notesRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+
+    @Autowired
     public NotesService(NotesRepository notesRepository) {
         this.notesRepository = notesRepository;
     }
 
-    public Notes createNote(Notes note) {
-        note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
-        System.out.println(note);
+//    public Notes createNote(Notes note) {
+//        System.out.println(note);
+//        note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
+//        return notesRepository.save(note);
+//    }
+
+
+
+    public Notes createNote(Notes note) throws Exception {
+        try{
+            User user = userRepository.findById(note.getUser().getUserId()).orElseThrow(() -> new EntityNotFoundException("User not found"));
+            note.setUser(user);
+            note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
+        }catch (Exception e){
+            throw new Exception(e);
+        }
+        System.out.println("THIS " + note);
         return notesRepository.save(note);
     }
+
 
     public List<Notes> notesList() {
         return notesRepository.findAll();
     }
-
-//    public List<Notes> notesListByUserId(Integer id){
-//        return notesRepository.findByUserId(id);
-//    }
 
     public Notes findByNoteId(Integer id) {
         return notesRepository.findByNoteId(id);
@@ -55,10 +68,14 @@ public class NotesService {
     }
 
     public List<Notes> findByTitle(String title){
-        System.out.println("FIND BY TITLE CALLED ");
         System.out.println(notesRepository.findByTitle(title));
         return notesRepository.findByTitle(title);
     }
 
+
+    public List<Notes> findAllByUserUserId(Integer userId){
+        System.out.println(notesRepository.findAllByUserUserId(userId));
+        return notesRepository.findAllByUserUserId(userId);
+    }
 }
 

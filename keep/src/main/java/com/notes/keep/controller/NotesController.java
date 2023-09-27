@@ -16,8 +16,13 @@ public class NotesController {
     private NotesService notesService;
 
     @PostMapping("/add")
-    public ResponseEntity<?> createNote(@RequestBody Notes note) {
+    public ResponseEntity<?> createNote(@RequestBody Notes note) throws Exception {
         Loggers.info("NOTE CREATED");
+        System.out.println(note);
+        Notes notes = notesService.createNote(note);
+        if(notes == null){
+            return ResponseEntity.status(500).build();
+        }
         return ResponseEntity.ok(notesService.createNote(note));
     }
 
@@ -27,10 +32,6 @@ public class NotesController {
         return ResponseEntity.ok(notesService.notesList());
     }
 
-//    @GetMapping("/getAll/userId/{id}")
-//    public ResponseEntity<?> getAllByUserId(@PathVariable Integer id) {
-//        return ResponseEntity.ok(notesService.notesListByUserId(id));
-//    }
 
     @GetMapping("/getNote/{id}")
     public ResponseEntity<?> getNoteById(@PathVariable Integer id) {
@@ -53,10 +54,14 @@ public class NotesController {
     }
 
     @GetMapping("/getByTitle/{title}")
-    public ResponseEntity<?> findByTitle(@PathVariable String title){
+    public ResponseEntity<?> findByTitle(@PathVariable String title) {
         Loggers.info("NOTE WITH TITLE " + title + " REQUESTED");
         return ResponseEntity.ok(notesService.findByTitle(title));
     }
 
+    @GetMapping("/userId/{id}")
+    public ResponseEntity<?> getAllByUserId(@PathVariable Integer id) {
+        return ResponseEntity.ok(notesService.findAllByUserUserId(id));
+    }
 
 }

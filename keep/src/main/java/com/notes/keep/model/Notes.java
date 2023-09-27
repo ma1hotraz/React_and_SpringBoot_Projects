@@ -1,11 +1,7 @@
 package com.notes.keep.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -16,12 +12,13 @@ import lombok.Data;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonSerialize(using = CustomNotesSerializer.class)
 @ToString
 @Data
 @Entity
 public class Notes {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer noteId;
 
     @NotNull
@@ -36,7 +33,7 @@ public class Notes {
     private String date;
     private String color;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
     private User user;
 }

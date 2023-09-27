@@ -2,6 +2,7 @@ package com.notes.keep.controller;
 
 import com.notes.keep.model.User;
 import com.notes.keep.service.UserService;
+import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,10 +21,10 @@ public class UserController {
         return userService.createUser(user);
     }
 
-    @GetMapping("/getAll/{id}")
-    public ResponseEntity<?> getAllNotes(@PathVariable Integer id) {
-        System.out.println("Hello "+ id);
-        return ResponseEntity.ok(userService.getByUserId(id));
+    @GetMapping("/userId/{id}")
+    public ResponseEntity<?> findByUserId(@PathVariable Integer id) {
+        Loggers.info("USER WITH" + id + " CALLED");
+        return ResponseEntity.ok(userService.findByUserId(id));
     }
 
 
