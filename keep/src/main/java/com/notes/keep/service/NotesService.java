@@ -41,7 +41,7 @@ public class NotesService {
 
     public Notes updateNoteById(Integer id, Notes notes) {
         Notes oldNote = notesRepository.findByNoteId(id);
-        oldNote.setColor(notes.getColor());
+//        oldNote.setColor(notes.getColor());
         oldNote.setDate(FormatDateTime.parseStandardDate(notes.getDate()));
         oldNote.setTitle(notes.getTitle());
         oldNote.setDescription(notes.getDescription());

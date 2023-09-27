@@ -54,7 +54,7 @@ public class NotesController {
 
     @GetMapping("/getByTitle/{title}")
     public ResponseEntity<?> findByTitle(@PathVariable String title){
-        Loggers.info("NOTE WITH TITLE " + title + " CALLED AT " + System.currentTimeMillis());
+        Loggers.info("NOTE WITH TITLE " + title + " REQUESTED");
         return ResponseEntity.ok(notesService.findByTitle(title));
     }
 
