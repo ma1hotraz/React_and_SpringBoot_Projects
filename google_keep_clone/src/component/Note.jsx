@@ -71,15 +71,17 @@ export default function Note() {
 
         const newNoteData = {
             title: title,
-            userId: 1,
             description: description,
             completed: false,
             color: getRandomColor(),
             user:{
                 userId: 1,
-                email: 'email',
-                firstName: 'Name',
-                lastName: 'last'
+                // email: 'email',
+                // firstName: 'Name',
+                // lastName: 'last',
+                // password: 'pass',
+                // role: 'USER',
+                // notes: []
             }
         };
 

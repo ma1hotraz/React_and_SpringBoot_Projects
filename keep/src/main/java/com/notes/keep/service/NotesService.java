@@ -9,6 +9,7 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NotesService {
@@ -23,26 +24,17 @@ public class NotesService {
         this.notesRepository = notesRepository;
     }
 
-//    public Notes createNote(Notes note) {
-//        System.out.println(note);
-//        note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
-//        return notesRepository.save(note);
-//    }
-
-
 
     public Notes createNote(Notes note) throws Exception {
         try{
-            User user = userRepository.findById(note.getUser().getUserId()).orElseThrow(() -> new EntityNotFoundException("User not found"));
-            note.setUser(user);
+            Optional<User> user = userRepository.findById(note.getUser().getUserId());
+            note.setUser(user.get());
             note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
         }catch (Exception e){
             throw new Exception(e);
         }
-        System.out.println("THIS " + note);
         return notesRepository.save(note);
     }
-
 
     public List<Notes> notesList() {
         return notesRepository.findAll();

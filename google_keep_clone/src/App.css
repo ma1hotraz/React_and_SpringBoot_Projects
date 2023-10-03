@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 } */
+.background-image {
+  background-image: url("https://source.unsplash.com/random?wallpapers");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}

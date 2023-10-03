@@ -1,24 +1,39 @@
 package com.notes.keep.controller;
 
+import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
-import com.notes.keep.service.UserService;
+import com.notes.keep.service.UserServiceImpl;
 import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
-
 @RestController
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userService;
 
     @PostMapping("/add")
-    public User addUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public ResponseEntity<?> addUser(@RequestBody User user) {
+        System.out.println(user);
+        if (userService.checkEmail(user.getEmail())) {
+            Loggers.warn("EMAIL ALREADY EXIST");
+            return ResponseEntity.status(409).build();
+        }
+        return ResponseEntity.ok(userService.createUser(user));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginUser(@RequestBody AuthRequest user) {
+        System.out.println("THSI IS " + user);
+        if (!userService.checkEmail(user.getEmail())) {
+            Loggers.warn("EMAIL/USER NOT EXIST");
+            return ResponseEntity.status(409).build();
+        } else {
+            Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
+            return ResponseEntity.ok(userService.loginUser(user));
+        }
     }
 
     @GetMapping("/userId/{id}")

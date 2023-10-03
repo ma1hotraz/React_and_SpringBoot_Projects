@@ -8,23 +8,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Data
+@Getter
+@Setter
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer userId;
-    
+
     @NotNull
     @NotBlank
     private String email;
@@ -37,7 +35,18 @@ public class User {
     @NotNull
     @NotBlank
     private String password;
+    @NotNull
+    @NotBlank
+    private String role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Notes> notes;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

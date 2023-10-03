@@ -10,5 +10,8 @@ public class Loggers {
     public static void info(String msg){
         logger.info(msg);
     }
+    public static void warn(String msg){
+        logger.info(msg);
+    }
 
 }

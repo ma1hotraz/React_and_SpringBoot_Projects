@@ -1,47 +1,26 @@
 package com.notes.keep.service;
 
-import com.notes.keep.dto.UserDTO;
-import com.notes.keep.model.Notes;
+import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
-import com.notes.keep.repository.UserRepository;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
-import org.modelmapper.spi.MatchingStrategy;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
-import java.util.Optional;
 
-@Service
-public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+public interface UserService {
+    public User createUser(User user);
 
-//    @Autowired
-//    private ModelMapper modelMapper;
+    public User findByUserId(Integer userId);
 
-    public User createUser(User user){
-        return userRepository.save(user);
-    }
+    public User loginUser(AuthRequest user);
 
-    public User findByUserId(Integer userId){
-        User user = userRepository.findById(userId).get();
-        System.out.println(user);
-        return userRepository.findById(userId).get();
-    }
+    public List<User> getAllUser();
 
-    //public EmployeeDTO employeeDTO(Employee employee){
-    //        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-    //        EmployeeDTO employeeDTO = new EmployeeDTO();
-    //        employeeDTO = modelMapper.map(employee,EmployeeDTO.class);
-    //        return employeeDTO;
-    //    }
+    public boolean checkEmail(String email);
 
-//    public UserDTO userDTO(User user){
-//           modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-//           UserDTO userDTO = new UserDTO();
-//           userDTO = modelMapper.map(user,UserDTO.class);
-//           return userDTO;
-//    }
+    public void updateResetPasswordToken(String token, String email);
+//
+//    public UserDetails getResetPasswordToken(String token);
+//
+//    public void updatePassword(UserDetails user, String newPassword);
+
 }

@@ -21,7 +21,7 @@ public class NotesController {
         System.out.println(note);
         Notes notes = notesService.createNote(note);
         if(notes == null){
-            return ResponseEntity.status(500).build();
+            return ResponseEntity.status(500).header("msg","NOTE IS NULL").build();
         }
         return ResponseEntity.ok(notesService.createNote(note));
     }
