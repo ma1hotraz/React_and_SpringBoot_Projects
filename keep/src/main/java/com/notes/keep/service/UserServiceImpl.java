@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
         System.out.println(user.getEmail() + " " + user.getPassword());
         User user1 = userRepository.findByEmail(user.getEmail());
         if(user1.getPassword().equals(user.getPassword())){
-            
+
         }
         return null;
     }
@@ -42,10 +42,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean checkEmail(String email) {
-        if(userRepository.existsByEmail(email)){
-            return true;
-        }
-        return false;
+        return userRepository.existsByEmail(email);
     }
 
     //METHODS NEEDS TO IMPLEMENT

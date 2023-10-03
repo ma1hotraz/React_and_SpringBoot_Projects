@@ -4,12 +4,15 @@ import com.notes.keep.model.Notes;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.NotesRepository;
 import com.notes.keep.repository.UserRepository;
+import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.FormatDateTime;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class NotesService {
@@ -18,11 +21,16 @@ public class NotesService {
     @Autowired
     private UserRepository userRepository;
 
+    public BCryptPasswordEncoder encoder;
+
 
     @Autowired
     public NotesService(NotesRepository notesRepository) {
         this.notesRepository = notesRepository;
     }
+
+    @Autowired
+    private EncryptionUtil encryptionUtil;
 
 
     public Notes createNote(Notes note) throws Exception {
@@ -30,6 +38,8 @@ public class NotesService {
             Optional<User> user = userRepository.findById(note.getUser().getUserId());
             note.setUser(user.get());
             note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
+            note.setTitle(encryptionUtil.encrypt(note.getTitle()));
+            note.setDescription(encryptionUtil.encrypt(note.getDescription()));
         }catch (Exception e){
             throw new Exception(e);
         }
@@ -37,7 +47,18 @@ public class NotesService {
     }
 
     public List<Notes> notesList() {
-        return notesRepository.findAll();
+        List<Notes> notesList = notesRepository.findAll();
+
+//        notesList.stream()
+//                .forEach(ele -> ele.setTitle(encryptionUtil.decrypt(ele.getTitle())));
+//
+//        notesList.forEach(System.out::println);
+
+        Notes notes = notesList.get(0);
+        System.out.println(encryptionUtil.decrypt(notes.getTitle() + " " + encryptionUtil.decrypt(notes.getDescription())));
+
+        List<Notes> collected = null;
+        return collected;
     }
 
     public Notes findByNoteId(Integer id) {
@@ -46,6 +67,9 @@ public class NotesService {
 
     public Notes updateNoteById(Integer id, Notes notes) {
         Notes oldNote = notesRepository.findByNoteId(id);
+        if(oldNote == null){
+            return null;
+        }
 //        oldNote.setColor(notes.getColor());
         oldNote.setDate(FormatDateTime.parseStandardDate(notes.getDate()));
         oldNote.setTitle(notes.getTitle());
@@ -60,13 +84,11 @@ public class NotesService {
     }
 
     public List<Notes> findByTitle(String title){
-        System.out.println(notesRepository.findByTitle(title));
         return notesRepository.findByTitle(title);
     }
 
 
     public List<Notes> findAllByUserUserId(Integer userId){
-        System.out.println(notesRepository.findAllByUserUserId(userId));
         return notesRepository.findAllByUserUserId(userId);
     }
 }

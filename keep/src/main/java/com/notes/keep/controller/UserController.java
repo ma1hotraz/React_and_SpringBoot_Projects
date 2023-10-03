@@ -26,7 +26,6 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody AuthRequest user) {
-        System.out.println("THSI IS " + user);
         if (!userService.checkEmail(user.getEmail())) {
             Loggers.warn("EMAIL/USER NOT EXIST");
             return ResponseEntity.status(409).build();

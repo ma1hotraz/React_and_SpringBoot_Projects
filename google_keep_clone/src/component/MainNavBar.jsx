@@ -16,7 +16,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['LOGIN'];
+
+
+const navItems = [];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -45,7 +47,6 @@ function DrawerAppBar(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-
 
   return (
     <Box sx={{ display: 'flex' }}>
