@@ -3,9 +3,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types'
 
-export const getData = async () => {
+export const getData = async (id) => {
 
-    const url = 'notes/getAll';
+    const url = `notes/userId/${id}`;
 
     try {
         const response = await fetch(url);
@@ -42,21 +42,21 @@ export const getData = async () => {
     }
 };
 
-export default function NoteData({ setData }) {
-    
+export default function NoteData({ setData, userId }) {
     useEffect(() => {
-        getData()
-            .then((fetchedData) => {
-                setData(fetchedData);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-    }, [setData]);
-
+      getData(userId)
+        .then((fetchedData) => {
+          setData(fetchedData);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+        });
+    }, [setData, userId]);
+  
     return null;
-}
-
-NoteData.prototype = {
-    setData: PropTypes.func
-};
+  }
+  
+  NoteData.propTypes = {
+    setData: PropTypes.func,
+    userId: PropTypes.number.isRequired, 
+  };

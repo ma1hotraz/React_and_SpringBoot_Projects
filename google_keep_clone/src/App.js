@@ -4,8 +4,8 @@ import SignUp from './pages/Signup.js'
 import Home from './pages/Home.js';
 import React from 'react'
 import Main from "./pages/Main.js";
-import { useTheme } from '@emotion/react';
 import Forget from "./pages/Forget.js";
+import NotFound404 from "./pages/NotFound404.js";
 
 export default function App() {
 
@@ -18,6 +18,7 @@ export default function App() {
           <Route path='/Signup' element={<SignUp />} />
           <Route path='/Home' element={<Home />} />
           <Route path='/Forget' element={<Forget />} />
+          <Route path='*' element={<NotFound404 />} />
         </Routes>
       </BrowserRouter>
     </div>

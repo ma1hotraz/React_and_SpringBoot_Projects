@@ -41,23 +41,23 @@ public class NotesService {
         return notesRepository.save(note);
     }
 
-    public List<Notes> notesList() {
-        List<Notes> notesList = notesRepository.findAll();
-        List<Notes> collected = new ArrayList<>();
-
-        try {
-            collected = notesList.stream()
-                    .peek(note -> {
-                        note.setTitle(encryptionUtil.decrypt(note.getTitle()));
-                        note.setDescription(encryptionUtil.decrypt(note.getDescription()));
-                    })
-                    .toList();
-        } catch (NullPointerException e) {
-            throw new NullPointerException("LIST IS EMPTY");
-        }
-
-        return collected;
-    }
+//    public List<Notes> notesList() {
+//        List<Notes> notesList = notesRepository.findAll();
+//        List<Notes> collected = new ArrayList<>();
+//
+//        try {
+//            collected = notesList.stream()
+//                    .peek(note -> {
+//                        note.setTitle(encryptionUtil.decrypt(note.getTitle()));
+//                        note.setDescription(encryptionUtil.decrypt(note.getDescription()));
+//                    })
+//                    .toList();
+//        } catch (NullPointerException e) {
+//            throw new NullPointerException("LIST IS EMPTY");
+//        }
+//
+//        return collected;
+//    }
 
     public Notes findByNoteId(Integer id) {
         Notes note = notesRepository.findByNoteId(id);
@@ -98,7 +98,21 @@ public class NotesService {
 
 
     public List<Notes> findAllByUserUserId(Integer userId) {
-        return notesRepository.findAllByUserUserId(userId);
+        List<Notes> notesList = notesRepository.findAll();
+        List<Notes> collected = new ArrayList<>();
+
+        try {
+            collected = notesList.stream()
+                    .peek(note -> {
+                        note.setTitle(encryptionUtil.decrypt(note.getTitle()));
+                        note.setDescription(encryptionUtil.decrypt(note.getDescription()));
+                    })
+                    .toList();
+        } catch (NullPointerException e) {
+            throw new NullPointerException("LIST IS EMPTY");
+        }
+
+        return collected;
     }
 }
 

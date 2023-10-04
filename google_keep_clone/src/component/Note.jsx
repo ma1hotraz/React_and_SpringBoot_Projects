@@ -23,6 +23,7 @@ export default function Note() {
     const [noteTitle, setNoteTitle] = useState();
     const [noteDescription, setNoteDescription] = useState();
     const [selectedNoteId, setSelectedNoteId] = useState(null);
+    const [currentUser, setCurrentUser] = useState(null);
 
 
     const handleCreateNote = () => {
@@ -34,7 +35,8 @@ export default function Note() {
 
 
     const fetchAndRefreshData = () => {
-        getData()
+        console.log(currentUser);
+        getData(currentUser.userId)
             .then((newData) => {
                 setData(newData || []);
             })
@@ -63,9 +65,16 @@ export default function Note() {
     };
 
 
-    useEffect(() => {
-    }, [noteTitle, noteDescription]);
+    // useEffect(() => {
+    // }, [noteTitle, noteDescription]);
 
+    useEffect(() => {
+        localStorage.removeItem('currentUser');
+        const items = JSON.parse(localStorage.getItem('userData'));
+        if (items) {
+            setCurrentUser(items);
+        }
+    }, []);
 
     const handleSaveNote = (title, description) => {
 
@@ -85,13 +94,7 @@ export default function Note() {
             completed: false,
             color: getRandomColor(),
             user: {
-                userId: 1,
-                // email: 'email',
-                // firstName: 'Name',
-                // lastName: 'last',
-                // password: 'pass',
-                // role: 'USER',
-                // notes: []
+                userId: currentUser.userId,
             }
         };
 
