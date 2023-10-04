@@ -52,8 +52,6 @@ export default function Note() {
     };
 
     useEffect(() => {
-        // console.log('noteTitle:', noteTitle);
-        // console.log('noteDescription:', noteDescription);
     }, [noteTitle, noteDescription]);
 
 
