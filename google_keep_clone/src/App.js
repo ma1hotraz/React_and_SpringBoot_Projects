@@ -6,6 +6,7 @@ import React from 'react'
 import Main from "./pages/Main.js";
 import { useTheme } from '@emotion/react';
 import Forget from "./pages/Forget.js";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Routes >
+
           <Route path='/' element={<Main />} />
           <Route path='/Signin' element={<SignIn />} />
           <Route path='/Signup' element={<SignUp />} />

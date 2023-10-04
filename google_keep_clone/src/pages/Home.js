@@ -48,15 +48,14 @@ export default function Home() {
     const backgroundColor = themeType ? secondaryBackgroundColor : primaryBackgroundColor;
     const navMenuIconColor = themeType ? secondarynavMenuIconColor : primarynavMenuIconColor;
 
-    
+
 
     return (
         <div style={{
             backgroundColor: `${backgroundColor}`, minHeight: "100vh"
         }}>
-            
+
             <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} />
-        
             <Box sx={{ padding: '15px' }}>
                 {/* <SearchBox /> */}
                 <Note color={textColor} backgroundColor={themeColor} />

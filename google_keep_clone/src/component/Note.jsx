@@ -10,8 +10,13 @@ import { addNote } from '../api/AddNote';
 import { updateData } from '../api/UpdateNote';
 import nodataImage from '../images/nodata.png';
 import '../css/NoData.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Note() {
+
+
     const [data, setData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMode, setModalMode] = useState('create');
@@ -28,28 +33,16 @@ export default function Note() {
         setIsModalOpen(true);
     };
 
-    //OLD
-    // const fetchAndRefreshData = () => {
-    //     getData()
-    //         .then((newData) => {
-    //             setData(newData);
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error fetching data:', error);
-    //         });
-    // };
 
-    //NEW
     const fetchAndRefreshData = () => {
         getData()
             .then((newData) => {
-                setData(newData || []); 
+                setData(newData || []);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
     };
-    
 
     const handleDeleteNote = () => {
         deleteById(selectedNoteId)
@@ -57,9 +50,15 @@ export default function Note() {
                 fetchAndRefreshData();
                 setIsModalOpen(false);
                 setSelectedNoteId(null);
+                toast.warn('Note deleted successfully!', {
+                    autoClose: 3000,
+                });
             })
             .catch((error) => {
                 console.error('Error deleting note:', error);
+                toast.error('Some went wrong', {
+                    autoClose: 3000,
+                });
             });
     };
 
@@ -85,7 +84,7 @@ export default function Note() {
             description: description,
             completed: false,
             color: getRandomColor(),
-            user:{
+            user: {
                 userId: 1,
                 // email: 'email',
                 // firstName: 'Name',
@@ -106,9 +105,15 @@ export default function Note() {
                     title = '';
                     description = '';
                     setNoteDescription('');
+                    toast.success('Note added successfully!', {
+                        autoClose: 3000,
+                    });
                 })
                 .catch((error) => {
                     console.error('Error creating note:', error);
+                    toast.error('Something went wrong', {
+                        autoClose: 3000,
+                    });
                 });
             handleCloseModel();
         } else if (modalMode === 'edit') {
@@ -121,9 +126,15 @@ export default function Note() {
                     setNoteDescription('');
                     title = '';
                     description = '';
+                    toast.success('Note Edited successfully!', {
+                        autoClose: 3000,
+                    });
                 })
                 .catch((error) => {
                     console.error('Error editing note:', error);
+                    toast.error('Something went wrong', {
+                        autoClose: 3000,
+                    });
                 });
             handleCloseModel();
         }
@@ -167,7 +178,6 @@ export default function Note() {
     return (
         <div style={{ width: '100%', height: '100%' }}>
             <NoteData setData={setData} />
-
             {data.length !== 0 ? (
                 <div style={{ marginTop: '80px', position: 'relative', width: '100%', height: '100%' }}>
                     <Grid container spacing={2} style={{ width: '100%', height: '100%' }}>
@@ -235,6 +245,7 @@ export default function Note() {
                 handleDelete={handleDeleteNote}
                 mode={modalMode}
             />
+            <ToastContainer position={'top-right'} />
         </div>
     );
 }
