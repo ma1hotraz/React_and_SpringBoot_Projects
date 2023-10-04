@@ -22,6 +22,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const theme = createTheme({
   palette: {
@@ -49,6 +51,7 @@ const renderApp = () => {
     <React.StrictMode>
       <ThemeProvider theme={theme}>
         <App />
+        <ToastContainer position='top-right'/>
       </ThemeProvider>
     </React.StrictMode>
   );

@@ -10,12 +10,12 @@ export const getData = async () => {
     try {
         const response = await fetch(url);
 
-        if (response.status === 204) {
-            toast.warn('Create A Note', {
-                autoClose: 3000,
-            });
-            return [];
-        }
+        // if (response.status === 204) {
+        //     toast.warn('Create A Note', {
+        //         autoClose: 3000,
+        //     });
+        //     return [];
+        // }
 
         if (!response.ok) {
             toast.warn('Server Error !', {
@@ -43,6 +43,7 @@ export const getData = async () => {
 };
 
 export default function NoteData({ setData }) {
+    
     useEffect(() => {
         getData()
             .then((fetchedData) => {

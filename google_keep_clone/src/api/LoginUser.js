@@ -1,8 +1,10 @@
 export const Login = async (UserInfo) => {
    const url = '/user/login';
 
-   console.log(UserInfo.get("email"), "sdfad");
-   console.log(UserInfo.get("password"), "sdfad");
+   const signInObj = {
+      email: UserInfo.get("email"),
+      password: UserInfo.get("password"),
+   }
 
    try {
       const response = await fetch(url, {
@@ -10,7 +12,7 @@ export const Login = async (UserInfo) => {
          headers: {
             'Content-Type': 'application/json',
          },
-         body: JSON.stringify(UserInfo),
+         body: JSON.stringify(signInObj),
       });
 
       if (response.ok) {

@@ -10,12 +10,11 @@ import { addNote } from '../api/AddNote';
 import { updateData } from '../api/UpdateNote';
 import nodataImage from '../images/nodata.png';
 import '../css/NoData.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Note() {
-
 
     const [data, setData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +32,7 @@ export default function Note() {
         setIsModalOpen(true);
     };
 
-    
+
     const fetchAndRefreshData = () => {
         getData()
             .then((newData) => {
@@ -43,7 +42,7 @@ export default function Note() {
                 console.error('Error fetching data:', error);
             });
     };
-    
+
 
     const handleDeleteNote = () => {
         deleteById(selectedNoteId)
@@ -246,7 +245,6 @@ export default function Note() {
                 handleDelete={handleDeleteNote}
                 mode={modalMode}
             />
-            <ToastContainer position={'top-right'} />
         </div>
     );
 }

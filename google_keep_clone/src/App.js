@@ -6,7 +6,6 @@ import React from 'react'
 import Main from "./pages/Main.js";
 import { useTheme } from '@emotion/react';
 import Forget from "./pages/Forget.js";
-import { ToastContainer } from "react-toastify";
 
 export default function App() {
 

@@ -16,8 +16,8 @@ export default function NoteModal({
 }) {
     const [noteTitle, setNoteTitle] = useState('');
     const [noteDescription, setNoteDescription] = useState('');
-    const [noteData, setNoteData] = useState([]);
-    
+    // const [noteData, setNoteData] = useState([]);
+
     useEffect(() => {
         setNoteTitle(title || '');
         setNoteDescription(description || '');
@@ -55,7 +55,7 @@ export default function NoteModal({
                         display: 'block'
                     }}
                 >
-                    <h2 style={{margin: '10px', padding: '6px'}} id="modal-title">
+                    <h2 style={{ margin: '10px', padding: '6px' }} id="modal-title">
                         {mode === 'create' ? 'Create Note' : 'Edit Note'}
                     </h2>
                     <TextField
@@ -88,7 +88,7 @@ export default function NoteModal({
                                 <DeleteIcon sx={{ color: 'red' }} onClick={handleDelete} />
                             </IconButton>
                         )}
-                        <Button variant="contained" color="success" onClick={()=>handleSaveNote(noteTitle,noteDescription)}>
+                        <Button variant="contained" color="success" onClick={() => handleSaveNote(noteTitle, noteDescription)}>
                             Save
                         </Button>
                     </Box>
@@ -96,7 +96,7 @@ export default function NoteModal({
             </Modal>
             {selectedId !== null && (
                 <>
-                    <EditNote id={selectedId} setData={setNoteData} />
+                    <EditNote id={selectedId} />{/* setData={setNoteData}  */}
                 </>
             )}
         </div>

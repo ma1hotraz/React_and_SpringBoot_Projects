@@ -1,5 +1,6 @@
 package com.notes.keep.controller;
 
+import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
 import com.notes.keep.service.UserServiceImpl;
@@ -16,23 +17,35 @@ public class UserController {
 
     @PostMapping("/add")
     public ResponseEntity<?> addUser(@RequestBody User user) {
-        System.out.println(user);
         if (userService.checkEmail(user.getEmail())) {
             Loggers.warn("EMAIL ALREADY EXIST");
             return ResponseEntity.status(409).build();
         }
-        return ResponseEntity.ok(userService.createUser(user));
+        Loggers.info("USER CREATED WITH EMAIL : " + user.getEmail());
+        User user1 = userService.createUser(user);
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserId(user1.getUserId());
+        userDTO.setName(user1.getFirstName() + user.getLastName());
+        userDTO.setEmail(user.getEmail());
+        return ResponseEntity.ok(userDTO);
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody AuthRequest user) {
         if (!userService.checkEmail(user.getEmail())) {
             Loggers.warn("EMAIL/USER NOT EXIST");
-            return ResponseEntity.status(409).build();
-        } else {
-            Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
-            return ResponseEntity.ok(userService.loginUser(user));
+            return ResponseEntity.status(409).header("msg", "EMAIL/USER NOT EXIST").build();
         }
+        Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
+        User user1 = userService.loginUser(user);
+        if(user1 == null){
+            return null;
+        }
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserId(user1.getUserId());
+        userDTO.setName(user1.getFirstName() + user1.getLastName());
+        userDTO.setEmail(user.getEmail());
+        return ResponseEntity.ok(userDTO);
     }
 
     @GetMapping("/userId/{id}")

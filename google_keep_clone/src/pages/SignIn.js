@@ -1,4 +1,3 @@
-import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,7 +11,9 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import {Login} from '../api/LoginUser';
+import { Login } from '../api/LoginUser';
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Copyright(props) {
   return (
@@ -37,14 +38,18 @@ const defaultTheme = createTheme();
 
 export default function SignIn() {
 
+  const navigate = useNavigate();
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password")
-    });
-    Login(data);
+
+    if (Login(data) !== null) {
+      navigate("/home", toast.success("Login Successful"))
+    }else{
+      toast.error('Wrong Password')
+    }
   };
 
   return (

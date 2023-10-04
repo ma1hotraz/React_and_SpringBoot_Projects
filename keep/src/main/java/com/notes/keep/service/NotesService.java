@@ -6,17 +6,13 @@ import com.notes.keep.repository.NotesRepository;
 import com.notes.keep.repository.UserRepository;
 import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.FormatDateTime;
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
 
 @Service
 public class NotesService {
@@ -85,7 +81,7 @@ public class NotesService {
         oldNote.setDescription(notes.getDescription());
         oldNote.setCompleted(notes.isCompleted());
 
-        //ENCRYPTING THE NOTE
+        //ENCRYPTING THE NOTE AFTER UPDATE
         oldNote.setTitle(encryptionUtil.encrypt(oldNote.getTitle()));
         oldNote.setDescription(encryptionUtil.encrypt(oldNote.getDescription()));
         notesRepository.save(oldNote);
