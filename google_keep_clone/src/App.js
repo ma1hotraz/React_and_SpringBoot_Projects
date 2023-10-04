@@ -10,14 +10,10 @@ import { ToastContainer } from "react-toastify";
 
 export default function App() {
 
-
-
-
   return (
     <div>
       <BrowserRouter>
         <Routes >
-
           <Route path='/' element={<Main />} />
           <Route path='/Signin' element={<SignIn />} />
           <Route path='/Signup' element={<SignUp />} />

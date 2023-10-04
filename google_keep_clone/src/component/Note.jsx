@@ -33,7 +33,7 @@ export default function Note() {
         setIsModalOpen(true);
     };
 
-
+    
     const fetchAndRefreshData = () => {
         getData()
             .then((newData) => {
@@ -43,6 +43,7 @@ export default function Note() {
                 console.error('Error fetching data:', error);
             });
     };
+    
 
     const handleDeleteNote = () => {
         deleteById(selectedNoteId)

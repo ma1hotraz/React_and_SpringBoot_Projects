@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types'
 
 export const getData = async () => {
@@ -9,10 +11,16 @@ export const getData = async () => {
         const response = await fetch(url);
 
         if (response.status === 204) {
+            toast.warn('Create A Note', {
+                autoClose: 3000,
+            });
             return [];
         }
 
         if (!response.ok) {
+            toast.warn('Server Error !', {
+                autoClose: 3000,
+            });
             throw new Error('Network response was not ok');
         }
 

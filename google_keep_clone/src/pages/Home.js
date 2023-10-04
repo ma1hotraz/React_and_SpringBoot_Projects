@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import { useCookies } from 'react-cookie';
 import SearchBox from '../component/SearchBox';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Home() {
 
@@ -23,7 +25,12 @@ export default function Home() {
             const newThemeType = !prevThemeType;
             setCookie('keeper', newThemeType);
             setActive(!newThemeType);
-            console.log(cookies, " -cookie ", isActive, " -isActive");
+            
+            const message = `${prevThemeType ? 'Light' : 'Dark'} Theme changed successfully!`;
+
+            toast.success(message, {
+                autoClose: 3000,
+            });
             return newThemeType;
         });
     };

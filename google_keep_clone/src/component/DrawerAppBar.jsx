@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faMoon, faRedo, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
 import SearchBar from './SearchMenu';
 
+
 const drawerWidth = 240;
 
 function DrawerAppBar(props) {
