@@ -8,7 +8,9 @@ export const getData = async () => {
     try {
         const response = await fetch(url);
 
-        console.log(response);
+        if (response.status === 204) {
+            return [];
+        }
 
         if (!response.ok) {
             throw new Error('Network response was not ok');

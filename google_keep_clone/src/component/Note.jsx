@@ -28,16 +28,28 @@ export default function Note() {
         setIsModalOpen(true);
     };
 
+    //OLD
+    // const fetchAndRefreshData = () => {
+    //     getData()
+    //         .then((newData) => {
+    //             setData(newData);
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error fetching data:', error);
+    //         });
+    // };
 
+    //NEW
     const fetchAndRefreshData = () => {
         getData()
             .then((newData) => {
-                setData(newData);
+                setData(newData || []); 
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
     };
+    
 
     const handleDeleteNote = () => {
         deleteById(selectedNoteId)
@@ -50,6 +62,7 @@ export default function Note() {
                 console.error('Error deleting note:', error);
             });
     };
+
 
     useEffect(() => {
     }, [noteTitle, noteDescription]);

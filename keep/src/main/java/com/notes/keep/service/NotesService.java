@@ -65,10 +65,10 @@ public class NotesService {
 
     public Notes findByNoteId(Integer id) {
         Notes note = notesRepository.findByNoteId(id);
-        try{
+        try {
             note.setTitle(encryptionUtil.decrypt(note.getTitle()));
             note.setDescription(encryptionUtil.decrypt(note.getDescription()));
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             return null;
         }
         return note;
@@ -84,6 +84,10 @@ public class NotesService {
         oldNote.setTitle(notes.getTitle());
         oldNote.setDescription(notes.getDescription());
         oldNote.setCompleted(notes.isCompleted());
+
+        //ENCRYPTING THE NOTE
+        oldNote.setTitle(encryptionUtil.encrypt(oldNote.getTitle()));
+        oldNote.setDescription(encryptionUtil.encrypt(oldNote.getDescription()));
         notesRepository.save(oldNote);
         return oldNote;
     }
