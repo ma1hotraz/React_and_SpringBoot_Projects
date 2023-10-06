@@ -16,8 +16,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { ToggleSlider } from 'react-toggle-slider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faMoon, faRedo, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
-import SearchBar from './SearchMenu';
+import { faList, faMoon, faRedo, faSun } from '@fortawesome/free-solid-svg-icons';
 
 
 const drawerWidth = 240;
@@ -25,31 +24,11 @@ const drawerWidth = 240;
 function DrawerAppBar(props) {
 
   const { window } = props;
-  const { getByTitle } = props;
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const [showSearchBar, setShowSearchBar] = useState(false);
-
-  const [searchText, setSearchText] = useState('');
-
-
-  const handleSearchIconClick = () => {
-    if (!showSearchBar) {
-      setShowSearchBar(true);
-    } else if (searchText.trim() === '' || searchText === null) {
-      setShowSearchBar(false);
-    } else {
-      getByTitle(searchText);
-    }
-  };
-
 
   const navItems = [
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly' }}>
-      {showSearchBar && <SearchBar value={setSearchText} onChange={(text) => setSearchText(text)} />}
-      <FontAwesomeIcon style={{ paddingLeft: '20px' }} icon={faSearch} size='2x' onClick={handleSearchIconClick} />
-    </div>,
     <FontAwesomeIcon icon={faRedo} size='2x' />,
     <FontAwesomeIcon icon={faList} size='2x' />,
     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>

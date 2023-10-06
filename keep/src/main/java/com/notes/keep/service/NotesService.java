@@ -11,8 +11,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class NotesService {
@@ -74,16 +76,18 @@ public class NotesService {
         notesRepository.deleteById(id);
     }
 
-    public List<Notes> findByTitle(String title) {
-        return notesRepository.findByTitle(title);
+    public List<Notes> findByTitle(Integer id, String title) {
+
+        return findAllByUserUserId(id)
+                .stream()
+                .filter(notes -> notes.getTitle().contains(title))
+                .collect(Collectors.toList());
     }
 
 
     public List<Notes> findAllByUserUserId(Integer userId) {
         List<Notes> notesList = notesRepository.findAllNotesByuserId(userId);
         List<Notes> collected = new ArrayList<>();
-
-
 
         try {
             collected = notesList.stream()

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NoteData, { getData } from '../api/NoteData';
-import { Grid, Paper, Typography, Box, Fab } from '@mui/material';
+import { Grid, Paper, Typography, Box, Fab, Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { getById } from '../api/EditNote';
 import { getRandomColor } from '../utils/ColorList';
@@ -12,6 +12,9 @@ import nodataImage from '../images/nodata.png';
 import '../css/NoData.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import SearchBox from './SearchBox';
 
 
 export default function Note() {
@@ -20,15 +23,19 @@ export default function Note() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMode, setModalMode] = useState('create');
     const [noteData, setNoteData] = useState(null);
-    // const [noteTitle, setNoteTitle] = useState();
-    // const [noteDescription, setNoteDescription] = useState();
+    const [noteTitle, setNoteTitle] = useState('');
+    const [noteDescription, setNoteDescription] = useState('');
     const [selectedNoteId, setSelectedNoteId] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
+    const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
+
 
     const handleCreateNote = () => {
         setModalMode('create');
         setSelectedNoteId(null);
         setNoteData(null);
+        setNoteTitle('');
+        setNoteDescription('');
         setIsModalOpen(true);
     };
 
@@ -47,6 +54,7 @@ export default function Note() {
     };
 
 
+
     const handleDeleteNote = () => {
         deleteById(selectedNoteId)
             .then(() => {
@@ -54,20 +62,22 @@ export default function Note() {
                 setIsModalOpen(false);
                 setSelectedNoteId(null);
                 toast.warn('Note deleted successfully!', {
-                    autoClose: 3000,
+                    autoClose: 2000,
                 });
             })
             .catch((error) => {
                 console.error('Error deleting note:', error);
                 toast.error('Some went wrong', {
-                    autoClose: 3000,
+                    autoClose: 2000,
                 });
             });
     };
 
 
-    // useEffect(() => {
-    // }, [noteTitle, noteDescription]);
+    useEffect(() => {
+        setNoteTitle('');
+        setNoteDescription('');
+    }, [noteTitle, noteDescription]);
 
 
     useEffect(() => {
@@ -78,17 +88,73 @@ export default function Note() {
         }
     }, []);
 
+    // const handleSaveNote = (title, description) => {
+
+    //     //TODO HERE WE NEEED TO FIX THE ISSUE 
+    //     /* issue : state variables is not updating inside the function after assigning the value */
+
+    //     // setNoteTitle(title);
+    //     // setNoteDescription(description);
+
+    //     /* WILL FIX IT LATER */
+
+
+    //     const newNoteData = {
+    //         title: title,
+    //         description: description,
+    //         completed: false,
+    //         color: getRandomColor(),
+    //         user: {
+    //             userId: currentUser.userId,
+    //         }
+    //     };
+
+    //     if (modalMode === 'create') {
+    //         addNote(newNoteData)
+    //             .then(() => {
+    //                 fetchAndRefreshData();
+    //                 setIsModalOpen(false);
+    //                 setSelectedNoteId(null);
+    //                 setNoteTitle('');
+    //                 setNoteDescription('');
+    //                 title = '';
+    //                 description = '';
+    //                 toast.success('Note added successfully!', {
+    //                     autoClose: 3000,
+    //                 });
+    //             })
+    //             .catch((error) => {
+    //                 console.error('Error creating note:', error);
+    //                 toast.error('Something went wrong', {
+    //                     autoClose: 3000,
+    //                 });
+    //             });
+    //         handleCloseModel();
+    //     } else if (modalMode === 'edit') {
+    //         updateData(selectedNoteId, newNoteData)
+    //             .then(() => {
+    //                 fetchAndRefreshData();
+    //                 setIsModalOpen(false);
+    //                 setSelectedNoteId(null);
+    //                 setNoteTitle('');
+    //                 setNoteDescription('');
+    //                 title = '';
+    //                 description = '';
+    //                 toast.success('Note Edited successfully!', {
+    //                     autoClose: 3000,
+    //                 });
+    //             })
+    //             .catch((error) => {
+    //                 console.error('Error editing note:', error);
+    //                 toast.error('Something went wrong', {
+    //                     autoClose: 3000,
+    //                 });
+    //             });
+    //         handleCloseModel();
+    //     }
+    // };
+
     const handleSaveNote = (title, description) => {
-
-        //TODO HERE WE NEEED TO FIX THE ISSUE 
-        /* issue : state variables is not updating inside the function after assigning the value */
-
-        // setNoteTitle(title);
-        // setNoteDescription(description);
-
-        /* WILL FIX IT LATER */
-
-
         const newNoteData = {
             title: title,
             description: description,
@@ -96,7 +162,7 @@ export default function Note() {
             color: getRandomColor(),
             user: {
                 userId: currentUser.userId,
-            }
+            },
         };
 
         if (modalMode === 'create') {
@@ -105,39 +171,41 @@ export default function Note() {
                     fetchAndRefreshData();
                     setIsModalOpen(false);
                     setSelectedNoteId(null);
-                    // setNoteTitle('');
-                    // setNoteDescription('');
-                    title = '';
-                    description = '';
+                    setNoteTitle('');
+                    setNoteDescription('');
+                    clearTitleAndDescription();
                     toast.success('Note added successfully!', {
-                        autoClose: 3000,
+                        autoClose: 2000,
                     });
                 })
                 .catch((error) => {
                     console.error('Error creating note:', error);
                     toast.error('Something went wrong', {
-                        autoClose: 3000,
+                        autoClose: 2000,
                     });
                 });
             handleCloseModel();
         } else if (modalMode === 'edit') {
+            if (!selectedNoteId) {
+                return;
+            }
+
             updateData(selectedNoteId, newNoteData)
                 .then(() => {
                     fetchAndRefreshData();
                     setIsModalOpen(false);
                     setSelectedNoteId(null);
-                    // setNoteTitle('');
-                    // setNoteDescription('');
-                    title = '';
-                    description = '';
+                    setNoteTitle('');
+                    setNoteDescription('');
+                    clearTitleAndDescription();
                     toast.success('Note Edited successfully!', {
-                        autoClose: 3000,
+                        autoClose: 2000,
                     });
                 })
                 .catch((error) => {
                     console.error('Error editing note:', error);
                     toast.error('Something went wrong', {
-                        autoClose: 3000,
+                        autoClose: 2000,
                     });
                 });
             handleCloseModel();
@@ -167,6 +235,15 @@ export default function Note() {
         setIsModalOpen(true);
     };
 
+    const clearTitleAndDescription = () => {
+        setNoteTitle('');
+        setNoteDescription('');
+    };
+
+
+    const toggleSearchBox = () => {
+        setIsSearchBoxVisible(!isSearchBoxVisible);
+    };
     // const predefinedHeights = ['200px', '250px', '280px', '300px'];
 
     // const getRandomHeight = () => {
@@ -182,6 +259,8 @@ export default function Note() {
     return (
         <div style={{ width: '100%', height: '100%' }}>
             <NoteData setData={setData} />
+            <FontAwesomeIcon style={{ marginTop: '50px', marginBottom: '-100px' }} icon={faSearch} size='3x' onClick={toggleSearchBox} />
+            {isSearchBoxVisible && <SearchBox />}
             {data.length !== 0 ? (
                 <div style={{ marginTop: '80px', position: 'relative', width: '100%', height: '100%' }}>
                     <Grid container spacing={2} style={{ width: '100%', height: '100%' }}>
@@ -222,9 +301,9 @@ export default function Note() {
                                 <div className="empty-state__icon">
                                     <img src={nodataImage} alt="" />
                                 </div>
-                                <div className="empty-state__message">No records has been added yet.</div>
+                                <div className="empty-state__message">No note has been added yet.</div>
                                 <div className="empty-state__help">
-                                    Add a new record by simpley clicking the button on bottom right side.
+                                    Add a new note by simpley clicking the button on bottom right side.
                                 </div>
                             </div>
                         </div>
@@ -248,7 +327,10 @@ export default function Note() {
                 handleSaveNote={handleSaveNote}
                 handleDelete={handleDeleteNote}
                 mode={modalMode}
+                clearTitleAndDescription={clearTitleAndDescription}
             />
         </div>
     );
 }
+
+

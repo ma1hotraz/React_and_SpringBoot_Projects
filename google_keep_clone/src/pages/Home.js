@@ -25,7 +25,7 @@
 //             const newThemeType = !prevThemeType;
 //             setCookie('keeper', newThemeType);
 //             setActive(!newThemeType);
-            
+
 //             const message = `${prevThemeType ? 'Light' : 'Dark'} Theme changed successfully!`;
 
 //             toast.success(message, {
@@ -76,15 +76,16 @@ import { useTheme } from '@emotion/react';
 import Header from '../component/DrawerAppBar';
 import Note from '../component/Note';
 import { useState, useEffect } from 'react';
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import { useCookies } from 'react-cookie';
 import SearchBox from '../component/SearchBox';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default function App() {
-  const [loading, setLoading] = useState(true); 
-  const [userData, setUserData] = useState(null); 
+  const [loading, setLoading] = useState(true);
   const [cookies, setCookie] = useCookies(['keeper', 'active']);
   const [themeType, setThemeType] = useState(cookies.keeper || false);
   const [isActive, setActive] = useState(cookies.active || false);
@@ -92,12 +93,11 @@ export default function App() {
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
     if (storedUserData) {
-      setUserData(JSON.parse(storedUserData));
       setLoading(false);
     } else {
       setLoading(true);
     }
-    
+
     setCookie('keeper', themeType);
     setCookie('active', isActive);
   }, [themeType, isActive, setCookie]);
@@ -143,7 +143,6 @@ export default function App() {
     <div style={{ backgroundColor: `${backgroundColor}`, minHeight: '100vh' }}>
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} />
       <Box sx={{ padding: '15px' }}>
-        {/* <SearchBox /> */}
         <Note color={textColor} backgroundColor={themeColor} />
       </Box>
     </div>

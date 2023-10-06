@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody AuthRequest user) {
+    public ResponseEntity<?> loginUser(@RequestBody AuthRequest user) throws InterruptedException {
         if (!userService.checkEmail(user.getEmail())) {
             Loggers.warn("EMAIL/USER NOT EXIST");
             return ResponseEntity.status(409).header("msg", "EMAIL/USER NOT EXIST").build();

@@ -1,5 +1,6 @@
 package com.notes.keep.controller;
 
+import com.notes.keep.dto.NotesDTO;
 import com.notes.keep.model.Notes;
 import com.notes.keep.service.NotesService;
 import com.notes.keep.utils.Loggers;
@@ -47,7 +48,7 @@ public class NotesController {
     public ResponseEntity<?> getNoteById(@PathVariable Integer id) {
         Loggers.info("NOTE WITH ID " + id + " REQUESTED");
         Notes note = notesService.findByNoteId(id);
-        if(note == null){
+        if (note == null) {
             return ResponseEntity.noContent().header("msg", "NO NOTE FOUND WITH THIS ID").build();
         }
         return ResponseEntity.ok(note);
@@ -57,7 +58,7 @@ public class NotesController {
     public ResponseEntity<?> updateNoteById(@PathVariable Integer id, @RequestBody Notes notes) {
         Loggers.info("NOTE WITH ID " + id + " UPDATED");
         Notes note = notesService.updateNoteById(id, notes);
-        if(note == null){
+        if (note == null) {
             return ResponseEntity.status(400).header("msg", "BAD REQUEST").build();
         }
         return ResponseEntity.ok(note);
@@ -67,23 +68,26 @@ public class NotesController {
     public ResponseEntity<?> deleteById(@PathVariable Integer id) {
         Loggers.info("NOTE WITH ID " + id + " DELETED");
         Notes note = notesService.findByNoteId(id);
-        if(note == null){
+        if (note == null) {
             return ResponseEntity.noContent().header("msg", "NO CONTENT DELETED BECAUSE IT DOESN'T EXIST").build();
         }
         notesService.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/getByTitle/{title}")
-    public ResponseEntity<?> findByTitle(@PathVariable String title) {
-        Loggers.info("NOTE WITH TITLE " + title + " REQUESTED");
-        List<Notes> notesList = notesService.findByTitle(title);
+    @GetMapping("/userId/{id}/{title}")
+    public ResponseEntity<?> findByTitle(@PathVariable Integer id, @PathVariable String title) {
+        Loggers.info("NOTE WITH TITLE : \'" + title.trim() + "\' AND ID : " + id + " REQUESTED");
+        if (title.isBlank() || title.isEmpty()) {
+            return ResponseEntity.status(204).header("msg", "TITLE IS EMPTY").build();
+        }
+        List<Notes> notesList = notesService.findByTitle(id, title);
         if (notesList == null) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS TITLE").build();
         }
+        //TODO use model mapping to map Notes -> NotesDTO
         return ResponseEntity.ok(notesList);
     }
-
 
 
 }
