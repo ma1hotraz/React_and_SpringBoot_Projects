@@ -33,6 +33,7 @@ function DrawerAppBar(props) {
 
   const [searchText, setSearchText] = useState('');
 
+
   const handleSearchIconClick = () => {
     if (!showSearchBar) {
       setShowSearchBar(true);
@@ -42,7 +43,7 @@ function DrawerAppBar(props) {
       getByTitle(searchText);
     }
   };
-  
+
 
   const navItems = [
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-evenly' }}>
@@ -55,8 +56,7 @@ function DrawerAppBar(props) {
       <FontAwesomeIcon key="sun" spin style={{ marginRight: '20px', marginLeft: '10px' }} icon={faSun} size='2x' />
       <ToggleSlider key="slider" onToggle={props.toggleMode} active={!props.active} />
       <FontAwesomeIcon key="moon" style={{ marginLeft: '20px', marginRight: '10px' }} icon={faMoon} size='2x' />
-    </Box>
-   
+    </Box>,
   ];
 
 

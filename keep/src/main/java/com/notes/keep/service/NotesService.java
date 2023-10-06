@@ -41,24 +41,6 @@ public class NotesService {
         return notesRepository.save(note);
     }
 
-//    public List<Notes> notesList() {
-//        List<Notes> notesList = notesRepository.findAll();
-//        List<Notes> collected = new ArrayList<>();
-//
-//        try {
-//            collected = notesList.stream()
-//                    .peek(note -> {
-//                        note.setTitle(encryptionUtil.decrypt(note.getTitle()));
-//                        note.setDescription(encryptionUtil.decrypt(note.getDescription()));
-//                    })
-//                    .toList();
-//        } catch (NullPointerException e) {
-//            throw new NullPointerException("LIST IS EMPTY");
-//        }
-//
-//        return collected;
-//    }
-
     public Notes findByNoteId(Integer id) {
         Notes note = notesRepository.findByNoteId(id);
         try {
@@ -98,8 +80,10 @@ public class NotesService {
 
 
     public List<Notes> findAllByUserUserId(Integer userId) {
-        List<Notes> notesList = notesRepository.findAll();
+        List<Notes> notesList = notesRepository.findAllNotesByuserId(userId);
         List<Notes> collected = new ArrayList<>();
+
+
 
         try {
             collected = notesList.stream()
@@ -108,6 +92,7 @@ public class NotesService {
                         note.setDescription(encryptionUtil.decrypt(note.getDescription()));
                     })
                     .toList();
+
         } catch (NullPointerException e) {
             throw new NullPointerException("LIST IS EMPTY");
         }
@@ -115,4 +100,3 @@ public class NotesService {
         return collected;
     }
 }
-

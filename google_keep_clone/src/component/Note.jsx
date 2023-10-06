@@ -20,11 +20,10 @@ export default function Note() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMode, setModalMode] = useState('create');
     const [noteData, setNoteData] = useState(null);
-    const [noteTitle, setNoteTitle] = useState();
-    const [noteDescription, setNoteDescription] = useState();
+    // const [noteTitle, setNoteTitle] = useState();
+    // const [noteDescription, setNoteDescription] = useState();
     const [selectedNoteId, setSelectedNoteId] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
-
 
     const handleCreateNote = () => {
         setModalMode('create');
@@ -35,8 +34,10 @@ export default function Note() {
 
 
     const fetchAndRefreshData = () => {
-        console.log(currentUser);
-        getData(currentUser.userId)
+        const userData = localStorage.getItem('userData');
+        const user = JSON.parse(userData);
+        const id = user?.userId;
+        getData(id)
             .then((newData) => {
                 setData(newData || []);
             })
@@ -68,6 +69,7 @@ export default function Note() {
     // useEffect(() => {
     // }, [noteTitle, noteDescription]);
 
+
     useEffect(() => {
         localStorage.removeItem('currentUser');
         const items = JSON.parse(localStorage.getItem('userData'));
@@ -87,7 +89,6 @@ export default function Note() {
         /* WILL FIX IT LATER */
 
 
-
         const newNoteData = {
             title: title,
             description: description,
@@ -104,10 +105,10 @@ export default function Note() {
                     fetchAndRefreshData();
                     setIsModalOpen(false);
                     setSelectedNoteId(null);
-                    setNoteTitle('');
+                    // setNoteTitle('');
+                    // setNoteDescription('');
                     title = '';
                     description = '';
-                    setNoteDescription('');
                     toast.success('Note added successfully!', {
                         autoClose: 3000,
                     });
@@ -125,8 +126,8 @@ export default function Note() {
                     fetchAndRefreshData();
                     setIsModalOpen(false);
                     setSelectedNoteId(null);
-                    setNoteTitle('');
-                    setNoteDescription('');
+                    // setNoteTitle('');
+                    // setNoteDescription('');
                     title = '';
                     description = '';
                     toast.success('Note Edited successfully!', {

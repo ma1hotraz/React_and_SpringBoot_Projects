@@ -38,17 +38,29 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const navigate =useNavigate();
+  
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-  
-    if (Signup(data)){
-      navigate("/home", toast.success("Login Successful"))
-    }
+    
+    handleSignup(data);
+
   };
- 
+
+
+  async function handleSignup(data) {
+    try {
+      const userData = await Signup(data);
+      if (userData) {
+        navigate("/home", toast.success("Login Successful"))
+      }
+    } catch (error) {
+      console.error('Signup failed:', error);
+    }
+  }
+
 
   return (
     <ThemeProvider theme={defaultTheme}>

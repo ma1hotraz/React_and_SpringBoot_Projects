@@ -15,6 +15,6 @@ public interface NotesRepository extends JpaRepository<Notes, Integer> {
     List<Notes> findByTitle(String title);
 
     @Query("SELECT n FROM Notes n WHERE n.user.userId = :userId")
-    List<Notes> findAllByUserUserId(@Param("userId") Integer userId);
+    List<Notes> findAllNotesByuserId(@Param("userId") Integer userId);
 }
 

@@ -21,8 +21,7 @@ export const Signup = async (UserInfo) => {
       });
 
 
-
-      if(response.status === 500){
+      if (response.status === 500) {
          toast.warn('Server Error !', {
             autoClose: 3000,
          });
@@ -48,10 +47,10 @@ export const Signup = async (UserInfo) => {
       if (contentType && contentType.includes('application/json')) {
          const data = await response.json();
          if (data !== null) {
-            // Save the data in sessionStorage
             localStorage.setItem('userData', JSON.stringify(data));
             return data;
          }
+
       } else {
          throw new Error('Response is not valid JSON');
       }

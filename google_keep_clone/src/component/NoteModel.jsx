@@ -16,7 +16,7 @@ export default function NoteModal({
 }) {
     const [noteTitle, setNoteTitle] = useState('');
     const [noteDescription, setNoteDescription] = useState('');
-    // const [noteData, setNoteData] = useState([]);
+    const [noteData, setNoteData] = useState([]);
 
     useEffect(() => {
         setNoteTitle(title || '');
@@ -96,7 +96,7 @@ export default function NoteModal({
             </Modal>
             {selectedId !== null && (
                 <>
-                    <EditNote id={selectedId} />{/* setData={setNoteData}  */}
+                    <EditNote id={selectedId} setData={setNoteData} />{/* setData={setNoteData}  */}
                 </>
             )}
         </div>

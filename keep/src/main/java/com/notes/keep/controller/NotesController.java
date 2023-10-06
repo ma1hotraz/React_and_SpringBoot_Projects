@@ -22,6 +22,7 @@ public class NotesController {
     @PostMapping("/add")
     public ResponseEntity<?> createNote(@RequestBody Notes note) throws Exception {
         Loggers.info("NOTE CREATED");
+        System.out.println(note);
         Notes notes = notesService.createNote(note);
         if (notes == null) {
             return ResponseEntity.status(200).header("msg", "FIELDS ARE EMPTY").build();
@@ -29,22 +30,15 @@ public class NotesController {
         return ResponseEntity.ok(notes);
     }
 
-//    @GetMapping("/getAll")
-//    public ResponseEntity<?> getAllNotes() throws NullPointerException {
-//        Loggers.info("ALL NOTE FETCHED");
-//        List<Notes> notesList = notesService.notesList();
-//        if(notesList.isEmpty()){
-//            return ResponseEntity.noContent().header("msg", "NO NOTE FOUND").build();
-//        }
-//        return ResponseEntity.ok(notesList);
-//    }
 
     @GetMapping("/userId/{id}")
     public ResponseEntity<?> getAllByUserId(@PathVariable Integer id) {
+
         List<Notes> notesList = notesService.findAllByUserUserId(id);
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
         }
+        System.out.println(notesList);
         return ResponseEntity.ok(notesList);
     }
 
