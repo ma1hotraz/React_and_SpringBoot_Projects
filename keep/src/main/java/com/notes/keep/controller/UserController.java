@@ -41,6 +41,7 @@ public class UserController {
         if(user1 == null){
             return null;
         }
+        //TODO Will use model_mapping later User -> UserDTO
         UserDTO userDTO = new UserDTO();
         userDTO.setUserId(user1.getUserId());
         userDTO.setName(user1.getFirstName() + user1.getLastName());

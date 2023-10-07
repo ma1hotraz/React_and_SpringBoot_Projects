@@ -12,8 +12,6 @@ import java.util.List;
 public interface NotesRepository extends JpaRepository<Notes, Integer> {
     Notes findByNoteId(Integer id);
 
-    List<Notes> findByTitle(String title);
-
     @Query("SELECT n FROM Notes n WHERE n.user.userId = :userId")
     List<Notes> findAllNotesByuserId(@Param("userId") Integer userId);
 }

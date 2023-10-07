@@ -15,9 +15,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
+import props from 'prop-types';
 
 
-export default function Note() {
+export default function Note(props) {
 
     const [data, setData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -259,7 +260,7 @@ export default function Note() {
     return (
         <div style={{ width: '100%', height: '100%' }}>
             <NoteData setData={setData} />
-            <FontAwesomeIcon style={{ marginTop: '50px', marginBottom: '-100px' }} icon={faSearch} size='3x' onClick={toggleSearchBox} />
+            <FontAwesomeIcon style={{ marginTop: '50px', marginBottom: '-100px' }} icon={faSearch} color={props.buttonColor} size='3x' onClick={toggleSearchBox} />
             {isSearchBoxVisible && <SearchBox />}
             {data.length !== 0 ? (
                 <div style={{ marginTop: '80px', position: 'relative', width: '100%', height: '100%' }}>

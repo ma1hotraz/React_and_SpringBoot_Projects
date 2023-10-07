@@ -11,7 +11,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -75,6 +74,7 @@ public class NotesService {
     public void deleteById(Integer id) {
         notesRepository.deleteById(id);
     }
+
 
     public List<Notes> findByTitle(Integer id, String title) {
 

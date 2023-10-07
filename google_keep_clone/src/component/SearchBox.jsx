@@ -120,7 +120,7 @@ export default function SearchBox() {
                         </div>
                     </>) : (
                     <Box >
-                        <img src={notfound} style={{ opacity: 0.5 }} alt="Transparent Image" />
+                        <img src={notfound} style={{ opacity: 0.5 }} alt="no results" />
                     </Box>
                 )}
             </div>
