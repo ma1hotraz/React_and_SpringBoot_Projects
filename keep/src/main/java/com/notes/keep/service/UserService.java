@@ -1,5 +1,6 @@
 package com.notes.keep.service;
 
+import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
 
@@ -7,7 +8,7 @@ import com.notes.keep.model.User;
 import java.util.List;
 
 public interface UserService {
-    public User createUser(User user);
+    public UserDTO createUser(User user);
 
     public User findByUserId(Integer userId);
 

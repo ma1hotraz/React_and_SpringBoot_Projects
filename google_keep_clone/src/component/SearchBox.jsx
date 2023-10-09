@@ -26,7 +26,7 @@ export default function SearchBox(props) {
         }
     };
 
-    const userData = localStorage.getItem('userData');
+    const userData = sessionStorage.getItem('userData');
     const user = JSON.parse(userData);
     const userId = user?.userId;
 

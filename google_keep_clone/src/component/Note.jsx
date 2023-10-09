@@ -41,7 +41,7 @@ export default function Note(props) {
 
 
     const fetchAndRefreshData = () => {
-        const userData = localStorage.getItem('userData');
+        const userData = sessionStorage.getItem('userData');
         const user = JSON.parse(userData);
         const id = user?.userId;
         getData(id)
@@ -81,8 +81,7 @@ export default function Note(props) {
 
 
     useEffect(() => {
-        localStorage.removeItem('currentUser');
-        const items = JSON.parse(localStorage.getItem('userData'));
+        const items = JSON.parse(sessionStorage.getItem('userData'));
         if (items) {
             setCurrentUser(items);
         }

@@ -1,14 +1,11 @@
 package com.notes.keep.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Set;
 
@@ -40,4 +37,11 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Notes> notes;
+
+    @Transient
+    @JsonIgnore
+    private MultipartFile file;
+    @Column(name = "image",length = 10000)
+    @Lob
+    private byte[] image;
 }

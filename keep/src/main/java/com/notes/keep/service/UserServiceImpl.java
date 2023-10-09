@@ -1,9 +1,11 @@
 package com.notes.keep.service;
 
+import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.UserRepository;
 import com.notes.keep.utils.EncryptionUtil;
+import com.notes.keep.utils.ImageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,11 +23,18 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private EncryptionUtil encryptionUtil;
 
+
     @Override
-    public User createUser(User user) {
+    public UserDTO createUser(User user) {
         user.setRole("USER");
         user.setPassword(encoder.encode(user.getPassword()));
-        return userRepository.save(user);
+        userRepository.save(user);
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserId(user.getUserId());
+        userDTO.setName(user.getFirstName() + " " + user.getLastName());
+        userDTO.setEmail(user.getEmail());
+        userDTO.setImage(null);
+        return userDTO;
     }
 
     @Override
@@ -44,6 +53,23 @@ public class UserServiceImpl implements UserService {
             return null;
         }
         return user1;
+    }
+
+    public UserDTO updateUser(User user) {
+        User userOld = userRepository.findByEmail(user.getEmail());
+        System.out.println("oldUser" + userOld);
+        byte[] upload = null;
+        upload = ImageUtils.compressImage(user.getImage());
+        userOld.setImage(upload);
+        User newUser = userRepository.save(userOld);
+        UserDTO userDTO = new UserDTO();
+        userDTO.setUserId(newUser.getUserId());
+        userDTO.setEmail(newUser.getEmail());
+        userDTO.setName(newUser.getFirstName() + " " + newUser.getLastName());
+        byte[] download = null;
+        download = ImageUtils.decompressImage(newUser.getImage());
+        userDTO.setImage(download);
+        return userDTO;
     }
 
     @Override

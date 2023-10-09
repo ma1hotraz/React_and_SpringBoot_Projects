@@ -80,12 +80,12 @@ public class NotesService {
 
 
     public List<Notes> findByTitle(Integer id, String title) {
-
         return findAllByUserUserId(id)
                 .stream()
-                .filter(notes -> notes.getTitle().contains(title))
+                .filter(notes -> notes.getTitle().toLowerCase().contains(title.toLowerCase()))
                 .collect(Collectors.toList());
     }
+
 
 
     public List<Notes> findAllByUserUserId(Integer userId) {
