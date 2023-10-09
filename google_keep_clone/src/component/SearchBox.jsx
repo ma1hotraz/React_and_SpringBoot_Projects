@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import notfound from '../images/notfound.gif';
 
-export default function SearchBox() {
+export default function SearchBox(props) {
     const [inputText, setInputText] = useState('');
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +37,7 @@ export default function SearchBox() {
         try {
             const parsedData = JSON.parse(storedData);
             if (typeof parsedData === 'string') {
-                query = parsedData; 
+                query = parsedData;
             }
         } catch (error) {
             console.error('Error parsing stored data:', error);
@@ -51,6 +51,13 @@ export default function SearchBox() {
         }
     }, [userId]);
 
+    const handleClick = (itemId) => {
+        console.log(itemId);
+        props.onItemClick(itemId);
+    };
+
+
+
     return (
         <div>
             <div style={{ marginTop: '50px', padding: '10px' }}>
@@ -59,7 +66,7 @@ export default function SearchBox() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        border: '2px solid green',
+                        // border: '2px solid green',
                         maxWidth: '50%',
                         padding: '10px',
                         borderRadius: '10px',
@@ -93,16 +100,20 @@ export default function SearchBox() {
                     <div></div>
                 ) : data.length !== 0 ? (
                     <>
-                        <h1>Notes with title : {inputText}</h1>
+                        <Typography variant='h5' style={{ margin: '5px', color: `${props.buttonColor}` }}>Notes with title : {inputText}</Typography>
                         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                             <Grid container spacing={2} style={{ width: '100%', height: '100%' }}>
                                 {data.map((item) => {
                                     return (
                                         <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
-                                            <Box sx={{ height: '200px', width: '300px' }} key={item.noteId}>
+                                            <Box sx={{ height: '200px', width: '300px' }} key={item.noteId} onClick={() => { handleClick(item.noteId) }}>
                                                 <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} className="note">
                                                     <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
-                                                    <Typography variant="h6" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.description}</Typography>
+                                                    <Typography variant="h6" style={{
+                                                        whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
+                                                        WebkitBoxOrient: 'vertical',
+                                                        maxHeight: '3.6em',
+                                                    }}>{item.description}</Typography>
                                                     <div style={{ height: '10px' }}></div>
                                                     <Typography variant="body2" color={'gray'} style={{
                                                         position: 'absolute',

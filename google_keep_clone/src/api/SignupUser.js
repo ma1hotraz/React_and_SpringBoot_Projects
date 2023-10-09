@@ -48,6 +48,7 @@ export const Signup = async (UserInfo) => {
          const data = await response.json();
          if (data !== null) {
             localStorage.setItem('userData', JSON.stringify(data));
+            sessionStorage.setItem('userData', JSON.stringify(data));
             return data;
          }
 

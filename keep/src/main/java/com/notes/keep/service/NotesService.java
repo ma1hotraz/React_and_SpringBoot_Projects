@@ -6,6 +6,7 @@ import com.notes.keep.repository.NotesRepository;
 import com.notes.keep.repository.UserRepository;
 import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.FormatDateTime;
+import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,8 +31,9 @@ public class NotesService {
     }
 
     public Notes createNote(Notes note) throws Exception {
-        try {
             Optional<User> user = userRepository.findById(note.getUser().getUserId());
+        try {
+            note.setDescription(note.getDescription().replaceAll("\\s+", " "));
             note.setUser(user.get());
             note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
             note.setTitle(encryptionUtil.encrypt(note.getTitle()));
@@ -39,6 +41,7 @@ public class NotesService {
         } catch (Exception e) {
             throw new Exception(e);
         }
+        Loggers.info("NOTE CREATED BY USERID : " + user.get().getUserId());
         return notesRepository.save(note);
     }
 
@@ -61,7 +64,7 @@ public class NotesService {
 //        oldNote.setColor(notes.getColor());
         oldNote.setDate(FormatDateTime.parseStandardDate(notes.getDate()));
         oldNote.setTitle(notes.getTitle());
-        oldNote.setDescription(notes.getDescription());
+        oldNote.setDescription(notes.getDescription().replaceAll("\\s+", " "));
         oldNote.setCompleted(notes.isCompleted());
 
         //ENCRYPTING THE NOTE AFTER UPDATE

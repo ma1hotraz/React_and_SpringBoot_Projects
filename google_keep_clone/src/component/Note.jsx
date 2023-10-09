@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NoteData, { getData } from '../api/NoteData';
-import { Grid, Paper, Typography, Box, Fab, Button } from '@mui/material';
+import { Grid, Paper, Typography, Box, Fab } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { getById } from '../api/EditNote';
 import { getRandomColor } from '../utils/ColorList';
@@ -15,7 +15,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
-import props from 'prop-types';
 
 
 export default function Note(props) {
@@ -258,79 +257,89 @@ export default function Note(props) {
     // };
 
     return (
-        <div style={{ width: '100%', height: '100%' }}>
-            <NoteData setData={setData} />
-            <FontAwesomeIcon style={{ marginTop: '50px', marginBottom: '-100px' }} icon={faSearch} color={props.buttonColor} size='3x' onClick={toggleSearchBox} />
-            {isSearchBoxVisible && <SearchBox />}
-            {data.length !== 0 ? (
-                <div style={{ marginTop: '80px', position: 'relative', width: '100%', height: '100%' }}>
-                    <Grid container spacing={2} style={{ width: '100%', height: '100%' }}>
-                        {data.map((item) => {
-                            return (
-                                <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
-                                    <Box sx={{ height: '200px', width: '300px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
-                                        <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} className="note">
-                                            <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
-                                            <Typography variant="h6" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.description}</Typography>
-                                            <div style={{ height: '10px' }}></div>
-                                            <Typography variant="body2" color={'gray'} style={{
-                                                position: 'absolute',
-                                                bottom: 10,
-                                                width: '100%',
-                                            }}>
-                                                {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
-                                            </Typography>
+        <Box>
+            <Box>
+                <FontAwesomeIcon style={{ marginBottom: '-80px', marginLeft: '10px' }} icon={faSearch} color={props.buttonColor} size='3x' onClick={toggleSearchBox} />
+                {isSearchBoxVisible && <SearchBox buttonColor={props.buttonColor} noteId={setSelectedNoteId} onItemClick={handleClick} />}
+            </Box>
+            <Box sx={{ width: '100%', height: '100%' }}>
+                <NoteData setData={setData} />
 
-                                        </Paper>
-                                    </Box>
-                                </Grid>
-                            );
-                        })}
-                    </Grid>
+                {data.length !== 0 ? (
+                    <Box sx={{ marginTop: '100px', width: '100%', height: '100%' }}>
+                        <Grid container spacing={1} style={{ width: '100%', height: '100%' }}>
+                            {data.map((item) => {
+                                return (
+                                    <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
+                                        <Box sx={{ height: '200px', width: '300px', marginTop: '20px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
+                                            <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} className="note">
+                                                <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
+                                                <Typography variant="h6" style={{
+                                                    whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
+                                                    WebkitBoxOrient: 'vertical',
+                                                    maxHeight: '3.6em',
+                                                }}>{item.description}</Typography>
 
-                    <Box sx={{ color: 'red', position: 'fixed', bottom: '20px', right: '20px' }} >
-                        <Fab aria-label="add" onClick={handleCreateNote}>
-                            <AddIcon />
-                        </Fab>
+                                                <div style={{ height: '10px' }}></div>
+                                                <Typography variant="body2" color={'gray'} style={{
+                                                    position: 'absolute',
+                                                    bottom: 10,
+                                                    width: '100%',
+                                                }}>
+                                                    {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
+                                                </Typography>
+
+                                            </Paper>
+                                        </Box>
+                                    </Grid>
+                                );
+                            })}
+                        </Grid>
+
+                        <Box sx={{ color: 'red', position: 'fixed', bottom: '20px', right: '20px' }} >
+                            <Fab aria-label="add" onClick={handleCreateNote}>
+                                <AddIcon />
+                            </Fab>
+                        </Box>
                     </Box>
-                </div>
-            ) : (
-                <div>
-                    <div className="main-div">
-                        <div className="empty-state">
-                            <div className="empty-state__content">
-                                <div className="empty-state__icon">
-                                    <img src={nodataImage} alt="" />
-                                </div>
-                                <div className="empty-state__message">No note has been added yet.</div>
-                                <div className="empty-state__help">
-                                    Add a new note by simpley clicking the button on bottom right side.
+                ) : (
+                    <div>
+                        <div className="main-div">
+                            <div className="empty-state">
+                                <div className="empty-state__content">
+                                    <div className="empty-state__icon">
+                                        <img src={nodataImage} alt="" />
+                                    </div>
+                                    <div className="empty-state__message">No note has been added yet.</div>
+                                    <div className="empty-state__help">
+                                        Add a new note by simpley clicking the button on bottom right side.
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div style={{ marginTop: '80px', textAlign: 'center' }}>
-                            <Box sx={{ position: 'fixed', bottom: '20px', right: '20px' }} >
-                                <Fab aria-label="add" size='large' onClick={handleCreateNote}>
-                                    <AddIcon />
-                                </Fab>
-                            </Box>
+                            <div style={{ marginTop: '80px', textAlign: 'center' }}>
+                                <Box sx={{ position: 'fixed', bottom: '20px', right: '20px' }} >
+                                    <Fab aria-label="add" size='large' onClick={handleCreateNote}>
+                                        <AddIcon />
+                                    </Fab>
+                                </Box>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )}
 
-            <NoteModal
-                selectedId={selectedNoteId}
-                isOpen={isModalOpen}
-                handleClose={handleCloseModel}
-                title={noteData?.title}
-                description={noteData?.description}
-                handleSaveNote={handleSaveNote}
-                handleDelete={handleDeleteNote}
-                mode={modalMode}
-                clearTitleAndDescription={clearTitleAndDescription}
-            />
-        </div>
+                <NoteModal
+                    selectedId={selectedNoteId}
+                    isOpen={isModalOpen}
+                    handleClose={handleCloseModel}
+                    title={noteData?.title}
+                    description={noteData?.description}
+                    handleSaveNote={handleSaveNote}
+                    handleDelete={handleDeleteNote}
+                    mode={modalMode}
+                    clearTitleAndDescription={clearTitleAndDescription}
+                />
+            </Box>
+        </Box>
     );
 }
 
