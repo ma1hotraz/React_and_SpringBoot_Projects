@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { updateData } from '../api/UpdateUser';
 import ImageDisplay from './ImageDisplay';
+import {getRandomColor} from '../utils/ColorList';
 
 export default function ProfileModal() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -103,8 +104,7 @@ export default function ProfileModal() {
     return (
         <Box>
             <Button onClick={handleClick}>
-                {source !== null ? <Avatar><ImageDisplay /></Avatar> : <Avatar>{name.charAt(0)}</Avatar>}
-                {/* <Avatar>{name.charAt(0)}</Avatar> */}
+                {source !== null ? <Avatar><ImageDisplay /></Avatar> : <Avatar sx={{backgroundColor: getRandomColor()}}>{name.charAt(0)}</Avatar>}
             </Button>
             <Modal
                 open={modalOpen}

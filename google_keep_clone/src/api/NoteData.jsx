@@ -6,6 +6,8 @@ import PropTypes from 'prop-types'
 
 
 export const getData = async (id) => {
+
+
   const url = `notes/userId/${id}`;
 
   try {
@@ -44,7 +46,7 @@ export const getData = async (id) => {
 };
 
 export default function NoteData({ setData }) {
-  const userData = localStorage.getItem('userData');
+  const userData = sessionStorage.getItem('userData');
   const user = JSON.parse(userData);
   const id = user?.userId;
 

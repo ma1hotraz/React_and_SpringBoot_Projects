@@ -58,7 +58,7 @@ public class UserController {
         return ResponseEntity.ok(userService.findByUserId(id));
     }
 
-//    @PutMapping("/updateUser/")
+    //    @PutMapping("/updateUser/")
 //    public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
 //        Loggers.info("UPDATED USER CALLED");
 //        System.out.println("newUser " + user);
@@ -71,30 +71,28 @@ public class UserController {
 //        UserDTO userDTO = userService.updateUser(user);
 //        return ResponseEntity.ok(userDTO);
 //    }
-@PutMapping("/updateUser/")
-public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
-    Loggers.info("UPDATED USER CALLED");
-    System.out.println("newUser " + user);
+    @PutMapping("/updateUser/")
+    public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
+        Loggers.info("UPDATED USER CALLED");
+        System.out.println("newUser " + user);
 
-    if (!isValidImage(user.getFile())) {
-        Loggers.error("INVALID IMAGE TYPE");
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid image type.");
+        if (!isValidImage(user.getFile())) {
+            Loggers.error("INVALID IMAGE TYPE");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid image type.");
+        }
+
+        byte[] arr = ImageUtils.convertMultipartFileToByteArray(user.getFile());
+        user.setImage(arr);
+
+        UserDTO userDTO = userService.updateUser(user);
+
+        return ResponseEntity.ok(userDTO);
     }
-
-    byte[] arr = ImageUtils.convertMultipartFileToByteArray(user.getFile());
-    user.setImage(arr);
-
-
-    UserDTO userDTO = userService.updateUser(user);
-
-    return ResponseEntity.ok(userDTO);
-}
 
     private boolean isValidImage(MultipartFile file) {
         String contentType = file.getContentType();
         return contentType != null && contentType.startsWith("image/");
     }
-
 
 
 }

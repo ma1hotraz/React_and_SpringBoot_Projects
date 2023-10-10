@@ -11,6 +11,8 @@ export const updateData = async (updatedData) => {
     formData.append('name', updatedData.name);
     formData.append('file', updatedData.file);
 
+    console.log(formData.get('email'));
+
     try {
         const response = await fetch(url, {
             method: 'PUT',

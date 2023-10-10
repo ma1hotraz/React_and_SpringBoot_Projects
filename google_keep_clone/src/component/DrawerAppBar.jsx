@@ -33,7 +33,7 @@ function DrawerAppBar(props) {
     <FontAwesomeIcon icon={faRedo} size='2x' />,
     <FontAwesomeIcon icon={faList} size='2x' />,
     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-      <FontAwesomeIcon key="sun" spin style={{ marginRight: '20px', marginLeft: '10px' }} icon={faSun} size='2x' />
+      <FontAwesomeIcon key="sun" style={{ marginRight: '20px', marginLeft: '10px' }} icon={faSun} size='2x' />
       <ToggleSlider key="slider" onToggle={props.toggleMode} active={!props.active} />
       <FontAwesomeIcon key="moon" style={{ marginLeft: '20px', marginRight: '10px' }} icon={faMoon} size='2x' />
     </Box>,

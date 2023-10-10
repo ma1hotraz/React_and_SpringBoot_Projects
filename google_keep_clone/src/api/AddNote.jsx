@@ -21,7 +21,7 @@ const getCurrentDateTime = () => {
     const timeZoneAbbreviation = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     const dateTimeString = `${dayOfWeek} ${month} ${day} ${hours}:${minutes}:${seconds} ${timeZoneAbbreviation} ${year}`;
-
+console.log('date', dateTimeString);
     return dateTimeString;
 }
 
