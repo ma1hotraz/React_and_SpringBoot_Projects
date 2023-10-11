@@ -8,6 +8,7 @@ import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Set;
+import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,9 +16,10 @@ import java.util.Set;
 @Data
 @Entity
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer userId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID userId;
 
     @NotNull
     @NotBlank
@@ -41,7 +43,7 @@ public class User {
     @Transient
     @JsonIgnore
     private MultipartFile file;
-    @Column(name = "image",length = 10000)
+    @Column(name = "image",length = 1048576)
     @Lob
     private byte[] image;
 }

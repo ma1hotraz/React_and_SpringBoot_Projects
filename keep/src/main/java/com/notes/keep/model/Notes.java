@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.Data;
 
+import java.util.UUID;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,8 +20,8 @@ import lombok.Data;
 @Entity
 public class Notes {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer noteId;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID noteId;
 
     @NotNull
     @NotBlank

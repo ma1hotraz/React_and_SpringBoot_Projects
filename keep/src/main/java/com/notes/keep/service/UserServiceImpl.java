@@ -11,6 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -38,8 +40,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByUserId(Integer userId) {
-        User user = userRepository.findById(userId).get();
+    public User findByUserId(UUID userId) {
+        Optional<User> user = Optional.of(userRepository.findById(userId).get());
         return userRepository.findById(userId).get();
     }
 

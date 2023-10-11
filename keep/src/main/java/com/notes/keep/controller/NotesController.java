@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @RestController
@@ -28,12 +29,13 @@ public class NotesController {
         if (notes == null) {
             return ResponseEntity.status(200).header("msg", "FIELDS ARE EMPTY").build();
         }
-        return ResponseEntity.ok(notes);
+        System.out.println(notes);
+        return ResponseEntity.ok().body(notes);
     }
 
 
     @GetMapping("/userId/{id}")
-    public ResponseEntity<?> getAllByUserId(@PathVariable Integer id) {
+    public ResponseEntity<?> getAllByUserId(@PathVariable UUID id) {
 
         List<Notes> notesList = notesService.findAllByUserUserId(id);
         if (notesList.isEmpty()) {
@@ -45,7 +47,7 @@ public class NotesController {
 
 
     @GetMapping("/getNote/{id}")
-    public ResponseEntity<?> getNoteById(@PathVariable Integer id) {
+    public ResponseEntity<?> getNoteById(@PathVariable UUID id) {
         Loggers.info("NOTE WITH ID " + id + " REQUESTED");
         Notes note = notesService.findByNoteId(id);
         if (note == null) {
@@ -55,7 +57,7 @@ public class NotesController {
     }
 
     @PutMapping("/noteId/{id}")
-    public ResponseEntity<?> updateNoteById(@PathVariable Integer id, @RequestBody Notes notes) {
+    public ResponseEntity<?> updateNoteById(@PathVariable UUID id, @RequestBody Notes notes) {
         Loggers.info("NOTE WITH ID " + id + " UPDATED");
         Notes note = notesService.updateNoteById(id, notes);
         if (note == null) {
@@ -65,7 +67,7 @@ public class NotesController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable Integer id) {
+    public ResponseEntity<?> deleteById(@PathVariable UUID id) {
         Loggers.info("NOTE WITH ID " + id + " DELETED");
         Notes note = notesService.findByNoteId(id);
         if (note == null) {
@@ -76,7 +78,7 @@ public class NotesController {
     }
 
     @GetMapping("/userId/{id}/{title}")
-    public ResponseEntity<?> findByTitle(@PathVariable Integer id, @PathVariable String title) {
+    public ResponseEntity<?> findByTitle(@PathVariable UUID id, @PathVariable String title) {
         Loggers.info("NOTE WITH TITLE : \'" + title.trim() + "\' AND ID : " + id + " REQUESTED");
         if (title.isBlank() || title.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "TITLE IS EMPTY").build();

@@ -6,11 +6,12 @@ import com.notes.keep.model.User;
 
 
 import java.util.List;
+import java.util.UUID;
 
 public interface UserService {
     public UserDTO createUser(User user);
 
-    public User findByUserId(Integer userId);
+    public User findByUserId(UUID userId);
 
     public User loginUser(AuthRequest user);
 

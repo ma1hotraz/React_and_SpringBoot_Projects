@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,7 +32,7 @@ public class NotesService {
     }
 
     public Notes createNote(Notes note) throws Exception {
-            Optional<User> user = userRepository.findById(note.getUser().getUserId());
+        Optional<User> user = userRepository.findById(note.getUser().getUserId());
         try {
             note.setDescription(note.getDescription().replaceAll("\\s+", " "));
             note.setUser(user.get());
@@ -41,11 +42,11 @@ public class NotesService {
         } catch (Exception e) {
             throw new Exception(e);
         }
-        Loggers.info("NOTE CREATED BY USERID : " + user.get().getUserId());
+        Loggers.info("NOTE CREATED BY EMAIL : " + user.get().getEmail());
         return notesRepository.save(note);
     }
 
-    public Notes findByNoteId(Integer id) {
+    public Notes findByNoteId(UUID id) {
         Notes note = notesRepository.findByNoteId(id);
         try {
             note.setTitle(encryptionUtil.decrypt(note.getTitle()));
@@ -56,7 +57,7 @@ public class NotesService {
         return note;
     }
 
-    public Notes updateNoteById(Integer id, Notes notes) {
+    public Notes updateNoteById(UUID id, Notes notes) {
         Notes oldNote = notesRepository.findByNoteId(id);
         if (oldNote == null) {
             return null;
@@ -74,12 +75,12 @@ public class NotesService {
         return oldNote;
     }
 
-    public void deleteById(Integer id) {
+    public void deleteById(UUID id) {
         notesRepository.deleteById(id);
     }
 
 
-    public List<Notes> findByTitle(Integer id, String title) {
+    public List<Notes> findByTitle(UUID id, String title) {
         return findAllByUserUserId(id)
                 .stream()
                 .filter(notes -> notes.getTitle().toLowerCase().contains(title.toLowerCase()))
@@ -87,8 +88,7 @@ public class NotesService {
     }
 
 
-
-    public List<Notes> findAllByUserUserId(Integer userId) {
+    public List<Notes> findAllByUserUserId(UUID userId) {
         List<Notes> notesList = notesRepository.findAllNotesByuserId(userId);
         List<Notes> collected = new ArrayList<>();
 

@@ -7,12 +7,13 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
-public interface NotesRepository extends JpaRepository<Notes, Integer> {
-    Notes findByNoteId(Integer id);
+public interface NotesRepository extends JpaRepository<Notes, UUID> {
+    Notes findByNoteId(UUID id);
 
     @Query("SELECT n FROM Notes n WHERE n.user.userId = :userId")
-    List<Notes> findAllNotesByuserId(@Param("userId") Integer userId);
+    List<Notes> findAllNotesByuserId(@Param("userId") UUID userId);
 }
 

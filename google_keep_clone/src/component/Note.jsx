@@ -263,15 +263,14 @@ export default function Note(props) {
             </Box>
             <Box sx={{ width: '100%', height: '100%' }}>
                 <NoteData setData={setData} />
-
                 {data.length !== 0 ? (
                     <Box sx={{ marginTop: '100px', width: '100%', height: '100%' }}>
-                        <Grid container spacing={1} style={{ width: '100%', height: '100%' }}>
+                        <Grid container>
                             {data.map((item) => {
                                 return (
-                                    <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
+                                    <Grid display={"flex"} justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
                                         <Box sx={{ height: '200px', width: '300px', marginTop: '20px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
-                                            <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} className="note">
+                                            <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} >
                                                 <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
                                                 <Typography variant="h6" style={{
                                                     whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,

@@ -12,6 +12,28 @@ export default function App() {
   const [themeType, setThemeType] = useState(cookies.keeper || false);
   const [isActive, setActive] = useState(cookies.active || false);
 
+  const theme = useTheme();
+  const primaryLightColor = theme.palette.primary.main;
+  const primaryNavColor = theme.palette.primary.navbar;
+  const primaryBackgroundColor = theme.palette.primary.backgroundColor;
+  const primaryDarkColor = theme.palette.secondary.main;
+  const secondaryNavColor = theme.palette.secondary.navbar;
+  const secondaryBackgroundColor = theme.palette.secondary.backgroundColor;
+  const primaryTextColor = theme.palette.primary.textColor;
+  const secondaryTextColor = theme.palette.secondary.textColor;
+  const primarynavMenuIconColor = theme.palette.primary.navMenuIconColor;
+  const secondarynavMenuIconColor = theme.palette.secondary.navMenuIconColor;
+  
+  const primaryButtonColor = theme.palette.primary.navMenuIconColor;
+  const secondaryButtonColor = theme.palette.secondary.navMenuIconColor;
+
+  const themeColor = themeType ? primaryDarkColor : primaryLightColor;
+  const navbarColor = themeType ? secondaryNavColor : primaryNavColor;
+  const textColor = themeType ? secondaryTextColor : primaryTextColor;
+  const backgroundColor = themeType ? secondaryBackgroundColor : primaryBackgroundColor;
+  const navMenuIconColor = themeType ? secondarynavMenuIconColor : primarynavMenuIconColor;
+  const buttonColor = themeType ? secondaryButtonColor : primaryButtonColor;
+
 
   useEffect(() => {
     const storedUserData = sessionStorage.getItem('userData');
@@ -40,28 +62,6 @@ export default function App() {
       return newThemeType;
     });
   };
-
-  const theme = useTheme();
-  const primaryLightColor = theme.palette.primary.main;
-  const primaryNavColor = theme.palette.primary.navbar;
-  const primaryBackgroundColor = theme.palette.primary.backgroundColor;
-  const primaryDarkColor = theme.palette.secondary.main;
-  const secondaryNavColor = theme.palette.secondary.navbar;
-  const secondaryBackgroundColor = theme.palette.secondary.backgroundColor;
-  const primaryTextColor = theme.palette.primary.textColor;
-  const secondaryTextColor = theme.palette.secondary.textColor;
-  const primarynavMenuIconColor = theme.palette.primary.navMenuIconColor;
-  const secondarynavMenuIconColor = theme.palette.secondary.navMenuIconColor;
-  
-  const primaryButtonColor = theme.palette.primary.navMenuIconColor;
-  const secondaryButtonColor = theme.palette.secondary.navMenuIconColor;
-
-  const themeColor = themeType ? primaryDarkColor : primaryLightColor;
-  const navbarColor = themeType ? secondaryNavColor : primaryNavColor;
-  const textColor = themeType ? secondaryTextColor : primaryTextColor;
-  const backgroundColor = themeType ? secondaryBackgroundColor : primaryBackgroundColor;
-  const navMenuIconColor = themeType ? secondarynavMenuIconColor : primarynavMenuIconColor;
-  const buttonColor = themeType ? secondaryButtonColor : primaryButtonColor;
 
   if (loading) {
     return <div>Loading...</div>;

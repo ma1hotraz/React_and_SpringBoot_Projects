@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/user")
@@ -53,7 +54,7 @@ public class UserController {
     }
 
     @GetMapping("/userId/{id}")
-    public ResponseEntity<?> findByUserId(@PathVariable Integer id) {
+    public ResponseEntity<?> findByUserId(@PathVariable UUID id) {
         Loggers.info("USER WITH" + id + " CALLED");
         return ResponseEntity.ok(userService.findByUserId(id));
     }

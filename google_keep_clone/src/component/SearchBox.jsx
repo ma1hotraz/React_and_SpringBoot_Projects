@@ -102,7 +102,7 @@ export default function SearchBox(props) {
                     <>
                         <Typography variant='h5' style={{ margin: '5px', color: `${props.buttonColor}` }}>Notes with title : {inputText}</Typography>
                         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-                            <Grid container spacing={2} style={{ width: '100%', height: '100%' }}>
+                            <Grid container>
                                 {data.map((item) => {
                                     return (
                                         <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
@@ -129,10 +129,12 @@ export default function SearchBox(props) {
                                 })}
                             </Grid>
                         </div>
-                    </>) : (
-                    <Box >
-                        <img src={notfound} style={{ opacity: 0.5 }} alt="no results" />
-                    </Box>
+                    </>
+                ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column' ,justifyContent: 'center', alignItems: 'center' }}>
+                        <img src={notfound} alt="no results" />
+                        <h4 style={{color: `${props.buttonColor}`, marginTop: '10px'}}>No Notes Found </h4>
+                    </div>
                 )}
             </div>
         </div>

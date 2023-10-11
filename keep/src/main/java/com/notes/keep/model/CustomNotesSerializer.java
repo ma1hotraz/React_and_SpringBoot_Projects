@@ -10,7 +10,7 @@ public class CustomNotesSerializer extends JsonSerializer<Notes> {
     @Override
     public void serialize(Notes notes, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         jsonGenerator.writeStartObject();
-        jsonGenerator.writeNumberField("noteId", notes.getNoteId());
+        jsonGenerator.writeStringField("noteId", notes.getNoteId().toString());
         jsonGenerator.writeStringField("title", notes.getTitle());
         jsonGenerator.writeStringField("description", notes.getDescription());
         jsonGenerator.writeBooleanField("completed", notes.isCompleted());
@@ -22,7 +22,7 @@ public class CustomNotesSerializer extends JsonSerializer<Notes> {
         User user = notes.getUser();
         if (user != null) {
             jsonGenerator.writeObjectFieldStart("user");
-            jsonGenerator.writeNumberField("userId", user.getUserId());
+            jsonGenerator.writeStringField("userId", user.getUserId().toString());
             jsonGenerator.writeStringField("email", user.getEmail());
             jsonGenerator.writeStringField("firstName", user.getFirstName());
             jsonGenerator.writeStringField("lastName", user.getLastName());

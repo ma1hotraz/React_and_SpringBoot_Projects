@@ -4,12 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { updateData } from '../api/UpdateUser';
 import ImageDisplay from './ImageDisplay';
-import {getRandomColor} from '../utils/ColorList';
+import { getRandomColor } from '../utils/ColorList';
 
 export default function ProfileModal() {
     const [modalOpen, setModalOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [source, setSource] = useState(null);
+    const [isImageVisible, setIsImageVisible] = useState(false);
 
     useEffect(() => {
         const fetchImage = () => {
@@ -100,11 +101,17 @@ export default function ProfileModal() {
         setSource(newImageSource);
     };
 
+    const toggleImageVisibility = () => {
+        setIsImageVisible(!isImageVisible);
+    };
+
+
+    const fadeDuration = ' 3.0s';
 
     return (
         <Box>
             <Button onClick={handleClick}>
-                {source !== null ? <Avatar><ImageDisplay /></Avatar> : <Avatar sx={{backgroundColor: getRandomColor()}}>{name.charAt(0)}</Avatar>}
+                {source !== null ? <Avatar><ImageDisplay /></Avatar> : <Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar>}
             </Button>
             <Modal
                 open={modalOpen}
@@ -143,16 +150,15 @@ export default function ProfileModal() {
                                     <FontAwesomeIcon icon={faCamera} />
                                 </Box>
                             ) : (
-                                (file === undefined || file === null || !source) ? (
-                                    <Avatar sx={{ height: '108px', width: '108px' }}>
+
+                                    (file === undefined || file === null || !source) ? (
+                                    <Avatar sx={{ transition: `opacity ${fadeDuration}`, opacity: isImageVisible ? 1 : 0, }}>
                                         {name.charAt(0)}
                                     </Avatar>
-                                ) : (
-                                    <ImageDisplay updateProfileImage={updateProfileImage} />
-                                )
-                            )}
-
-
+                                    ) : (<>
+                               <Avatar sx={{height:"108px",width:"108px"}}><ImageDisplay /></Avatar> 
+                                    </> )
+                                )}
                         </Avatar>
                     </Box>
                     <Box sx={{ margin: '20px 0 20px 0' }}>
