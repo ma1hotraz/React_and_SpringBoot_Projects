@@ -9,13 +9,18 @@ import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Objects;
 import java.util.UUID;
 
 @RestController
@@ -59,29 +64,14 @@ public class UserController {
         return ResponseEntity.ok(userService.findByUserId(id));
     }
 
-    //    @PutMapping("/updateUser/")
-//    public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
-//        Loggers.info("UPDATED USER CALLED");
-//        System.out.println("newUser " + user);
-//        if (!Objects.equals(user.getFile().getContentType(), "image/png")) {
-//            Loggers.error("INVALID IMAGE TYPE");
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-//        }
-//        byte[] arr = ImageUtils.convertMultipartFileToByteArray(user.getFile());
-//        user.setImage(arr);
-//        UserDTO userDTO = userService.updateUser(user);
-//        return ResponseEntity.ok(userDTO);
-//    }
     @PutMapping("/updateUser/")
     public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
-        Loggers.info("UPDATED USER CALLED");
-        System.out.println("newUser " + user);
+        Loggers.info("UPDATE USER CALLED");
 
         if (!isValidImage(user.getFile())) {
             Loggers.error("INVALID IMAGE TYPE");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid image type.");
         }
-
         byte[] arr = ImageUtils.convertMultipartFileToByteArray(user.getFile());
         user.setImage(arr);
 

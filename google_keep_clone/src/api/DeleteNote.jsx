@@ -1,5 +1,4 @@
-import { Modal } from '@mui/material';
-import React from 'react'
+
 
 export const deleteById = async (id) => {
     const url = `notes/delete/${id}`
