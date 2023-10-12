@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import { useCookies } from 'react-cookie';
 import 'react-toastify/dist/ReactToastify.css';
+import ErrorPage from './ErrorPage';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ export default function App() {
   const secondaryTextColor = theme.palette.secondary.textColor;
   const primarynavMenuIconColor = theme.palette.primary.navMenuIconColor;
   const secondarynavMenuIconColor = theme.palette.secondary.navMenuIconColor;
-  
+
   const primaryButtonColor = theme.palette.primary.navMenuIconColor;
   const secondaryButtonColor = theme.palette.secondary.navMenuIconColor;
 
@@ -58,13 +59,13 @@ export default function App() {
       //   autoClose: 2000,
       // });
 
-      
+
       return newThemeType;
     });
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><ErrorPage /></div>;
   }
 
   return (
