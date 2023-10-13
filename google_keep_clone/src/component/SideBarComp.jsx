@@ -2,8 +2,6 @@ import React from 'react';
 import { Sidenav, Nav, Toggle, Container } from 'rsuite';
 import DashboardIcon from '@rsuite/icons/legacy/Dashboard';
 import GroupIcon from '@rsuite/icons/legacy/Group';
-import MagicIcon from '@rsuite/icons/legacy/Magic';
-import GearCircleIcon from '@rsuite/icons/legacy/GearCircle';
 import '../css/SideBarComp.css'
 import { Box } from '@mui/material';
 

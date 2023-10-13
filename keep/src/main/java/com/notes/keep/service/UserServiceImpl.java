@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -30,13 +32,18 @@ public class UserServiceImpl implements UserService {
     public UserDTO createUser(User user) {
         user.setRole("USER");
         user.setPassword(encoder.encode(user.getPassword()));
-        userRepository.save(user);
-        UserDTO userDTO = new UserDTO();
-        userDTO.setUserId(user.getUserId());
-        userDTO.setName(user.getFirstName() + " " + user.getLastName());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setImage(null);
-        return userDTO;
+        Date utilDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String formattedDate = dateFormat.format(utilDate);
+        try {
+            Date date = dateFormat.parse(formattedDate);
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            user.setDate(sqlDate);
+            userRepository.save(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return UserDTO.builder().userId(user.getUserId()).email(user.getEmail()).name(user.getFirstName() + " " + user.getLastName()).image(user.getImage()).build();
     }
 
     @Override
@@ -63,15 +70,11 @@ public class UserServiceImpl implements UserService {
         byte[] upload = null;
         upload = ImageUtils.compressImage(user.getImage());
         userOld.setImage(upload);
+        userOld.setFileSize(user.getFile().getSize() / 1024);
         User newUser = userRepository.save(userOld);
-        UserDTO userDTO = new UserDTO();
-        userDTO.setUserId(newUser.getUserId());
-        userDTO.setEmail(newUser.getEmail());
-        userDTO.setName(newUser.getFirstName() + " " + newUser.getLastName());
         byte[] download = null;
         download = ImageUtils.decompressImage(newUser.getImage());
-        userDTO.setImage(download);
-        return userDTO;
+        return UserDTO.builder().userId(newUser.getUserId()).email(newUser.getEmail()).name(newUser.getFirstName() + " " + newUser.getLastName()).image(download).build();
     }
 
     @Override

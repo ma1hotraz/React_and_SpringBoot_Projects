@@ -72,6 +72,7 @@ public class UserController {
             Loggers.error("INVALID IMAGE TYPE");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid image type.");
         }
+
         byte[] arr = ImageUtils.convertMultipartFileToByteArray(user.getFile());
         user.setImage(arr);
 
