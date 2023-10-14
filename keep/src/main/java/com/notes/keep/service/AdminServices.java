@@ -9,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.sql.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -53,5 +54,41 @@ public class AdminServices {
         return userDTO;
     }
 
+    public UserDTO findUserByName(String name) {
+        User user = userRepository.findByFirstName(name);
+        UserDTO userDTO = null;
+        if(user == null){
+            return userDTO;
+        }
+        userDTO = UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
+        return userDTO;
+    }
+
+    public List<UserDTO> userListByDate(long date) {
+
+        System.out.println(date);
+
+        Date sqlDate = new Date(date);
+
+        System.out.println("java.sql.Date: " + sqlDate);
+
+        List<User> users = userRepository.findUserByDate(date);
+
+        System.out.println(users);
+
+        if (users.isEmpty()) {
+            return Collections.emptyList();
+        }
+
+        return users.stream()
+                .map(user -> UserDTO.builder()
+                        .userId(user.getUserId())
+                        .email(user.getEmail())
+                        .name(user.getFirstName() + " " + user.getLastName())
+                        .image(user.getImage())
+                        .build())
+                .collect(Collectors.toList());
+    }
 
 }
+//findUserByDate

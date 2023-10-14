@@ -1,58 +1,215 @@
-import React from 'react';
-import { Sidenav, Nav, Toggle, Container } from 'rsuite';
-import DashboardIcon from '@rsuite/icons/legacy/Dashboard';
-import GroupIcon from '@rsuite/icons/legacy/Group';
-import '../css/SideBarComp.css'
-import { Box } from '@mui/material';
+// import React, { useState, useEffect } from 'react';
+// import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faBars, faDashboard, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+// import { Box, Typography } from '@mui/material';
 
+// export default function SideBarComp() {
+//   const [isCollapsed, setIsCollapsed] = useState(false);
+//   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+//   useEffect(() => {
+//     // Handle any logic you want when the sidebar is collapsed or expanded
+//   }, [isCollapsed, windowWidth]);
+
+//   const toggleSidebar = () => {
+//     setIsCollapsed(!isCollapsed);
+//   };
+
+//   const handleResize = () => {
+//     setWindowWidth(window.innerWidth);
+
+//     if (window.innerWidth < 1100) {
+//       setIsCollapsed(true);
+//     } else {
+//       setIsCollapsed(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener('resize', handleResize);
+
+//     // Clean up the event listener when the component unmounts
+//     return () => {
+//       window.removeEventListener('resize', handleResize);
+//     };
+//   }, []);
+
+//   return (
+//     <>
+
+//       <div >
+//       <Sidebar
+//         collapsed={isCollapsed}
+//         style={{ height: '100vh', marginTop: '50px', transition: 'all 0.3s' }}
+//       >
+//         <Menu iconShape="square">
+//           <MenuItem
+//             onClick={toggleSidebar}
+//             style={{ textAlign: 'center', cursor: 'pointer' }}
+//           >
+//             <Box>
+//               {isCollapsed ? (
+//                 <div>
+//                 <FontAwesomeIcon icon={faBars} />
+//                 <h1>dfiu</h1>
+//                 </div>
+//               ) : (
+//                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+//                   <FontAwesomeIcon icon={faBars} />
+//                   <div style={{ width: '10px' }}></div>
+//                   <Typography variant='h5'>Admin Panel</Typography>
+//                 </div>
+//               )}
+//             </Box>
+//           </MenuItem>
+//         </Menu>
+//         <Menu>
+//           <Box
+//             style={{
+//               padding: '10px',
+//               marginLeft: '10px',
+//             }}
+//           >
+//             {isCollapsed ? (
+//               <Box>
+//                 <FontAwesomeIcon icon={faDashboard} size='2x' />
+//               </Box>
+//             ) : (
+//               <div style={{ display: 'flex' }}>
+//                 <FontAwesomeIcon icon={faDashboard} size='2x' />
+//                 <div style={{ width: '20px' }}></div>
+//                 <Typography variant='h6'>Dashboard</Typography>
+//               </div>
+//             )}
+//           </Box>
+//         </Menu>
+//         <Menu>
+//           <SubMenu title='Search' icon={<FontAwesomeIcon icon={faMagnifyingGlass} title='Search' size='2x' />}>
+//             <MenuItem>
+//               <Typography variant='body1'>Search By Email</Typography>
+//             </MenuItem>
+//             <MenuItem>
+//               <Typography variant='body1'>Search By Name</Typography>
+//             </MenuItem>
+//             <MenuItem>
+//               <Typography variant='body1'>Search By Date</Typography>
+//             </MenuItem>
+//             <MenuItem>
+//               <Typography>{windowWidth}</Typography>
+//             </MenuItem>
+//           </SubMenu>
+//         </Menu>
+//       </Sidebar>
+//     </div>
+
+//     <div style={{marginTop: '60px', backgroundColor: 'grey'}}>cg</div>
+//     {/* </div> */}
+//     </>
+//   );
+// }
+
+
+import React, { useState, useEffect } from 'react';
+import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faDashboard, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { Box, Typography } from '@mui/material';
 
 export default function SideBarComp() {
-  const [expanded, setExpanded] = React.useState(true);
-  const [activeKey, setActiveKey] = React.useState('1');
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Handle any logic you want when the sidebar is collapsed or expanded
+  }, [isCollapsed, windowWidth]);
+
+  const toggleSidebar = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+
+    if (window.innerWidth < 1100) {
+      setIsCollapsed(true);
+    } else {
+      setIsCollapsed(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div style={{ marginTop: '70px' }}>
-      <Box style={{ width: 240 }} minHeight={'100vh'}>
-        <Toggle
-          onChange={setExpanded}
-          checked={expanded}
-          checkedChildren="Expand"
-          unCheckedChildren="Collapse"
-        />
-        <hr />
-        <Sidenav expanded={expanded} defaultOpenKeys={['3', '4']}>
-          <Sidenav.Body>
-            <Nav activeKey={activeKey} onSelect={setActiveKey}>
-              <Nav.Item eventKey="1" icon={<DashboardIcon />}>
-                Dashboard
-              </Nav.Item>
-              <Nav.Item eventKey="2" icon={<GroupIcon />}>
-                User Group
-              </Nav.Item>
-              {/* <Nav.Menu placement="rightStart" eventKey="3" title="Advanced" icon={<MagicIcon />}>
-                <Nav.Item eventKey="3-1">Geo</Nav.Item>
-                <Nav.Item eventKey="3-2">Devices</Nav.Item>
-                <Nav.Item eventKey="3-3">Loyalty</Nav.Item>
-                <Nav.Item eventKey="3-4">Visit Depth</Nav.Item>
-              </Nav.Menu> */}
-              {/* <Nav.Menu
-                placement="rightStart"
-                eventKey="4"
-                title="Settings"
-                icon={<GearCircleIcon />}
-              >
-                <Nav.Item eventKey="4-1">Applications</Nav.Item>
-                <Nav.Item eventKey="4-2">Channels</Nav.Item>
-                <Nav.Item eventKey="4-3">Versions</Nav.Item>
-                <Nav.Menu eventKey="4-5" title="Custom Action">
-                  <Nav.Item eventKey="4-5-1">Action Name</Nav.Item>
-                  <Nav.Item eventKey="4-5-2">Action Params</Nav.Item>
-                </Nav.Menu>
-              </Nav.Menu> */}
-            </Nav>
-          </Sidenav.Body>
-          <Sidenav.Toggle expanded={expanded} onToggle={expanded => setExpanded(expanded)} />
-        </Sidenav>
-      </Box>
+
+    <div style={{ display: 'flex' }}>
+      <Sidebar
+        collapsed={isCollapsed}
+        style={{ minHeight: '90vh', marginTop: '60px', transition: 'all 0.3s' }}
+      >
+        <Menu iconShape="square">
+          <MenuItem
+            onClick={toggleSidebar}
+            style={{ textAlign: 'center', cursor: 'pointer' }}
+          >
+            <Box>
+              {isCollapsed ? (
+                <FontAwesomeIcon icon={faBars} />
+
+              ) : (
+                <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                  <FontAwesomeIcon icon={faBars} />
+                  <div style={{ width: '10px' }}></div>
+                  <Typography variant='h5'>Admin Panel</Typography>
+                </div>
+              )}
+            </Box>
+          </MenuItem>
+        </Menu>
+        <Menu>
+          <Box
+            style={{
+              padding: '10px',
+              marginLeft: '10px',
+            }}
+          >
+            {isCollapsed ? (
+              <Box>
+                <FontAwesomeIcon icon={faDashboard} size='2x' />
+              </Box>
+            ) : (
+              <div style={{ display: 'flex' }}>
+                <FontAwesomeIcon icon={faDashboard} size='2x' />
+                <div style={{ width: '20px' }}></div>
+                <Typography variant='h6'>Dashboard</Typography>
+              </div>
+            )}
+          </Box>
+        </Menu>
+        <Menu>
+          <SubMenu title='Search' icon={<FontAwesomeIcon icon={faMagnifyingGlass} title='Search' size='2x' />}>
+            <MenuItem>
+              <Typography variant='body1'>Search By Email</Typography>
+            </MenuItem>
+            <MenuItem>
+              <Typography variant='body1'>Search By Name</Typography>
+            </MenuItem>
+            <MenuItem>
+              <Typography variant='body1'>Search By Date</Typography>
+            </MenuItem>
+            <MenuItem>
+              <Typography>{windowWidth}</Typography>
+            </MenuItem>
+          </SubMenu>
+        </Menu>
+      </Sidebar>
     </div>
   );
 }
