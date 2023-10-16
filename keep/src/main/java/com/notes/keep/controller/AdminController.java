@@ -1,7 +1,6 @@
 package com.notes.keep.controller;
 
 import com.notes.keep.dto.UserDTO;
-import com.notes.keep.model.User;
 import com.notes.keep.service.AdminServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
