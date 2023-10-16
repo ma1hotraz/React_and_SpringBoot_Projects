@@ -53,9 +53,7 @@ public class AdminController {
     public ResponseEntity<?> findUsersByDate(@PathVariable String date) {
         try {
             long timestamp;
-
             try {
-
                 timestamp = Long.parseLong(date);
 
             } catch (NumberFormatException ex) {
@@ -64,9 +62,7 @@ public class AdminController {
                 Date parsedDate = dateFormat.parse(date);
                 timestamp = parsedDate.getTime();
             }
-
             List<UserDTO> userDTO = adminServices.userListByDate(timestamp);
-
             if (userDTO.isEmpty()) {
                 return ResponseEntity.noContent().build();
             } else {

@@ -14,25 +14,24 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Login } from '../api/LoginUser';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { IconButton } from "@mui/material";
-import Oauth from '../images/logoOauth.png';
-import Okta from '../images/logoOkta.png';
 
 
 function Copyright() {
   return (
-    <Box sx={{ margin: '20px', display: 'flex', flexDirection: 'column', width: '180px' }}>
-      <Button variant={'outlined'} sx={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
-        <img src={Okta} height={'30px'} width={'30px'}/>
-        <div style={{width: '10px'}}></div>
-        <IconButton>Okta</IconButton>
-      </Button>
-      <Button variant={'outlined'} sx={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
-        <img src={Oauth} height={'30px'} width={'30px'}/>
-        <div style={{width: '10px'}}></div>
-        <IconButton>OAuth</IconButton>
-      </Button>
-    </Box>
+    // <Box sx={{ margin: '20px', display: 'flex', flexDirection: 'column', width: '180px' }}>
+    //   <Button variant={'outlined'} sx={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
+    //     <img src={Okta} height={'30px'} width={'30px'}/>
+    //     <div style={{width: '10px'}}></div>
+    //     <IconButton>Okta</IconButton>
+    //   </Button>
+    //   <Button variant={'outlined'} sx={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
+    //     <img src={Oauth} height={'30px'} width={'30px'}/>
+    //     <div style={{width: '10px'}}></div>
+    //     <IconButton>OAuth</IconButton>
+    //   </Button>
+    // </Box>
+    <>
+    </>
   );
 }
 
