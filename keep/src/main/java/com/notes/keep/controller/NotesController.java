@@ -30,7 +30,12 @@ public class NotesController {
     public ResponseEntity<?> createNote(@RequestBody Notes note) throws Exception {
         Loggers.info("NOTE CREATED");
         System.out.println(note);
-        Notes notes = notesService.createNote(note);
+        Notes notes = null;
+        try {
+           notes = notesService.createNote(note);
+        }catch (Exception e){
+            return ResponseEntity.status(500).header("msg","USER NOT FOUND").build();
+        }
         if (notes == null) {
             return ResponseEntity.status(200).header("msg", "FIELDS ARE EMPTY").build();
         }

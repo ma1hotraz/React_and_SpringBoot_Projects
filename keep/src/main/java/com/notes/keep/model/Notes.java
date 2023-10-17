@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.Data;
 
+import java.sql.Date;
 import java.util.UUID;
 
 
@@ -32,7 +33,7 @@ public class Notes {
     private String description;
 
     private boolean completed;
-    private String date;
+    private Date date;
     private String color;
 
     @ManyToOne(fetch = FetchType.LAZY)

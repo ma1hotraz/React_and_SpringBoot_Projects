@@ -3,7 +3,7 @@ package com.notes.keep.controller;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
-import com.notes.keep.service.UserServiceImpl;
+import com.notes.keep.service.impl.CustomUserServiceImpl;
 import com.notes.keep.utils.ImageUtils;
 import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,8 @@ public class UserController {
     @Value("${project.image}")
     public String path;
     @Autowired
-    private UserServiceImpl userService;
+    private CustomUserServiceImpl userService;
+
 
     @PostMapping("/add")
     public ResponseEntity<?> addUser(@RequestBody User user) {

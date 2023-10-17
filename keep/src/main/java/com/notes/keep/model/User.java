@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,6 +15,7 @@ import java.util.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @ToString
 @Data
 @Entity
@@ -25,6 +27,7 @@ public class User implements UserDetails{
 
     @NotNull
     @NotBlank
+    @Column(unique = true)
     private String email;
     @NotNull
     @NotBlank
@@ -37,7 +40,8 @@ public class User implements UserDetails{
     private String password;
     @NotNull
     @NotBlank
-    private String role;
+    @Column(columnDefinition = "default USER")
+    private String roles;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private Set<Notes> notes;
@@ -55,7 +59,7 @@ public class User implements UserDetails{
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return List.of(new SimpleGrantedAuthority(roles));
     }
 
     @Override

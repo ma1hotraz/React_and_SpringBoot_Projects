@@ -5,21 +5,23 @@ import com.notes.keep.model.User;
 import com.notes.keep.repository.NotesRepository;
 import com.notes.keep.repository.UserRepository;
 import com.notes.keep.utils.EncryptionUtil;
-import com.notes.keep.utils.FormatDateTime;
 import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.text.SimpleDateFormat;
 import java.util.stream.Collectors;
+import java.util.Optional;
+import java.util.Date;
+import java.util.UUID;
+import java.util.List;
+import java.util.ArrayList;
 
 @Service
 public class NotesService {
     private final NotesRepository notesRepository;
+    @Autowired
     public BCryptPasswordEncoder encoder;
     @Autowired
     private UserRepository userRepository;
@@ -36,7 +38,20 @@ public class NotesService {
         try {
             note.setDescription(note.getDescription().replaceAll("\\s+", " "));
             note.setUser(user.get());
-            note.setDate(FormatDateTime.parseStandardDate(note.getDate()));
+
+
+            Date utilDate = new Date();
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String formattedDate = dateFormat.format(utilDate);
+            try {
+                Date date = dateFormat.parse(formattedDate);
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+                note.setDate(sqlDate);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
             note.setTitle(encryptionUtil.encrypt(note.getTitle()));
             note.setDescription(encryptionUtil.encrypt(note.getDescription()));
         } catch (Exception e) {
@@ -59,11 +74,23 @@ public class NotesService {
 
     public Notes updateNoteById(UUID id, Notes notes) {
         Notes oldNote = notesRepository.findByNoteId(id);
+        System.out.println(oldNote);
         if (oldNote == null) {
             return null;
         }
 //        oldNote.setColor(notes.getColor());
-        oldNote.setDate(FormatDateTime.parseStandardDate(notes.getDate()));
+
+        Date utilDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String formattedDate = dateFormat.format(utilDate);
+        try {
+            Date date = dateFormat.parse(formattedDate);
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            notes.setDate(sqlDate);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         oldNote.setTitle(notes.getTitle());
         oldNote.setDescription(notes.getDescription().replaceAll("\\s+", " "));
         oldNote.setCompleted(notes.isCompleted());

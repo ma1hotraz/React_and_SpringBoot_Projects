@@ -1,9 +1,10 @@
-package com.notes.keep.service;
+package com.notes.keep.service.impl;
 
-import com.notes.keep.dto.UserDTO;
+import javacom.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.UserRepository;
+import com.notes.keep.service.CustomUserService;
 import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.ImageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class CustomUserServiceImpl implements CustomUserService {
 
     @Autowired
     private BCryptPasswordEncoder encoder;
@@ -30,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO createUser(User user) {
-        user.setRole("USER");
+        user.setRoles("USER");
         user.setPassword(encoder.encode(user.getPassword()));
         Date utilDate = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -88,20 +86,5 @@ public class UserServiceImpl implements UserService {
     }
 
     //METHODS NEEDS TO IMPLEMENT
-
-    @Override
-    public void updateResetPasswordToken(String token, String email) {
-
-    }
-
-//    @Override
-//    public UserDetails getResetPasswordToken(String token) {
-//        return null;
-//    }
-//
-//    @Override
-//    public void updatePassword(UserDetails user, String newPassword) {
-//
-//    }
 
 }

@@ -106,7 +106,7 @@ export default function ProfileModal() {
     };
 
 
-    const fadeDuration = ' 3.0s';
+    const fadeDuration = ' 2.0s';
 
     return (
         <Box>
