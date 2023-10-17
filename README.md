@@ -74,6 +74,8 @@
     cd google_keep</br>
     use npm i [ to install project packages ]</br>
   - Back-End :</br>
-    dir : keep contains files for back-end.</br>
-    configure application.properties : ```replace mysql username and password.```</br>
-    now use ```mvn spring-boot:run``` to run springboot application.</br> 
+    dir: keep contains files for back-end.</br>
+    configure application.properties: ```replace MySQL username and password.```</br>
+    now use ```mvn spring-boot:run``` to run the springboot application.</br>
+    > Use VSCode for FrontEnd ( Recommended ) </br>
+    > Use InteiiJIdea for backEnd ( Recommended )
