@@ -77,5 +77,6 @@
     dir: keep contains files for back-end.</br>
     configure application.properties: ```replace MySQL username and password.```</br>
     now use ```mvn spring-boot:run``` to run the springboot application.</br>
+    <hr>
     > Use VSCode for FrontEnd ( Recommended ) </br>
     > Use InteiiJIdea for backEnd ( Recommended )
