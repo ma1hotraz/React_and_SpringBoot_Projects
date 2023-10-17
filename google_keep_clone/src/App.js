@@ -22,7 +22,6 @@ export default function App() {
           <Route path='/Home' element={<Home />} />
           <Route path='/Forget' element={<Forget />} />
           <Route path='Profile' element={<Profile />} />
-          <Route path='/test' element={<ImageDisplay />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='*' element={<NotFound404 />} />
         </Routes>

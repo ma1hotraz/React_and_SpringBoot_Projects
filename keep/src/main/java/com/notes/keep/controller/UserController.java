@@ -35,6 +35,9 @@ public class UserController {
 
     @PostMapping("/add")
     public ResponseEntity<?> addUser(@RequestBody User user) {
+        if (user.getEmail().isEmpty() || user.getEmail().isBlank() && user.getFirstName().isBlank() || user.getFirstName().isEmpty() && user.getPassword().isEmpty() || user.getPassword().isBlank() && user.getLastName().isBlank() || user.getLastName().isEmpty()) {
+            return ResponseEntity.status(422).header("msg", "ANY OF THE VALUE IS EMPTY").build();
+        }
         if (userService.checkEmail(user.getEmail())) {
             Loggers.warn("EMAIL ALREADY EXIST");
             return ResponseEntity.status(409).build();

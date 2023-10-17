@@ -23,24 +23,34 @@ export const Signup = async (UserInfo) => {
 
       if (response.status === 500) {
          toast.warn('Server Error !', {
-            autoClose: 3000,
+            autoClose: 2000,
          });
          return;
       }
 
       if (response.status === 409) {
          toast.warn('Email Exist, Please Login', {
-            autoClose: 3000,
+            autoClose: 2000,
          });
          return;
       }
 
-      if (!response.ok) {
-         toast.warn('Something went wrong', {
-            autoClose: 3000,
+
+
+      if (response.status === 422) {
+         toast.warn('Please Input Correct Value', {
+            autoClose: 2000,
          });
          throw new Error('Network response was not ok');
       }
+
+      if (!response.ok) {
+         toast.warn('Something Went Wrong', {
+            autoClose: 2000,
+         });
+         throw new Error('Network response was not ok');
+      }
+
 
 
       const contentType = response.headers.get('content-type');

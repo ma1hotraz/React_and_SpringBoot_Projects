@@ -1,3 +1,5 @@
+
+
 export const Login = async (UserInfo) => {
    const url = '/user/login';
 
@@ -16,7 +18,7 @@ export const Login = async (UserInfo) => {
       });
 
       if (response.ok) {
-         console.log(response,);
+         console.log(response);
          return true;
       } else {
          console.log(response);

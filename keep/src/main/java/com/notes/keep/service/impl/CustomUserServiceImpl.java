@@ -1,6 +1,6 @@
 package com.notes.keep.service.impl;
 
-import javacom.notes.keep.dto.UserDTO;
+import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.UserRepository;

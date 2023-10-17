@@ -47,6 +47,8 @@ export default function SignIn() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
 
+    console.log("LOGIN :  ", data);
+
     if (Login(data) !== null) {
       navigate("/home", toast.success("Login Successful"))
     } else {

@@ -56,8 +56,6 @@ export default function SearchBox(props) {
         props.onItemClick(itemId);
     };
 
-
-
     return (
         <div>
             <div style={{ marginTop: '50px', padding: '10px' }}>
