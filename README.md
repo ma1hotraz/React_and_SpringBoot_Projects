@@ -63,3 +63,20 @@
 # Currently : 
   **JWT**
   - Implementing JWT for user authentication and authorization.
+  **Spring - Security**
+  - Implementing Spring Security along with JWT.
+
+# Installation :
+  **Steps**
+  - Frond-End :
+    dir : google_keep contains file for front-end.</br>
+    use commands :</br>
+    cd google_keep</br>
+    use npm i [ to install project packages ]</br>
+  - Back-End :</br>
+    dir: keep contains files for back-end.</br>
+    configure application.properties: ```replace MySQL username and password.```</br>
+    now use ```mvn spring-boot:run``` to run the springboot application.</br>
+    <hr>
+    > Use VSCode for FrontEnd ( Recommended ) </br>
+    > Use InteiiJIdea for backEnd ( Recommended )
