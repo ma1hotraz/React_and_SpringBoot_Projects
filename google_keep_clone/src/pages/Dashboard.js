@@ -8,6 +8,7 @@ import {
     Grid,
     Box,
     Button,
+    Paper
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,6 +17,7 @@ import Dashboard1 from '../component/DashBoardComp1';
 import Dashboard2 from '../component/DashBoardComp2';
 import Dashboard3 from '../component/DashBoardComp3';
 import Dashboard4 from '../component/DashBoardComp4';
+import Dashboard5 from '../component/DashBoardComp5';
 
 
 const Dashboard = () => {
@@ -42,7 +44,7 @@ const Dashboard = () => {
     }
 
     return (
-        <Box sx={{ backgroundColor: 'grey', padding: '40px' }}>
+        <Box sx={{ backgroundColor: '#EDEDED', padding: '40px' }}>
             <IconButton
                 color="primary"
                 onClick={toggleSidebar}
@@ -65,7 +67,7 @@ const Dashboard = () => {
                     {/* SIDEMENU */}
                     <ListItem button onClick={() => setSidebarOpen(false)}>
                         <Button variant='contained' onClick={onUsersClick}>
-                            <FontAwesomeIcon icon={faUser}  />
+                            <FontAwesomeIcon icon={faUser} />
                             <div style={{ width: '20px' }}></div>
                             <Typography variant='p'>
                                 Users
@@ -73,31 +75,31 @@ const Dashboard = () => {
                         </Button>
                     </ListItem>
                     <ListItem button onClick={() => setSidebarOpen(false)}>
-                    <Button variant='contained' onClick={onStats}>
-                                    <FontAwesomeIcon icon={faUser} size='1x' />
-                                    <div style={{ width: '20px' }}></div>
-                                    <Typography variant='p'>
-                                        Stats
-                                    </Typography>
-                                </Button>
+                        <Button variant='contained' onClick={onStats}>
+                            <FontAwesomeIcon icon={faUser} size='1x' />
+                            <div style={{ width: '20px' }}></div>
+                            <Typography variant='p'>
+                                Stats
+                            </Typography>
+                        </Button>
                     </ListItem>
                     <ListItem button onClick={() => setSidebarOpen(false)}>
-                    <Button variant='contained' onClick={onDBStorage}>
-                                    <FontAwesomeIcon icon={faUser} size='1x' />
-                                    <div style={{ width: '20px' }}></div>
-                                    <Typography variant='p'>
-                                        DB Storage
-                                    </Typography>
-                                </Button>
+                        <Button variant='contained' onClick={onDBStorage}>
+                            <FontAwesomeIcon icon={faUser} size='1x' />
+                            <div style={{ width: '20px' }}></div>
+                            <Typography variant='p'>
+                                DB Storage
+                            </Typography>
+                        </Button>
                     </ListItem>
                     <ListItem button onClick={() => setSidebarOpen(false)}>
-                    <Button variant='contained' onClick={onNewUser}>
-                                    <FontAwesomeIcon icon={faUser} size='1x' />
-                                    <div style={{ width: '20px' }}></div>
-                                    <Typography variant='p'>
-                                        New User
-                                    </Typography>
-                                </Button>
+                        <Button variant='contained' onClick={onNewUser}>
+                            <FontAwesomeIcon icon={faUser} size='1x' />
+                            <div style={{ width: '20px' }}></div>
+                            <Typography variant='p'>
+                                New User
+                            </Typography>
+                        </Button>
                     </ListItem>
                     <Grid container spacing={3}>
                         {/* <Grid item xs={12} md={3} >
@@ -118,21 +120,18 @@ const Dashboard = () => {
                 </List>
             </Drawer>
 
-            <Grid item xs={12} md={9} margin={5}>
-                <Box>
-                    <Dashboard1 />
-                </Box>
-                <Box>
-                    <Dashboard2 />
-                </Box>
-                <Box>
-                    <Dashboard3 />
-                </Box>
-                <Box>
+            <Grid item xs={12} md={9} margin={5} columnSpacing={5}>
+                <Grid sx={{ display: 'flex', justifyContent: 'space-evenly' }} spacing={4}>
                     <Dashboard4 />
+                    <Dashboard3 />
+                </Grid>
+                <Box sx={{height:'20px'}}>
+
+                </Box>
+                <Box>
+                    <Dashboard5 />
                 </Box>
             </Grid>
-            {/* </Grid> */}
         </Box>
     );
 };

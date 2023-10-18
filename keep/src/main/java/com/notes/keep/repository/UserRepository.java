@@ -21,4 +21,6 @@ public interface UserRepository extends JpaRepository<User, UUID>{
     User findByFirstName(String firstName);
 
     List<User> findUserByDate(long date);
+
+
 }

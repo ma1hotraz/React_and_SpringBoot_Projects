@@ -25,10 +25,25 @@ public class AdminController {
     @GetMapping("/getAllUser")
     public ResponseEntity<?> getAllUsers() {
         List<UserDTO> userDTO = adminServices.userList();
-        if (userDTO == null) {
+        if (userDTO.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(userDTO);
+    }
+
+    @GetMapping("/getAllNumber")
+    public ResponseEntity<?> getAllNumber() {
+        List<UserDTO> userDTO = adminServices.userList();
+        if (userDTO.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(userDTO.size());
+    }
+
+    @GetMapping("/getDBSize")
+    public ResponseEntity<?> getDBSize(){
+        Double size = adminServices.sizeOfDB();
+        return ResponseEntity.ok(size);
     }
 
     @GetMapping("/find/email/{email}")
@@ -74,5 +89,7 @@ public class AdminController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error.");
         }
     }
+
+
 
 }

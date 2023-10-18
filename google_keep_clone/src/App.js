@@ -7,7 +7,6 @@ import Main from "./pages/Main.js";
 import Forget from "./pages/Forget.js";
 import NotFound404 from "./pages/NotFound404.js";
 import Profile from "./component/ProfileModal.jsx";
-import ImageDisplay from "./component/ImageDisplay.jsx";
 import Dashboard from "./pages/Dashboard.js";
 
 export default function App() {

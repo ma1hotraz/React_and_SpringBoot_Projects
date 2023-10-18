@@ -1,96 +1,36 @@
-import React from 'react';
-import ReactApexChart from 'react-apexcharts';
+import React, { useEffect, useState } from 'react';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { getTotalUserSize } from '../api/AdminAPIs';
 
-function generateDayWiseTimeSeries(baseDate, count, yrange) {
-  var i = 0;
-  var series = [];
-  while (i < count) {
-    var x = baseDate;
-    var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+export default function DashBoardComp4() {
+    const [totalUsers, setTotalUsers] = useState(null);
 
-    series.push([x, y]);
-    baseDate += 86400000;
-    i++;
-  }
-  return series;
+    useEffect(() => {
+        const fetchTotalUserSize = async () => {
+            try {
+                const data = await getTotalUserSize();
+                setTotalUsers(data);
+            } catch (error) {
+                console.error('Error fetching total user size:', error);
+            }
+        };
+        fetchTotalUserSize();
+    }, []);
+
+    return (
+        <Box sx={{ }}>
+            <Card sx={{ height: '195px', display: 'flex', padding: '40px' ,flexDirection: 'column', justifyContent: 'center' }}>
+                <CardMedia sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <FontAwesomeIcon icon={faUser} size='3x' />
+                </CardMedia>
+                <CardContent>
+                    <Typography variant='h5' align='center'>
+                        {totalUsers !== null ? `Total Users : ${totalUsers}` : 'Loading...'}
+                    </Typography>
+                </CardContent>
+            </Card>
+        </Box>
+    );
 }
-
-const Dashboard4 = () => {
-  const baseDate = new Date('11 Feb 2017 GMT').getTime(); // Change the base date to your desired start date
-  const series = [
-    {
-      name: 'TEAM 1',
-      data: generateDayWiseTimeSeries(baseDate, 20, {
-        min: 10,
-        max: 60,
-      }),
-    },
-    {
-      name: 'TEAM 2',
-      data: generateDayWiseTimeSeries(baseDate, 20, {
-        min: 10,
-        max: 60,
-      }),
-    },
-    {
-      name: 'TEAM 3',
-      data: generateDayWiseTimeSeries(baseDate, 30, {
-        min: 10,
-        max: 60,
-      }),
-    },
-    {
-      name: 'TEAM 4',
-      data: generateDayWiseTimeSeries(baseDate, 10, {
-        min: 10,
-        max: 60,
-      }),
-    },
-    {
-      name: 'TEAM 5',
-      data: generateDayWiseTimeSeries(baseDate, 30, {
-        min: 10,
-        max: 60,
-      }),
-    },
-  ];
-
-  const options = {
-    chart: {
-      height: 300,
-      type: 'scatter',
-      zoom: {
-        type: 'xy',
-      },
-    },
-    dataLabels: {
-      enabled: false,
-    },
-    grid: {
-      xaxis: {
-        lines: {
-          show: true,
-        },
-      },
-      yaxis: {
-        lines: {
-          show: true,
-        },
-      },
-    },
-    xaxis: {
-      type: 'datetime',
-    },
-    yaxis: {
-      max: 70,
-    },
-  };
-
-  return (
-    <div id="chart">
-      <ReactApexChart options={options} series={series} type="scatter" height={350} />
-    </div>
-  );
-};
-
-export default Dashboard4;

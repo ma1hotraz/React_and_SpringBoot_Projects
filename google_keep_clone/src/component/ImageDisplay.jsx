@@ -31,7 +31,7 @@ const ImageDisplay = () => {
     fetchImage();
   }, []);
 
-  return  <img src={source} alt='Fetched Image' />
+  return  <img src={source}  alt='Fetched Image' />
 };
 
 export default ImageDisplay;

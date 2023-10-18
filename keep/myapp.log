@@ -1,0 +1,152 @@
+2023-10-18T19:22:49.752+05:30  INFO 15008 --- [main] com.notes.keep.KeepApplication           : Starting KeepApplication using Java 20.0.2 with PID 15008 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-10-18T19:22:49.754+05:30  INFO 15008 --- [main] com.notes.keep.KeepApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-10-18T19:22:50.330+05:30  INFO 15008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-18T19:22:50.398+05:30  INFO 15008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2023-10-18T19:22:50.928+05:30  INFO 15008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 443 (https)
+2023-10-18T19:22:50.940+05:30  INFO 15008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-18T19:22:50.940+05:30  INFO 15008 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-18T19:22:51.022+05:30  INFO 15008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-18T19:22:51.023+05:30  INFO 15008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1227 ms
+2023-10-18T19:22:51.167+05:30  INFO 15008 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.5.1 by Redgate
+2023-10-18T19:22:51.168+05:30  INFO 15008 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-10-18T19:22:51.168+05:30  INFO 15008 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2023-10-18T19:22:51.178+05:30  INFO 15008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-18T19:22:51.441+05:30  INFO 15008 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2dba05b1
+2023-10-18T19:22:51.442+05:30  INFO 15008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-18T19:22:51.470+05:30  INFO 15008 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-10-18T19:22:51.510+05:30  INFO 15008 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.021s)
+2023-10-18T19:22:51.522+05:30  INFO 15008 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema `notes_db`: 1
+2023-10-18T19:22:51.523+05:30  INFO 15008 --- [main] o.f.core.internal.command.DbMigrate      : Schema `notes_db` is up to date. No migration necessary.
+2023-10-18T19:22:51.618+05:30  INFO 15008 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-18T19:22:51.665+05:30  INFO 15008 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-10-18T19:22:51.945+05:30  INFO 15008 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-10-18T19:22:52.575+05:30  INFO 15008 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-18T19:22:52.583+05:30  INFO 15008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:22:53.133+05:30  WARN 15008 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-18T19:22:53.148+05:30  WARN 15008 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e0c66008-1c2c-46d6-8acf-6ffe94c9a33f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-10-18T19:22:53.219+05:30  INFO 15008 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@85104d6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56e9126f, org.springframework.security.web.context.SecurityContextHolderFilter@34128fed, org.springframework.security.web.header.HeaderWriterFilter@66ab3716, org.springframework.security.web.authentication.logout.LogoutFilter@282079b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4dfe56dc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@580a5b6e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e773b8a, org.springframework.security.web.session.SessionManagementFilter@4f5d7091, org.springframework.security.web.access.ExceptionTranslationFilter@31d791c0]
+2023-10-18T19:22:53.723+05:30  INFO 15008 --- [main] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-10-18T19:22:53.743+05:30  INFO 15008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 443 (https) with context path ''
+2023-10-18T19:22:53.749+05:30  INFO 15008 --- [main] com.notes.keep.KeepApplication           : Started KeepApplication in 4.378 seconds (process running for 4.772)
+2023-10-18T19:23:24.046+05:30  INFO 15008 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:23:24.047+05:30  INFO 15008 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-18T19:23:24.053+05:30  INFO 15008 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-18T19:25:05.913+05:30  INFO 6548 --- [main] com.notes.keep.KeepApplication           : Starting KeepApplication using Java 20.0.2 with PID 6548 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-10-18T19:25:05.914+05:30  INFO 6548 --- [main] com.notes.keep.KeepApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-10-18T19:25:06.507+05:30  INFO 6548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-18T19:25:06.576+05:30  INFO 6548 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2023-10-18T19:25:07.114+05:30  INFO 6548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 443 (https)
+2023-10-18T19:25:07.125+05:30  INFO 6548 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-18T19:25:07.126+05:30  INFO 6548 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-18T19:25:07.219+05:30  INFO 6548 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-18T19:25:07.219+05:30  INFO 6548 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1263 ms
+2023-10-18T19:25:07.362+05:30  INFO 6548 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.5.1 by Redgate
+2023-10-18T19:25:07.362+05:30  INFO 6548 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-10-18T19:25:07.362+05:30  INFO 6548 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2023-10-18T19:25:07.371+05:30  INFO 6548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-18T19:25:07.629+05:30  INFO 6548 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@44b940a2
+2023-10-18T19:25:07.632+05:30  INFO 6548 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-18T19:25:07.659+05:30  INFO 6548 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-10-18T19:25:07.696+05:30  INFO 6548 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.019s)
+2023-10-18T19:25:07.706+05:30  INFO 6548 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema `notes_db`: 1
+2023-10-18T19:25:07.707+05:30  INFO 6548 --- [main] o.f.core.internal.command.DbMigrate      : Schema `notes_db` is up to date. No migration necessary.
+2023-10-18T19:25:07.791+05:30  INFO 6548 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-18T19:25:07.834+05:30  INFO 6548 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-10-18T19:25:08.124+05:30  INFO 6548 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-10-18T19:25:08.776+05:30  INFO 6548 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-18T19:25:08.784+05:30  INFO 6548 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:25:09.333+05:30  WARN 6548 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-18T19:25:09.348+05:30  WARN 6548 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 42d490b4-985d-43a4-9ba6-40d720aa49e7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-10-18T19:25:09.419+05:30  INFO 6548 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ed3e66d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e9947af, org.springframework.security.web.context.SecurityContextHolderFilter@580a5b6e, org.springframework.security.web.header.HeaderWriterFilter@f9919a2, org.springframework.security.web.authentication.logout.LogoutFilter@4e773b8a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14f1545c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@445d878c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d60aa4, org.springframework.security.web.session.SessionManagementFilter@2a728076, org.springframework.security.web.access.ExceptionTranslationFilter@24347d8b]
+2023-10-18T19:25:09.912+05:30  INFO 6548 --- [main] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-10-18T19:25:09.933+05:30  INFO 6548 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 443 (https) with context path ''
+2023-10-18T19:25:09.940+05:30  INFO 6548 --- [main] com.notes.keep.KeepApplication           : Started KeepApplication in 4.403 seconds (process running for 4.801)
+2023-10-18T19:26:26.613+05:30  INFO 6548 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:26:26.614+05:30  INFO 6548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-18T19:26:26.622+05:30  INFO 6548 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-18T19:26:29.981+05:30  INFO 14080 --- [main] com.notes.keep.KeepApplication           : Starting KeepApplication using Java 20.0.2 with PID 14080 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-10-18T19:26:29.983+05:30  INFO 14080 --- [main] com.notes.keep.KeepApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-10-18T19:26:30.630+05:30  INFO 14080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-18T19:26:30.698+05:30  INFO 14080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 3 JPA repository interfaces.
+2023-10-18T19:26:31.238+05:30  INFO 14080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 443 (https)
+2023-10-18T19:26:31.248+05:30  INFO 14080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-18T19:26:31.249+05:30  INFO 14080 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-18T19:26:31.355+05:30  INFO 14080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-18T19:26:31.355+05:30  INFO 14080 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1323 ms
+2023-10-18T19:26:31.500+05:30  INFO 14080 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.5.1 by Redgate
+2023-10-18T19:26:31.500+05:30  INFO 14080 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-10-18T19:26:31.500+05:30  INFO 14080 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2023-10-18T19:26:31.508+05:30  INFO 14080 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-18T19:26:31.777+05:30  INFO 14080 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19ae2ee5
+2023-10-18T19:26:31.779+05:30  INFO 14080 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-18T19:26:31.806+05:30  INFO 14080 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-10-18T19:26:31.866+05:30  INFO 14080 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.043s)
+2023-10-18T19:26:31.881+05:30  INFO 14080 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema `notes_db`: 1
+2023-10-18T19:26:31.882+05:30  INFO 14080 --- [main] o.f.core.internal.command.DbMigrate      : Schema `notes_db` is up to date. No migration necessary.
+2023-10-18T19:26:31.969+05:30  INFO 14080 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-18T19:26:32.021+05:30  INFO 14080 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-10-18T19:26:32.331+05:30  INFO 14080 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-10-18T19:26:32.981+05:30  INFO 14080 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-18T19:26:32.988+05:30  INFO 14080 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:26:33.576+05:30  WARN 14080 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-18T19:26:33.592+05:30  WARN 14080 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 4d0cf3c8-01b5-43e7-bab2-b648d03a1251
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-10-18T19:26:33.664+05:30  INFO 14080 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e9947af, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d60aa4, org.springframework.security.web.context.SecurityContextHolderFilter@66450129, org.springframework.security.web.header.HeaderWriterFilter@530ee11a, org.springframework.security.web.authentication.logout.LogoutFilter@579cfcc4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1ec98548, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16eca98a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30942f54, org.springframework.security.web.session.SessionManagementFilter@a3f1f32, org.springframework.security.web.access.ExceptionTranslationFilter@6418075c]
+2023-10-18T19:26:34.174+05:30  INFO 14080 --- [main] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-10-18T19:26:34.196+05:30  INFO 14080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 443 (https) with context path ''
+2023-10-18T19:26:34.202+05:30  INFO 14080 --- [main] com.notes.keep.KeepApplication           : Started KeepApplication in 4.643 seconds (process running for 5.058)
+2023-10-18T19:27:42.975+05:30  INFO 14080 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:27:42.977+05:30  INFO 14080 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-18T19:27:42.982+05:30  INFO 14080 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-10-18T19:27:46.165+05:30  INFO 15756 --- [main] com.notes.keep.KeepApplication           : Starting KeepApplication using Java 20.0.2 with PID 15756 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-10-18T19:27:46.167+05:30  INFO 15756 --- [main] com.notes.keep.KeepApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-10-18T19:27:46.779+05:30  INFO 15756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-18T19:27:46.841+05:30  INFO 15756 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2023-10-18T19:27:47.404+05:30  INFO 15756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 443 (https)
+2023-10-18T19:27:47.414+05:30  INFO 15756 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-18T19:27:47.415+05:30  INFO 15756 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-10-18T19:27:47.493+05:30  INFO 15756 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-18T19:27:47.494+05:30  INFO 15756 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1279 ms
+2023-10-18T19:27:47.628+05:30  INFO 15756 --- [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.5.1 by Redgate
+2023-10-18T19:27:47.629+05:30  INFO 15756 --- [main] o.f.c.internal.license.VersionPrinter    : See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+2023-10-18T19:27:47.629+05:30  INFO 15756 --- [main] o.f.c.internal.license.VersionPrinter    : 
+2023-10-18T19:27:47.637+05:30  INFO 15756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-18T19:27:47.911+05:30  INFO 15756 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19ae2ee5
+2023-10-18T19:27:47.913+05:30  INFO 15756 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-18T19:27:47.943+05:30  INFO 15756 --- [main] o.f.c.i.database.base.BaseDatabaseType   : Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-10-18T19:27:48.025+05:30  INFO 15756 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.019s)
+2023-10-18T19:27:48.037+05:30  INFO 15756 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema `notes_db`: 1
+2023-10-18T19:27:48.038+05:30  INFO 15756 --- [main] o.f.core.internal.command.DbMigrate      : Schema `notes_db` is up to date. No migration necessary.
+2023-10-18T19:27:48.123+05:30  INFO 15756 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-18T19:27:48.172+05:30  INFO 15756 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-10-18T19:27:48.452+05:30  INFO 15756 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-10-18T19:27:49.074+05:30  INFO 15756 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-18T19:27:49.081+05:30  INFO 15756 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:27:49.626+05:30  WARN 15756 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-18T19:27:49.641+05:30  WARN 15756 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3162384e-e5c6-4a78-8a21-a96ee6b085cf
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2023-10-18T19:27:49.719+05:30  INFO 15756 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c070ade, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@bb3487c, org.springframework.security.web.context.SecurityContextHolderFilter@281d3ce7, org.springframework.security.web.header.HeaderWriterFilter@e9947af, org.springframework.security.web.authentication.logout.LogoutFilter@4cb939d5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45e49d3d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@569b3009, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@650997b0, org.springframework.security.web.session.SessionManagementFilter@568e2d65, org.springframework.security.web.access.ExceptionTranslationFilter@490f2fad]
+2023-10-18T19:27:50.230+05:30  INFO 15756 --- [main] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-10-18T19:27:50.249+05:30  INFO 15756 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 443 (https) with context path ''
+2023-10-18T19:27:50.256+05:30  INFO 15756 --- [main] com.notes.keep.KeepApplication           : Started KeepApplication in 4.476 seconds (process running for 4.862)
+2023-10-18T19:28:04.146+05:30  INFO 15756 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-18T19:28:04.147+05:30  INFO 15756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-10-18T19:28:04.152+05:30  INFO 15756 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

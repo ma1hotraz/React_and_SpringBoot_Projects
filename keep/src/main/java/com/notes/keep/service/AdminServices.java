@@ -4,12 +4,15 @@ import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.AdminRepository;
 import com.notes.keep.repository.UserRepository;
+import com.notes.keep.utils.ImageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.sql.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,7 +41,7 @@ public class AdminServices {
                         .userId(user.getUserId())
                         .email(user.getEmail())
                         .name(user.getFirstName() + " " + user.getLastName())
-                        .image(user.getImage())
+                        .image(user.getImage() != null ? ImageUtils.decompressImage(user.getImage()) : user.getImage())
                         .build())
                 .collect(Collectors.toList());
     }
@@ -47,7 +50,7 @@ public class AdminServices {
     public UserDTO findUserByEmail(String email) {
         User user = userRepository.findByEmail(email);
         UserDTO userDTO = null;
-        if(user == null){
+        if (user == null) {
             return userDTO;
         }
         userDTO = UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
@@ -57,7 +60,7 @@ public class AdminServices {
     public UserDTO findUserByName(String name) {
         User user = userRepository.findByFirstName(name);
         UserDTO userDTO = null;
-        if(user == null){
+        if (user == null) {
             return userDTO;
         }
         userDTO = UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
@@ -66,11 +69,7 @@ public class AdminServices {
 
     public List<UserDTO> userListByDate(long date) {
 
-        System.out.println(date);
-
         Date sqlDate = new Date(date);
-
-        System.out.println("java.sql.Date: " + sqlDate);
 
         List<User> users = userRepository.findUserByDate(date);
 
@@ -88,6 +87,11 @@ public class AdminServices {
                         .image(user.getImage())
                         .build())
                 .collect(Collectors.toList());
+    }
+
+    public Double sizeOfDB() {
+        System.out.println(adminRepository.sizeOfDB());
+        return adminRepository.sizeOfDB();
     }
 
 }

@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 import '../css/NoData.css';
 
-
 export const addNote = async (noteData) => {
 
     console.log(noteData);

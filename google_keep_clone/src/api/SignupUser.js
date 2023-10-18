@@ -35,8 +35,6 @@ export const Signup = async (UserInfo) => {
          return;
       }
 
-
-
       if (response.status === 422) {
          toast.warn('Please Input Correct Value', {
             autoClose: 2000,
@@ -50,7 +48,6 @@ export const Signup = async (UserInfo) => {
          });
          throw new Error('Network response was not ok');
       }
-
 
 
       const contentType = response.headers.get('content-type');

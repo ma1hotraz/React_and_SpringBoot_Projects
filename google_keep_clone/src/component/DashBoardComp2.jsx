@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
@@ -64,7 +65,9 @@ export default function DashBoardComp2() {
     };
     return (
         <div id="chart">
-            <ReactApexChart options={options} series={series} type="radialBar" height={300} />
+            <Box sx={{ }}>
+                <ReactApexChart options={options} series={series} type="radialBar" height={300} />
+            </Box>
         </div>
     );
 }
