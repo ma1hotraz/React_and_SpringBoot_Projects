@@ -70,6 +70,8 @@
 
 ![flow-diagram](images/session-based.png)
 
+<p align="center"><a href="https://hackernoon.com/using-session-cookies-vs-jwt-for-authentication-sd2v3vci">Source</a></p>
+
 <hr>
 
 
