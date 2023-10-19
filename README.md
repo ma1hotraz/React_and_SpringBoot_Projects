@@ -77,6 +77,7 @@
     dir: keep contains files for back-end.</br>
     configure application.properties: ```replace MySQL username and password.```</br>
     now use ```mvn spring-boot:run``` to run the springboot application.</br>
+    ``` note: if getting webserver issue kindly changer serve.port in application.properties for example server.port = 443 -> server.port = 8443```
     <hr>
     > Use VSCode for FrontEnd ( Recommended ) </br>
     > Use InteiiJIdea for backEnd ( Recommended )
