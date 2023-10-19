@@ -83,7 +83,7 @@
      - Working On Dashboard
 
    - Backend:
-     - Working on implementation of Jwt authentication and authorization in the project
+     - Working on the implementation of Jwt authentication and authorization in the project
 
 
 # Installation :
