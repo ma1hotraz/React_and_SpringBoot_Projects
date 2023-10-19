@@ -66,6 +66,14 @@
 
 <hr>
 
+# Authetication Flow JWT
+
+![flow-diagram](images/session-based.png)
+
+<hr>
+
+
+
 # Currently : 
   **JWT**
   - Implementing JWT for user authentication and authorization.
