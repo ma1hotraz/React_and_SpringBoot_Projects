@@ -60,6 +60,12 @@
 
 <hr>
 
+# Project Flow
+
+![flow-diagram](images/project-flow.png)
+
+<hr>
+
 # Currently : 
   **JWT**
   - Implementing JWT for user authentication and authorization.
@@ -69,15 +75,15 @@
 # Installation :
   **Steps**
   - Frond-End :
-    dir : google_keep contains file for front-end.</br>
-    use commands :</br>
-    cd google_keep</br>
-    use npm i [ to install project packages ]</br>
+    - dir : google_keep contains file for front-end.</br>
+    - use commands :</br>
+    - cd google_keep</br>
+    - use npm i [ to install project packages ]</br>
   - Back-End :</br>
-    dir: keep contains files for back-end.</br>
-    configure application.properties: ```replace MySQL username and password.```</br>
-    now use ```mvn spring-boot:run``` to run the springboot application.</br>
-    note:``` if getting webserver issue kindly changer serve.port in application.properties for example server.port = 443 -> server.port = 8443```
+    - dir: keep contains files for back-end.</br>
+    - configure application.properties: ```replace MySQL username and password.```</br>
+    - now use ```mvn spring-boot:run``` to run the springboot application.</br>
+    - note:``` if getting webserver issue kindly changer serve.port in application.properties for example server.port = 443 -> server.port = 8443```
     <hr>
     > Use VSCode for FrontEnd ( Recommended ) </br>
     > Use InteiiJIdea for backEnd ( Recommended )
