@@ -90,9 +90,12 @@ public class AdminServices {
     }
 
     public Double sizeOfDB() {
-        System.out.println(adminRepository.sizeOfDB());
         return adminRepository.sizeOfDB();
     }
 
+    public String sendLogs(){
+        return null;
+    }
+
+
 }
-//findUserByDate

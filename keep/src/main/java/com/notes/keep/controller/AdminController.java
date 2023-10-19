@@ -2,6 +2,7 @@ package com.notes.keep.controller;
 
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.service.AdminServices;
+import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,7 @@ public class AdminController {
         if (userDTO.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
+        Loggers.info("ALL USERS LIST REQUESTED BY ADMIN");
         return ResponseEntity.ok(userDTO);
     }
 
@@ -37,12 +39,14 @@ public class AdminController {
         if (userDTO.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
+        Loggers.info("ALL USERS NUMBER REQUESTED BY ADMIN");
         return ResponseEntity.ok(userDTO.size());
     }
 
     @GetMapping("/getDBSize")
     public ResponseEntity<?> getDBSize(){
         Double size = adminServices.sizeOfDB();
+        Loggers.info("DB SIZE REQUESTED BY ADMIN");
         return ResponseEntity.ok(size);
     }
 
@@ -52,6 +56,7 @@ public class AdminController {
         if (userDTO == null) {
             return ResponseEntity.noContent().build();
         }
+        Loggers.info("USER WITH EMAIL " + email + " REQUESTED BY ADMIN");
         return ResponseEntity.ok(userDTO);
     }
 
@@ -61,6 +66,7 @@ public class AdminController {
         if (userDTO == null) {
             return ResponseEntity.noContent().build();
         }
+        Loggers.info("USER WITH NAME " + name + " REQUESTED BY ADMIN");
         return ResponseEntity.ok(userDTO);
     }
 
@@ -77,6 +83,7 @@ public class AdminController {
                 Date parsedDate = dateFormat.parse(date);
                 timestamp = parsedDate.getTime();
             }
+            Loggers.info("USERS WITH DATE " + date + " REQUESTED BY ADMIN");
             List<UserDTO> userDTO = adminServices.userListByDate(timestamp);
             if (userDTO.isEmpty()) {
                 return ResponseEntity.noContent().build();

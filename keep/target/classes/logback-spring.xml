@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml" />
-    <property name="LOGS_DIR" value="./logs" />
+<configuration scan="true" scanPeriod="10 seconds">
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <property name="LOGS_DIR" value="./logs"/>
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS_DIR}/myapp.log</file>
         <encoder>
@@ -13,9 +13,9 @@
         </rollingPolicy>
     </appender>
     <logger name="com.example" level="info" additivity="false">
-        <appender-ref ref="file" />
+        <appender-ref ref="file"/>
     </logger>
     <root level="info">
-        <appender-ref ref="file" />
+        <appender-ref ref="file"/>
     </root>
 </configuration>
