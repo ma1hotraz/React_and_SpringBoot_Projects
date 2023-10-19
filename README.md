@@ -60,6 +60,22 @@
 
 <hr>
 
+# Project Flow
+
+![flow-diagram](images/project-flow.png)
+
+<hr>
+
+# Authetication Flow JWT
+
+![flow-diagram](images/session-based.png)
+
+<p align="center"><a href="https://hackernoon.com/using-session-cookies-vs-jwt-for-authentication-sd2v3vci">Source</a></p>
+
+<hr>
+
+
+
 # Currently : 
   **JWT**
   - Implementing JWT for user authentication and authorization.
@@ -69,14 +85,52 @@
 # Installation :
   **Steps**
   - Frond-End :
-    dir : google_keep contains file for front-end.</br>
-    use commands :</br>
-    cd google_keep</br>
-    use npm i [ to install project packages ]</br>
+    - dir : google_keep contains file for front-end.</br>
+    - use commands :</br>
+    - cd google_keep</br>
+    - use npm i [ to install project packages ]</br>
   - Back-End :</br>
-    dir: keep contains files for back-end.</br>
-    configure application.properties: ```replace MySQL username and password.```</br>
-    now use ```mvn spring-boot:run``` to run the springboot application.</br>
+    - dir: keep contains files for back-end.</br>
+    - configure application.properties: ```replace MySQL username and password.```</br>
+    - now use ```mvn spring-boot:run``` to run the springboot application.</br>
+    - note:``` if getting webserver issue kindly changer serve.port in application.properties for example server.port = 443 -> server.port = 8443```
     <hr>
     > Use VSCode for FrontEnd ( Recommended ) </br>
     > Use InteiiJIdea for backEnd ( Recommended )
+
+
+    <hr>
+# Gallary
+
+# Main Page
+![](images/1.png)
+![](images/2.png)
+
+# Sign In
+![](images/3.png)
+
+# Forget
+![](images/4.png)
+
+# Sign Up
+![](images/5.png)
+
+# Home Page
+![](images/6.png)
+
+# Note Created
+![](images/7.png)
+![](images/8.png)
+
+# Dark Mode
+![](images/9.png)
+![](images/10.png)
+
+# Searching Notes
+![](images/11.png)
+
+# Error Pages
+![](images/12.png)
+![](images/13.png)
+    
+    
