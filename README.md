@@ -102,17 +102,34 @@
     <hr>
 # Gallary
 
+# Main Page
 ![](images/1.png)
 ![](images/2.png)
+
+# Sign In
 ![](images/3.png)
+
+# Forget
 ![](images/4.png)
+
+# Sign Up
 ![](images/5.png)
+
+# Home Page
 ![](images/6.png)
+
+# Note Created
 ![](images/7.png)
 ![](images/8.png)
+
+# Dark Mode
 ![](images/9.png)
 ![](images/10.png)
+
+# Searching Notes
 ![](images/11.png)
+
+# Error Pages
 ![](images/12.png)
 ![](images/13.png)
     
