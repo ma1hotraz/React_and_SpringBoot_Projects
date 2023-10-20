@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import getLocale from "../utils/SettingLocale";
 
 export const Signup = async (UserInfo) => {
    const url = 'user/add';
@@ -48,13 +49,17 @@ export const Signup = async (UserInfo) => {
          });
          throw new Error('Network response was not ok');
       }
-      
+
       const contentType = response.headers.get('content-type');
       if (contentType && contentType.includes('application/json')) {
          const data = await response.json();
          if (data !== null) {
             sessionStorage.setItem('userData', JSON.stringify(data));
-            localStorage.setItem('lang', JSON.stringify('en'));
+            const locale = navigator.language;
+            const currLocale = getLocale(locale);
+            console.log(locale + "-> " + currLocale);
+            //setting up initial locale via browser
+            localStorage.setItem('lang', JSON.stringify(currLocale));
             return data;
          }
 

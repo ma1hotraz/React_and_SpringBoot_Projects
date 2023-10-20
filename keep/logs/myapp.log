@@ -181,3 +181,10 @@ This generated password is for development use only. Your security configuration
 2023-10-20 15:48:58 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a51ec4db-0d3f-48aa-ae3a-763a75458605 REQUESTED
 2023-10-20 15:48:59 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a51ec4db-0d3f-48aa-ae3a-763a75458605 REQUESTED
 2023-10-20 15:49:00 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a51ec4db-0d3f-48aa-ae3a-763a75458605 DELETED
+2023-10-20 17:51:26 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : dsasd98
+2023-10-20 18:02:06 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : dasd
+2023-10-20 18:12:00 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : dasdasd27897
+2023-10-20 18:24:29 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : dasdasda99
+2023-10-20 18:30:14 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20 18:30:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-10-20 18:30:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
