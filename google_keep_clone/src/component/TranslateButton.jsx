@@ -53,6 +53,7 @@ export default function TranslateButton() {
             >
                 <MenuItem onClick={() => handleClose('en')}>English</MenuItem>
                 <MenuItem onClick={() => handleClose('hi')}>हिंदी</MenuItem>
+                <MenuItem onClick={() => handleClose('cn')}>中国人</MenuItem>
             </Menu>
         </div>
     );

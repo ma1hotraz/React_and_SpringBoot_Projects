@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 import translationsInHindi from '../locales/hi/translation.json';
 import translationsInEng from '../locales/en/translation.json'
+import translationsInChinese from '../locales/cn/translation.json'
 
 const resources = {
     en: {
@@ -11,6 +12,9 @@ const resources = {
     hi: {
         translation: translationsInHindi
     },
+    cn:{
+        translation : translationsInChinese
+    }
 };
 
 i18n
