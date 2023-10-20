@@ -24,6 +24,8 @@ import App from './App';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n/i18n';
 
 const theme = createTheme({
   palette: {
@@ -49,9 +51,10 @@ const root = document.getElementById('root');
 const renderApp = () => {
   ReactDOM.createRoot(root).render(
     <React.StrictMode>
+      <I18nextProvider i18n={i18n} />
       <ThemeProvider theme={theme}>
         <App />
-        <ToastContainer position='top-right'/>
+        <ToastContainer position='top-right' />
       </ThemeProvider>
     </React.StrictMode>
   );

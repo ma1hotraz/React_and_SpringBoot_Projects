@@ -15,9 +15,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
+import { useTranslation } from 'react-i18next';
+import i18n from '../i18n/i18n';
+import getText from '../utils/TextUtils';
+
 
 
 export default function Note(props) {
+
+
+    const { t } = useTranslation();
 
     const [data, setData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -61,7 +68,7 @@ export default function Note(props) {
                 fetchAndRefreshData();
                 setIsModalOpen(false);
                 setSelectedNoteId(null);
-                toast.warn('Note deleted successfully!', {
+                toast.warn(getText('Note deleted successfully!'), {
                     autoClose: 2000,
                 });
             })
@@ -243,22 +250,11 @@ export default function Note(props) {
     const toggleSearchBox = () => {
         setIsSearchBoxVisible(!isSearchBoxVisible);
     };
-    // const predefinedHeights = ['200px', '250px', '280px', '300px'];
-
-    // const getRandomHeight = () => {
-    //     // Get a random index from predefinedHeights array
-    //     const randomIndex = Math.floor(Math.random() * predefinedHeights.length);
-    //     return predefinedHeights[randomIndex];
-    //   };
-
-    // const getRandomWidth = () => {
-    //     return `${Math.floor(Math.random() * (400 - 300 + 1) + 300)}px`;
-    // };
 
     return (
         <Box>
             <Box>
-                <FontAwesomeIcon style={{ marginTop: '80px',marginBottom: '-80px', marginLeft: '10px' }} icon={faSearch} color={props.buttonColor} size='3x' onClick={toggleSearchBox} />
+                <FontAwesomeIcon style={{ marginTop: '80px', marginBottom: '-80px', marginLeft: '10px' }} icon={faSearch} color={props.buttonColor} size='3x' onClick={toggleSearchBox} />
                 {isSearchBoxVisible && <SearchBox buttonColor={props.buttonColor} noteId={setSelectedNoteId} onItemClick={handleClick} />}
             </Box>
             <Box sx={{ width: '100%', height: '100%' }}>
@@ -306,11 +302,11 @@ export default function Note(props) {
                             <div className="empty-state">
                                 <div className="empty-state__content">
                                     <div className="empty-state__icon">
-                                        <img src={nodataImage} alt="" />
+                                        <img src={nodataImage} alt="nodata_img" />
                                     </div>
-                                    <div className="empty-state__message">No note has been added yet.</div>
+                                    <div className="empty-state__message">{getText('No note has been added yet.')}</div>
                                     <div className="empty-state__help">
-                                        Add a new note by simpley clicking the button on bottom right side.
+                                        {getText('Add a new note by simpley clicking the button on bottom right side.')}
                                     </div>
                                 </div>
                             </div>

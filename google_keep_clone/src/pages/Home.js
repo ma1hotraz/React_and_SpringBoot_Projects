@@ -6,6 +6,7 @@ import { Box } from '@mui/material';
 import { useCookies } from 'react-cookie';
 import 'react-toastify/dist/ReactToastify.css';
 import ErrorPage from './ErrorPage';
+import LanguageSelector from '../component/LanguageSelector';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -71,6 +72,7 @@ export default function App() {
   return (
     <div style={{ backgroundColor: `${backgroundColor}`, minHeight: '100vh' }}>
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} />
+      <LanguageSelector />
       <Box sx={{ padding: '15px' }}>
         <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} />
       </Box>

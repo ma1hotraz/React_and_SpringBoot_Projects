@@ -62,7 +62,7 @@ const Dashboard = () => {
                 open={isSidebarOpen}
                 onClose={() => setSidebarOpen(false)}
             >
-                <Typography variant='h4'>Menu</Typography>
+                <Typography variant='h4' sx={{padding: '20px'}}>Menu</Typography>
                 <List>
                     {/* SIDEMENU */}
                     <ListItem button onClick={() => setSidebarOpen(false)}>

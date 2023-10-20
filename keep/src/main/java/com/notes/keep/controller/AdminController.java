@@ -1,6 +1,7 @@
 package com.notes.keep.controller;
 
 import com.notes.keep.dto.UserDTO;
+import com.notes.keep.dto.UserDTODate;
 import com.notes.keep.service.AdminServices;
 import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class AdminController {
 
     @GetMapping("/getAllUser")
     public ResponseEntity<?> getAllUsers() {
-        List<UserDTO> userDTO = adminServices.userList();
+        List<UserDTODate> userDTO = adminServices.userList();
         if (userDTO.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
@@ -35,7 +36,7 @@ public class AdminController {
 
     @GetMapping("/getAllNumber")
     public ResponseEntity<?> getAllNumber() {
-        List<UserDTO> userDTO = adminServices.userList();
+        List<UserDTODate> userDTO = adminServices.userList();
         if (userDTO.isEmpty()) {
             return ResponseEntity.noContent().build();
         }

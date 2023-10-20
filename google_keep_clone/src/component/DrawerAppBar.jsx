@@ -16,8 +16,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { ToggleSlider } from 'react-toggle-slider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faMoon, faRedo, faSun, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faList, faMoon, faSun, faTrash } from '@fortawesome/free-solid-svg-icons';
 import ProfileModal from './ProfileModal';
+import TranslateButton from './TranslateButton';
+
 
 
 const drawerWidth = 240;
@@ -32,19 +34,18 @@ function DrawerAppBar(props) {
   const navItems = [
     <FontAwesomeIcon icon={faList} size='2x' />,
     <FontAwesomeIcon icon={faTrash} size='2x' />,
+    <TranslateButton />,
     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <FontAwesomeIcon key="sun" style={{ marginRight: '20px', marginLeft: '10px' }} icon={faSun} size='2x' />
       <ToggleSlider key="slider" onToggle={props.toggleMode} active={!props.active} />
       <FontAwesomeIcon key="moon" style={{ marginLeft: '20px', marginRight: '10px' }} icon={faMoon} size='2x' />
-    </Box>,   
+    </Box>,
     <ProfileModal />
   ];
-
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
 
 
   const drawer = (

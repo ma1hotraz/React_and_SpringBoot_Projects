@@ -21,7 +21,7 @@ export default function DashBoardComp4() {
 
     return (
         <Box sx={{ }}>
-            <Card sx={{ height: '190px', display: 'flex', padding: '40px' ,flexDirection: 'column', justifyContent: 'center' }}>
+            <Card sx={{ height: '190px', minWidth: '300px',display: 'flex', padding: '40px' ,flexDirection: 'column', justifyContent: 'center' }}>
                 <CardMedia sx={{ display: 'flex', justifyContent: 'center' }}>
                     <FontAwesomeIcon icon={faUser} size='3x' />
                 </CardMedia>

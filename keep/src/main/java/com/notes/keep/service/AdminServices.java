@@ -1,6 +1,7 @@
 package com.notes.keep.service;
 
 import com.notes.keep.dto.UserDTO;
+import com.notes.keep.dto.UserDTODate;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.AdminRepository;
 import com.notes.keep.repository.UserRepository;
@@ -29,7 +30,7 @@ public class AdminServices {
     public AdminServices() {
     }
 
-    public List<UserDTO> userList() {
+    public List<UserDTODate> userList() {
         List<User> users = userRepository.findAll();
 
         if (users.isEmpty()) {
@@ -37,11 +38,11 @@ public class AdminServices {
         }
 
         return users.stream()
-                .map(user -> UserDTO.builder()
+                .map(user -> UserDTODate.builder()
                         .userId(user.getUserId())
                         .email(user.getEmail())
                         .name(user.getFirstName() + " " + user.getLastName())
-                        .image(user.getImage() != null ? ImageUtils.decompressImage(user.getImage()) : user.getImage())
+                        .image(user.getImage() != null ? ImageUtils.decompressImage(user.getImage()) : user.getImage()).date(user.getDate())
                         .build())
                 .collect(Collectors.toList());
     }
