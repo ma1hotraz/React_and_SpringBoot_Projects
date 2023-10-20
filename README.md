@@ -85,6 +85,17 @@
    - Backend:
      - Working on the implementation of Jwt authentication and authorization in the project
 
+<hr>
+
+# Feature Implemented
+
+  **Feature**
+   
+   - Multi Language Support
+     - added 2-3 languages
+
+<hr>
+
 
 # Installation :
   **Steps**

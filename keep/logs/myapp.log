@@ -141,3 +141,43 @@ This generated password is for development use only. Your security configuration
 2023-10-20 13:48:38 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 75850830-79b3-4e72-93a9-6994db02e9ba REQUESTED
 2023-10-20 13:48:38 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 75850830-79b3-4e72-93a9-6994db02e9ba REQUESTED
 2023-10-20 13:48:39 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 75850830-79b3-4e72-93a9-6994db02e9ba DELETED
+2023-10-20 15:02:06 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-10-20 15:02:06 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : weqw213sd
+2023-10-20 15:02:17 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-10-20 15:02:17 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : weqw213sd
+2023-10-20 15:02:36 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-10-20 15:02:36 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : weqw213sd
+2023-10-20 15:02:42 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-10-20 15:02:42 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : weqw213sd
+2023-10-20 15:02:53 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 5384d9ab-bf1b-4f33-b256-dfbf2058cc52 REQUESTED
+2023-10-20 15:02:53 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 5384d9ab-bf1b-4f33-b256-dfbf2058cc52 REQUESTED
+2023-10-20 15:02:53 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 5384d9ab-bf1b-4f33-b256-dfbf2058cc52 REQUESTED
+2023-10-20 15:02:54 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 5384d9ab-bf1b-4f33-b256-dfbf2058cc52 DELETED
+2023-10-20 15:03:04 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 72578c1e-dbab-493e-a9f9-dffc5fab24ab REQUESTED
+2023-10-20 15:03:05 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 72578c1e-dbab-493e-a9f9-dffc5fab24ab REQUESTED
+2023-10-20 15:03:05 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 72578c1e-dbab-493e-a9f9-dffc5fab24ab REQUESTED
+2023-10-20 15:03:06 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 72578c1e-dbab-493e-a9f9-dffc5fab24ab DELETED
+2023-10-20 15:03:08 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID adcf5e34-8a0b-4f4c-b4a5-a133cfd84112 REQUESTED
+2023-10-20 15:03:09 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID adcf5e34-8a0b-4f4c-b4a5-a133cfd84112 REQUESTED
+2023-10-20 15:03:09 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID adcf5e34-8a0b-4f4c-b4a5-a133cfd84112 REQUESTED
+2023-10-20 15:03:10 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID adcf5e34-8a0b-4f4c-b4a5-a133cfd84112 DELETED
+2023-10-20 15:03:12 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d6794bb0-ef38-47fc-a231-eaa41faabc11 REQUESTED
+2023-10-20 15:03:12 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d6794bb0-ef38-47fc-a231-eaa41faabc11 REQUESTED
+2023-10-20 15:03:13 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d6794bb0-ef38-47fc-a231-eaa41faabc11 REQUESTED
+2023-10-20 15:03:13 [https-jsse-nio-443-exec-4] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d6794bb0-ef38-47fc-a231-eaa41faabc11 DELETED
+2023-10-20 15:06:17 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : dasd23424
+2023-10-20 15:07:08 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : dsd34
+2023-10-20 15:45:23 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : asdsfdsaw
+2023-10-20 15:47:38 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : sdf
+2023-10-20 15:48:06 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-10-20 15:48:06 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : sdf
+2023-10-20 15:48:24 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-10-20 15:48:24 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : sdf
+2023-10-20 15:48:36 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d77696cf-f0ad-4c4a-b50b-6692bb673e36 REQUESTED
+2023-10-20 15:48:36 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d77696cf-f0ad-4c4a-b50b-6692bb673e36 REQUESTED
+2023-10-20 15:48:36 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d77696cf-f0ad-4c4a-b50b-6692bb673e36 REQUESTED
+2023-10-20 15:48:47 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID d77696cf-f0ad-4c4a-b50b-6692bb673e36 DELETED
+2023-10-20 15:48:58 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a51ec4db-0d3f-48aa-ae3a-763a75458605 REQUESTED
+2023-10-20 15:48:58 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a51ec4db-0d3f-48aa-ae3a-763a75458605 REQUESTED
+2023-10-20 15:48:59 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a51ec4db-0d3f-48aa-ae3a-763a75458605 REQUESTED
+2023-10-20 15:49:00 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a51ec4db-0d3f-48aa-ae3a-763a75458605 DELETED

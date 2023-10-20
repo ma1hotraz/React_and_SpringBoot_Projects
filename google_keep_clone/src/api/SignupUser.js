@@ -48,8 +48,7 @@ export const Signup = async (UserInfo) => {
          });
          throw new Error('Network response was not ok');
       }
-
-
+      
       const contentType = response.headers.get('content-type');
       if (contentType && contentType.includes('application/json')) {
          const data = await response.json();
