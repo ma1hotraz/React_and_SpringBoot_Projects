@@ -77,16 +77,20 @@
 
 
 # Currently : 
-  **JWT**
-  - Implementing JWT for user authentication and authorization.
-  **Spring - Security**
-  - Implementing Spring Security along with JWT.
+  **STATUS** 
+
+   - Frontend:
+     - Working On Dashboard
+
+   - Backend:
+     - Working on the implementation of Jwt authentication and authorization in the project
+
 
 # Installation :
   **Steps**
   - Frond-End :
     - dir : google_keep contains file for front-end.</br>
-    - use commands :</br>
+    - use commands:</br>
     - cd google_keep</br>
     - use npm i [ to install project packages ]</br>
   - Back-End :</br>
