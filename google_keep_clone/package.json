@@ -43,7 +43,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "reactuiclone-production.up.railway.app:8443",
+  "proxy": "reactuiclone-production.up.railway.app:443",
   "eslintConfig": {
     "extends": [
       "react-app",
