@@ -1483,3 +1483,6 @@ This generated password is for development use only. Your security configuration
 2023-10-22 01:29:35 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/home/viking/Code/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
 2023-10-22 01:29:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8443 (https) with context path ''
 2023-10-22 01:29:35 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 6.962 seconds (process running for 7.515)
+2023-10-22 01:56:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-10-22 01:56:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-10-22 01:56:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
