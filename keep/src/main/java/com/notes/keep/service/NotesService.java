@@ -116,7 +116,7 @@ public class NotesService {
 
 
     public List<Notes> findAllByUserUserId(UUID userId) {
-        List<Notes> notesList = notesRepository.findAllNotesByuserId(userId);
+        List<Notes> notesList = notesRepository.findAllNotesByUserId(userId);
         List<Notes> collected = new ArrayList<>();
 
         try {
