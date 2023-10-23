@@ -15,16 +15,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
-import { useTranslation } from 'react-i18next';
-import i18n from '../i18n/i18n';
 import getText from '../utils/TextUtils';
 
 
 
 export default function Note(props) {
-
-
-    const { t } = useTranslation();
 
     const [data, setData] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -289,7 +284,6 @@ export default function Note(props) {
                                 );
                             })}
                         </Grid>
-
                         <Box sx={{ color: 'red', position: 'fixed', bottom: '20px', right: '20px' }} >
                             <Fab aria-label="add" onClick={handleCreateNote}>
                                 <AddIcon />
@@ -320,7 +314,6 @@ export default function Note(props) {
                         </div>
                     </div>
                 )}
-
                 <NoteModal
                     selectedId={selectedNoteId}
                     isOpen={isModalOpen}

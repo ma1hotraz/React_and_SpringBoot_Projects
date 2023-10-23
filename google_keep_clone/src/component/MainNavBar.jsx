@@ -14,11 +14,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import TranslateButton from '../component/TranslateButton';
 
 const drawerWidth = 240;
 
 
-const navItems = [];
+const navItems = [<TranslateButton />];
 
 function DrawerAppBar(props) {
   const { window } = props;
