@@ -3,8 +3,9 @@ import { Button, Menu, MenuItem } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 import i18n from '../i18n/i18n';
+import { useTheme } from 'styled-components';
 
-export default function TranslateButton() {
+export default function TranslateButton(props) {
     const [locale, setLocale] = useState(i18n.language);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -27,8 +28,6 @@ export default function TranslateButton() {
         }
     }, []);
 
-    console.log(locale);
-
     return (
         <div>
             <Button
@@ -41,7 +40,7 @@ export default function TranslateButton() {
                 <FontAwesomeIcon
                     icon={faLanguage}
                     size='2x'
-                    color='white'
+                    color={props.buttonColor}
                 />
             </Button>
             <Menu

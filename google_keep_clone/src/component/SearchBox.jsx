@@ -4,6 +4,7 @@ import { Box, Container, Grid, Paper, TextField, Typography, InputAdornment } fr
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import notfound from '../images/notfound.gif';
+import { HashLoader } from 'react-spinners';
 
 export default function SearchBox(props) {
     const [inputText, setInputText] = useState('');
@@ -95,7 +96,9 @@ export default function SearchBox(props) {
                     />
                 </Container>
                 {isLoading ? (
-                    <div></div>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', padding: '20px 20px 0 20px' }}>
+                        <HashLoader color='#f6ed22' size={100} />
+                    </Box>
                 ) : data.length !== 0 ? (
                     <>
                         <Typography variant='h5' style={{ margin: '5px', color: `${props.buttonColor}` }}>Notes with title : {inputText}</Typography>
@@ -129,9 +132,9 @@ export default function SearchBox(props) {
                         </div>
                     </>
                 ) : (
-                    <div style={{ display: 'flex', flexDirection: 'column' ,justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         <img src={notfound} alt="no results" />
-                        <h4 style={{color: `${props.buttonColor}`, marginTop: '10px'}}>No Notes Found </h4>
+                        <h4 style={{ color: `${props.buttonColor}`, marginTop: '10px' }}>No Notes Found </h4>
                     </div>
                 )}
             </div>

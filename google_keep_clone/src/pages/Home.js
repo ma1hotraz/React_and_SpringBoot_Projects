@@ -54,13 +54,6 @@ export default function App() {
       const newThemeType = !prevThemeType;
       setCookie('keeper', newThemeType);
       setActive(!newThemeType);
-
-      // const message = `${prevThemeType ? 'Light' : 'Dark'} Theme changed successfully!`;
-      // toast.success(message, {
-      //   autoClose: 2000,
-      // });
-
-
       return newThemeType;
     });
   };

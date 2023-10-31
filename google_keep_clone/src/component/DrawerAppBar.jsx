@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faMoon, faSun, faTrash } from '@fortawesome/free-solid-svg-icons';
 import ProfileModal from './ProfileModal';
 import TranslateButton from './TranslateButton';
+import TrashModal from '../component/TrashModal';
 
 
 
@@ -33,8 +34,8 @@ function DrawerAppBar(props) {
 
   const navItems = [
     <FontAwesomeIcon icon={faList} size='2x' />,
-    <FontAwesomeIcon icon={faTrash} size='2x' />,
-    <TranslateButton />,
+    <TrashModal />,
+    <TranslateButton buttonColor={props.buttonColor}/>,
     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <FontAwesomeIcon key="sun" style={{ marginRight: '20px', marginLeft: '10px' }} icon={faSun} size='2x' />
       <ToggleSlider key="slider" onToggle={props.toggleMode} active={!props.active} />

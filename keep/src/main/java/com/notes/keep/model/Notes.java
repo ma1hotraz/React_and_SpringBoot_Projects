@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.Data;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.sql.Date;
 import java.util.UUID;
@@ -33,6 +34,7 @@ public class Notes {
     private String description;
 
     private boolean completed;
+    private boolean deleted = false;
     private Date date;
     private String color;
 

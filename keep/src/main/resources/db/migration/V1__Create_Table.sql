@@ -29,3 +29,9 @@ CREATE TABLE IF NOT EXISTS notes (
     FOREIGN KEY (userId) REFERENCES User(userId)
 );
 
+CREATE TABLE IF NOT EXISTS trash (
+    noteId BINARY(16) NOT NULL PRIMARY KEY,
+    deleted BOOLEAN,
+    deletedOn DATE
+);
+

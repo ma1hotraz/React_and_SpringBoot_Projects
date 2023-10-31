@@ -64,7 +64,7 @@ const Dashboard = () => {
                 <Typography variant='h4' sx={{padding: '20px'}}>Menu</Typography>
                 <List>
                     {/* SIDEMENU */}
-                    <ListItem button onClick={() => setSidebarOpen(false)}>
+                    <ListItem onClick={() => setSidebarOpen(false)}>
                         <Button variant='contained' onClick={onUsersClick}>
                             <FontAwesomeIcon icon={faUser} />
                             <div style={{ width: '20px' }}></div>
