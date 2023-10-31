@@ -27,6 +27,8 @@ export default function TranslateButton() {
         }
     }, []);
 
+    console.log(locale);
+
     return (
         <div>
             <Button

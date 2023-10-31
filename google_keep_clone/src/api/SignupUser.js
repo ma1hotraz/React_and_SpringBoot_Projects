@@ -21,6 +21,8 @@ export const Signup = async (UserInfo) => {
          body: JSON.stringify(signUpObj),
       });
 
+      console.log(response);
+
 
       if (response.status === 500) {
          toast.warn('Server Error !', {

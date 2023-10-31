@@ -8,7 +8,6 @@ import {
     Grid,
     Box,
     Button,
-    Paper
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -106,7 +106,7 @@ export default function ProfileModal() {
     };
 
 
-    const fadeDuration = ' 2.0s';
+    const fadeDuration = '1.0s';
 
     return (
         <Box>
@@ -146,19 +146,20 @@ export default function ProfileModal() {
                                         ref={fileInputRef}
                                         style={{ display: 'none' }}
                                         onChange={handleFileChange}
+                                        onClick={toggleImageVisibility}
                                     />
                                     <FontAwesomeIcon icon={faCamera} />
                                 </Box>
                             ) : (
 
-                                    (file === undefined || file === null || !source) ? (
+                                (file === undefined || file === null || !source) ? (
                                     <Avatar sx={{ transition: `opacity ${fadeDuration}`, opacity: isImageVisible ? 1 : 0, }}>
                                         {name.charAt(0)}
                                     </Avatar>
-                                    ) : (<>
-                               <Avatar sx={{height:"108px",width:"108px"}}><ImageDisplay /></Avatar> 
-                                    </> )
-                                )}
+                                ) : (<>
+                                    <Avatar sx={{ height: "108px", width: "108px" }}><ImageDisplay /></Avatar>
+                                </>)
+                            )}
                         </Avatar>
                     </Box>
                     <Box sx={{ margin: '20px 0 20px 0' }}>

@@ -9,8 +9,6 @@ export default function ErroPage() {
       <h2>Something Went Wrong, Please Refresh Page or Try Again After Sometimes.</h2>
       <a href="/signin" className="link_404" style={{ textDecoration: 'none' }}>Go to Home</a>
     </div>
-
-
   )
 }
 

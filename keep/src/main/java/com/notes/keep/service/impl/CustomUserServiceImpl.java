@@ -8,6 +8,8 @@ import com.notes.keep.service.CustomUserService;
 import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.ImageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -83,6 +85,14 @@ public class CustomUserServiceImpl implements CustomUserService {
     @Override
     public boolean checkEmail(String email) {
         return userRepository.existsByEmail(email);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        if(!checkEmail(email)){
+            return null;
+        }
+        return userRepository.findByEmail(email);
     }
 
     //METHODS NEEDS TO IMPLEMENT

@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import java.util.List;
 import java.util.UUID;
 
-public interface CustomUserService {
+public interface CustomUserService extends UserDetailsService{
 
     public UserDTO createUser(User user);
 
