@@ -91,8 +91,10 @@
 
   **Feature**
    
-   - Multi Language Support
+   - Multi-Language Support
      - added 2-3 languages
+   - Added Trash can
+     - for deletion and retrieval of notes.
 
 <hr>
 
