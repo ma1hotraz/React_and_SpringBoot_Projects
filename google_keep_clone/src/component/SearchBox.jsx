@@ -53,7 +53,7 @@ export default function SearchBox(props) {
     }, [userId]);
 
     const handleClick = (itemId) => {
-        console.log(itemId);
+         // console.log(itemId);
         props.onItemClick(itemId);
     };
 

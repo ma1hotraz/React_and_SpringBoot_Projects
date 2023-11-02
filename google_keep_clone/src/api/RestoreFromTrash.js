@@ -1,24 +1,24 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-export const getDeletedNotes = async () => {
+export default RestoreFromTrash = async (noteId) => {
     const userData = sessionStorage.getItem('userData');
     const user = JSON.parse(userData);
     const id = user?.userId;
 
-    const url = `/notes/trash/userId/${id}`;
+    const url = `notes/trash/userId/${id}/restore/noteId/${noteId}`;
 
     try {
         const response = await fetch(url);
 
         if (!response.ok) {
             toast.warn('Server Error !', {
-                autoClose: 2000,
+                autoClose: 3000,
             });
             throw new Error('Network response was not ok');
         }
 
         if (response.status === 204) {
+            toast.warn('Create A Note', {
+                autoClose: 3000,
+            });
             return [];
         }
 
@@ -39,8 +39,3 @@ export const getDeletedNotes = async () => {
         throw error;
     }
 };
-
-
-// DeletedNotes.propTypes = {
-//     setData: PropTypes.func,
-// };

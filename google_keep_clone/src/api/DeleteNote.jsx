@@ -1,5 +1,3 @@
-
-
 export const deleteById = async (id) => {
     const url = `notes/delete/${id}`
  

@@ -14,7 +14,7 @@
 // );
 
 // // If you want to start measuring performance in your app, pass a function
-// // to log results (for example: reportWebVitals(console.log))
+// // to log results (for example: reportWebVitals( // console.log))
 // // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // // reportWebVitals();
 import React from 'react';
@@ -35,6 +35,7 @@ const theme = createTheme({
       textColor: '#FFFFFF',
       navMenuIconColor: '#000000',
       main: '#71797E',
+      modalBg: '#FFFFFF',
     },
     secondary: {
       navbar: '#202124',
@@ -42,6 +43,7 @@ const theme = createTheme({
       textColor: '#FFFFFF',
       navMenuIconColor: '#FFFFFF',
       main: '#202124',
+      modalBg: '#D5D5D5'
     }
   },
 });

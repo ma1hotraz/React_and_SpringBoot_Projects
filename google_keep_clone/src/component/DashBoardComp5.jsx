@@ -12,7 +12,7 @@ export default function DashBoardComp5() {
             try {
                 const data = await getAllUsers();
                 setAllUsers(data);
-                console.log(data);
+                 // console.log(data);
             } catch (error) {
                 console.error('Error fetching total user size:', error);
             }

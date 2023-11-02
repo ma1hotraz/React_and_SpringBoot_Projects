@@ -1,6 +1,7 @@
 package com.notes.keep.controller;
 
 import com.notes.keep.model.Notes;
+import com.notes.keep.model.Trash;
 import com.notes.keep.service.NotesService;
 import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,9 @@ public class NotesController {
         System.out.println(note);
         Notes notes = null;
         try {
-           notes = notesService.createNote(note);
-        }catch (Exception e){
-            return ResponseEntity.status(500).header("msg","USER NOT FOUND").build();
+            notes = notesService.createNote(note);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).header("msg", "USER NOT FOUND").build();
         }
         if (notes == null) {
             return ResponseEntity.status(200).header("msg", "FIELDS ARE EMPTY").build();
@@ -99,6 +100,34 @@ public class NotesController {
         }
         //TODO use model mapping to map Notes -> NotesDTO
         return ResponseEntity.ok(notesList);
+    }
+
+    @GetMapping("/trash/userId/{id}")
+    public ResponseEntity<?> getTrashByUserId(@PathVariable UUID id) {
+
+        List<Trash> notesList = notesService.findAllTrashByUserUserId(id);
+        if (notesList.isEmpty()) {
+            return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
+        }
+        System.out.println(notesList);
+        return ResponseEntity.ok(notesList);
+    }
+
+    @DeleteMapping("/trash/userId/{userId}/delete/noteId/{noteId}")
+    public ResponseEntity<?> deleteNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId) {
+
+        Boolean deleted = notesService.deleteFromTrash(userId, noteId);
+        if(!deleted){
+            return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
+        }
+        return ResponseEntity.ok("DELETED SUCCESSFULLY");
+    }
+
+    @GetMapping("/trash/userId/{userId}/restore/noteId/{noteId}")
+    public ResponseEntity<?> restoreNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId) {
+
+        System.out.println("restored note from trash called");
+        return ResponseEntity.ok().build();
     }
 
 

@@ -25,6 +25,8 @@ export default function App() {
   const secondaryTextColor = theme.palette.secondary.textColor;
   const primarynavMenuIconColor = theme.palette.primary.navMenuIconColor;
   const secondarynavMenuIconColor = theme.palette.secondary.navMenuIconColor;
+  const primaryModalBg = theme.palette.primary.modalBg;
+  const secondaryModalBg = theme.palette.secondary.modalBg;
 
   const primaryButtonColor = theme.palette.primary.navMenuIconColor;
   const secondaryButtonColor = theme.palette.secondary.navMenuIconColor;
@@ -35,6 +37,7 @@ export default function App() {
   const backgroundColor = themeType ? secondaryBackgroundColor : primaryBackgroundColor;
   const navMenuIconColor = themeType ? secondarynavMenuIconColor : primarynavMenuIconColor;
   const buttonColor = themeType ? secondaryButtonColor : primaryButtonColor;
+  const modalBg = themeType ? secondaryModalBg : primaryModalBg;
 
 
   useEffect(() => {
@@ -64,7 +67,7 @@ export default function App() {
 
   return (
     <div style={{ backgroundColor: `${backgroundColor}`, minHeight: '100vh' }}>
-      <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} />
+      <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg}/>
       <LanguageSelector />
       <Box sx={{ padding: '15px' }}>
         <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} />

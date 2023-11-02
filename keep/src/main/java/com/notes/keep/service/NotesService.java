@@ -1,8 +1,10 @@
 package com.notes.keep.service;
 
 import com.notes.keep.model.Notes;
+import com.notes.keep.model.Trash;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.NotesRepository;
+import com.notes.keep.repository.TrashRepository;
 import com.notes.keep.repository.UserRepository;
 import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.Loggers;
@@ -11,12 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.stream.Collectors;
-import java.util.Optional;
-import java.util.Date;
-import java.util.UUID;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.stream.Stream;
 
 @Service
 public class NotesService {
@@ -27,6 +26,9 @@ public class NotesService {
     private UserRepository userRepository;
     @Autowired
     private EncryptionUtil encryptionUtil;
+
+    @Autowired
+    private TrashRepository trashRepository;
 
     @Autowired
     public NotesService(NotesRepository notesRepository) {
@@ -103,6 +105,22 @@ public class NotesService {
     }
 
     public void deleteById(UUID id) {
+        Notes note = notesRepository.findByNoteId(id);
+        note.setDeleted(true);
+
+        Trash deletedNote =
+                Trash.builder()
+                        .noteId(note.getNoteId())
+                        .title(note.getTitle())
+                        .description(note.getDescription())
+                        .completed(note.isCompleted())
+                        .deleted(note.isDeleted())
+                        .date(note.getDate())
+                        .color(note.getColor())
+                        .user(note.getUser())
+                        .build();
+
+        trashRepository.save(deletedNote);
         notesRepository.deleteById(id);
     }
 
@@ -132,5 +150,31 @@ public class NotesService {
         }
 
         return collected;
+    }
+
+    public List<Trash> findAllTrashByUserUserId(UUID userId) {
+        List<Trash> notesList = trashRepository.findAllNotesByUserId(userId);
+        List<Trash> collected;
+
+        System.out.println(notesList);
+
+        try {
+            collected = new ArrayList<>(notesList);
+
+        } catch (NullPointerException e) {
+            throw new NullPointerException("LIST IS EMPTY");
+        }
+
+        return collected;
+    }
+
+    public Boolean deleteFromTrash(UUID userId, UUID noteId) {
+       try {
+           trashRepository.deleteById(noteId);
+       }catch (Exception e){
+           e.printStackTrace();
+           return false;
+       }
+        return true;
     }
 }

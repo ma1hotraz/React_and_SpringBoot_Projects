@@ -18,7 +18,7 @@ export const getTotalUserSize = async () => {
             throw new Error('Response is not valid JSON');
         }
     } catch (e) {
-        console.log('Error', e);
+         // console.log('Error', e);
     }
 }
 
@@ -41,7 +41,7 @@ export const getDBSize = async () => {
             throw new Error('Response is not valid JSON');
         }
     } catch (e) {
-        console.log('Error', e);
+         // console.log('Error', e);
     }
 }
 
@@ -63,7 +63,7 @@ export const getAllUsers = async () => {
             throw new Error('Response is not valid JSON');
         }
     } catch (e) {
-        console.log('Error', e);
+         // console.log('Error', e);
     }
 }
 

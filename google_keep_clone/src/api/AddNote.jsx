@@ -4,7 +4,7 @@ import '../css/NoData.css';
 
 export const addNote = async (noteData) => {
 
-    console.log(noteData);
+     // console.log(noteData);
 
     const url = 'notes/add';
 

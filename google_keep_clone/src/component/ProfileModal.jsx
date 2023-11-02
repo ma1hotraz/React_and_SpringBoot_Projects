@@ -18,7 +18,7 @@ export default function ProfileModal() {
                 const dataS = sessionStorage.getItem('userData');
                 const imageData = JSON.parse(dataS);
 
-                console.log("THIS IS DATA", imageData);
+                 // console.log("THIS IS DATA", imageData);
 
                 if (!imageData || !imageData.image) {
                     console.error('Image data not found in sessionStorage');
@@ -88,7 +88,7 @@ export default function ProfileModal() {
 
         try {
             const response = await updateData(User);
-            console.log(response);
+             // console.log(response);
 
             updateProfileImage(response.data);
         } catch (error) {

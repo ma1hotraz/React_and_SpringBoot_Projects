@@ -27,19 +27,19 @@ const Dashboard = () => {
     };
 
     const onUsersClick = () => {
-        console.log('Users ');
+         // console.log('Users ');
     }
 
     const onStats = () => {
-        console.log('Stats ');
+         // console.log('Stats ');
     }
 
     const onDBStorage = () => {
-        console.log('DB Storage ');
+         // console.log('DB Storage ');
     }
 
     const onNewUser = () => {
-        console.log('On New User ');
+         // console.log('On New User ');
     }
 
     return (

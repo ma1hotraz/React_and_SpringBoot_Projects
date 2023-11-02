@@ -34,8 +34,8 @@ function DrawerAppBar(props) {
 
   const navItems = [
     <FontAwesomeIcon icon={faList} size='2x' />,
-    <TrashModal />,
-    <TranslateButton buttonColor={props.buttonColor}/>,
+    <TrashModal modalBg={props.modalBg}/>,
+    <TranslateButton/>,
     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <FontAwesomeIcon key="sun" style={{ marginRight: '20px', marginLeft: '10px' }} icon={faSun} size='2x' />
       <ToggleSlider key="slider" onToggle={props.toggleMode} active={!props.active} />

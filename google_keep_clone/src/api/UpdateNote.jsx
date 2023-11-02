@@ -50,7 +50,7 @@ const UpdateNote = (props) => {
         fetchData();
     }, [props.id]);
 
-    console.log(noteData1);
+     // console.log(noteData1);
 
     return noteData1 || {};
 };

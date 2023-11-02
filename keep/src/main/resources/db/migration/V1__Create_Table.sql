@@ -18,20 +18,27 @@ CREATE TABLE IF NOT EXISTS User (
     CONSTRAINT CK_Roles CHECK (roles IN ('ADMIN', 'USER'))
 );
 
-CREATE TABLE IF NOT EXISTS notes (
+CREATE TABLE IF NOT EXISTS Notes (
     noteId BINARY(16) NOT NULL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
     completed BOOLEAN,
+    deleted BOOLEAN,
     date DATE,
     color VARCHAR(255),
     userId BINARY(16),
     FOREIGN KEY (userId) REFERENCES User(userId)
 );
 
-CREATE TABLE IF NOT EXISTS trash (
+CREATE TABLE IF NOT EXISTS Trash (
     noteId BINARY(16) NOT NULL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    completed BOOLEAN,
     deleted BOOLEAN,
-    deletedOn DATE
+    date DATE,
+    color VARCHAR(255),
+    userId BINARY(16),
+    FOREIGN KEY (userId) REFERENCES User(userId)
 );
 
