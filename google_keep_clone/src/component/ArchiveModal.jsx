@@ -1,12 +1,10 @@
 import { Modal, Box, Paper, Typography, Grid, Dialog, Button, DialogActions, DialogContentText, DialogContent, DialogTitle } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { HashLoader } from 'react-spinners';
-import { getDeletedNotes } from '../api/DeletedNotes';
-import { deleteFromTrash } from '../api/RemoveFromTrash';
-import { toast } from 'react-toastify';
-import { restoredFromTrash } from '../api/RestoreFromTrash';
+import { faInbox } from '@fortawesome/free-solid-svg-icons';
+import { archivedList } from '../api/ArchivedNotes';
+
 
 export default function TrashModal(props) {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -46,20 +44,7 @@ export default function TrashModal(props) {
         setDialogOpen(false);
     }
 
-    const onClose = async () => {
-        // const userData = sessionStorage.getItem('userData');
-        // const user = JSON.parse(userData);
-        // const id = user?.userId;
-        // try {
-        //     setLoading(true);
-        //     await getData(id);
-        // } catch (error) {
-        //     toast.warn('Server Error!', {
-        //         autoClose: 2000,
-        //     });
-        // } finally {
-        //     setLoading(false);
-        // }
+    const onClose = () => {
         setModalOpen(false);
     }
 
@@ -68,45 +53,15 @@ export default function TrashModal(props) {
         setNoteDeleted(true);
     }
 
-    const handleDelete = async () => {
-        try {
-            setLoading(true);
-            await deleteFromTrash(noteId);
-            getList();
-        } catch (error) {
-            toast.warn('Server Error!', {
-                autoClose: 2000,
-            });
-        } finally {
-            setLoading(false);
-        }
-        setDialogOpen(false);
-    }
-
-    const handleRestore = async () => {
-        try {
-            setLoading(true);
-            await restoredFromTrash(noteId);
-            getList();
-        } catch (error) {
-            toast.warn('Server Error!', {
-                autoClose: 2000,
-            });
-        } finally {
-            setLoading(false);
-        }
-        setDialogOpen(false);
-    }
-
-
-    const getList = async () => {
-        const noteList = await getDeletedNotes();
+    const getData = async () => {
+        const noteList = await archivedList();
         setData(noteList);
+        console.log(noteList);
         setNoteDeleted(false);
     }
 
     useEffect(() => {
-        getList();
+        getData();
     }, [noteDeleted, noteId]);
 
     const handleClick = (noteId) => {
@@ -116,10 +71,10 @@ export default function TrashModal(props) {
 
     return (
         <div>
-            <FontAwesomeIcon icon={faTrash} size='2x' onClick={onOpen} />
+            <FontAwesomeIcon icon={faInbox} size='2x' onClick={onOpen} />
             <Modal open={isModalOpen} onClose={onClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Box style={style}>
-                    <h1 style={{ textAlign: 'center' }}>Trash</h1>
+                    <h1 style={{ textAlign: 'center' }}>Archive</h1>
                     {data.length !== 0 ? (
                         <>
                             {isLoading === true ? <Box sx={{
@@ -177,20 +132,19 @@ export default function TrashModal(props) {
             <Dialog open={isDialogOpen} onClose={handleClose}>
                 <DialogTitle id="responsive-dialog-title">
                     <Typography variant='h5' textAlign={'center'}>
-                        Attention !!!
+                        Attention !!! "Cannot Edit Archived Notes"
                     </Typography>
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Notes will automatically be deleted after 30 days.
+                        <Typography variant='p' align='center'>
+                            Restore Note to Notes Page to Edit
+                        </Typography>
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions sx={{ padding: '20px' }}>
-                    <Button onClick={handleRestore} variant='contained' color='primary'>
+                    <Button variant='contained' color='primary'>
                         Restore
-                    </Button>
-                    <Button onClick={handleDelete} variant='contained' color='error'>
-                        Delete
                     </Button>
                 </DialogActions>
             </Dialog>

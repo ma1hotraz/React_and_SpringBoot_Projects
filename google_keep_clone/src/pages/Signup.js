@@ -123,7 +123,7 @@ export default function SignIn() {
                 label="Last Name"
                 name="lastname"
                 autoComplete="lastname"
-                autoFocus
+                
               />
               <TextField
                 margin="normal"
@@ -133,7 +133,7 @@ export default function SignIn() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                autoFocus
+                
               />
               <TextField
                 margin="normal"

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NoteData, { getData } from '../api/NoteData';
-import { Grid, Paper, Typography, Box, Fab } from '@mui/material';
+import { Grid, Paper, Typography, Box, Fab, IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { getById } from '../api/EditNote';
 import { getRandomColor } from '../utils/ColorList';
@@ -16,6 +16,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
 import getText from '../utils/TextUtils';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { archivedTo } from '../api/ArchiveNote';
 
 
 
@@ -30,6 +32,8 @@ export default function Note(props) {
     const [selectedNoteId, setSelectedNoteId] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
+    // const [archiveButton, setArchiveButton] = useState('green');
+    // const [archiveButtonHovered, setArchiveButtonHovered] = useState(false);
 
 
     const handleCreateNote = () => {
@@ -234,6 +238,7 @@ export default function Note(props) {
     const handleClick = (itemId) => {
         setSelectedNoteId(itemId);
         setModalMode('edit');
+        console.log("object1")
         setIsModalOpen(true);
     };
 
@@ -247,6 +252,11 @@ export default function Note(props) {
         setIsSearchBoxVisible(!isSearchBoxVisible);
     };
 
+    const handleArchive = (noteId) => {
+        console.log('clicked archived noteID ', noteId, "-----", );
+        archivedTo(noteId);
+    }
+
     return (
         <Box>
             <Box>
@@ -258,18 +268,28 @@ export default function Note(props) {
                 {data.length !== 0 ? (
                     <Box sx={{ marginTop: '100px', width: '100%', height: '100%' }}>
                         <Grid container>
+
                             {data.map((item) => {
                                 return (
-                                    <Grid display={"flex"} justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
+                                    <Grid display={"flex"}
+                                        justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
                                         <Box sx={{ height: '200px', width: '300px', marginTop: '20px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
                                             <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} >
-                                                <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
+                                                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                    <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
+                                                    <Box onClick={() => {
+                                                        handleClick(item.noteId);
+                                                    }}>
+                                                        <IconButton onClick={e => e.stopPropagation()}>
+                                                            <AddCircleIcon className="hover-effect" onClick={() => handleArchive(item.noteId)} />
+                                                        </IconButton>
+                                                    </Box>
+                                                </Box>
                                                 <Typography variant="h6" style={{
                                                     whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
                                                     WebkitBoxOrient: 'vertical',
                                                     maxHeight: '3.6em',
                                                 }}>{item.description}</Typography>
-
                                                 <div style={{ height: '10px' }}></div>
                                                 <Typography variant="body2" color={'gray'} style={{
                                                     position: 'absolute',
@@ -278,8 +298,8 @@ export default function Note(props) {
                                                 }}>
                                                     {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
                                                 </Typography>
-
                                             </Paper>
+
                                         </Box>
                                     </Grid>
                                 );

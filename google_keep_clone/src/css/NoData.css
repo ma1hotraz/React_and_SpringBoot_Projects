@@ -68,3 +68,14 @@ body {
         color: #444;
     }
 }
+
+/* Hovering effect for + sign */
+
+.hover-effect:hover {
+    color: lightgreen; 
+
+  }
+  .hover-effect{
+    color: green;
+    cursor: pointer;
+  }

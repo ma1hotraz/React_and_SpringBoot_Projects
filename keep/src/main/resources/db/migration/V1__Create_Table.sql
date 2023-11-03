@@ -42,3 +42,14 @@ CREATE TABLE IF NOT EXISTS Trash (
     FOREIGN KEY (userId) REFERENCES User(userId)
 );
 
+CREATE TABLE IF NOT EXISTS Archived (
+    noteId BINARY(16) NOT NULL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    completed BOOLEAN,
+    archived BOOLEAN,
+    date DATE,
+    color VARCHAR(255),
+    userId BINARY(16),
+    FOREIGN KEY (userId) REFERENCES User(userId)
+);

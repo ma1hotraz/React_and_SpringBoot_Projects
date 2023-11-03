@@ -1,5 +1,6 @@
 package com.notes.keep.controller;
 
+import com.notes.keep.model.Archived;
 import com.notes.keep.model.Notes;
 import com.notes.keep.model.Trash;
 import com.notes.keep.service.NotesService;
@@ -105,7 +106,7 @@ public class NotesController {
     @GetMapping("/trash/userId/{id}")
     public ResponseEntity<?> getTrashByUserId(@PathVariable UUID id) {
 
-        List<Trash> notesList = notesService.findAllTrashByUserUserId(id);
+        List<Trash> notesList = notesService.findAllTrashByUserId(id);
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
         }
@@ -125,10 +126,39 @@ public class NotesController {
 
     @DeleteMapping("/trash/userId/{userId}/restore/noteId/{noteId}")
     public ResponseEntity<?> restoreNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId) {
-
-        System.out.println("CALLED");
         Boolean restored = notesService.restoredFromTrash(userId,noteId);
-        return ResponseEntity.ok().build();
+        if(!restored){
+            return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
+        }
+        return ResponseEntity.ok().body("RESTORED SUCCESSFULLY");
+    }
+
+
+    @GetMapping("/archive/userId/{id}")
+    public ResponseEntity<?> getArchiveByUserId(@PathVariable UUID id) {
+
+        List<Archived> notesList = notesService.findAllArchiveByUserId(id);
+        if (notesList.isEmpty()) {
+            return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
+        }
+        return ResponseEntity.ok(notesList);
+    }
+
+
+    @GetMapping("/archive/userId/{userId}/addArchive/noteId/{noteId}")
+    public ResponseEntity<?> archiveNote(@PathVariable UUID userId, @PathVariable UUID noteId){
+        System.out.println(userId);
+        System.out.println(noteId);
+        boolean archived = notesService.addToArchive(userId,noteId);
+        if(!archived){
+            return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
+        }
+        return ResponseEntity.status(200).body("MOVED TO ARCHIVE");
+    }
+
+    @GetMapping("/archive/userId/{userId}/removeArchive/noteId/{noteId}")
+    public ResponseEntity<?> deArchiveNote(@PathVariable UUID userId, @PathVariable UUID noteId){
+        return ResponseEntity.status(200).body("MOVED TO ARCHIVE");
     }
 
 
