@@ -1,8 +1,8 @@
 {
-    "short_name": "React App",
-    "name": "Create React App Sample",
+    "short_name": "Keeper App",
+    "name": "Custom Note App",
     "icons": [
-      
+         
     ],
     "start_url": ".",
     "display": "standalone",
