@@ -95,6 +95,8 @@
      - added 2-3 languages
    - Added Trash can
      - for deletion and retrieval of notes.
+   - Added Archive
+     - for archive notes.
 
 <hr>
 
