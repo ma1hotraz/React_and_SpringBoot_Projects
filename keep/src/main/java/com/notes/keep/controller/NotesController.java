@@ -123,10 +123,11 @@ public class NotesController {
         return ResponseEntity.ok("DELETED SUCCESSFULLY");
     }
 
-    @GetMapping("/trash/userId/{userId}/restore/noteId/{noteId}")
+    @DeleteMapping("/trash/userId/{userId}/restore/noteId/{noteId}")
     public ResponseEntity<?> restoreNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId) {
 
-        System.out.println("restored note from trash called");
+        System.out.println("CALLED");
+        Boolean restored = notesService.restoredFromTrash(userId,noteId);
         return ResponseEntity.ok().build();
     }
 

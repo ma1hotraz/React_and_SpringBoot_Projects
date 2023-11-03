@@ -4,10 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.Data;
+import lombok.*;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import java.sql.Date;
@@ -18,6 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @JsonSerialize(using = CustomNotesSerializer.class)
 @ToString
+@Builder
 @Data
 @Entity
 public class Notes {

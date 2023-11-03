@@ -11,3 +11,1472 @@
 2023-11-03 11:18:54 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 39c92861-fab9-47d0-96c9-a9b6dc361c8a REQUESTED
 2023-11-03 11:18:54 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 39c92861-fab9-47d0-96c9-a9b6dc361c8a DELETED
 2023-11-03 11:18:55 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 39c92861-fab9-47d0-96c9-a9b6dc361c8a REQUESTED
+2023-11-03 11:23:29 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:23:29 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:23:32 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:23:32 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:23:34 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:23:34 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:23:36 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:23:36 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:23:37 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 95b80e97-2e38-455b-afb4-420323bfb0ad REQUESTED
+2023-11-03 11:23:38 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 95b80e97-2e38-455b-afb4-420323bfb0ad REQUESTED
+2023-11-03 11:23:38 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 95b80e97-2e38-455b-afb4-420323bfb0ad REQUESTED
+2023-11-03 11:23:40 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID b51f1406-1713-4eb7-9fdb-facec88f2906 REQUESTED
+2023-11-03 11:23:40 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID b51f1406-1713-4eb7-9fdb-facec88f2906 REQUESTED
+2023-11-03 11:23:41 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID b51f1406-1713-4eb7-9fdb-facec88f2906 DELETED
+2023-11-03 11:23:42 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 95b80e97-2e38-455b-afb4-420323bfb0ad REQUESTED
+2023-11-03 11:23:42 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 95b80e97-2e38-455b-afb4-420323bfb0ad REQUESTED
+2023-11-03 11:23:43 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 95b80e97-2e38-455b-afb4-420323bfb0ad REQUESTED
+2023-11-03 11:23:43 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 95b80e97-2e38-455b-afb4-420323bfb0ad DELETED
+2023-11-03 11:25:32 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 6a5e761a-8a34-416e-9559-24cc56ca9dd0 REQUESTED
+2023-11-03 11:25:33 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 6a5e761a-8a34-416e-9559-24cc56ca9dd0 REQUESTED
+2023-11-03 11:25:33 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 6a5e761a-8a34-416e-9559-24cc56ca9dd0 REQUESTED
+2023-11-03 11:25:34 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 6a5e761a-8a34-416e-9559-24cc56ca9dd0 DELETED
+2023-11-03 11:43:23 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:43:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 11:43:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 11:43:51 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 7204 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 11:43:51 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 11:43:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 11:43:53 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2023-11-03 11:43:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 11:43:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 11:43:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 11:43:54 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 11:43:54 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2965 ms
+2023-11-03 11:43:54 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 11:43:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e40fbb3
+2023-11-03 11:43:55 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 11:43:55 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 11:43:55 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 11:43:55 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 11:43:55 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 11:43:56 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.145s)
+2023-11-03 11:43:56 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 11:43:56 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 11:43:56 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 11:43:56 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 11:43:57 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 11:43:57 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 11:43:57 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:43:58 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 11:43:58 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6153aca1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@30b2d267, org.springframework.security.web.context.SecurityContextHolderFilter@61c98f5, org.springframework.security.web.header.HeaderWriterFilter@59cbeaee, org.springframework.security.web.authentication.logout.LogoutFilter@475753dd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4624e3d1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61d7df22, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a740449, org.springframework.security.web.session.SessionManagementFilter@437a4e61, org.springframework.security.web.access.ExceptionTranslationFilter@34a06981, org.springframework.security.web.access.intercept.AuthorizationFilter@5c21b22e]
+2023-11-03 11:43:59 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 11:43:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 11:43:59 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 9.156 seconds (process running for 12.57)
+2023-11-03 11:49:24 [https-jsse-nio-443-exec-9] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 11:49:24 [https-jsse-nio-443-exec-9] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 11:49:24 [https-jsse-nio-443-exec-9] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-11-03 11:49:36 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 320bdf54-1878-412b-b466-777a86e2150c REQUESTED
+2023-11-03 11:49:37 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 320bdf54-1878-412b-b466-777a86e2150c REQUESTED
+2023-11-03 11:49:37 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 320bdf54-1878-412b-b466-777a86e2150c DELETED
+2023-11-03 11:49:37 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 320bdf54-1878-412b-b466-777a86e2150c REQUESTED
+2023-11-03 11:52:47 [https-jsse-nio-443-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; UUID string too large]
+2023-11-03 11:53:06 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:53:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 11:53:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 11:53:09 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 2432 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 11:53:09 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 11:53:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 11:53:09 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 4 JPA repository interfaces.
+2023-11-03 11:53:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 11:53:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 11:53:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 11:53:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 11:53:10 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1555 ms
+2023-11-03 11:53:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 11:53:11 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1788cb61
+2023-11-03 11:53:11 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 11:53:11 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 11:53:11 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 11:53:11 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 11:53:11 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 11:53:11 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.072s)
+2023-11-03 11:53:11 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 11:53:11 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 11:53:11 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 11:53:11 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 11:53:11 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 11:53:12 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 11:53:12 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:53:13 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 11:53:14 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7f9b46ed, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d0b8b8b, org.springframework.security.web.context.SecurityContextHolderFilter@a23b96b, org.springframework.security.web.header.HeaderWriterFilter@7c1adb8a, org.springframework.security.web.authentication.logout.LogoutFilter@73cd3b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14acc33e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32dc895e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f18445b, org.springframework.security.web.session.SessionManagementFilter@2dacad1d, org.springframework.security.web.access.ExceptionTranslationFilter@19e03398, org.springframework.security.web.access.intercept.AuthorizationFilter@38614875]
+2023-11-03 11:53:15 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 11:53:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 11:53:15 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 6.742 seconds (process running for 7.841)
+2023-11-03 11:53:19 [https-jsse-nio-443-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 11:53:19 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 11:53:19 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 11:53:19 [https-jsse-nio-443-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; UUID string too large]
+2023-11-03 11:54:31 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:54:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 11:54:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 11:54:34 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 10716 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 11:54:34 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 11:54:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 11:54:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2023-11-03 11:54:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 11:54:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 11:54:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 11:54:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 11:54:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1455 ms
+2023-11-03 11:54:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 11:54:35 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59c43561
+2023-11-03 11:54:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 11:54:35 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 11:54:35 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 11:54:35 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 11:54:36 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 11:54:36 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.084s)
+2023-11-03 11:54:36 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 11:54:36 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 11:54:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 11:54:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 11:54:36 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 11:54:37 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 11:54:37 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:54:38 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 11:54:38 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58d635de, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@282d1023, org.springframework.security.web.context.SecurityContextHolderFilter@65630116, org.springframework.security.web.header.HeaderWriterFilter@53b81a55, org.springframework.security.web.authentication.logout.LogoutFilter@6f87bc6c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fee1e32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23657729, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d1b96b9, org.springframework.security.web.session.SessionManagementFilter@6afdb486, org.springframework.security.web.access.ExceptionTranslationFilter@1784d711, org.springframework.security.web.access.intercept.AuthorizationFilter@79a12552]
+2023-11-03 11:54:38 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 11:54:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 11:54:38 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 5.41 seconds (process running for 5.858)
+2023-11-03 11:54:44 [https-jsse-nio-443-exec-10] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 11:54:44 [https-jsse-nio-443-exec-10] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 11:54:44 [https-jsse-nio-443-exec-10] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 11:56:26 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:56:26 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:56:26 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 DELETED
+2023-11-03 11:56:26 [https-jsse-nio-443-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+jakarta.validation.ConstraintViolationException: Validation failed for classes [com.notes.keep.model.Trash] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:148)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:211)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:96)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:612)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:483)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:480)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:329)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:477)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2234)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1930)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:660)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:410)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy139.save(Unknown Source)
+	at com.notes.keep.service.NotesService.deleteById(NotesService.java:123)
+	at com.notes.keep.controller.NotesController.deleteById(NotesController.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-03 11:56:26 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:56:49 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:56:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 11:56:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 11:56:51 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 19104 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 11:56:51 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 11:56:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 11:56:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 4 JPA repository interfaces.
+2023-11-03 11:56:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 11:56:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 11:56:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 11:56:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 11:56:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1322 ms
+2023-11-03 11:56:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 11:56:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e6060f1
+2023-11-03 11:56:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 11:56:53 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 11:56:53 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 11:56:53 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 11:56:53 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 11:56:53 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.048s)
+2023-11-03 11:56:53 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 11:56:53 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 11:56:53 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 11:56:53 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 11:56:53 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 11:56:54 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 11:56:54 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:56:55 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 11:56:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@17a756db, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d10160a, org.springframework.security.web.context.SecurityContextHolderFilter@184e5c44, org.springframework.security.web.header.HeaderWriterFilter@5bbf8daa, org.springframework.security.web.authentication.logout.LogoutFilter@533165e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6153aca1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33ac7934, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@157ff8f8, org.springframework.security.web.session.SessionManagementFilter@7dbc77ca, org.springframework.security.web.access.ExceptionTranslationFilter@130a99fe, org.springframework.security.web.access.intercept.AuthorizationFilter@2e729fea]
+2023-11-03 11:56:55 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 11:56:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 11:56:55 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 4.841 seconds (process running for 5.54)
+2023-11-03 11:58:44 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:58:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 11:58:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 11:58:48 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 21440 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 11:58:48 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 11:58:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 11:58:49 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+2023-11-03 11:58:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 11:58:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 11:58:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 11:58:50 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 11:58:50 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1571 ms
+2023-11-03 11:58:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 11:58:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c0b51da
+2023-11-03 11:58:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 11:58:50 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 11:58:50 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 11:58:50 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 11:58:50 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 11:58:50 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.058s)
+2023-11-03 11:58:50 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 11:58:50 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 11:58:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 11:58:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 11:58:51 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 11:58:51 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 11:58:52 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 11:58:53 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 11:58:53 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c09d716, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@734eada1, org.springframework.security.web.context.SecurityContextHolderFilter@15a87fbb, org.springframework.security.web.header.HeaderWriterFilter@19e03398, org.springframework.security.web.authentication.logout.LogoutFilter@4a5e0faf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a23b96b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bc46dde, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f9b46ed, org.springframework.security.web.session.SessionManagementFilter@408708a1, org.springframework.security.web.access.ExceptionTranslationFilter@57e2d15c, org.springframework.security.web.access.intercept.AuthorizationFilter@1ce07709]
+2023-11-03 11:58:54 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 11:58:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 11:58:54 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 6.731 seconds (process running for 7.189)
+2023-11-03 11:58:59 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 11:58:59 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 11:58:59 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 11:59:00 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:59:01 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:59:01 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:59:02 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 DELETED
+2023-11-03 11:59:02 [https-jsse-nio-443-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+jakarta.validation.ConstraintViolationException: Validation failed for classes [com.notes.keep.model.Trash] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:148)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:211)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:96)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:612)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:483)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:480)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:329)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:477)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2234)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1930)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:660)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:410)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy139.save(Unknown Source)
+	at com.notes.keep.service.NotesService.deleteById(NotesService.java:123)
+	at com.notes.keep.controller.NotesController.deleteById(NotesController.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-03 11:59:03 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 DELETED
+2023-11-03 11:59:03 [https-jsse-nio-443-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+jakarta.validation.ConstraintViolationException: Validation failed for classes [com.notes.keep.model.Trash] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:148)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:211)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:96)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:612)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:483)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:480)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:329)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:477)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2234)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1930)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:660)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:410)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy139.save(Unknown Source)
+	at com.notes.keep.service.NotesService.deleteById(NotesService.java:123)
+	at com.notes.keep.controller.NotesController.deleteById(NotesController.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-03 11:59:22 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:59:22 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:59:25 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:59:25 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:59:27 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:59:27 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:59:32 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 11:59:32 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 11:59:34 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 83e3e1b7-fb97-4c78-a6b3-d5a2cb756b57 REQUESTED
+2023-11-03 11:59:35 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 83e3e1b7-fb97-4c78-a6b3-d5a2cb756b57 REQUESTED
+2023-11-03 11:59:35 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 83e3e1b7-fb97-4c78-a6b3-d5a2cb756b57 REQUESTED
+2023-11-03 11:59:35 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 83e3e1b7-fb97-4c78-a6b3-d5a2cb756b57 DELETED
+2023-11-03 11:59:43 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:59:43 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:59:44 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 11:59:44 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 DELETED
+2023-11-03 11:59:44 [https-jsse-nio-443-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+jakarta.validation.ConstraintViolationException: Validation failed for classes [com.notes.keep.model.Trash] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:148)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:211)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:96)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:612)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:483)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:480)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:329)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:477)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2234)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1930)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:660)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:410)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy139.save(Unknown Source)
+	at com.notes.keep.service.NotesService.deleteById(NotesService.java:123)
+	at com.notes.keep.controller.NotesController.deleteById(NotesController.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-03 12:00:53 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9fa79c99-f27d-4869-b3c3-8a68dda1dd2d REQUESTED
+2023-11-03 12:00:54 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9fa79c99-f27d-4869-b3c3-8a68dda1dd2d REQUESTED
+2023-11-03 12:00:54 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9fa79c99-f27d-4869-b3c3-8a68dda1dd2d REQUESTED
+2023-11-03 12:00:54 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9fa79c99-f27d-4869-b3c3-8a68dda1dd2d DELETED
+2023-11-03 12:00:56 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 921e4988-542a-4bea-9429-90554efd3c74 REQUESTED
+2023-11-03 12:00:56 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 921e4988-542a-4bea-9429-90554efd3c74 REQUESTED
+2023-11-03 12:00:56 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 921e4988-542a-4bea-9429-90554efd3c74 REQUESTED
+2023-11-03 12:00:57 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 921e4988-542a-4bea-9429-90554efd3c74 DELETED
+2023-11-03 12:02:04 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:02:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:02:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:02:07 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 21172 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:02:07 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:02:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:02:08 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:02:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:02:09 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:02:09 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:02:09 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:02:09 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1451 ms
+2023-11-03 12:02:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:02:09 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@585513a8
+2023-11-03 12:02:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:02:09 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:02:09 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:02:09 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:02:09 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:02:09 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.082s)
+2023-11-03 12:02:09 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:02:09 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:02:09 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:02:09 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:02:10 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:02:11 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:02:11 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:02:11 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:02:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d1b96b9, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@505bc480, org.springframework.security.web.context.SecurityContextHolderFilter@fee1e32, org.springframework.security.web.header.HeaderWriterFilter@c8e99, org.springframework.security.web.authentication.logout.LogoutFilter@47baf547, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50b1dfab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68c05c5b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@394a7390, org.springframework.security.web.session.SessionManagementFilter@598f6c93, org.springframework.security.web.access.ExceptionTranslationFilter@53b81a55, org.springframework.security.web.access.intercept.AuthorizationFilter@4e6c703a]
+2023-11-03 12:02:12 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:02:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:02:12 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 5.466 seconds (process running for 5.882)
+2023-11-03 12:02:30 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:02:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:02:30 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:02:34 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 21300 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:02:34 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:02:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:02:35 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:02:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:02:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:02:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:02:36 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:02:36 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1382 ms
+2023-11-03 12:02:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:02:36 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@585513a8
+2023-11-03 12:02:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:02:36 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:02:36 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:02:36 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:02:36 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:02:36 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.065s)
+2023-11-03 12:02:36 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:02:36 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:02:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:02:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:02:37 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:02:37 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:02:37 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:02:38 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:02:38 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58a93f51, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@56589f00, org.springframework.security.web.context.SecurityContextHolderFilter@23657729, org.springframework.security.web.header.HeaderWriterFilter@28d2afd8, org.springframework.security.web.authentication.logout.LogoutFilter@20711b02, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@68c05c5b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bbf8daa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ce4b0a8, org.springframework.security.web.session.SessionManagementFilter@2d2710a8, org.springframework.security.web.access.ExceptionTranslationFilter@722e1bff, org.springframework.security.web.access.intercept.AuthorizationFilter@505bc480]
+2023-11-03 12:02:38 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:02:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:02:39 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 4.926 seconds (process running for 5.326)
+2023-11-03 12:02:55 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:02:55 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:02:55 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-11-03 12:04:04 [https-jsse-nio-443-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2023-11-03 12:04:38 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:04:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:04:38 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:04:42 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 19800 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:04:42 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:04:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:04:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:04:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:04:43 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:04:43 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:04:43 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:04:43 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1331 ms
+2023-11-03 12:04:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:04:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ee5632d
+2023-11-03 12:04:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:04:44 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:04:44 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:04:44 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:04:44 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:04:44 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.024s)
+2023-11-03 12:04:44 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:04:44 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:04:44 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:04:44 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:04:44 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:04:45 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:04:45 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:04:46 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:04:46 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b33e616, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c1d9c40, org.springframework.security.web.context.SecurityContextHolderFilter@5dc90de7, org.springframework.security.web.header.HeaderWriterFilter@7dbc77ca, org.springframework.security.web.authentication.logout.LogoutFilter@17a756db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20711b02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5120886f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79e3f444, org.springframework.security.web.session.SessionManagementFilter@178f5b5b, org.springframework.security.web.access.ExceptionTranslationFilter@73ac7716, org.springframework.security.web.access.intercept.AuthorizationFilter@7d3b4646]
+2023-11-03 12:04:46 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:04:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:04:47 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 4.958 seconds (process running for 5.34)
+2023-11-03 12:04:52 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:04:52 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:04:52 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 12:05:41 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:05:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:05:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:05:45 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 15620 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:05:45 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:05:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:05:46 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:05:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:05:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:05:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:05:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:05:46 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1305 ms
+2023-11-03 12:05:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:05:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@585513a8
+2023-11-03 12:05:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:05:47 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:05:47 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:05:47 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:05:47 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:05:47 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.062s)
+2023-11-03 12:05:47 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:05:47 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:05:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:05:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:05:47 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:05:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:05:48 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:05:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:05:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42365c82, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46c47690, org.springframework.security.web.context.SecurityContextHolderFilter@282d1023, org.springframework.security.web.header.HeaderWriterFilter@33ac7934, org.springframework.security.web.authentication.logout.LogoutFilter@7d3b4646, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@505bc480, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56589f00, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5aa026e9, org.springframework.security.web.session.SessionManagementFilter@5120886f, org.springframework.security.web.access.ExceptionTranslationFilter@5a740449, org.springframework.security.web.access.intercept.AuthorizationFilter@1252d480]
+2023-11-03 12:05:49 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:05:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:05:49 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 4.876 seconds (process running for 5.266)
+2023-11-03 12:05:55 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:05:55 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:05:55 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 12:05:56 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID dbb614e8-eaf8-4613-b658-fdf3cf7f05b2 REQUESTED
+2023-11-03 12:05:57 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID dbb614e8-eaf8-4613-b658-fdf3cf7f05b2 REQUESTED
+2023-11-03 12:05:57 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID dbb614e8-eaf8-4613-b658-fdf3cf7f05b2 REQUESTED
+2023-11-03 12:05:58 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID dbb614e8-eaf8-4613-b658-fdf3cf7f05b2 DELETED
+2023-11-03 12:05:58 [https-jsse-nio-443-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+jakarta.validation.ConstraintViolationException: Validation failed for classes [com.notes.keep.model.Trash] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:148)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:211)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:96)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:612)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:483)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:480)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:329)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:477)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2234)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1930)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:660)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:410)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy139.save(Unknown Source)
+	at com.notes.keep.service.NotesService.deleteById(NotesService.java:123)
+	at com.notes.keep.controller.NotesController.deleteById(NotesController.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-03 12:05:59 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 12:06:00 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 REQUESTED
+2023-11-03 12:06:00 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 9e57cf16-7f41-47be-a566-ccf8dcaa14b1 DELETED
+2023-11-03 12:06:00 [https-jsse-nio-443-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+jakarta.validation.ConstraintViolationException: Validation failed for classes [com.notes.keep.model.Trash] during persist time for groups [jakarta.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be null', propertyPath=description, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotNull.message}'}
+	ConstraintViolationImpl{interpolatedMessage='must not be blank', propertyPath=title, rootBeanClass=class com.notes.keep.model.Trash, messageTemplate='{jakarta.validation.constraints.NotBlank.message}'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:148)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:211)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:96)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:612)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:483)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:480)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:329)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:477)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2234)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1930)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:660)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:410)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:244)
+	at jdk.proxy2/jdk.proxy2.$Proxy139.save(Unknown Source)
+	at com.notes.keep.service.NotesService.deleteById(NotesService.java:123)
+	at com.notes.keep.controller.NotesController.deleteById(NotesController.java:87)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-03 12:06:15 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:06:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:06:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:06:18 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 21628 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:06:18 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:06:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:06:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:06:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:06:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:06:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:06:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:06:20 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1613 ms
+2023-11-03 12:06:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:06:20 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c0b51da
+2023-11-03 12:06:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:06:20 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:06:20 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:06:20 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:06:20 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:06:20 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.027s)
+2023-11-03 12:06:20 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:06:20 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:06:20 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:06:20 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:06:21 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:06:21 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:06:21 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:06:23 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:06:23 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11e36e5c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2620264e, org.springframework.security.web.context.SecurityContextHolderFilter@38614875, org.springframework.security.web.header.HeaderWriterFilter@26f0ab88, org.springframework.security.web.authentication.logout.LogoutFilter@7200702, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@734eada1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69bdcfbc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@126ae0ca, org.springframework.security.web.session.SessionManagementFilter@75a6cdb, org.springframework.security.web.access.ExceptionTranslationFilter@1b48784a, org.springframework.security.web.access.intercept.AuthorizationFilter@36003e90]
+2023-11-03 12:06:24 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:06:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:06:24 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 6.603 seconds (process running for 7.223)
+2023-11-03 12:06:33 [https-jsse-nio-443-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:06:33 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:06:33 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 12:06:37 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:06:37 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 12:06:39 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:06:39 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 12:06:41 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 63ffd062-71a7-48db-ab7b-f5044f6c900a REQUESTED
+2023-11-03 12:06:42 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 63ffd062-71a7-48db-ab7b-f5044f6c900a REQUESTED
+2023-11-03 12:06:42 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 63ffd062-71a7-48db-ab7b-f5044f6c900a REQUESTED
+2023-11-03 12:06:43 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 63ffd062-71a7-48db-ab7b-f5044f6c900a DELETED
+2023-11-03 12:06:45 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a38f2ebc-90d3-4e6b-a43e-d7aae70870f2 REQUESTED
+2023-11-03 12:06:45 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a38f2ebc-90d3-4e6b-a43e-d7aae70870f2 REQUESTED
+2023-11-03 12:06:45 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a38f2ebc-90d3-4e6b-a43e-d7aae70870f2 DELETED
+2023-11-03 12:06:46 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID a38f2ebc-90d3-4e6b-a43e-d7aae70870f2 REQUESTED
+2023-11-03 12:08:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:08:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:08:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:10:58 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 21988 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:10:58 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:10:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:10:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:10:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:10:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:10:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:10:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:10:59 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1431 ms
+2023-11-03 12:10:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:10:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c0b51da
+2023-11-03 12:10:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:11:00 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:11:00 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:11:00 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:11:00 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:11:00 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.048s)
+2023-11-03 12:11:00 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:11:00 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:11:00 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:11:00 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:11:00 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:11:01 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:11:01 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:11:02 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:11:03 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11e36e5c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2620264e, org.springframework.security.web.context.SecurityContextHolderFilter@38614875, org.springframework.security.web.header.HeaderWriterFilter@26f0ab88, org.springframework.security.web.authentication.logout.LogoutFilter@7200702, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@734eada1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69bdcfbc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@126ae0ca, org.springframework.security.web.session.SessionManagementFilter@75a6cdb, org.springframework.security.web.access.ExceptionTranslationFilter@1b48784a, org.springframework.security.web.access.intercept.AuthorizationFilter@36003e90]
+2023-11-03 12:11:03 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:11:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:11:03 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 6.255 seconds (process running for 6.721)
+2023-11-03 12:11:09 [https-jsse-nio-443-exec-10] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:11:09 [https-jsse-nio-443-exec-10] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:11:09 [https-jsse-nio-443-exec-10] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-11-03 12:11:57 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:11:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:11:57 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:12:00 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 21572 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:12:00 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:12:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:12:01 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:12:02 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:12:02 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:12:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:12:02 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:12:02 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1550 ms
+2023-11-03 12:12:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:12:02 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34c7232c
+2023-11-03 12:12:02 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:12:03 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:12:03 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:12:03 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:12:03 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:12:03 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.027s)
+2023-11-03 12:12:03 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:12:03 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:12:03 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:12:03 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:12:03 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:12:04 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:12:04 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:12:05 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:12:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ce07709, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@637de489, org.springframework.security.web.context.SecurityContextHolderFilter@408708a1, org.springframework.security.web.header.HeaderWriterFilter@37227aa7, org.springframework.security.web.authentication.logout.LogoutFilter@6e49863e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2dacad1d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42af2977, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38614875, org.springframework.security.web.session.SessionManagementFilter@40b7e68c, org.springframework.security.web.access.ExceptionTranslationFilter@28df2da8, org.springframework.security.web.access.intercept.AuthorizationFilter@77f1026e]
+2023-11-03 12:12:06 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:12:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:12:06 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 6.385 seconds (process running for 6.858)
+2023-11-03 12:12:10 [https-jsse-nio-443-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:12:10 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:12:10 [https-jsse-nio-443-exec-6] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 12:12:16 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:12:16 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 12:12:19 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:12:19 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 12:12:21 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:12:21 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 12:12:22 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0aa1eeb7-e18b-4cd7-a5a1-af969c1af2b7 REQUESTED
+2023-11-03 12:12:23 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0aa1eeb7-e18b-4cd7-a5a1-af969c1af2b7 REQUESTED
+2023-11-03 12:12:23 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0aa1eeb7-e18b-4cd7-a5a1-af969c1af2b7 REQUESTED
+2023-11-03 12:12:23 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0aa1eeb7-e18b-4cd7-a5a1-af969c1af2b7 DELETED
+2023-11-03 12:13:35 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m188ms226µs600ns).
+2023-11-03 12:13:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:13:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:13:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:13:39 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 21536 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:13:39 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:13:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:13:39 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:13:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:13:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:13:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:13:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:13:40 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1517 ms
+2023-11-03 12:13:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:13:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c0b51da
+2023-11-03 12:13:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:13:41 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:13:41 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:13:41 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:13:41 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:13:41 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.060s)
+2023-11-03 12:13:41 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:13:41 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:13:41 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:13:41 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:13:41 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:13:42 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:13:42 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:13:43 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:13:44 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f18445b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69bdcfbc, org.springframework.security.web.context.SecurityContextHolderFilter@14acc33e, org.springframework.security.web.header.HeaderWriterFilter@6ad2cb6d, org.springframework.security.web.authentication.logout.LogoutFilter@5eb89000, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bc46dde, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d6cac57, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4cb45048, org.springframework.security.web.session.SessionManagementFilter@6d92bfaf, org.springframework.security.web.access.ExceptionTranslationFilter@7c1adb8a, org.springframework.security.web.access.intercept.AuthorizationFilter@734eada1]
+2023-11-03 12:13:44 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:13:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:13:44 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 6.237 seconds (process running for 6.741)
+2023-11-03 12:13:47 [https-jsse-nio-443-exec-10] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:13:47 [https-jsse-nio-443-exec-10] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:13:47 [https-jsse-nio-443-exec-10] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 12:13:52 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 3346350c-4c09-41aa-b130-77c101b17ba5 REQUESTED
+2023-11-03 12:13:53 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 3346350c-4c09-41aa-b130-77c101b17ba5 REQUESTED
+2023-11-03 12:13:53 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 3346350c-4c09-41aa-b130-77c101b17ba5 REQUESTED
+2023-11-03 12:13:53 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 3346350c-4c09-41aa-b130-77c101b17ba5 DELETED
+2023-11-03 12:14:27 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:14:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:14:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:14:29 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 11284 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:14:29 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:14:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:14:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:14:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:14:30 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:14:30 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:14:31 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:14:31 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2149 ms
+2023-11-03 12:14:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:14:31 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@36224f93
+2023-11-03 12:14:31 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:14:32 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:14:32 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:14:32 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:14:32 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:14:32 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.023s)
+2023-11-03 12:14:32 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: 1
+2023-11-03 12:14:32 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `notes_db` is up to date. No migration necessary.
+2023-11-03 12:14:32 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:14:32 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:14:32 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:14:33 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:14:33 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:14:33 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:14:34 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5dc90de7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3071d086, org.springframework.security.web.context.SecurityContextHolderFilter@77a35b2f, org.springframework.security.web.header.HeaderWriterFilter@6ea1fc9, org.springframework.security.web.authentication.logout.LogoutFilter@184e5c44, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d62bb8b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@321bf4b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20711b02, org.springframework.security.web.session.SessionManagementFilter@722e1bff, org.springframework.security.web.access.ExceptionTranslationFilter@53ccbc15, org.springframework.security.web.access.intercept.AuthorizationFilter@178f5b5b]
+2023-11-03 12:14:34 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:14:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:14:34 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 5.83 seconds (process running for 6.44)
+2023-11-03 12:14:36 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:14:36 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:14:36 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-11-03 12:14:41 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 7cff7eb1-8132-4a5b-bf80-a84a54730972 REQUESTED
+2023-11-03 12:14:42 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 7cff7eb1-8132-4a5b-bf80-a84a54730972 REQUESTED
+2023-11-03 12:14:42 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 7cff7eb1-8132-4a5b-bf80-a84a54730972 REQUESTED
+2023-11-03 12:14:43 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 7cff7eb1-8132-4a5b-bf80-a84a54730972 DELETED
+2023-11-03 12:14:45 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 48a09991-0cf3-424d-9687-55b80617fdb0 REQUESTED
+2023-11-03 12:14:45 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 48a09991-0cf3-424d-9687-55b80617fdb0 REQUESTED
+2023-11-03 12:14:45 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 48a09991-0cf3-424d-9687-55b80617fdb0 DELETED
+2023-11-03 12:14:46 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 48a09991-0cf3-424d-9687-55b80617fdb0 REQUESTED
+2023-11-03 12:14:46 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 17fa462b-d612-4c75-afea-a29b1fae9efc REQUESTED
+2023-11-03 12:14:47 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 17fa462b-d612-4c75-afea-a29b1fae9efc REQUESTED
+2023-11-03 12:14:47 [https-jsse-nio-443-exec-6] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 17fa462b-d612-4c75-afea-a29b1fae9efc REQUESTED
+2023-11-03 12:14:48 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 17fa462b-d612-4c75-afea-a29b1fae9efc DELETED
+2023-11-03 12:16:23 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:16:23 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdasd
+2023-11-03 12:16:25 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 40a557f0-07c5-480c-83f3-e93d74a22241 REQUESTED
+2023-11-03 12:16:25 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 40a557f0-07c5-480c-83f3-e93d74a22241 REQUESTED
+2023-11-03 12:16:26 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 40a557f0-07c5-480c-83f3-e93d74a22241 REQUESTED
+2023-11-03 12:16:26 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 40a557f0-07c5-480c-83f3-e93d74a22241 DELETED
+2023-11-03 12:16:41 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 731c6b50-5d67-436b-8702-44d94fe53655 REQUESTED
+2023-11-03 12:16:41 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 731c6b50-5d67-436b-8702-44d94fe53655 REQUESTED
+2023-11-03 12:16:41 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 731c6b50-5d67-436b-8702-44d94fe53655 REQUESTED
+2023-11-03 12:16:41 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 731c6b50-5d67-436b-8702-44d94fe53655 DELETED
+2023-11-03 12:16:43 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4a877311-638f-4c04-9d71-68498e535e11 REQUESTED
+2023-11-03 12:16:44 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4a877311-638f-4c04-9d71-68498e535e11 REQUESTED
+2023-11-03 12:16:44 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4a877311-638f-4c04-9d71-68498e535e11 REQUESTED
+2023-11-03 12:16:45 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4a877311-638f-4c04-9d71-68498e535e11 DELETED
+2023-11-03 12:16:47 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID fb4373f8-1ab9-4fa9-a7af-9f2d0ab18fd7 REQUESTED
+2023-11-03 12:16:48 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID fb4373f8-1ab9-4fa9-a7af-9f2d0ab18fd7 REQUESTED
+2023-11-03 12:16:48 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID fb4373f8-1ab9-4fa9-a7af-9f2d0ab18fd7 DELETED
+2023-11-03 12:16:48 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID fb4373f8-1ab9-4fa9-a7af-9f2d0ab18fd7 REQUESTED
+2023-11-03 12:16:50 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID ee4a6180-da3e-4e2a-a9ce-806beeef7266 REQUESTED
+2023-11-03 12:16:50 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID ee4a6180-da3e-4e2a-a9ce-806beeef7266 REQUESTED
+2023-11-03 12:16:50 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID ee4a6180-da3e-4e2a-a9ce-806beeef7266 DELETED
+2023-11-03 12:16:50 [https-jsse-nio-443-exec-10] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID ee4a6180-da3e-4e2a-a9ce-806beeef7266 REQUESTED
+2023-11-03 12:17:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:17:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2023-11-03 12:17:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2023-11-03 12:18:37 [main] INFO  com.notes.keep.KeepApplication - Starting KeepApplication using Java 17.0.8 with PID 12472 (C:\Users\sushant.raj\React_UI_Clone\keep\target\classes started by sushant.raj in C:\Users\sushant.raj\React_UI_Clone\keep)
+2023-11-03 12:18:37 [main] INFO  com.notes.keep.KeepApplication - No active profile set, falling back to 1 default profile: "default"
+2023-11-03 12:18:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 12:18:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70 ms. Found 4 JPA repository interfaces.
+2023-11-03 12:18:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 443 (https)
+2023-11-03 12:18:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2023-11-03 12:18:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.12]
+2023-11-03 12:18:38 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-11-03 12:18:38 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1336 ms
+2023-11-03 12:18:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2023-11-03 12:18:39 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59c43561
+2023-11-03 12:18:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2023-11-03 12:18:39 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2023-11-03 12:18:39 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2023-11-03 12:18:39 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2023-11-03 12:18:39 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3306/notes_db (MySQL 8.0)
+2023-11-03 12:18:39 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table `notes_db`.`flyway_schema_history` does not exist yet
+2023-11-03 12:18:39 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.022s)
+2023-11-03 12:18:39 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table `notes_db`.`flyway_schema_history` ...
+2023-11-03 12:18:41 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `notes_db`: << Empty Schema >>
+2023-11-03 12:18:41 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema `notes_db` to version "1 - Create Table"
+2023-11-03 12:18:45 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema `notes_db`, now at version v1 (execution time 00:03.858s)
+2023-11-03 12:18:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 12:18:45 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-11-03 12:18:45 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-11-03 12:18:46 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 12:18:46 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 12:18:47 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 12:18:47 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@77228160, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19faa9dc, org.springframework.security.web.context.SecurityContextHolderFilter@59e9ba7, org.springframework.security.web.header.HeaderWriterFilter@40b7e68c, org.springframework.security.web.authentication.logout.LogoutFilter@1ce07709, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@455591ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33a0b857, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@522fc988, org.springframework.security.web.session.SessionManagementFilter@7bc46dde, org.springframework.security.web.access.ExceptionTranslationFilter@2122b4bd, org.springframework.security.web.access.intercept.AuthorizationFilter@4cb45048]
+2023-11-03 12:18:48 [main] INFO  o.a.t.u.net.NioEndpoint.certificate - Connector [https-jsse-nio-443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [file:/C:/Users/sushant.raj/React_UI_Clone/keep/target/classes/local-ssl.p12] using alias [local-ssl] with trust store [null]
+2023-11-03 12:18:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 443 (https) with context path ''
+2023-11-03 12:18:48 [main] INFO  com.notes.keep.KeepApplication - Started KeepApplication in 11.123 seconds (process running for 11.679)
+2023-11-03 12:22:25 [https-jsse-nio-443-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-03 12:22:25 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-11-03 12:22:25 [https-jsse-nio-443-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-11-03 12:22:53 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - USER CREATED WITH EMAIL : asdas
+2023-11-03 12:23:01 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:23:01 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdas
+2023-11-03 12:23:05 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:23:05 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdas
+2023-11-03 12:23:15 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 74c9a36c-7c44-4300-92ba-dc51276d5955 REQUESTED
+2023-11-03 12:23:16 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 74c9a36c-7c44-4300-92ba-dc51276d5955 REQUESTED
+2023-11-03 12:23:16 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 74c9a36c-7c44-4300-92ba-dc51276d5955 REQUESTED
+2023-11-03 12:23:16 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 74c9a36c-7c44-4300-92ba-dc51276d5955 DELETED
+2023-11-03 12:23:18 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4c13dc5b-729d-418d-8360-9258716ddac5 REQUESTED
+2023-11-03 12:23:18 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4c13dc5b-729d-418d-8360-9258716ddac5 REQUESTED
+2023-11-03 12:23:19 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4c13dc5b-729d-418d-8360-9258716ddac5 REQUESTED
+2023-11-03 12:23:20 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 4c13dc5b-729d-418d-8360-9258716ddac5 DELETED
+2023-11-03 12:26:46 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:26:46 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdas
+2023-11-03 12:26:49 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:26:49 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdas
+2023-11-03 12:26:51 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID bb15a18d-dbad-48d3-a166-77a8a7176de8 REQUESTED
+2023-11-03 12:26:51 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID bb15a18d-dbad-48d3-a166-77a8a7176de8 REQUESTED
+2023-11-03 12:26:52 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID bb15a18d-dbad-48d3-a166-77a8a7176de8 REQUESTED
+2023-11-03 12:26:52 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID bb15a18d-dbad-48d3-a166-77a8a7176de8 DELETED
+2023-11-03 12:26:53 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 60836e58-a86f-46e3-8f8e-358a9b9d6fd9 REQUESTED
+2023-11-03 12:26:54 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 60836e58-a86f-46e3-8f8e-358a9b9d6fd9 REQUESTED
+2023-11-03 12:26:54 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 60836e58-a86f-46e3-8f8e-358a9b9d6fd9 REQUESTED
+2023-11-03 12:26:55 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 60836e58-a86f-46e3-8f8e-358a9b9d6fd9 DELETED

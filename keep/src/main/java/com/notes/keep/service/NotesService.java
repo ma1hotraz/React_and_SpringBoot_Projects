@@ -169,12 +169,42 @@ public class NotesService {
     }
 
     public Boolean deleteFromTrash(UUID userId, UUID noteId) {
-       try {
-           trashRepository.deleteById(noteId);
-       }catch (Exception e){
-           e.printStackTrace();
-           return false;
-       }
+        try {
+            trashRepository.deleteById(noteId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public Boolean restoredFromTrash(UUID userId, UUID noteId) {
+        try {
+            List<Trash> trashList = trashRepository.findAllNotesByUserId(userId);
+            Notes note = null;
+            for (Trash trash : trashList) {
+                if (trash.getNoteId().equals(noteId)) {
+                    note = Notes.builder()
+                            .noteId(trash.getNoteId())
+                            .title(encryptionUtil.encrypt(trash.getTitle()))
+                            .description(encryptionUtil.encrypt(trash.getDescription()))
+                            .completed(trash.isCompleted())
+                            .deleted(false)
+                            .date(trash.getDate())
+                            .color(trash.getColor())
+                            .user(trash.getUser())
+                            .build();
+                    break;
+                }
+            }
+            if(note == null){
+                return false;
+            }
+            trashRepository.deleteById(noteId);
+            notesRepository.save(note);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return true;
     }
 }
