@@ -1480,3 +1480,25 @@ List of constraint violations:[
 2023-11-03 12:26:54 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 60836e58-a86f-46e3-8f8e-358a9b9d6fd9 REQUESTED
 2023-11-03 12:26:54 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 60836e58-a86f-46e3-8f8e-358a9b9d6fd9 REQUESTED
 2023-11-03 12:26:55 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 60836e58-a86f-46e3-8f8e-358a9b9d6fd9 DELETED
+2023-11-03 12:35:06 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 92240b19-9eff-4ecc-8237-fd5a144b26e4 REQUESTED
+2023-11-03 12:35:06 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 92240b19-9eff-4ecc-8237-fd5a144b26e4 REQUESTED
+2023-11-03 12:35:07 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 92240b19-9eff-4ecc-8237-fd5a144b26e4 REQUESTED
+2023-11-03 12:35:07 [https-jsse-nio-443-exec-1] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 92240b19-9eff-4ecc-8237-fd5a144b26e4 DELETED
+2023-11-03 12:39:53 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID e2c15bb1-27cf-4408-acfa-dbf0266e88ee REQUESTED
+2023-11-03 12:39:53 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID e2c15bb1-27cf-4408-acfa-dbf0266e88ee REQUESTED
+2023-11-03 12:39:54 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID e2c15bb1-27cf-4408-acfa-dbf0266e88ee REQUESTED
+2023-11-03 12:39:55 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID e2c15bb1-27cf-4408-acfa-dbf0266e88ee DELETED
+2023-11-03 12:39:57 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 35e09dd1-2bfb-445a-b6b1-e9d686f7a47c REQUESTED
+2023-11-03 12:39:58 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 35e09dd1-2bfb-445a-b6b1-e9d686f7a47c REQUESTED
+2023-11-03 12:39:58 [https-jsse-nio-443-exec-7] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 35e09dd1-2bfb-445a-b6b1-e9d686f7a47c REQUESTED
+2023-11-03 12:39:58 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 35e09dd1-2bfb-445a-b6b1-e9d686f7a47c DELETED
+2023-11-03 12:40:00 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0320abbb-13f4-4154-8ee5-fb6671f24652 REQUESTED
+2023-11-03 12:40:00 [https-jsse-nio-443-exec-9] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0320abbb-13f4-4154-8ee5-fb6671f24652 REQUESTED
+2023-11-03 12:40:00 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0320abbb-13f4-4154-8ee5-fb6671f24652 REQUESTED
+2023-11-03 12:40:01 [https-jsse-nio-443-exec-5] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID 0320abbb-13f4-4154-8ee5-fb6671f24652 DELETED
+2023-11-03 12:41:56 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE CREATED
+2023-11-03 12:41:56 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE CREATED BY EMAIL : asdas
+2023-11-03 12:41:59 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID f5259950-86db-4da6-aad9-07498f61df0b REQUESTED
+2023-11-03 12:41:59 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID f5259950-86db-4da6-aad9-07498f61df0b REQUESTED
+2023-11-03 12:41:59 [https-jsse-nio-443-exec-3] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID f5259950-86db-4da6-aad9-07498f61df0b REQUESTED
+2023-11-03 12:41:59 [https-jsse-nio-443-exec-2] INFO  com.notes.keep.utils.Loggers - NOTE WITH ID f5259950-86db-4da6-aad9-07498f61df0b DELETED
