@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 
 @Service
 public class NotesService {
@@ -249,6 +250,40 @@ public class NotesService {
                             .build();
             archivedRepository.save(archive);
             notesRepository.deleteById(noteId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean removeFromArchive(UUID userId, UUID noteId) {
+        try {
+            List<Archived> archivedList = archivedRepository.findAll();
+            List<Archived> archivedByUserId = archivedList.stream()
+                    .filter(notes -> notes.getUser().getUserId().equals(userId))
+                    .toList();
+
+            if (archivedByUserId.isEmpty()) {
+                return false;
+            }
+
+            for (Archived archived : archivedByUserId) {
+                Archived note = archived;
+                System.out.println(note);
+                if (note.getNoteId().equals(noteId)) {
+                    Notes notes = Notes.builder().noteId(note.getNoteId())
+                            .title(note.getTitle())
+                            .description(archived.getDescription())
+                            .completed(archived.isCompleted())
+                            .date(archived.getDate())
+                            .color(archived.getColor())
+                            .user(archived.getUser())
+                            .build();
+                    notesRepository.save(notes);
+                }
+            }
+            archivedRepository.deleteById(noteId);
         } catch (Exception e) {
             e.printStackTrace();
             return false;

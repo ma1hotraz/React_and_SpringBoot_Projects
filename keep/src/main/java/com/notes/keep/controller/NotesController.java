@@ -118,7 +118,7 @@ public class NotesController {
     public ResponseEntity<?> deleteNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId) {
 
         Boolean deleted = notesService.deleteFromTrash(userId, noteId);
-        if(!deleted){
+        if (!deleted) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
         return ResponseEntity.ok("DELETED SUCCESSFULLY");
@@ -126,8 +126,8 @@ public class NotesController {
 
     @DeleteMapping("/trash/userId/{userId}/restore/noteId/{noteId}")
     public ResponseEntity<?> restoreNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId) {
-        Boolean restored = notesService.restoredFromTrash(userId,noteId);
-        if(!restored){
+        Boolean restored = notesService.restoredFromTrash(userId, noteId);
+        if (!restored) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
         return ResponseEntity.ok().body("RESTORED SUCCESSFULLY");
@@ -146,18 +146,20 @@ public class NotesController {
 
 
     @GetMapping("/archive/userId/{userId}/addArchive/noteId/{noteId}")
-    public ResponseEntity<?> archiveNote(@PathVariable UUID userId, @PathVariable UUID noteId){
-        System.out.println(userId);
-        System.out.println(noteId);
-        boolean archived = notesService.addToArchive(userId,noteId);
-        if(!archived){
+    public ResponseEntity<?> archiveNote(@PathVariable UUID userId, @PathVariable UUID noteId) {
+        boolean archived = notesService.addToArchive(userId, noteId);
+        if (!archived) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
         return ResponseEntity.status(200).body("MOVED TO ARCHIVE");
     }
 
     @GetMapping("/archive/userId/{userId}/removeArchive/noteId/{noteId}")
-    public ResponseEntity<?> deArchiveNote(@PathVariable UUID userId, @PathVariable UUID noteId){
+    public ResponseEntity<?> deArchiveNote(@PathVariable UUID userId, @PathVariable UUID noteId) {
+        boolean archived = notesService.removeFromArchive(userId, noteId);
+        if (!archived) {
+            return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
+        }
         return ResponseEntity.status(200).body("MOVED TO ARCHIVE");
     }
 

@@ -2,7 +2,6 @@
 import { toast } from "react-toastify";
 
 export const deleteFromTrash = async (noteId) => {
-    console.log("deleteFromTrash called")
     const userData = sessionStorage.getItem('userData');
     const user = JSON.parse(userData);
     const id = user?.userId;

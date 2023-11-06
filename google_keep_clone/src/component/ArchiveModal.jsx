@@ -3,25 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HashLoader } from 'react-spinners';
 import { faInbox } from '@fortawesome/free-solid-svg-icons';
-import { archivedList } from '../api/ArchivedNotes';
+import { archivedList, restoreFromArchive } from '../api/ArchivedNotes';
 
 
 export default function TrashModal(props) {
     const [isModalOpen, setModalOpen] = useState(false);
-    const [noteDeleted, setNoteDeleted] = useState(false);
+    const [noteArchived, setNoteArchived] = useState(false);
     const [isDialogOpen, setDialogOpen] = useState(false);
     const [noteId, setNoteId] = useState('');
     const [isLoading, setLoading] = useState(false);
     const [data, setData] = useState([]);
     const [showLoader, setShowLoader] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowLoader(true);
-        }, 2000);
-
-        return () => clearTimeout(timer);
-    }, []);
 
     const style = {
         position: 'absolute',
@@ -35,6 +27,16 @@ export default function TrashModal(props) {
         boxShadow: 16,
         padding: '20px'
     };
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowLoader(true);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+
 
     const handleClickOpen = () => {
         setDialogOpen(true);
@@ -50,24 +52,30 @@ export default function TrashModal(props) {
 
     const onOpen = () => {
         setModalOpen(true);
-        setNoteDeleted(true);
+        setNoteArchived(true);
     }
 
     const getData = async () => {
         const noteList = await archivedList();
         setData(noteList);
-        console.log(noteList);
-        setNoteDeleted(false);
+        setNoteArchived(false);
     }
-
-    useEffect(() => {
-        getData();
-    }, [noteDeleted, noteId]);
 
     const handleClick = (noteId) => {
         setNoteId(noteId);
         handleClickOpen();
     }
+
+    const handleRestore = async () => {
+        setLoading(true);
+        await restoreFromArchive(noteId);
+        setLoading(false);
+        handleClose();
+    }
+
+    useEffect(() => {
+        getData();
+    }, [noteArchived, noteId]);
 
     return (
         <div>
@@ -142,8 +150,8 @@ export default function TrashModal(props) {
                         </Typography>
                     </DialogContentText>
                 </DialogContent>
-                <DialogActions sx={{ padding: '20px' }}>
-                    <Button variant='contained' color='primary'>
+                <DialogActions sx={{ padding: '20px' }} onClose>
+                    <Button variant='contained' color='primary' onClick={handleRestore}>
                         Restore
                     </Button>
                 </DialogActions>

@@ -253,9 +253,14 @@ export default function Note(props) {
     };
 
     const handleArchive = (noteId) => {
-        console.log('clicked archived noteID ', noteId, "-----", );
         archivedTo(noteId);
+        fetchAndRefreshData();
     }
+
+    useEffect(() => {
+        handleArchive(selectedNoteId);
+    }, [selectedNoteId]);
+
 
     return (
         <Box>
