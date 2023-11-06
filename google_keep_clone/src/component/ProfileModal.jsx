@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Avatar, Box, Button, Modal, Typography } from '@mui/material';
+import { Avatar, Badge, Box, Button, Modal, Tooltip, Typography } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { updateData } from '../api/UpdateUser';
@@ -18,7 +18,7 @@ export default function ProfileModal() {
                 const dataS = sessionStorage.getItem('userData');
                 const imageData = JSON.parse(dataS);
 
-                 // console.log("THIS IS DATA", imageData);
+                // console.log("THIS IS DATA", imageData);
 
                 if (!imageData || !imageData.image) {
                     console.error('Image data not found in sessionStorage');
@@ -88,7 +88,7 @@ export default function ProfileModal() {
 
         try {
             const response = await updateData(User);
-             // console.log(response);
+            // console.log(response);
 
             updateProfileImage(response.data);
         } catch (error) {
@@ -110,74 +110,76 @@ export default function ProfileModal() {
 
     return (
         <Box>
-            <Button onClick={handleClick}>
-                {source !== null ? <Avatar><ImageDisplay /></Avatar> : <Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar>}
-            </Button>
-            <Modal
-                open={modalOpen}
-                onClose={handleClose}
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                }}
-            >
-                <Box
-                    sx={{
-                        width: 400,
-                        bgcolor: 'background.paper',
-                        border: '2px solid #000',
-                        boxShadow: 24,
-                        p: 4,
-                        borderRadius: '20px'
+            <Tooltip title={'Profile'}>
+                <Button onClick={handleClick}>
+                    {source !== null ? <Badge badgeContent={4}><Avatar><ImageDisplay /></Avatar> </Badge> : <Badge color='secondary' vertical='bottom'  badgeContent={4}><Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar></Badge>}
+                </Button>
+                <Modal
+                    open={modalOpen}
+                    onClose={handleClose}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                     }}
                 >
-                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <Avatar
-                            sx={{ height: '108px', width: '108px' }}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            {isHovered ? (
-                                <Box onClick={handleImage}>
-                                    <input
-                                        type="file"
-                                        id="imgupload"
-                                        ref={fileInputRef}
-                                        style={{ display: 'none' }}
-                                        onChange={handleFileChange}
-                                        onClick={toggleImageVisibility}
-                                    />
-                                    <FontAwesomeIcon icon={faCamera} />
-                                </Box>
-                            ) : (
+                    <Box
+                        sx={{
+                            width: 400,
+                            bgcolor: 'background.paper',
+                            border: '2px solid #000',
+                            boxShadow: 24,
+                            p: 4,
+                            borderRadius: '20px'
+                        }}
+                    >
+                        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                            <Avatar
+                                sx={{ height: '108px', width: '108px' }}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                {isHovered ? (
+                                    <Box onClick={handleImage}>
+                                        <input
+                                            type="file"
+                                            id="imgupload"
+                                            ref={fileInputRef}
+                                            style={{ display: 'none' }}
+                                            onChange={handleFileChange}
+                                            onClick={toggleImageVisibility}
+                                        />
+                                        <FontAwesomeIcon icon={faCamera} />
+                                    </Box>
+                                ) : (
 
-                                (file === undefined || file === null || !source) ? (
-                                    <Avatar sx={{ transition: `opacity ${fadeDuration}`, opacity: isImageVisible ? 1 : 0, }}>
-                                        {name.charAt(0)}
-                                    </Avatar>
-                                ) : (<>
-                                    <Avatar sx={{ height: "108px", width: "108px" }}><ImageDisplay /></Avatar>
-                                </>)
-                            )}
-                        </Avatar>
+                                    (file === undefined || file === null || !source) ? (
+                                        <Avatar sx={{ transition: `opacity ${fadeDuration}`, opacity: isImageVisible ? 1 : 0, }}>
+                                            {name.charAt(0)}
+                                        </Avatar>
+                                    ) : (<>
+                                        <Avatar sx={{ height: "108px", width: "108px" }}><ImageDisplay /></Avatar>
+                                    </>)
+                                )}
+                            </Avatar>
+                        </Box>
+                        <Box sx={{ margin: '20px 0 20px 0' }}>
+                            <Typography variant="h6" component="div">
+                                User Profile
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Name: {name}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                Email: {email}
+                            </Typography>
+                        </Box>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', margin: '10px' }} >
+                            <Button variant='contained' onClick={handleClose}>Close</Button>
+                        </Box>
                     </Box>
-                    <Box sx={{ margin: '20px 0 20px 0' }}>
-                        <Typography variant="h6" component="div">
-                            User Profile
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Name: {name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            Email: {email}
-                        </Typography>
-                    </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', margin: '10px' }} >
-                        <Button variant='contained' onClick={handleClose}>Close</Button>
-                    </Box>
-                </Box>
-            </Modal>
+                </Modal>
+            </Tooltip>
         </Box>
     );
 }

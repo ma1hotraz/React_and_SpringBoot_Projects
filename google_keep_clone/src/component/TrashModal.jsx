@@ -1,4 +1,4 @@
-import { Modal, Box, Paper, Typography, Grid, Dialog, Button, DialogActions, DialogContentText, DialogContent, DialogTitle } from '@mui/material';
+import { Modal, Box, Paper, Typography, Grid, Dialog, Button, DialogActions, DialogContentText, DialogContent, DialogTitle, Tooltip } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -103,84 +103,86 @@ export default function TrashModal(props) {
 
     return (
         <div>
-            <FontAwesomeIcon icon={faTrash} size='2x' onClick={onOpen} />
-            <Modal open={isModalOpen} onClose={onClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Box style={style}>
-                    <h1 style={{ textAlign: 'center' }}>Trash</h1>
-                    {data.length !== 0 ? (
-                        <>
-                            {isLoading === true ? <Box sx={{
+            <Tooltip title={'Trash'}>
+                <FontAwesomeIcon icon={faTrash} size='2x' onClick={onOpen} />
+                <Modal open={isModalOpen} onClose={onClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Box style={style}>
+                        <h1 style={{ textAlign: 'center' }}>Trash</h1>
+                        {data.length !== 0 ? (
+                            <>
+                                {isLoading === true ? <Box sx={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    padding: '20px'
+                                }}>
+                                    <HashLoader color='#f6ed22' size={100} />
+                                </Box> : <Grid container>
+                                    {data.map((item) => {
+                                        return (
+                                            <Grid item xs={12} sm={6} md={4} lg={3} spacing={1} sx={{ margin: '20px 0 20px 0' }}>
+                                                <Box sx={{ height: '150px', width: '250px' }} key={item.noteId} onClick={() => { handleClick(item.noteId) }}>
+                                                    <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} className="note">
+                                                        <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
+                                                        <Typography variant="h6" style={{
+                                                            whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
+                                                            WebkitBoxOrient: 'vertical',
+                                                            maxHeight: '3.6em',
+                                                        }}>{item.description}</Typography>
+                                                        <div style={{ height: '10px' }}></div>
+                                                        <Typography variant="body2" color={'gray'} style={{
+                                                            position: 'absolute',
+                                                            bottom: 10,
+                                                            width: '100%',
+                                                        }}>
+                                                            {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
+                                                        </Typography>
+                                                    </Paper>
+                                                </Box>
+                                            </Grid>
+                                        );
+                                    })}
+                                </Grid>
+                                }
+                            </>
+                        ) : (
+                            <Box sx={{
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
                                 padding: '20px'
                             }}>
-                                <HashLoader color='#f6ed22' size={100} />
-                            </Box> : <Grid container>
-                                {data.map((item) => {
-                                    return (
-                                        <Grid item xs={12} sm={6} md={4} lg={3} spacing={1} sx={{ margin: '20px 0 20px 0' }}>
-                                            <Box sx={{ height: '150px', width: '250px' }} key={item.noteId} onClick={() => { handleClick(item.noteId) }}>
-                                                <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} className="note">
-                                                    <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
-                                                    <Typography variant="h6" style={{
-                                                        whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
-                                                        WebkitBoxOrient: 'vertical',
-                                                        maxHeight: '3.6em',
-                                                    }}>{item.description}</Typography>
-                                                    <div style={{ height: '10px' }}></div>
-                                                    <Typography variant="body2" color={'gray'} style={{
-                                                        position: 'absolute',
-                                                        bottom: 10,
-                                                        width: '100%',
-                                                    }}>
-                                                        {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
-                                                    </Typography>
-                                                </Paper>
-                                            </Box>
-                                        </Grid>
-                                    );
-                                })}
-                            </Grid>
-                            }
-                        </>
-                    ) : (
-                        <Box sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            padding: '20px'
-                        }}>
-                            {showLoader ? (
-                                <h1>NO CONTENT</h1>
-                            ) : (
-                                <HashLoader color='#f6ed22' size={100} />
-                            )}
+                                {showLoader ? (
+                                    <h1>NO CONTENT</h1>
+                                ) : (
+                                    <HashLoader color='#f6ed22' size={100} />
+                                )}
 
-                        </Box>
-                    )}
-                </Box>
-            </Modal>
-            <Dialog open={isDialogOpen} onClose={handleClose}>
-                <DialogTitle id="responsive-dialog-title">
-                    <Typography variant='h5' textAlign={'center'}>
-                        Attention !!!
-                    </Typography>
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        Notes will automatically be deleted after 30 days.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions sx={{ padding: '20px' }}>
-                    <Button onClick={handleRestore} variant='contained' color='primary'>
-                        Restore
-                    </Button>
-                    <Button onClick={handleDelete} variant='contained' color='error'>
-                        Delete
-                    </Button>
-                </DialogActions>
-            </Dialog>
+                            </Box>
+                        )}
+                    </Box>
+                </Modal>
+                <Dialog open={isDialogOpen} onClose={handleClose}>
+                    <DialogTitle id="responsive-dialog-title">
+                        <Typography variant='h5' textAlign={'center'}>
+                            Attention !!!
+                        </Typography>
+                    </DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            Notes will automatically be deleted after 30 days.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions sx={{ padding: '20px' }}>
+                        <Button onClick={handleRestore} variant='contained' color='primary'>
+                            Restore
+                        </Button>
+                        <Button onClick={handleDelete} variant='contained' color='error'>
+                            Delete
+                        </Button>
+                    </DialogActions>
+                </Dialog>
+            </Tooltip>
         </div>
     );
 }

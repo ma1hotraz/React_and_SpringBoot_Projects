@@ -21,6 +21,7 @@ import ProfileModal from './ProfileModal';
 import TranslateButton from './TranslateButton';
 import TrashModal from '../component/TrashModal';
 import ArchiveModal from '../component/ArchiveModal';
+import Notification from './Notification';
 
 
 
@@ -43,6 +44,7 @@ function DrawerAppBar(props) {
       <ToggleSlider key="slider" onToggle={props.toggleMode} active={!props.active} />
       <FontAwesomeIcon key="moon" style={{ marginLeft: '20px', marginRight: '10px' }} icon={faMoon} size='2x' />
     </Box>,
+    <Notification />,
     <ProfileModal />
   ];
 

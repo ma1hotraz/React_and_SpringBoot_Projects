@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
+import { Button, Menu, MenuItem, Tooltip } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage } from '@fortawesome/free-solid-svg-icons';
 import i18n from '../i18n/i18n';
@@ -29,32 +29,34 @@ export default function TranslateButton() {
 
     return (
         <div>
-            <Button
-                id="basic-button"
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-            >
-                <FontAwesomeIcon
-                    icon={faLanguage}
-                    size='2x'
-                    color={`white`}
-                />
-            </Button>
-            <Menu
-                id="basic-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={() => handleClose(null)}
-                MenuListProps={{
-                    'aria-labelledby': 'basic-button',
-                }}
-            >
-                <MenuItem onClick={() => handleClose('en')}>English</MenuItem>
-                <MenuItem onClick={() => handleClose('hi')}>हिंदी</MenuItem>
-                <MenuItem onClick={() => handleClose('cn')}>中国人</MenuItem>
-            </Menu>
+            <Tooltip title={'Language'}>
+                <Button
+                    id="basic-button"
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}
+                    onClick={handleClick}
+                >
+                    <FontAwesomeIcon
+                        icon={faLanguage}
+                        size='2x'
+                        color={`white`}
+                    />
+                </Button>
+                <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={() => handleClose(null)}
+                    MenuListProps={{
+                        'aria-labelledby': 'basic-button',
+                    }}
+                >
+                    <MenuItem onClick={() => handleClose('en')}>English</MenuItem>
+                    <MenuItem onClick={() => handleClose('hi')}>हिंदी</MenuItem>
+                    <MenuItem onClick={() => handleClose('cn')}>中国人</MenuItem>
+                </Menu>
+            </Tooltip>
         </div>
     );
 }

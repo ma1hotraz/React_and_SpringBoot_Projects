@@ -15,11 +15,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.Optional;
 import java.util.Date;
-import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.UUID;
+import java.util.Optional;
+import java.util.Iterator;
 import java.util.stream.Collectors;
 
 @Service
@@ -238,21 +239,29 @@ public class NotesService {
 
     public boolean addToArchive(UUID userId, UUID noteId) {
         try {
-            Notes notes = notesRepository.findByNoteId(noteId);
-            System.out.println(notes);
-            Archived archive =
-                    Archived.
-                            builder().noteId(notes.getNoteId())
-                            .title(notes.getTitle())
-                            .description(notes.getDescription())
-                            .completed(notes.isCompleted())
-                            .archived(true)
-                            .date(notes.getDate())
-                            .color(notes.getColor())
-                            .user(notes.getUser())
-                            .build();
-            archivedRepository.save(archive);
-            notesRepository.deleteById(noteId);
+            List<Notes> notesList = notesRepository.findAll();
+            List<Notes> notesByUserId = notesList.stream().filter(note -> note.getUser().getUserId().equals(userId)).collect(Collectors.toList());
+
+            Iterator<Notes> it = notesByUserId.iterator();
+            while (it.hasNext()) {
+                Notes notes = it.next();
+                if (notes.getNoteId().equals(noteId)) {
+                    Archived archive =
+                            Archived.
+                                    builder().noteId(notes.getNoteId())
+                                    .title(notes.getTitle())
+                                    .description(notes.getDescription())
+                                    .completed(notes.isCompleted())
+                                    .archived(true)
+                                    .date(notes.getDate())
+                                    .color(notes.getColor())
+                                    .user(notes.getUser())
+                                    .build();
+                    archivedRepository.save(archive);
+                    notesRepository.deleteById(noteId);
+                    break;
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return false;
