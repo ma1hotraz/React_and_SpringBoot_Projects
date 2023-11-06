@@ -32,8 +32,6 @@ export default function Note(props) {
     const [selectedNoteId, setSelectedNoteId] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
-    // const [archiveButton, setArchiveButton] = useState('green');
-    // const [archiveButtonHovered, setArchiveButtonHovered] = useState(false);
 
 
     const handleCreateNote = () => {

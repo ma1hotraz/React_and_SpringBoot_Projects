@@ -46,20 +46,7 @@ export default function TrashModal(props) {
         setDialogOpen(false);
     }
 
-    const onClose = async () => {
-        // const userData = sessionStorage.getItem('userData');
-        // const user = JSON.parse(userData);
-        // const id = user?.userId;
-        // try {
-        //     setLoading(true);
-        //     await getData(id);
-        // } catch (error) {
-        //     toast.warn('Server Error!', {
-        //         autoClose: 2000,
-        //     });
-        // } finally {
-        //     setLoading(false);
-        // }
+    const onClose = () => {
         setModalOpen(false);
     }
 

@@ -1,6 +1,5 @@
 package com.notes.keep.repository;
 
-import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

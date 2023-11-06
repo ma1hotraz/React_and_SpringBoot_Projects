@@ -15,9 +15,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Optional;
+import java.util.Date;
+import java.util.UUID;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
 
 @Service
 public class NotesService {
