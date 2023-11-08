@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NoteData, { getData } from '../api/NoteData';
-import { Grid, Paper, Typography, Box, Fab, IconButton } from '@mui/material';
+import { Grid, Paper, Typography, Box, Fab, IconButton, Tooltip } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import { getById } from '../api/EditNote';
 import { getRandomColor } from '../utils/ColorList';
@@ -16,8 +16,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchBox from './SearchBox';
 import getText from '../utils/TextUtils';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { archivedTo } from '../api/ArchiveNote';
+import { Archive } from '@mui/icons-material';
+import Draggable from 'react-draggable';
 
 
 
@@ -56,7 +57,6 @@ export default function Note(props) {
                 console.error('Error fetching data:', error);
             });
     };
-
 
 
     const handleDeleteNote = () => {
@@ -236,7 +236,6 @@ export default function Note(props) {
     const handleClick = (itemId) => {
         setSelectedNoteId(itemId);
         setModalMode('edit');
-        console.log("object1")
         setIsModalOpen(true);
     };
 
@@ -260,6 +259,7 @@ export default function Note(props) {
     }, [selectedNoteId]);
 
 
+
     return (
         <Box>
             <Box>
@@ -271,39 +271,39 @@ export default function Note(props) {
                 {data.length !== 0 ? (
                     <Box sx={{ marginTop: '100px', width: '100%', height: '100%' }}>
                         <Grid container>
-
                             {data.map((item) => {
                                 return (
                                     <Grid display={"flex"}
                                         justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
-                                        <Box sx={{ height: '200px', width: '300px', marginTop: '20px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
-                                            <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} >
-                                                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                    <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
-                                                    <Box onClick={() => {
-                                                        handleClick(item.noteId);
-                                                    }}>
-                                                        <IconButton  onClick={e => e.stopPropagation()}  >
-                                                            <AddCircleIcon sx={{border: '3px solid white', borderRadius: '20px'}} className="hover-effect" onClick={() => handleArchive(item.noteId)} />
-                                                        </IconButton>
+                                        <Draggable>
+                                            <Box sx={{ height: '200px', width: '300px', marginTop: '20px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
+                                                <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} >
+                                                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                        <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
+                                                        <Box onClick={() => {
+                                                            handleClick(item.noteId);
+                                                        }}>
+                                                            <Tooltip title='Archive'><IconButton onClick={e => e.stopPropagation()}  >
+                                                                <Archive sx={{}} className="hover-effect" onClick={() => handleArchive(item.noteId)} />
+                                                            </IconButton></Tooltip>
+                                                        </Box>
                                                     </Box>
-                                                </Box>
-                                                <Typography variant="h6" style={{
-                                                    whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
-                                                    WebkitBoxOrient: 'vertical',
-                                                    maxHeight: '3.6em',
-                                                }}>{item.description}</Typography>
-                                                <div style={{ height: '10px' }}></div>
-                                                <Typography variant="body2" color={'gray'} style={{
-                                                    position: 'absolute',
-                                                    bottom: 10,
-                                                    width: '100%',
-                                                }}>
-                                                    {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
-                                                </Typography>
-                                            </Paper>
-
-                                        </Box>
+                                                    <Typography variant="h6" style={{
+                                                        whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
+                                                        WebkitBoxOrient: 'vertical',
+                                                        maxHeight: '3.6em',
+                                                    }}>{item.description}</Typography>
+                                                    <div style={{ height: '10px' }}></div>
+                                                    <Typography variant="body2" color={'gray'} style={{
+                                                        position: 'absolute',
+                                                        bottom: 10,
+                                                        width: '100%',
+                                                    }}>
+                                                        {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
+                                                    </Typography>
+                                                </Paper>
+                                            </Box>
+                                        </Draggable>
                                     </Grid>
                                 );
                             })}
@@ -337,7 +337,8 @@ export default function Note(props) {
                             </div>
                         </div>
                     </div>
-                )}
+                )
+                }
                 <NoteModal
                     selectedId={selectedNoteId}
                     isOpen={isModalOpen}

@@ -1,4 +1,4 @@
-import { useTheme } from '@emotion/react';
+// import { useTheme } from '@emotion/react';
 import Header from '../component/DrawerAppBar';
 import Note from '../component/Note';
 import { useState, useEffect } from 'react';
@@ -7,6 +7,8 @@ import { useCookies } from 'react-cookie';
 import 'react-toastify/dist/ReactToastify.css';
 import ErrorPage from './ErrorPage';
 import LanguageSelector from '../component/LanguageSelector';
+import { useTheme } from '@mui/material/styles'; 
+
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -27,7 +29,6 @@ export default function App() {
   const secondarynavMenuIconColor = theme.palette.secondary.navMenuIconColor;
   const primaryModalBg = theme.palette.primary.modalBg;
   const secondaryModalBg = theme.palette.secondary.modalBg;
-
   const primaryButtonColor = theme.palette.primary.navMenuIconColor;
   const secondaryButtonColor = theme.palette.secondary.navMenuIconColor;
 
@@ -67,7 +68,7 @@ export default function App() {
 
   return (
     <div style={{ backgroundColor: `${backgroundColor}`, minHeight: '100vh' }}>
-      <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg}/>
+      <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />
       <LanguageSelector />
       <Box sx={{ padding: '15px' }}>
         <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} />

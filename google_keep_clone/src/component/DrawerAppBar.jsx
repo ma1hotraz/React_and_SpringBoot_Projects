@@ -16,12 +16,13 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { ToggleSlider } from 'react-toggle-slider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import ProfileModal from './ProfileModal';
 import TranslateButton from './TranslateButton';
 import TrashModal from '../component/TrashModal';
 import ArchiveModal from '../component/ArchiveModal';
 import Notification from './Notification';
+import SortingList from './SortingList';
 
 
 
@@ -35,7 +36,7 @@ function DrawerAppBar(props) {
 
 
   const navItems = [
-    <FontAwesomeIcon icon={faList} size='2x' />,
+    <SortingList />,
     <ArchiveModal modalBg={props.modalBg} />,
     <TrashModal modalBg={props.modalBg} />,
     <TranslateButton />,

@@ -69,13 +69,12 @@ export const getAllUsers = async () => {
 
 export const serverStatus = async () => {
     try {
-        const url = '/actuator/health'; // You may need to specify the full URL if necessary
-
+        const url = '/actuator/health';
+        
         const response = await fetch(url);
 
         if (response.ok) {
             const data = await response.json();
-            console.log("Server Status:", data);
             return data;
         } else {
             console.error("Failed to fetch server status. Status:", response.status);

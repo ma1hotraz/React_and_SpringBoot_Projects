@@ -72,10 +72,10 @@ body {
 /* Hovering effect for + sign */
 
 .hover-effect:hover {
-    color: lightgreen; 
+    color: black; 
 
   }
   .hover-effect{
-    color: rgb(0, 190, 0);
+    color: gray;
     cursor: pointer;
   }

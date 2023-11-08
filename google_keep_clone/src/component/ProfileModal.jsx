@@ -5,12 +5,34 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { updateData } from '../api/UpdateUser';
 import ImageDisplay from './ImageDisplay';
 import { getRandomColor } from '../utils/ColorList';
+import { serverStatus } from '../api/AdminAPIs';
 
 export default function ProfileModal() {
+
+
     const [modalOpen, setModalOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [source, setSource] = useState(null);
     const [isImageVisible, setIsImageVisible] = useState(false);
+    const [isServerUp, setIsServerUp] = useState('error');
+
+
+    const getStatus = async () => {
+        try {
+            const serverResponse = await serverStatus();
+            if (serverResponse) {
+                setIsServerUp('success');
+            } else {
+                setIsServerUp('error');
+            }
+        } catch (error) {
+            setIsServerUp(false);
+        }
+    };
+
+    useEffect(() => {
+        getStatus();
+    }, []);
 
     useEffect(() => {
         const fetchImage = () => {
@@ -109,13 +131,14 @@ export default function ProfileModal() {
         <Box>
             <Tooltip title={'Profile'}>
                 <Button onClick={handleClick}>
-                    {source !== null ? <Badge color='secondary' overlap='circular' size="large" variant='dot' anchorOrigin={{
+                    {source !== null ? <Badge color={`${isServerUp}`} overlap='circular' size="large" variant='dot' anchorOrigin={{
                         vertical: 'bottom',
                         horizontal: 'right'
-                    }}><Avatar><ImageDisplay /></Avatar> </Badge> : <Badge color='secondary' overlap='circular' size="large" variant='dot' anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'right'
-                    }}><Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar></Badge>}
+                    }}><Avatar><ImageDisplay /></Avatar> </Badge> : <Badge color={`${isServerUp}`}
+                        overlap='circular' size="large" variant='dot' anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'right'
+                        }}><Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar></Badge>}
                 </Button>
                 <Modal
                     open={modalOpen}

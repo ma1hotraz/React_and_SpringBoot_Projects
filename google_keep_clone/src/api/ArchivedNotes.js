@@ -10,8 +10,6 @@ export const archivedList = async () => {
     try {
         const response = await fetch(url, { method: 'GET' });
 
-        console.log(response);
-
         if (!response.ok) {
             toast.warn('Server Error!', {
                 autoClose: 2000,
@@ -41,8 +39,6 @@ export const restoreFromArchive = async (noteId) => {
     const url = `notes/archive/userId/${id}/removeArchive/noteId/${noteId}`;
     try {
         const response = await fetch(url, { method: 'GET' });
-
-        console.log(response);
 
         if (!response.ok) {
             toast.warn('Server Error!', {
