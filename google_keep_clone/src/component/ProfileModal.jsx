@@ -18,8 +18,6 @@ export default function ProfileModal() {
                 const dataS = sessionStorage.getItem('userData');
                 const imageData = JSON.parse(dataS);
 
-                // console.log("THIS IS DATA", imageData);
-
                 if (!imageData || !imageData.image) {
                     console.error('Image data not found in sessionStorage');
                     return;
@@ -88,7 +86,6 @@ export default function ProfileModal() {
 
         try {
             const response = await updateData(User);
-            // console.log(response);
 
             updateProfileImage(response.data);
         } catch (error) {
@@ -112,7 +109,13 @@ export default function ProfileModal() {
         <Box>
             <Tooltip title={'Profile'}>
                 <Button onClick={handleClick}>
-                    {source !== null ? <Badge badgeContent={4}><Avatar><ImageDisplay /></Avatar> </Badge> : <Badge color='secondary' vertical='bottom'  badgeContent={4}><Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar></Badge>}
+                    {source !== null ? <Badge color='secondary' overlap='circular' size="large" variant='dot' anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right'
+                    }}><Avatar><ImageDisplay /></Avatar> </Badge> : <Badge color='secondary' overlap='circular' size="large" variant='dot' anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right'
+                    }}><Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar></Badge>}
                 </Button>
                 <Modal
                     open={modalOpen}

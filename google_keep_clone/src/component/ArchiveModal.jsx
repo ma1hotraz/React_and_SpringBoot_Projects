@@ -44,6 +44,7 @@ export default function TrashModal(props) {
 
     const handleClose = () => {
         setDialogOpen(false);
+        
     }
 
     const onClose = () => {

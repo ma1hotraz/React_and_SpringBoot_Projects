@@ -17,33 +17,37 @@ import Dashboard2 from '../component/DashBoardComp2';
 import Dashboard3 from '../component/DashBoardComp3';
 import Dashboard4 from '../component/DashBoardComp4';
 import Dashboard5 from '../component/DashBoardComp5';
+import StatusComponent from '../component/StatusComponent';
+
 
 
 const Dashboard = () => {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+
 
     const toggleSidebar = () => {
         setSidebarOpen(!isSidebarOpen);
     };
 
     const onUsersClick = () => {
-         // console.log('Users ');
+        // console.log('Users ');
     }
 
     const onStats = () => {
-         // console.log('Stats ');
+        // console.log('Stats ');
     }
 
     const onDBStorage = () => {
-         // console.log('DB Storage ');
+        // console.log('DB Storage ');
     }
 
     const onNewUser = () => {
-         // console.log('On New User ');
+        // console.log('On New User ');
     }
 
     return (
-        <Box sx={{ backgroundColor: '#EDEDED', padding: '40px' }}>
+        <Box sx={{ backgroundColor: '#EDEDED', padding: '40px', minHeight: '100vh' }}>
             <IconButton
                 color="primary"
                 onClick={toggleSidebar}
@@ -61,7 +65,7 @@ const Dashboard = () => {
                 open={isSidebarOpen}
                 onClose={() => setSidebarOpen(false)}
             >
-                <Typography variant='h4' sx={{padding: '20px'}}>Menu</Typography>
+                <Typography variant='h4' sx={{ padding: '20px' }}>Menu</Typography>
                 <List>
                     {/* SIDEMENU */}
                     <ListItem onClick={() => setSidebarOpen(false)}>
@@ -121,10 +125,11 @@ const Dashboard = () => {
 
             <Grid item xs={12} md={9} margin={5} columnSpacing={5}>
                 <Grid sx={{ display: 'flex', justifyContent: 'space-evenly' }} spacing={4}>
+                    <StatusComponent />
                     <Dashboard4 />
                     <Dashboard3 />
                 </Grid>
-                <Box sx={{height:'20px'}}>
+                <Box sx={{ height: '20px' }}>
 
                 </Box>
                 <Box>

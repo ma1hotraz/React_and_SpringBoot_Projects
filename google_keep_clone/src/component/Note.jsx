@@ -256,7 +256,7 @@ export default function Note(props) {
     }
 
     useEffect(() => {
-        handleArchive(selectedNoteId);
+        fetchAndRefreshData();
     }, [selectedNoteId]);
 
 
@@ -283,8 +283,8 @@ export default function Note(props) {
                                                     <Box onClick={() => {
                                                         handleClick(item.noteId);
                                                     }}>
-                                                        <IconButton onClick={e => e.stopPropagation()}>
-                                                            <AddCircleIcon className="hover-effect" onClick={() => handleArchive(item.noteId)} />
+                                                        <IconButton  onClick={e => e.stopPropagation()}  >
+                                                            <AddCircleIcon sx={{border: '3px solid white', borderRadius: '20px'}} className="hover-effect" onClick={() => handleArchive(item.noteId)} />
                                                         </IconButton>
                                                     </Box>
                                                 </Box>

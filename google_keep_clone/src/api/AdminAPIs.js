@@ -18,7 +18,7 @@ export const getTotalUserSize = async () => {
             throw new Error('Response is not valid JSON');
         }
     } catch (e) {
-         // console.log('Error', e);
+        // console.log('Error', e);
     }
 }
 
@@ -41,7 +41,7 @@ export const getDBSize = async () => {
             throw new Error('Response is not valid JSON');
         }
     } catch (e) {
-         // console.log('Error', e);
+        // console.log('Error', e);
     }
 }
 
@@ -63,8 +63,28 @@ export const getAllUsers = async () => {
             throw new Error('Response is not valid JSON');
         }
     } catch (e) {
-         // console.log('Error', e);
+        // console.log('Error', e);
     }
 }
+
+export const serverStatus = async () => {
+    try {
+        const url = '/actuator/health'; // You may need to specify the full URL if necessary
+
+        const response = await fetch(url);
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log("Server Status:", data);
+            return data;
+        } else {
+            console.error("Failed to fetch server status. Status:", response.status);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error while fetching server status:", error);
+        return null;
+    }
+};
 
 
