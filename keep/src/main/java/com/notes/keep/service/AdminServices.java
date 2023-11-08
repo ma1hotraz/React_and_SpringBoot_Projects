@@ -71,11 +71,7 @@ public class AdminServices {
     public List<UserDTO> userListByDate(long date) {
 
         Date sqlDate = new Date(date);
-
         List<User> users = userRepository.findUserByDate(date);
-
-        System.out.println(users);
-
         if (users.isEmpty()) {
             return Collections.emptyList();
         }

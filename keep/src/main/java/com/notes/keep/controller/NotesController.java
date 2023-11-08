@@ -31,7 +31,6 @@ public class NotesController {
     @PostMapping("/add")
     public ResponseEntity<?> createNote(@RequestBody Notes note) throws Exception {
         Loggers.info("NOTE CREATED");
-        System.out.println(note);
         Notes notes = null;
         try {
             notes = notesService.createNote(note);
@@ -41,7 +40,6 @@ public class NotesController {
         if (notes == null) {
             return ResponseEntity.status(200).header("msg", "FIELDS ARE EMPTY").build();
         }
-        System.out.println(notes);
         return ResponseEntity.ok().body(notes);
     }
 
@@ -53,7 +51,6 @@ public class NotesController {
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
         }
-        System.out.println(notesList);
         return ResponseEntity.ok(notesList);
     }
 
@@ -110,7 +107,6 @@ public class NotesController {
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
         }
-        System.out.println(notesList);
         return ResponseEntity.ok(notesList);
     }
 

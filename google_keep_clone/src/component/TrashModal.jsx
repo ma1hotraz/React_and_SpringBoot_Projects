@@ -7,6 +7,7 @@ import { getDeletedNotes } from '../api/DeletedNotes';
 import { deleteFromTrash } from '../api/RemoveFromTrash';
 import { toast } from 'react-toastify';
 import { restoredFromTrash } from '../api/RestoreFromTrash';
+import { fetchAndRefreshData } from './Note';
 
 export default function TrashModal(props) {
     const [isModalOpen, setModalOpen] = useState(false);
@@ -48,6 +49,7 @@ export default function TrashModal(props) {
 
     const onClose = () => {
         setModalOpen(false);
+        fetchAndRefreshData();
     }
 
     const onOpen = () => {
@@ -68,6 +70,7 @@ export default function TrashModal(props) {
             setLoading(false);
         }
         setDialogOpen(false);
+
     }
 
     const handleRestore = async () => {

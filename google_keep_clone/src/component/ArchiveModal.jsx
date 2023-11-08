@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HashLoader } from 'react-spinners';
 import { faInbox } from '@fortawesome/free-solid-svg-icons';
 import { archivedList, restoreFromArchive } from '../api/ArchivedNotes';
+import { fetchAndRefreshData } from './Note';
 
 
 export default function TrashModal(props) {
@@ -44,6 +45,7 @@ export default function TrashModal(props) {
 
     const handleClose = () => {
         setDialogOpen(false);
+        fetchAndRefreshData();
     }
 
     const onClose = () => {
@@ -70,6 +72,7 @@ export default function TrashModal(props) {
         setLoading(true);
         await restoreFromArchive(noteId);
         setLoading(false);
+        getData();
         handleClose();
     }
 

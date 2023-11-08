@@ -20,6 +20,9 @@ import { archivedTo } from '../api/ArchiveNote';
 import { Archive } from '@mui/icons-material';
 import Draggable from 'react-draggable';
 
+export var fetchAndRefreshData = () => {
+
+};
 
 
 export default function Note(props) {
@@ -45,7 +48,7 @@ export default function Note(props) {
     };
 
 
-    const fetchAndRefreshData = () => {
+    fetchAndRefreshData = () => {
         const userData = sessionStorage.getItem('userData');
         const user = JSON.parse(userData);
         const id = user?.userId;
@@ -56,7 +59,8 @@ export default function Note(props) {
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
-    };
+    }
+
 
 
     const handleDeleteNote = () => {
@@ -275,7 +279,7 @@ export default function Note(props) {
                                 return (
                                     <Grid display={"flex"}
                                         justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
-                                        <Draggable>
+                                        <Draggable scale={1} grid={[25, 25]} >
                                             <Box sx={{ height: '200px', width: '300px', marginTop: '20px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
                                                 <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} >
                                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>

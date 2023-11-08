@@ -85,7 +85,6 @@ public class NotesService {
 
     public Notes updateNoteById(UUID id, Notes notes) {
         Notes oldNote = notesRepository.findByNoteId(id);
-        System.out.println(oldNote);
         if (oldNote == null) {
             return null;
         }
@@ -163,11 +162,7 @@ public class NotesService {
 
     public List<Trash> findAllTrashByUserId(UUID userId) {
         List<Trash> notesList = trashRepository.findAllNotesByUserId(userId);
-
         List<Trash> collected;
-
-        System.out.println(notesList);
-
         try {
             collected = new ArrayList<>(notesList);
 
@@ -192,7 +187,6 @@ public class NotesService {
         } catch (NullPointerException e) {
             throw new NullPointerException("LIST IS EMPTY");
         }
-        System.out.println(collected);
         return collected;
     }
 
@@ -282,7 +276,6 @@ public class NotesService {
 
             for (Archived archived : archivedByUserId) {
                 Archived note = archived;
-                System.out.println(note);
                 if (note.getNoteId().equals(noteId)) {
                     Notes notes = Notes.builder().noteId(note.getNoteId())
                             .title(note.getTitle())

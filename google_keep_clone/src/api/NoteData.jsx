@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 
 export const getData = async (id) => {
 
-
   const url = `notes/userId/${id}`;
 
   try {
