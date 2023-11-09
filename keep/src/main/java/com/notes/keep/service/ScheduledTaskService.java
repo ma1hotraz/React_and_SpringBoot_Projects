@@ -14,15 +14,16 @@ public class ScheduledTaskService {
     @Autowired
     private DataSource dataSource;
 
-    //    @Scheduled(cron = "0 0 5 * * *")
-    @Scheduled(cron = "0 */2 * * * *")
+        @Scheduled(cron = "0 0 5 * * *")
     public void runScheduledTask() {
         System.out.println("CALLED");
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
             String sql = "DELETE FROM TRASH WHERE date < now() - interval 30 day;";
             statement.executeUpdate(sql);
+            System.out.println("TRASH TABLE UPDATED SUCCESSFULLY");
         } catch (Exception e) {
+            System.out.println("TRASH TABLE UPDATED UNSUCCESSFULLY");
             e.printStackTrace();
         }
     }
