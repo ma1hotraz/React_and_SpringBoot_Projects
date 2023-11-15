@@ -15,7 +15,7 @@ public interface CustomUserService extends UserDetailsService{
 
     public User findByUserId(UUID userId);
 
-    public User loginUser(AuthRequest user);
+    public UserDTO loginUser(AuthRequest user);
 
     public List<User> getAllUser();
 

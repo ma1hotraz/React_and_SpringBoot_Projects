@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,9 +35,11 @@ public class UserController {
     public String path;
     @Autowired
     private CustomUserServiceImpl userService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
 
-    @PostMapping("/add")
+    @PostMapping("/auth/add")
     public ResponseEntity<?> addUser(@RequestBody User user) {
         if (user.getEmail().isEmpty() || user.getEmail().isBlank() && user.getFirstName().isBlank() || user.getFirstName().isEmpty() && user.getPassword().isEmpty() || user.getPassword().isBlank() && user.getLastName().isBlank() || user.getLastName().isEmpty()) {
             return ResponseEntity.status(422).header("msg", "ANY OF THE VALUE IS EMPTY").build();
@@ -47,18 +53,26 @@ public class UserController {
         return ResponseEntity.ok(userDTO);
     }
 
-    @PostMapping("/login")
+    @PostMapping("/auth/login")
     public ResponseEntity<?> loginUser(@RequestBody AuthRequest user) throws InterruptedException {
         if (!userService.checkEmail(user.getEmail())) {
             Loggers.warn("EMAIL/USER NOT EXIST");
             return ResponseEntity.status(409).header("msg", "EMAIL/USER NOT EXIST").build();
         }
-        Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
-        User user1 = userService.loginUser(user);
-        if (user1 == null) {
-            return null;
+        try {
+//            Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
+            Authentication authenticationRequest =
+                    UsernamePasswordAuthenticationToken.unauthenticated(user.getEmail(), user.getPassword());
+            Authentication authenticationResponse =
+                    this.authenticationManager.authenticate(authenticationRequest);
+            System.out.println(authenticationResponse);
+            Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
+
+        } catch (Exception e) {
+            return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
         }
-        //TODO Will use model_mapping later User -> UserDTO
+        UserDTO user1 = userService.loginUser(user);
         return ResponseEntity.ok(user1);
     }
 

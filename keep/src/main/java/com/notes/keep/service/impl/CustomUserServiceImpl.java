@@ -23,7 +23,6 @@ public class CustomUserServiceImpl implements CustomUserService {
     private BCryptPasswordEncoder encoder;
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private EncryptionUtil encryptionUtil;
 
@@ -54,14 +53,15 @@ public class CustomUserServiceImpl implements CustomUserService {
 
 
     @Override
-    public User loginUser(AuthRequest user) {
+    public UserDTO loginUser(AuthRequest user) {
         System.out.println(user.getEmail() + " " + user.getPassword());
         User user1 = userRepository.findByEmail(user.getEmail());
         String password = encryptionUtil.encrypt(user1.getPassword());
         if (password.equals(user.getPassword())) {
             return null;
         }
-        return user1;
+
+        return UserDTO.builder().userId(user1.getUserId()).email(user1.getEmail()).image(user1.getImage()).build();
     }
 
     public UserDTO updateUser(User user) {
