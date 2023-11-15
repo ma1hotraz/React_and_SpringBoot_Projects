@@ -54,14 +54,8 @@ public class CustomUserServiceImpl implements CustomUserService {
 
     @Override
     public UserDTO loginUser(AuthRequest user) {
-        System.out.println(user.getEmail() + " " + user.getPassword());
         User user1 = userRepository.findByEmail(user.getEmail());
-        String password = encryptionUtil.encrypt(user1.getPassword());
-        if (password.equals(user.getPassword())) {
-            return null;
-        }
-
-        return UserDTO.builder().userId(user1.getUserId()).email(user1.getEmail()).image(user1.getImage()).build();
+        return UserDTO.builder().userId(user1.getUserId()).name(user1.getFirstName() + " " + user1.getLastName()).email(user1.getEmail()).image(user1.getImage()).build();
     }
 
     public UserDTO updateUser(User user) {
