@@ -1,12 +1,17 @@
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import getLocale from "../utils/SettingLocale";
 
 
 export const Login = async (UserInfo) => {
-   const url = '/user/login';
+   const url = 'user/auth/login';
 
    const signInObj = {
       email: UserInfo.get("email"),
       password: UserInfo.get("password"),
    }
+
+   
 
    try {
       const response = await fetch(url, {
@@ -17,15 +22,53 @@ export const Login = async (UserInfo) => {
          body: JSON.stringify(signInObj),
       });
 
-      if (response.ok) {
-          // console.log(response);
-         return true;
+      console.log("HERE", response);
+
+
+
+      if (response.status === 500) {
+         toast.warn('Server Error !', {
+            autoClose: 2000,
+         });
+         return;
+      }
+
+      if (response.status === 409) {
+         toast.warn('Email Exist, Please Login', {
+            autoClose: 2000,
+         });
+         return;
+      }
+
+      if (response.status === 401) {
+         toast.warn('Email or Password Wrong', {
+            autoClose: 2000,
+         });
+         throw new Error('Network response was not ok');
+      }
+
+      if (!response.ok) {
+         toast.warn('Something Went Wrong', {
+            autoClose: 2000,
+         });
+         throw new Error('Network response was not ok');
+      }
+
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+         const data = await response.json();
+         if (data !== null) {
+            sessionStorage.setItem('userData', JSON.stringify(data));
+            const locale = navigator.language;
+            const currLocale = getLocale(locale);
+            localStorage.setItem('lang', JSON.stringify(currLocale));
+            return data;
+         }
+
       } else {
-          // console.log(response);
-         return false;
+         throw new Error('Response is not valid JSON');
       }
    } catch (e) {
-      console.error('Error', e);
-      return false;
+      console.log('Error', e);
    }
 }

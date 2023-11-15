@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import getLocale from "../utils/SettingLocale";
 
 export const Signup = async (UserInfo) => {
-   const url = 'user/add';
+   const url = 'user/auth/add';
 
    const signUpObj = {
       firstName: UserInfo.get("firstname"),
@@ -21,8 +21,6 @@ export const Signup = async (UserInfo) => {
          body: JSON.stringify(signUpObj),
       });
 
-       // console.log(response);
-
 
       if (response.status === 500) {
          toast.warn('Server Error !', {
@@ -38,8 +36,8 @@ export const Signup = async (UserInfo) => {
          return;
       }
 
-      if (response.status === 422) {
-         toast.warn('Please Input Correct Value', {
+      if (response.status === 401) {
+         toast.warn('Email or Password Wrong', {
             autoClose: 2000,
          });
          throw new Error('Network response was not ok');
@@ -59,8 +57,6 @@ export const Signup = async (UserInfo) => {
             sessionStorage.setItem('userData', JSON.stringify(data));
             const locale = navigator.language;
             const currLocale = getLocale(locale);
-             // console.log(locale + "-> " + currLocale);
-            //setting up initial locale via browser
             localStorage.setItem('lang', JSON.stringify(currLocale));
             return data;
          }
@@ -69,7 +65,6 @@ export const Signup = async (UserInfo) => {
          throw new Error('Response is not valid JSON');
       }
    } catch (e) {
-       // console.log('Error', e);
-
+       console.log('Error', e);
    }
 }

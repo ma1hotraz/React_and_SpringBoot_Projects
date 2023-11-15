@@ -46,15 +46,20 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-
-     // console.log("LOGIN :  ", data);
-
-    if (Login(data) !== null) {
-      navigate("/home", toast.success("Login Successful"))
-    } else {
-      toast.error('Wrong Password')
-    }
+    handleSignIn(data);
   };
+
+
+  async function handleSignIn(data) {
+    try {
+      const userData = await Login(data);
+      if (userData) {
+        navigate("/home", toast.success("Login Successful"))
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>

@@ -45,7 +45,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://5a96-49-43-98-213.ngrok-free.app",
+  "proxy": "https://localhost:443",
   "eslintConfig": {
     "extends": [
       "react-app",
