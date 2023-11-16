@@ -80,10 +80,10 @@
   **STATUS** 
 
    - Frontend:
-     - Working On Dashboard
+     - Logout feature
 
    - Backend:
-     - Working on the implementation of Jwt authentication and authorization in the project
+     - Working on the validation of data
 
 <hr>
 
@@ -91,8 +91,8 @@
 
   **Feature**
    
-   - Multi-Language Support
-     - added 2-3 languages
+   - Spring Security
+     - Added Spring Security
    - Added Trash can
      - for deletion and retrieval of notes.
    - Added Archive
