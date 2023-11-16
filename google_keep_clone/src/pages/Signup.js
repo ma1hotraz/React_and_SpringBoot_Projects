@@ -20,7 +20,12 @@ import { toast } from "react-toastify";
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  
+
+  const [errorFirstName, seterrorFirstName] = React.useState(false);
+  const [errorLastName, seterrorLastName] = React.useState(false);
+  const [errorEmail, seterrorEmail] = React.useState(false);
+  const [errorPassword, seterrorPassword] = React.useState(false);
+
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -41,6 +46,30 @@ export default function SignIn() {
     }
   }
 
+  const validateEmail = (email) => {
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(String(email).toLowerCase());
+  };
+
+  const handleInputChangeFirstName = (event) => {
+    seterrorFirstName(event.target.value);
+  };
+  const handleInputChangeLastName = (event) => {
+    seterrorLastName(event.target.value);
+  };
+  const handleInputChangeEmail = (event) => {
+    seterrorEmail(validateEmail(event.target.value));
+  }
+  const handleInputChangePassword = (event) => {
+    seterrorPassword(event.target.value);
+  }
+
+  const isSubmitDisabled = !(
+    errorFirstName &&
+    errorLastName &&
+    errorEmail &&
+    errorPassword.length >= 6 ? true : false
+  );
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -94,7 +123,11 @@ export default function SignIn() {
                 name="firstname"
                 autoComplete="firstname"
                 autoFocus
+                error={errorFirstName.length <= 4 ? true : false}
+                helperText={errorFirstName.length <= 4 ? 'Too Short' : ''}
+                onChange={handleInputChangeFirstName}
               />
+
               <TextField
                 margin="normal"
                 required
@@ -103,7 +136,9 @@ export default function SignIn() {
                 label="Last Name"
                 name="lastname"
                 autoComplete="lastname"
-                
+                error={errorLastName.length <= 4 ? true : false}
+                helperText={errorLastName.length <= 4 ? 'Too Short' : ''}
+                onChange={handleInputChangeLastName}
               />
               <TextField
                 margin="normal"
@@ -113,7 +148,9 @@ export default function SignIn() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                
+                error={errorEmail ? false : true}
+                helperText={errorEmail === false ? 'Invalid email address' : ''}
+                onChange={handleInputChangeEmail}
               />
               <TextField
                 margin="normal"
@@ -124,6 +161,9 @@ export default function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                error={errorPassword.length < 6 ? true : false}
+                helperText={errorPassword.length < 6 ? 'Too Short Min. 6 ' : ''}
+                onChange={handleInputChangePassword}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -134,6 +174,7 @@ export default function SignIn() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                disabled={isSubmitDisabled}
               >
                 Sign In
               </Button>

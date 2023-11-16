@@ -69,7 +69,7 @@ export default function Note(props) {
                 fetchAndRefreshData();
                 setIsModalOpen(false);
                 setSelectedNoteId(null);
-                toast.warn(getText('Note deleted successfully!'), {
+                toast.warn(getText('Note deleted!'), {
                     autoClose: 2000,
                 });
             })
@@ -182,7 +182,7 @@ export default function Note(props) {
                     setNoteTitle('');
                     setNoteDescription('');
                     clearTitleAndDescription();
-                    toast.success('Note added successfully!', {
+                    toast.success('Note added!', {
                         autoClose: 2000,
                     });
                 })
@@ -206,7 +206,7 @@ export default function Note(props) {
                     setNoteTitle('');
                     setNoteDescription('');
                     clearTitleAndDescription();
-                    toast.success('Note Edited successfully!', {
+                    toast.success('Note Edited!', {
                         autoClose: 2000,
                     });
                 })

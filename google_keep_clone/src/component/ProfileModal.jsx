@@ -6,8 +6,12 @@ import { updateData } from '../api/UpdateUser';
 import ImageDisplay from './ImageDisplay';
 import { getRandomColor } from '../utils/ColorList';
 import { serverStatus } from '../api/AdminAPIs';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function ProfileModal() {
+
+    const navigate = useNavigate();
 
 
     const [modalOpen, setModalOpen] = useState(false);
@@ -125,7 +129,8 @@ export default function ProfileModal() {
     };
 
     const handleLogout = () => {
-        
+        navigate("/", toast.success("Logout Successful"))
+        sessionStorage.clear();
     }
 
     const fadeDuration = '1.0s';

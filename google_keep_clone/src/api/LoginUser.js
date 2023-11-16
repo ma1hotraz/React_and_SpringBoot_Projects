@@ -11,8 +11,6 @@ export const Login = async (UserInfo) => {
       password: UserInfo.get("password"),
    }
 
-   
-
    try {
       const response = await fetch(url, {
          method: 'POST',
