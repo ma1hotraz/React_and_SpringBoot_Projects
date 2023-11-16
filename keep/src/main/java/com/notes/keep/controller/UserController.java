@@ -2,10 +2,12 @@ package com.notes.keep.controller;
 
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
+import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.User;
 import com.notes.keep.service.impl.CustomUserServiceImpl;
 import com.notes.keep.utils.ImageUtils;
 import com.notes.keep.utils.Loggers;
+import jakarta.annotation.security.RolesAllowed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -48,8 +50,8 @@ public class UserController {
             return ResponseEntity.status(409).build();
         }
         Loggers.info("USER CREATED WITH EMAIL : " + user.getEmail());
-        UserDTO userDTO = userService.createUser(user);
-        return ResponseEntity.ok(userDTO);
+        AuthResponse authResponse = userService.createUser(user);
+        return ResponseEntity.ok(authResponse);
     }
 
     @PostMapping("/auth/login")
@@ -69,16 +71,19 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
         }
-        UserDTO user1 = userService.loginUser(user);
-        return ResponseEntity.ok(user1);
+        AuthResponse authResponse = userService.loginUser(user);
+        return ResponseEntity.ok(authResponse);
     }
 
-    @GetMapping("/userId/{id}")
+    @RolesAllowed("USER")
+    @GetMapping("/userId/")
     public ResponseEntity<?> findByUserId(@PathVariable UUID id) {
+        System.out.println(id);
         Loggers.info("USER WITH" + id + " CALLED");
         return ResponseEntity.ok(userService.findByUserId(id));
     }
 
+    @RolesAllowed("USER")
     @PutMapping("/updateUser/")
     public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
         Loggers.info("UPDATE USER CALLED");

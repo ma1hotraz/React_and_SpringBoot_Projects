@@ -1,13 +1,17 @@
 package com.notes.keep.service.impl;
 
+import com.notes.keep.config.jwt.JwtService;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
+import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.UserRepository;
 import com.notes.keep.service.CustomUserService;
 import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.ImageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -25,10 +29,14 @@ public class CustomUserServiceImpl implements CustomUserService {
     private UserRepository userRepository;
     @Autowired
     private EncryptionUtil encryptionUtil;
+    @Autowired
+    private JwtService jwtService;
+    @Autowired
+    private AuthenticationManager manager;
 
 
     @Override
-    public UserDTO createUser(User user) {
+    public AuthResponse createUser(User user) {
         user.setRoles("USER");
         user.setPassword(encoder.encode(user.getPassword()));
         Date utilDate = new Date();
@@ -42,25 +50,35 @@ public class CustomUserServiceImpl implements CustomUserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return UserDTO.builder().userId(user.getUserId()).email(user.getEmail()).name(user.getFirstName() + " " + user.getLastName()).image(user.getImage()).build();
+        UserDTO userDTO = UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
+        var jwtToken = jwtService.generateToken(user,userDTO);
+        return AuthResponse.builder().token(jwtToken).build();
     }
 
     @Override
     public User findByUserId(UUID userId) {
-        Optional<User> user = Optional.of(userRepository.findById(userId).get());
         return userRepository.findById(userId).get();
     }
 
 
     @Override
-    public UserDTO loginUser(AuthRequest user) {
-        User user1 = userRepository.findByEmail(user.getEmail());
-        return UserDTO.builder().userId(user1.getUserId()).name(user1.getFirstName() + " " + user1.getLastName()).email(user1.getEmail()).image(user1.getImage()).build();
+    public AuthResponse loginUser(AuthRequest user) {
+        Optional<User> user1 = userRepository.findByEmail(user.getEmail());
+        manager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        user.getEmail(),
+                        user.getPassword()
+                )
+        );
+        var userTemp = user1.get();
+        UserDTO userDTO = UserDTO.builder().userId(userTemp.getUserId()).name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(user.getEmail()).image(userTemp.getImage()).build();
+        var jwtToken = jwtService.generateToken(userTemp,userDTO);
+        return AuthResponse.builder().token(jwtToken).build();
     }
 
     public UserDTO updateUser(User user) {
-        User userOld = userRepository.findByEmail(user.getEmail());
-        System.out.println("oldUser" + userOld);
+        Optional<User> temp = userRepository.findByEmail(user.getEmail());
+        User userOld = temp.get();
         byte[] upload = null;
         upload = ImageUtils.compressImage(user.getImage());
         userOld.setImage(upload);
@@ -86,7 +104,7 @@ public class CustomUserServiceImpl implements CustomUserService {
         if(!checkEmail(email)){
             return null;
         }
-        return userRepository.findByEmail(email);
+        return userRepository.findByEmail(email).get();
     }
 
     //METHODS NEEDS TO IMPLEMENT

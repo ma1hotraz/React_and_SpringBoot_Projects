@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.notes.keep.repository.UserRepository;
 
+import java.util.Optional;
+
 @Service
 
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -18,7 +20,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        User user = repository.findByEmail(email);
+        Optional<User> temp = repository.findByEmail(email);
+        User user = temp.get();
         if (user != null) {
             return new CustomUserDetails(user);
         }

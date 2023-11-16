@@ -10,11 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 import java.sql.Date;
-import java.util.Iterator;
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
@@ -49,12 +46,13 @@ public class AdminServices {
 
 
     public UserDTO findUserByEmail(String email) {
-        User user = userRepository.findByEmail(email);
+        Optional<User> user = userRepository.findByEmail(email);
         UserDTO userDTO = null;
-        if (user == null) {
+        if (!user.isPresent()) {
             return userDTO;
         }
-        userDTO = UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
+        User user1 = user.get();
+        userDTO = UserDTO.builder().userId(user1.getUserId()).name(user1.getFirstName() + " " + user1.getLastName()).email(user1.getEmail()).image(user1.getImage()).build();
         return userDTO;
     }
 
