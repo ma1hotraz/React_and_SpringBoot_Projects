@@ -14,31 +14,16 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Login } from '../api/LoginUser';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
-
-function Copyright() {
-  return (
-    // <Box sx={{ margin: '20px', display: 'flex', flexDirection: 'column', width: '180px' }}>
-    //   <Button variant={'outlined'} sx={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
-    //     <img src={Okta} height={'30px'} width={'30px'}/>
-    //     <div style={{width: '10px'}}></div>
-    //     <IconButton>Okta</IconButton>
-    //   </Button>
-    //   <Button variant={'outlined'} sx={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
-    //     <img src={Oauth} height={'30px'} width={'30px'}/>
-    //     <div style={{width: '10px'}}></div>
-    //     <IconButton>OAuth</IconButton>
-    //   </Button>
-    // </Box>
-    <>
-    </>
-  );
-}
 
 const defaultTheme = createTheme();
 
 
 export default function SignIn() {
+
+  const [errorEmail, seterrorEmail] = useState(false);
+  const [errorPassword, seterrorPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -48,6 +33,24 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
     handleSignIn(data);
   };
+
+
+  const validateEmail = (email) => {
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(String(email).toLowerCase());
+  };
+
+  const handleInputChangeEmail = (event) => {
+    seterrorEmail(validateEmail(event.target.value));
+  }
+  const handleInputChangePassword = (event) => {
+    seterrorPassword(event.target.value);
+  }
+
+  const isSubmitDisabled = !(
+    errorEmail &&
+      errorPassword.length >= 6 ? true : false
+  );
 
 
   async function handleSignIn(data) {
@@ -113,6 +116,9 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                error={errorEmail ? false : true}
+                helperText={errorEmail === false ? 'Invalid email address' : ''}
+                onChange={handleInputChangeEmail}
               />
               <TextField
                 margin="normal"
@@ -123,6 +129,9 @@ export default function SignIn() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                error={errorPassword.length < 6 ? true : false}
+                helperText={errorPassword.length < 6 ? 'Too Short Min. 6 ' : ''}
+                onChange={handleInputChangePassword}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -133,6 +142,7 @@ export default function SignIn() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                disabled={isSubmitDisabled}
               >
                 Sign In
               </Button>
@@ -148,7 +158,6 @@ export default function SignIn() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>
         </Grid>
