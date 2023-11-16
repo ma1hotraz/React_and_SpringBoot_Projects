@@ -51,22 +51,20 @@ public class JwtService {
 
     public String generateToken(
             Map<String, Object> extractClaims,
-            UserDetails userDetails,
-            UserDTO userDTO
+            UserDetails userDetails
     ) {
         return Jwts
                 .builder()
                 .setClaims(extractClaims)
                 .setSubject(userDetails.getUsername())
-                .claim("user", userDTO)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpiration))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    public String generateToken(UserDetails userDetails, UserDTO user) {
-        return generateToken(new HashMap<>(), userDetails, user);
+    public String generateToken(UserDetails userDetails) {
+        return generateToken(new HashMap<>(), userDetails);
     }
 
     public boolean isTokenValid(

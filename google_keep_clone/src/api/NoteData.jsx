@@ -5,19 +5,24 @@ import PropTypes from 'prop-types'
 
 
 
-export const getData = async (id) => {
+export const getData = async (id, token) => {
 
   const url = `notes/userId/${id}`;
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `${token}`
+      },
+    });
 
-    if (response.status === 204) {
-      toast.warn('Create A Note', {
-        autoClose: 3000,
-      });
-      return [];
-    }
+    // if (response.status === 204) {
+    //   toast.warn('Create A Note', {
+    //     autoClose: 3000,
+    //   });
+    //   return [];
+    // }
 
     if (!response.ok) {
       toast.warn('Server Error !', {
@@ -48,10 +53,12 @@ export default function NoteData({ setData }) {
   const userData = sessionStorage.getItem('userData');
   const user = JSON.parse(userData);
   const id = user?.userId;
+  const token = user?.response;
+
 
   useEffect(() => {
     if (id) {
-      getData(id)
+      getData(id, token)
         .then((fetchedData) => {
           setData(fetchedData);
         })
@@ -59,7 +66,7 @@ export default function NoteData({ setData }) {
           console.error('Error fetching data:', error);
         });
     }
-  }, [id, setData]);
+  }, [id, token, setData]);
 
 }
 

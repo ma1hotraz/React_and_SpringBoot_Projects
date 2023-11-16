@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import getLocale from "../utils/SettingLocale";
+import { jwtDecode } from "jwt-decode";
 
 export const Signup = async (UserInfo) => {
    const url = 'user/auth/add';
@@ -20,7 +21,8 @@ export const Signup = async (UserInfo) => {
          },
          body: JSON.stringify(signUpObj),
       });
-
+      
+      
 
       if (response.status === 500) {
          toast.warn('Server Error !', {
@@ -54,6 +56,7 @@ export const Signup = async (UserInfo) => {
       if (contentType && contentType.includes('application/json')) {
          const data = await response.json();
          if (data !== null) {
+            console.log(jwtDecode(JSON.stringify(data)));
             sessionStorage.setItem('userData', JSON.stringify(data));
             const locale = navigator.language;
             const currLocale = getLocale(locale);

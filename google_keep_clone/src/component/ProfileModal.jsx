@@ -124,6 +124,9 @@ export default function ProfileModal() {
         setIsImageVisible(!isImageVisible);
     };
 
+    const handleLogout = () => {
+        
+    }
 
     const fadeDuration = '1.0s';
 
@@ -200,8 +203,9 @@ export default function ProfileModal() {
                                 Email: {email}
                             </Typography>
                         </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'center', margin: '10px' }} >
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', margin: '10px' }} >
                             <Button variant='contained' onClick={handleClose}>Close</Button>
+                            <Button variant='contained' color='error' onClick={handleLogout}>Logout</Button>
                         </Box>
                     </Box>
                 </Modal>

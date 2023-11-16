@@ -15,14 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -50,8 +43,8 @@ public class UserController {
             return ResponseEntity.status(409).build();
         }
         Loggers.info("USER CREATED WITH EMAIL : " + user.getEmail());
-        AuthResponse authResponse = userService.createUser(user);
-        return ResponseEntity.ok(authResponse);
+        UserDTO userDTO = userService.createUser(user);
+        return ResponseEntity.ok(userDTO);
     }
 
     @PostMapping("/auth/login")
@@ -71,14 +64,14 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
         }
-        AuthResponse authResponse = userService.loginUser(user);
-        return ResponseEntity.ok(authResponse);
+        UserDTO userDTO = userService.loginUser(user);
+        return ResponseEntity.ok(userDTO);
     }
 
-    @RolesAllowed("USER")
-    @GetMapping("/userId/")
-    public ResponseEntity<?> findByUserId(@PathVariable UUID id) {
-        System.out.println(id);
+//    @RolesAllowed("USER")
+    @GetMapping("/userId")
+    public ResponseEntity<?> findByUserId(@RequestParam("id") UUID id) {
+        System.out.println("here is the control "+id);
         Loggers.info("USER WITH" + id + " CALLED");
         return ResponseEntity.ok(userService.findByUserId(id));
     }

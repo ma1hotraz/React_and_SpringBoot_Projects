@@ -36,7 +36,7 @@ public class CustomUserServiceImpl implements CustomUserService {
 
 
     @Override
-    public AuthResponse createUser(User user) {
+    public UserDTO createUser(User user) {
         user.setRoles("USER");
         user.setPassword(encoder.encode(user.getPassword()));
         Date utilDate = new Date();
@@ -50,9 +50,9 @@ public class CustomUserServiceImpl implements CustomUserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        UserDTO userDTO = UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
-        var jwtToken = jwtService.generateToken(user,userDTO);
-        return AuthResponse.builder().token(jwtToken).build();
+        var jwtToken = jwtService.generateToken(user);
+        AuthResponse token = AuthResponse.builder().token(jwtToken).build();
+        return UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).response(token).build();
     }
 
     @Override
@@ -62,7 +62,7 @@ public class CustomUserServiceImpl implements CustomUserService {
 
 
     @Override
-    public AuthResponse loginUser(AuthRequest user) {
+    public UserDTO loginUser(AuthRequest user) {
         Optional<User> user1 = userRepository.findByEmail(user.getEmail());
         manager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -71,9 +71,9 @@ public class CustomUserServiceImpl implements CustomUserService {
                 )
         );
         var userTemp = user1.get();
-        UserDTO userDTO = UserDTO.builder().userId(userTemp.getUserId()).name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(user.getEmail()).image(userTemp.getImage()).build();
-        var jwtToken = jwtService.generateToken(userTemp,userDTO);
-        return AuthResponse.builder().token(jwtToken).build();
+        var jwtToken = jwtService.generateToken(userTemp);
+        AuthResponse token = AuthResponse.builder().token(jwtToken).build();
+        return UserDTO.builder().userId(userTemp.getUserId()).name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(userTemp.getEmail()).image(userTemp.getImage()).response(token).build();
     }
 
     public UserDTO updateUser(User user) {

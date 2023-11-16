@@ -12,11 +12,11 @@ import java.util.UUID;
 
 public interface CustomUserService extends UserDetailsService{
 
-    public AuthResponse createUser(User user);
+    public UserDTO createUser(User user);
 
     public User findByUserId(UUID userId);
 
-    public AuthResponse loginUser(AuthRequest user);
+    public UserDTO loginUser(AuthRequest user);
 
     public List<User> getAllUser();
 
