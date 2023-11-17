@@ -7,7 +7,7 @@ const ImageDisplay2 = ({ imageData }) => {
         const fetchImage = () => {
             try {
                 if (!imageData) {
-                    console.error('Image data not found in props', imageData);
+                    // console.error('Image data not found in props', imageData);
                     return;
                 }
 

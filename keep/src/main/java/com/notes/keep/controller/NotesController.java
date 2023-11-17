@@ -1,6 +1,10 @@
 package com.notes.keep.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.notes.keep.model.Archived;
+import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.Notes;
 import com.notes.keep.model.Trash;
 import com.notes.keep.service.NotesService;
@@ -12,6 +16,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.logging.Logger;
 

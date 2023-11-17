@@ -1,6 +1,8 @@
 package com.notes.keep.config;
 
 import com.notes.keep.config.jwt.JwtAuthFilter;
+import com.notes.keep.model.Admin;
+import com.notes.keep.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,14 +10,23 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.authentication.configurers.provisioning.InMemoryUserDetailsManagerConfigurer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import java.util.Collection;
 
 @Configuration
 @EnableWebSecurity
@@ -30,9 +41,8 @@ public class SecurityConfig {
         return new UserDetailsServiceImpl();
     }
 
-
     @Bean
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(encoder());
@@ -55,12 +65,8 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/user/**", "/api/v1/auth/**", "/actuator/health","/notes/**")
+                .requestMatchers("/user/**", "/admin/**","/api/v1/auth/**", "/actuator/health", "/notes/**")
                 .permitAll()
-                .requestMatchers("/admin/**")
-                .hasRole("ADMIN")
-//                .requestMatchers("/user/**")
-//                .hasRole("USER")
                 .anyRequest()
                 .authenticated()
                 .and()

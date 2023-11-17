@@ -1,13 +1,28 @@
 package com.notes.keep.service;
 
+import com.notes.keep.config.SecurityConfig;
+import com.notes.keep.config.jwt.JwtService;
+import com.notes.keep.dto.AdminDTO;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.dto.UserDTODate;
+import com.notes.keep.model.Admin;
+import com.notes.keep.model.AuthRequest;
+import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.User;
 import com.notes.keep.repository.AdminRepository;
 import com.notes.keep.repository.UserRepository;
 import com.notes.keep.utils.ImageUtils;
+import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -17,14 +32,29 @@ import java.util.stream.Collectors;
 @Service
 public class AdminServices {
     @Autowired
-    private PasswordEncoder encoder;
-    @Autowired
     private AdminRepository adminRepository;
-
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private AuthenticationManager manager;
+    @Autowired
+    private JwtService jwtService;
 
     public AdminServices() {
+    }
+
+    public AdminDTO login(AuthRequest request) {
+        Optional<Admin> temp = adminRepository.findById(request.getEmail());
+        manager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        request.getEmail(),
+                        request.getPassword()
+                )
+        );
+        Admin admin = temp.get();
+        var jwtToken = jwtService.generateToken(admin);
+        AuthResponse token = AuthResponse.builder().token(jwtToken).build();
+        return AdminDTO.builder().email(admin.getEmail()).name(admin.getFirstName() + " " + admin.getLastName()).response(token).build();
     }
 
     public List<UserDTODate> userList() {
@@ -88,7 +118,7 @@ public class AdminServices {
         return adminRepository.sizeOfDB();
     }
 
-    public String sendLogs(){
+    public String sendLogs() {
         return null;
     }
 

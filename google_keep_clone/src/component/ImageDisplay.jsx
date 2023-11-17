@@ -12,7 +12,7 @@ const ImageDisplay = () => {
          // console.log("THIS IS DATA", imageData);
 
         if (!imageData || !imageData.image) {
-          console.error('Image data not found in sessionStorage');
+          // console.error('Image data not found in sessionStorage');
           return;
         }
 

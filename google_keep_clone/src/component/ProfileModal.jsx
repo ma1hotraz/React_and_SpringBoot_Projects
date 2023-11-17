@@ -45,7 +45,7 @@ export default function ProfileModal() {
                 const imageData = JSON.parse(dataS);
 
                 if (!imageData || !imageData.image) {
-                    console.error('Image data not found in sessionStorage');
+                    // console.error('Image data not found in sessionStorage');
                     return;
                 }
 

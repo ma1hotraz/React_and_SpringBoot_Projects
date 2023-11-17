@@ -59,7 +59,6 @@ public class UserController {
                     UsernamePasswordAuthenticationToken.unauthenticated(user.getEmail(), user.getPassword());
             Authentication authenticationResponse =
                     this.authenticationManager.authenticate(authenticationRequest);
-            System.out.println(authenticationResponse);
             Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
 
         } catch (Exception e) {

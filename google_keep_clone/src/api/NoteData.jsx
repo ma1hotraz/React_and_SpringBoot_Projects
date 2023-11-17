@@ -69,3 +69,6 @@ export default function NoteData({ setData }) {
 NoteData.propTypes = {
   setData: PropTypes.func,
 };
+
+
+
