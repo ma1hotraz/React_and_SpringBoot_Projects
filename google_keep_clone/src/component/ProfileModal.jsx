@@ -4,22 +4,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { updateData } from '../api/UpdateUser';
 import ImageDisplay from './ImageDisplay';
-import { getRandomColor } from '../utils/ColorList';
 import { serverStatus } from '../api/AdminAPIs';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+
 export default function ProfileModal() {
-
     const navigate = useNavigate();
-
 
     const [modalOpen, setModalOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [source, setSource] = useState(null);
     const [isImageVisible, setIsImageVisible] = useState(false);
     const [isServerUp, setIsServerUp] = useState('error');
-
+    const [avatarCol, setAvatarCol] = useState('grey');
 
     const getStatus = async () => {
         try {
@@ -38,6 +36,8 @@ export default function ProfileModal() {
         getStatus();
     }, []);
 
+    const fileInputRef = useRef(null);
+
     useEffect(() => {
         const fetchImage = () => {
             try {
@@ -50,9 +50,7 @@ export default function ProfileModal() {
                 }
 
                 const byteArray = new Uint8Array(atob(imageData.image).split('').map(char => char.charCodeAt(0)));
-
                 const blob = new Blob([byteArray], { type: 'image/png' });
-
                 const dataUrl = URL.createObjectURL(blob);
 
                 setSource(dataUrl);
@@ -61,22 +59,10 @@ export default function ProfileModal() {
             }
         };
 
+        const storedData = localStorage.getItem('avtarCol');
+        setAvatarCol(storedData.substring(1,8) || 'grey');
+
         fetchImage();
-    }, []);
-
-    const storedData = sessionStorage.getItem('userData');
-    const data = JSON.parse(storedData);
-
-
-    const name = data.name;
-    const email = data.email;
-    const file = data.image;
-
-
-    const fileInputRef = useRef(null);
-
-    useEffect(() => {
-        setIsHovered(false);
     }, []);
 
     const handleClick = () => {
@@ -96,29 +82,25 @@ export default function ProfileModal() {
     };
 
     const handleImage = () => {
-        if (fileInputRef.current) {
-            fileInputRef.current.click();
-        }
-    }
+        fileInputRef.current.click();
+    };
 
     const handleFileChange = async (event) => {
         const selectedFile = event.target.files[0];
 
-        const User = {
+        const user = {
             name: name,
             email: email,
-            file: selectedFile
-        }
+            file: selectedFile,
+        };
 
         try {
-            const response = await updateData(User);
-
+            const response = await updateData(user);
             updateProfileImage(response.data);
         } catch (error) {
             console.error('Error updating user:', error);
         }
     };
-
 
     const updateProfileImage = (newImageSource) => {
         setSource(newImageSource);
@@ -129,9 +111,11 @@ export default function ProfileModal() {
     };
 
     const handleLogout = () => {
-        navigate("/", toast.success("Logout Successful"))
+        navigate('/', toast.success('Logout Successful'));
         sessionStorage.clear();
-    }
+    };
+
+    const { name, email } = JSON.parse(sessionStorage.getItem('userData'));
 
     const fadeDuration = '1.0s';
 
@@ -139,14 +123,35 @@ export default function ProfileModal() {
         <Box>
             <Tooltip title={'Profile'}>
                 <Button onClick={handleClick}>
-                    {source !== null ? <Badge color={`${isServerUp}`} overlap='circular' size="large" variant='dot' anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'right'
-                    }}><Avatar><ImageDisplay /></Avatar> </Badge> : <Badge color={`${isServerUp}`}
-                        overlap='circular' size="large" variant='dot' anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'right'
-                        }}><Avatar sx={{ backgroundColor: getRandomColor() }}>{name.charAt(0)}</Avatar></Badge>}
+                    {source !== null ? (
+                        <Badge
+                            color={`${isServerUp}`}
+                            overlap="circular"
+                            size="large"
+                            variant="dot"
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'right',
+                            }}
+                        >
+                            <Avatar sx={{ backgroundColor: avatarCol }}>
+                                <ImageDisplay />
+                            </Avatar>
+                        </Badge>
+                    ) : (
+                        <Badge
+                            color={`${isServerUp}`}
+                            overlap="circular"
+                            size="large"
+                            variant="dot"
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'right',
+                            }}
+                        >
+                            <Avatar sx={{ backgroundColor: avatarCol }}>{name.charAt(0)}</Avatar>
+                        </Badge>
+                    )}
                 </Button>
                 <Modal
                     open={modalOpen}
@@ -164,7 +169,7 @@ export default function ProfileModal() {
                             border: '2px solid #000',
                             boxShadow: 24,
                             p: 4,
-                            borderRadius: '20px'
+                            borderRadius: '20px',
                         }}
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -186,14 +191,20 @@ export default function ProfileModal() {
                                         <FontAwesomeIcon icon={faCamera} />
                                     </Box>
                                 ) : (
-
-                                    (file === undefined || file === null || !source) ? (
-                                        <Avatar sx={{ transition: `opacity ${fadeDuration}`, opacity: isImageVisible ? 1 : 0, }}>
+                                    (source === null || !source) ? (
+                                        <Avatar
+                                            sx={{
+                                                transition: `opacity ${fadeDuration}`,
+                                                opacity: isImageVisible ? 1 : 0,
+                                            }}
+                                        >
                                             {name.charAt(0)}
                                         </Avatar>
-                                    ) : (<>
-                                        <Avatar sx={{ height: "108px", width: "108px" }}><ImageDisplay /></Avatar>
-                                    </>)
+                                    ) : (
+                                        <Avatar sx={{ height: '108px', width: '108px' }}>
+                                            <ImageDisplay />
+                                        </Avatar>
+                                    )
                                 )}
                             </Avatar>
                         </Box>
@@ -208,9 +219,13 @@ export default function ProfileModal() {
                                 Email: {email}
                             </Typography>
                         </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', margin: '10px' }} >
-                            <Button variant='contained' onClick={handleClose}>Close</Button>
-                            <Button variant='contained' color='error' onClick={handleLogout}>Logout</Button>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', margin: '10px' }}>
+                            <Button variant="contained" onClick={handleClose}>
+                                Close
+                            </Button>
+                            <Button variant="contained" color="error" onClick={handleLogout}>
+                                Logout
+                            </Button>
                         </Box>
                     </Box>
                 </Modal>

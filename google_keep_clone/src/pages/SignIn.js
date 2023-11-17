@@ -15,6 +15,7 @@ import { Login } from '../api/LoginUser';
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import LoadingBar from "react-top-loading-bar";
 
 
 const defaultTheme = createTheme();
@@ -24,6 +25,8 @@ export default function SignIn() {
 
   const [errorEmail, seterrorEmail] = useState(false);
   const [errorPassword, seterrorPassword] = useState(false);
+  const [isLoading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const navigate = useNavigate();
 
@@ -47,26 +50,34 @@ export default function SignIn() {
     seterrorPassword(event.target.value);
   }
 
-  const isSubmitDisabled = !(
-    errorEmail &&
-      errorPassword.length >= 6 ? true : false
-  );
+  const isSubmitDisabled = !(errorEmail && errorPassword.length >= 6);
 
 
   async function handleSignIn(data) {
     try {
+      setLoading(true);
+      setProgress(35);
       const userData = await Login(data);
       if (userData) {
-        navigate("/home", toast.success("Login Successful"))
+        setProgress(100);
+        navigate("/home", toast.success("Login Successful"));
       }
     } catch (error) {
       console.error('Login failed:', error);
+    } finally {
+      setLoading(false);
     }
   }
-
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      {isLoading ? <LoadingBar color="yellow" height={10} progress={progress} shadow={true} transitionTime={2000} waitingTime={1000} onLoaderFinished={() => setProgress(0)} /> : <></>}
+      <Grid container component="main" sx={{
+        height: "100vh",
+        backgroundColor: `${isLoading ? '#000000' : '#FFFFFF'}`,
+        backdropFilter: `blur(${isLoading ? '10px' : '0'})`,
+        opacity: isLoading ? 0.8 : 1,
+        boxShadow: `${isLoading ? '10px 20px 20px grey' : 'none'}`,
+      }}>
         <CssBaseline />
         <Grid
           item
@@ -143,6 +154,7 @@ export default function SignIn() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
                 disabled={isSubmitDisabled}
+                onClick={() => setLoading(true)}
               >
                 Sign In
               </Button>

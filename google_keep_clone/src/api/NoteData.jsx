@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types'
 
 
-
 export const getData = async (id, token) => {
 
   const url = `notes/userId/${id}`;
@@ -17,12 +16,9 @@ export const getData = async (id, token) => {
       },
     });
 
-    // if (response.status === 204) {
-    //   toast.warn('Create A Note', {
-    //     autoClose: 3000,
-    //   });
-    //   return [];
-    // }
+    if (response.status === 204) {
+      return [];
+    }
 
     if (!response.ok) {
       toast.warn('Server Error !', {

@@ -11,15 +11,11 @@ export const updateData = async (updatedData) => {
     formData.append('name', updatedData.name);
     formData.append('file', updatedData.file);
 
-     // console.log(formData.get('email'));
-
     try {
         const response = await fetch(url, {
             method: 'PUT',
             body: formData,
         });
-
-         // console.log(response);
 
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -31,7 +27,6 @@ export const updateData = async (updatedData) => {
             const data = await response.json();
             if (data !== null) {
                 sessionStorage.setItem('userData', JSON.stringify(data));
-                 // console.log(data);
                 return data;
              }
             return data || {};

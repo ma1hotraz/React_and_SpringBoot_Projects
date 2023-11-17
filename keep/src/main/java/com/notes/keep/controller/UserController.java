@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -68,15 +69,14 @@ public class UserController {
         return ResponseEntity.ok(userDTO);
     }
 
-//    @RolesAllowed("USER")
-    @GetMapping("/userId")
-    public ResponseEntity<?> findByUserId(@RequestParam("id") UUID id) {
+    @GetMapping("/userId/{id}")
+    public ResponseEntity<?> findByUserId(@PathVariable UUID id) {
         System.out.println("here is the control "+id);
         Loggers.info("USER WITH" + id + " CALLED");
         return ResponseEntity.ok(userService.findByUserId(id));
     }
 
-    @RolesAllowed("USER")
+
     @PutMapping("/updateUser/")
     public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
         Loggers.info("UPDATE USER CALLED");

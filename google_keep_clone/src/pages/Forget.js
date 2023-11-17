@@ -88,9 +88,14 @@ export default function Forget() {
                                 Send Link
                             </Button>
                             <Grid container>
-                                <Grid item>
+                                <Grid item xs>
                                     <Link href="/signin" variant="body2">
-                                        {"Sign In"}
+                                        Sign In
+                                    </Link>
+                                </Grid>
+                                <Grid item>
+                                    <Link href="/SignUp" variant="body2">
+                                        {"Don't have an account? Sign Up"}
                                     </Link>
                                 </Grid>
                             </Grid>

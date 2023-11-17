@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import getLocale from "../utils/SettingLocale";
-import { jwtDecode } from "jwt-decode";
+import { getRandomColor } from '../utils/ColorList';
 
 export const Signup = async (UserInfo) => {
    const url = 'user/auth/add';
@@ -21,8 +21,8 @@ export const Signup = async (UserInfo) => {
          },
          body: JSON.stringify(signUpObj),
       });
-      
-      
+
+      console.log(response);
 
       if (response.status === 500) {
          toast.warn('Server Error !', {
@@ -56,18 +56,18 @@ export const Signup = async (UserInfo) => {
       if (contentType && contentType.includes('application/json')) {
          const data = await response.json();
          if (data !== null) {
-            console.log(jwtDecode(JSON.stringify(data)));
+            console.log(data, "DATA FROM BACKEND ");
             sessionStorage.setItem('userData', JSON.stringify(data));
             const locale = navigator.language;
             const currLocale = getLocale(locale);
             localStorage.setItem('lang', JSON.stringify(currLocale));
+            localStorage.setItem('avtarCol', JSON.stringify(getRandomColor()));
             return data;
          }
-
       } else {
          throw new Error('Response is not valid JSON');
       }
    } catch (e) {
-       console.log('Error', e);
+      console.log('Error', e);
    }
 }

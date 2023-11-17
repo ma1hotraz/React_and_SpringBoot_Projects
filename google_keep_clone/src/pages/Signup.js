@@ -15,6 +15,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Signup } from '../api/SignupUser'
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import LoadingBar from "react-top-loading-bar";
 
 
 const defaultTheme = createTheme();
@@ -25,6 +27,8 @@ export default function SignIn() {
   const [errorLastName, seterrorLastName] = React.useState(false);
   const [errorEmail, seterrorEmail] = React.useState(false);
   const [errorPassword, seterrorPassword] = React.useState(false);
+  const [isLoading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const navigate = useNavigate();
 
@@ -34,15 +38,19 @@ export default function SignIn() {
     handleSignup(data);
   };
 
-
   async function handleSignup(data) {
     try {
+      setLoading(true);
+      setProgress(35);
       const userData = await Signup(data);
       if (userData) {
+        setProgress(100);
         navigate("/home", toast.success("Login Successful"))
       }
     } catch (error) {
       console.error('Signup failed:', error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -66,14 +74,25 @@ export default function SignIn() {
 
   const isSubmitDisabled = !(
     errorFirstName &&
-    errorLastName &&
-    errorEmail &&
-    errorPassword.length >= 6 ? true : false
+      errorLastName &&
+      errorEmail &&
+      errorPassword.length >= 6 ? true : false
   );
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      {isLoading ? <LoadingBar color="yellow" height={10} progress={progress} shadow={true} transitionTime={2000} waitingTime={1000} onLoaderFinished={() => setProgress(0)} /> : <></>}
+      <Grid
+        container
+        component="main"
+        sx={{
+          height: "100vh",
+          backgroundColor: `${isLoading ? '#000000' : '#FFFFFF'}`,
+          backdropFilter: `blur(${isLoading ? '10px' : '0'})`,
+          opacity: isLoading ? 0.8 : 1,
+          boxShadow: `${isLoading ? '10px 20px 20px grey' : 'none'}`,
+        }}
+      >
         <CssBaseline />
         <Grid
           item
