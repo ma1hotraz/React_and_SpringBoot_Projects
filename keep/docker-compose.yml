@@ -1,21 +1,33 @@
-version: '3'
-
+version: "3.7"
 services:
-  mysql:
-    image: mysql:8.0
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: notes_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+#  dbservice:
+#    container_name: dbservice
+#    image: mysql:latest
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: notes_db
+#    volumes:
+#      - ./data:/var/lib/mysql
+#    ports:
+#      - 3307:3306
+#    networks:
+#      - springserv
 
-  spring-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  appservice:
+    build: ./
+#    depends_on:
+#      - dbservice
+    restart: always
+#    environment:
+#      MYSQL_HOST: dbservice
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: root
+#      MYSQL_PORT: 3306
+
     ports:
-      - "8080:8080"
-    depends_on:
-      - mysql
+      - 8000-8999:8080
+#    networks:
+#      - springserv
+
+#networks:
+#  springserv:

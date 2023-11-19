@@ -10,20 +10,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/logs")
-public class LogTailerController {
+public class LogTailerController{
 
     @Autowired
     private LogTailerService logTailerService;
 
-//    @GetMapping("/tail-log")
-//    public void tailLog(@RequestParam String filePath) {
-//
-//        logTailerService.tailLogFile(filePath);
-//    }
 
     @GetMapping("/tail-log")
     public List<String> tailLog(){
-        return logTailerService.tailLogFile();
+        System.out.println(logTailerService.getLogLines());
+        return logTailerService.getLogLines();
     }
 
 }

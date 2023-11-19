@@ -129,6 +129,9 @@ const Dashboard = () => {
                     <Dashboard4 />
                     <Dashboard3 />
                 </Grid>
+                <Grid sx={{ display: 'flex', justifyContent: 'space-evenly' }} spacing={4}>
+                    <Dashboard1/>
+                </Grid>
                 <Box sx={{ height: '20px' }}>
 
                 </Box>

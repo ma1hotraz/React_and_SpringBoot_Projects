@@ -21,7 +21,7 @@ export default function StatusComponent() {
     }, []);
 
     return (
-        <Box sx={{ height: '190px', minWidth: '300px', display: 'flex', padding: '40px', flexDirection: 'column', justifyContent: 'center' }}>
+        <Box sx={{ height: '200px', minWidth: '300px', display: 'flex', padding: '40px', flexDirection: 'column', justifyContent: 'center' }}>
             <Card sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', padding: '100px' }}>
                 {isServerUp === null ? (
                     <CardMedia sx={{ display: 'flex', justifyContent: 'center' }}> <FontAwesomeIcon icon={faServer} color='yellow' size='3x' /> </CardMedia>
@@ -30,7 +30,7 @@ export default function StatusComponent() {
                 ) : (
                     <CardMedia sx={{ display: 'flex', justifyContent: 'center' }}> <FontAwesomeIcon icon={faServer} color='red' size='3x' /> </CardMedia>
                 )}
-                <CardContent><Typography variant='h5' align='center'>{`Status : ${isServerUp ? "UP" : "DOWN"}`}</Typography></CardContent>
+                <CardContent><Typography sx={{display: 'flex', flexDirection : 'row', justifyContent: 'center'}} variant='h5'>{`Status ${isServerUp ? ": UP" : ": DOWN"}`}</Typography></CardContent>
             </Card>
         </Box>
     );

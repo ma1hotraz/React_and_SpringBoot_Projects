@@ -34,13 +34,15 @@ const root = document.getElementById('root');
 
 const renderApp = () => {
   ReactDOM.createRoot(root).render(
-    <React.StrictMode>
+    // <React.StrictMode>
+    <div>
       <I18nextProvider i18n={i18n} />
       <ThemeProvider theme={theme}>
         <App />
         <ToastContainer position='top-right' />
       </ThemeProvider>
-    </React.StrictMode>
+    </div>
+    // </React.StrictMode>
   );
 };
 
