@@ -40,29 +40,18 @@ public class AdminController {
     private PasswordEncoder encoder;
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody AuthRequest authRequest) {
-        if (!adminRepository.findByEmail(authRequest.getEmail()).isPresent()) {
+    public ResponseEntity<?> loginAdmin(@RequestBody AuthRequest authRequest) {
+        if (!adminRepository.existsByEmail(authRequest.getEmail())) {
             Loggers.warn("EMAIL/USER NOT EXIST");
             return ResponseEntity.status(409).header("msg", "EMAIL/USER NOT EXIST").build();
         }
         AdminDTO adminDTO = null;
-//        try {
-//        Authentication authenticationRequest =
-//                UsernamePasswordAuthenticationToken.unauthenticated(authRequest.getEmail(), authRequest.getPassword());
-//
-//        System.out.println(authenticationRequest);
-//
-//        Authentication authenticationResponse =
-//                this.authenticationManager.authenticate(authenticationRequest);
-//        System.out.println(authenticationResponse);
-
-
-        adminDTO = adminServiceImpl.login(authRequest);
-        Loggers.info("ADMIN WITH EMAIL " + authRequest.getEmail() + " LOGGED IN");
-
-//        } catch (Exception e) {
-//            return ResponseEntity.status(401).header("msg", "INVALID HHHH EMAIL OR PASSWORD").build();
-//        }
+        try {
+            adminDTO = adminServiceImpl.login(authRequest);
+            Loggers.info("USER WITH EMAIL " + authRequest.getEmail() + " LOGGED IN");
+        } catch (AuthenticationException e) {
+            return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
+        }
         return ResponseEntity.ok(adminDTO);
     }
 

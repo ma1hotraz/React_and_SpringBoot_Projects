@@ -39,26 +39,15 @@ public class AdminServiceImpl implements AdminDetailsService {
 
     public AdminDTO login(AuthRequest request) {
         Optional<Admin> temp = adminRepository.findByEmail(request.getEmail());
-        System.out.println(temp.get());
-        Admin admin = null;
-        AuthResponse token = null;
-        try {
-            System.out.println("ISSUE");
             manager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             request.getEmail(),
                             request.getPassword()
                     )
             );
-            System.out.println("ISSUE GHASHDIAISDHIASD");
-            admin = temp.get();
-            System.out.println("ADMIN DATA " + admin);
+            Admin admin = temp.get();
             var jwtToken = jwtService.generateToken(admin);
-            token = AuthResponse.builder().token(jwtToken).build();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return AdminDTO.builder().build();
-        }
+            AuthResponse token = AuthResponse.builder().token(jwtToken).build();
         return AdminDTO.builder().email(admin.getEmail()).name(admin.getFirstName() + " " + admin.getLastName()).role(admin.getRoles()).response(token).build();
     }
 

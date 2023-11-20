@@ -54,18 +54,17 @@ public class UserController {
             Loggers.warn("EMAIL/USER NOT EXIST");
             return ResponseEntity.status(409).header("msg", "EMAIL/USER NOT EXIST").build();
         }
+        UserDTO userDTO = null;
         try {
-            Authentication authenticationRequest =
-                    UsernamePasswordAuthenticationToken.unauthenticated(user.getEmail(), user.getPassword());
-            System.out.println(authenticationRequest);
-            Authentication authenticationResponse =
-                    this.authenticationManager.authenticate(authenticationRequest);
-            System.out.println(authenticationResponse);
+//            Authentication authenticationRequest =
+//                    UsernamePasswordAuthenticationToken.unauthenticated(user.getEmail(), user.getPassword());
+//            Authentication authenticationResponse =
+//                    this.authenticationManager.authenticate(authenticationRequest);
+             userDTO = userService.loginUser(user);
             Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
         } catch (Exception e) {
             return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
         }
-        UserDTO userDTO = userService.loginUser(user);
         return ResponseEntity.ok(userDTO);
     }
 
