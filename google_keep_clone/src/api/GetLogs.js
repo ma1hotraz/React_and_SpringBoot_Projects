@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 
 export const getLogs = async () => {
 
-    const url = `logs/tail-log`;
+    const url = 'logs/tail-logs';
     try {
         const response = await fetch(url, { method: 'GET' });
 

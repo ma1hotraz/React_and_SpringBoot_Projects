@@ -57,10 +57,11 @@ public class UserController {
         try {
             Authentication authenticationRequest =
                     UsernamePasswordAuthenticationToken.unauthenticated(user.getEmail(), user.getPassword());
+            System.out.println(authenticationRequest);
             Authentication authenticationResponse =
                     this.authenticationManager.authenticate(authenticationRequest);
+            System.out.println(authenticationResponse);
             Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
-
         } catch (Exception e) {
             return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
         }

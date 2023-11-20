@@ -68,6 +68,8 @@ export default function SignIn() {
       setLoading(false);
     }
   }
+
+  
   return (
     <ThemeProvider theme={defaultTheme}>
       {isLoading ? <LoadingBar color="yellow" height={10} progress={progress} shadow={true} transitionTime={2000} waitingTime={1000} onLoaderFinished={() => setProgress(0)} /> : <></>}

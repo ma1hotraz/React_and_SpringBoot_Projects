@@ -1,55 +1,52 @@
 package com.notes.keep.config;
 
 import com.notes.keep.model.Admin;
-import com.notes.keep.model.User;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import java.util.Collection;
-import java.util.List;
 
-public class CustomUserDetails implements UserDetails {
+public class AdminDetailsService implements UserDetails {
 
-
-    public CustomUserDetails(User user) {
+    public AdminDetailsService(Admin admin) {
         super();
-        this.user = user;
+        this.admin = admin;
     }
 
-    private User user;
+    private Admin admin;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(user.getRoles()));
-    }
-
-    @Override
-    public String getUsername() {
-        return user.getEmail();
+        return null;
     }
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return false;
     }
 }

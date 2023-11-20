@@ -74,7 +74,7 @@ public class LogTailerService {
 
     private final String logFilePath = "./logs/myapp.log";
     private final List<String> logLines = new ArrayList<>();
-    private final Object lock = new Object(); // Used for synchronization
+    private final Object lock = new Object();
 
     public LogTailerService() {
         startLogMonitoring();

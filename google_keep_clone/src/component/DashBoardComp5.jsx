@@ -12,7 +12,6 @@ export default function DashBoardComp5() {
             try {
                 const data = await getAllUsers();
                 setAllUsers(data);
-                 // console.log(data);
             } catch (error) {
                 console.error('Error fetching total user size:', error);
             }
@@ -27,9 +26,7 @@ export default function DashBoardComp5() {
             <TableContainer component={Paper} sx={{ padding: '10px' }}>
             <Typography variant='h3' textAlign={'center'}>All Users</Typography>
                 <Table sx={{ minWidth: 600 }} stickyHeader aria-label="simple table">
-                
-                    <TableHead>
-                        
+                    <TableHead> 
                         <TableRow>
                             <TableCell ><Typography variant='h5'>No.</Typography> </TableCell>
                             <TableCell><Typography variant='h5'>Name</Typography></TableCell>

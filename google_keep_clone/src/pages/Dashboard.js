@@ -13,7 +13,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Dashboard1 from '../component/DashBoardComp1';
-import Dashboard2 from '../component/DashBoardComp2';
 import Dashboard3 from '../component/DashBoardComp3';
 import Dashboard4 from '../component/DashBoardComp4';
 import Dashboard5 from '../component/DashBoardComp5';
@@ -124,16 +123,13 @@ const Dashboard = () => {
             </Drawer>
 
             <Grid item xs={12} md={9} margin={5} columnSpacing={5}>
-                <Grid sx={{ display: 'flex', justifyContent: 'space-evenly' }} spacing={4}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }} spacing={4}>
                     <StatusComponent />
                     <Dashboard4 />
                     <Dashboard3 />
-                </Grid>
-                <Grid sx={{ display: 'flex', justifyContent: 'space-evenly' }} spacing={4}>
-                    <Dashboard1/>
-                </Grid>
-                <Box sx={{ height: '20px' }}>
-
+                </Box>
+                <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }} spacing={4}>
+                    <Dashboard1 />
                 </Box>
                 <Box>
                     <Dashboard5 />

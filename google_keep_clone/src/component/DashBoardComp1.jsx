@@ -6,6 +6,7 @@ import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { HashLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
 import ScrollButton from './ScrollButton';
+import { serverStatus } from '../api/AdminAPIs';
 
 export default function DashBoardComp1() {
     const [logs, setLogs] = useState([]);
@@ -30,10 +31,12 @@ export default function DashBoardComp1() {
 
     const getData = async () => {
         try {
-            setLoading(true);
-            const logsData = await getLogs();
-            setLogs(logsData);
-            await new Promise(resolve => setTimeout(resolve, 6000));
+            if (serverStatus) {
+                setLoading(true);
+                const logsData = await getLogs();
+                setLogs(logsData);
+                await new Promise(resolve => setTimeout(resolve, 6000));
+            }
         } catch (error) {
             toast.warn(error.message, { autoClose: 2000 });
             setLoading(false);
@@ -88,6 +91,7 @@ export default function DashBoardComp1() {
                         }}
                     >
                         <HashLoader color='#f6ed22' size={100} />
+                        {serverStatus ? '' : <Typography variant='body'>Server is buzy</Typography>}
                     </Box>
                 )}
                 <Box
@@ -98,16 +102,23 @@ export default function DashBoardComp1() {
                         padding: '10px',
                         height: '60vh',
                         minWidth: '80vh',
+                        minWidth: 600,
                         overflow: 'auto',
                     }}
                 >
                     <Box>
-                        {logs.map((log, index) => (
-                            <Typography key={index} variant="body2">
-                                {log}
-                            </Typography>
-                        ))}
-                        <ScrollButton containerRef={containerRef}/>
+                        {!serverStatus ? (<>{Array.isArray(logs) && logs.length > 0 ? (
+                            logs.map((log, index) => (
+                                <Typography key={index} variant="body2">
+                                    {log}
+                                </Typography>
+                            ))
+                        ) : (
+                            <Typography variant="body2">No logs available</Typography>
+                        )}
+                            <ScrollButton containerRef={containerRef} /></>) : (<><Typography>
+                                Server is Offline
+                            </Typography></>)}
                     </Box>
                 </Box>
             </Box>

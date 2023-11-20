@@ -1,5 +1,6 @@
 package com.notes.keep.service;
 
+import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -16,15 +17,14 @@ public class ScheduledTaskService {
 
         @Scheduled(cron = "0 0 5 * * *")
     public void runScheduledTask() {
-        System.out.println("CALLED");
         try (Connection connection = dataSource.getConnection();
              Statement statement = connection.createStatement()) {
             String sql = "DELETE FROM TRASH WHERE date < now() - interval 30 day;";
             statement.executeUpdate(sql);
-            System.out.println("TRASH TABLE UPDATED SUCCESSFULLY");
+            Loggers.info("TRASH TABLE UPDATED SUCCESSFULLY");
         } catch (Exception e) {
-            System.out.println("TRASH TABLE UPDATED UNSUCCESSFULLY");
-            e.printStackTrace();
+            Loggers.info("TRASH TABLE UPDATED UNSUCCESSFULLY");
+            Loggers.error(e.getMessage());
         }
     }
 }

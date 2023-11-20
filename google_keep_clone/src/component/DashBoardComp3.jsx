@@ -68,7 +68,7 @@ export default function Dashboard3() {
 
     return (
         <div id="chart">
-            <Box>
+            <Box component={Paper}>
                 <ReactApexChart options={options} series={series} type="radialBar" height={300} />
             </Box>
         </div>
