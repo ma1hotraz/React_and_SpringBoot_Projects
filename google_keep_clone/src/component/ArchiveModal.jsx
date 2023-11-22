@@ -5,6 +5,8 @@ import { HashLoader } from 'react-spinners';
 import { faInbox } from '@fortawesome/free-solid-svg-icons';
 import { archivedList, restoreFromArchive } from '../api/ArchivedNotes';
 import { fetchAndRefreshData } from './Note';
+import { serverStatus } from '../api/AdminAPIs';
+import { toast } from 'react-toastify';
 
 
 export default function TrashModal(props) {
@@ -58,9 +60,13 @@ export default function TrashModal(props) {
     }
 
     const getData = async () => {
-        const noteList = await archivedList();
-        setData(noteList);
-        setNoteArchived(false);
+        if (serverStatus) {
+            const noteList = await archivedList();
+            setData(noteList);
+            setNoteArchived(false);
+        } else {
+            toast.error('Server is offline', 1000);
+        }
     }
 
     const handleClick = (noteId) => {

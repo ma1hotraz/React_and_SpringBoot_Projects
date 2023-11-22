@@ -5,8 +5,6 @@ export const archivedTo = async (noteId) => {
     const user = JSON.parse(userData);
     const id = user?.userId;
 
-    console.log(id, " ", noteId);
-
     const url = `notes/archive/userId/${id}/addArchive/noteId/${noteId}`;
     try {
         const response = await fetch(url, { method: 'GET' });
@@ -17,7 +15,8 @@ export const archivedTo = async (noteId) => {
             toast.warn('Server Error!', {
                 autoClose: 2000,
             });
-            throw new Error('Network response was not ok');
+            // throw new Error('Network response was not ok');
+            return [];
         }
 
         if (response.ok) {

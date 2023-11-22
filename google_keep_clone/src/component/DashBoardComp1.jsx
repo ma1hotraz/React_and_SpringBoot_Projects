@@ -5,38 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { HashLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
-import ScrollButton from './ScrollButton';
 import { serverStatus } from '../api/AdminAPIs';
 
 export default function DashBoardComp1() {
     const [logs, setLogs] = useState([]);
     const [isLoading, setLoading] = useState(false);
 
-    const containerRef = React.useRef(null);
-
-    // const getData = async () => {
-    //     try {
-    //         setLoading(true);
-    //         const logsData = await getLogs();
-    //         setTimeout(async () => {
-    //             setLogs(logsData);
-    //         }, 5000);
-    //     } catch (error) {
-    //         toast.warn(error.message, { autoClose: 2000 });
-    //         setLoading(false);
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
+    // const containerRef = React.useRef(null);
 
     const getData = async () => {
         try {
-            if (serverStatus) {
-                setLoading(true);
-                const logsData = await getLogs();
-                setLogs(logsData);
-                await new Promise(resolve => setTimeout(resolve, 6000));
-            }
+            setLoading(true);
+            const logsData = await getLogs();
+            setLogs(logsData);
         } catch (error) {
             toast.warn(error.message, { autoClose: 2000 });
             setLoading(false);
@@ -47,8 +28,6 @@ export default function DashBoardComp1() {
 
     useEffect(() => {
         getData();
-        const intervalId = setInterval(getData, 30000);
-        return () => clearInterval(intervalId);
     }, []);
 
     const handleRefresh = () => {
@@ -95,22 +74,21 @@ export default function DashBoardComp1() {
                     </Box>
                 )}
                 <Box
-                    ref={containerRef}
+                    // ref={containerRef}
                     sx={{
                         border: '2px solid black',
                         color: 'white',
                         padding: '10px',
                         height: '60vh',
-                        minWidth: '80vh',
                         minWidth: 600,
                         overflow: 'auto',
                     }}
                 >
                     <Box>
-                        {!serverStatus ? (<>{Array.isArray(logs) && logs.length > 0 ? (
+                        {/* {!serverStatus ? (<>{Array.isArray(logs) && logs.length > 0 ? (
                             logs.map((log, index) => (
                                 <Typography key={index} variant="body2">
-                                    {log}
+                                    {log.data}
                                 </Typography>
                             ))
                         ) : (
@@ -118,7 +96,20 @@ export default function DashBoardComp1() {
                         )}
                             <ScrollButton containerRef={containerRef} /></>) : (<><Typography>
                                 Server is Offline
-                            </Typography></>)}
+                            </Typography></>)} */}
+                        {serverStatus === false ? (
+                            <Typography variant="body2">No logs available</Typography>
+                        ) : (
+                            Array.isArray(logs) && logs.length > 0 ? (
+                                logs.map((log, index) => (
+                                    <Typography key={index} variant="body2">
+                                        {log.data}
+                                    </Typography>
+                                ))
+                            ) : (
+                                <Typography variant="body2">No logs available</Typography>
+                            )
+                        )}
                     </Box>
                 </Box>
             </Box>

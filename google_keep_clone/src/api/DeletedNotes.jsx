@@ -15,7 +15,8 @@ export const getDeletedNotes = async () => {
             toast.warn('Server Error !', {
                 autoClose: 2000,
             });
-            throw new Error('Network response was not ok');
+            // throw new Error('Network response was not ok');
+            return [];
         }
 
         if (response.status === 204) {

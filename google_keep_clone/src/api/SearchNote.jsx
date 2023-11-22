@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export const getByTitle = async (userId, query) => {
 
@@ -13,7 +14,8 @@ export const getByTitle = async (userId, query) => {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            // throw new Error('Network response was not ok');
+            toast.error('Server Error', 1000);
         }
 
         const contentType = response.headers.get('content-type');

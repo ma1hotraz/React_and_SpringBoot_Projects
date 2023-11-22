@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/NotFound404.css'
 import { Box } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 export default function NotFound404() {
     return (
@@ -18,7 +19,7 @@ export default function NotFound404() {
                                 </h3>
                                 <p>The page you are looking for
                                     has been lost in space.</p>
-                                <a href="/signin" className="link_404">Go to Home</a>
+                                <Link to="/signin" className="link_404">Go to Home</Link>
                             </div>
                         </div>
                     </div>

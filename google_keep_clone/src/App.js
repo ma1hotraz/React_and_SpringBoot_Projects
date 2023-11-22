@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import SignIn from './pages/SignIn.js';
 import SignUp from './pages/Signup.js'
 import Home from './pages/Home.js';
@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <div>
-      <BrowserRouter>
+      <Router>
         <Routes >
           <Route path='/' element={<Main />} />
           <Route path='/Signin' element={<SignIn />} />
@@ -26,7 +26,7 @@ export default function App() {
           <Route path='/admin/login' element={<AdminLogin />} />
           <Route path='*' element={<NotFound404 />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   )
 }

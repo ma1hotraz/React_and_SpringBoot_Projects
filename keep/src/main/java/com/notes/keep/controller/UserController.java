@@ -8,6 +8,8 @@ import com.notes.keep.service.impl.CustomUserServiceImpl;
 import com.notes.keep.utils.ImageUtils;
 import com.notes.keep.utils.Loggers;
 import jakarta.annotation.security.RolesAllowed;
+import netscape.javascript.JSObject;
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -56,11 +58,7 @@ public class UserController {
         }
         UserDTO userDTO = null;
         try {
-//            Authentication authenticationRequest =
-//                    UsernamePasswordAuthenticationToken.unauthenticated(user.getEmail(), user.getPassword());
-//            Authentication authenticationResponse =
-//                    this.authenticationManager.authenticate(authenticationRequest);
-             userDTO = userService.loginUser(user);
+            userDTO = userService.loginUser(user);
             Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
         } catch (Exception e) {
             return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
@@ -70,7 +68,7 @@ public class UserController {
 
     @GetMapping("/userId/{id}")
     public ResponseEntity<?> findByUserId(@PathVariable UUID id) {
-        System.out.println("here is the control "+id);
+        System.out.println("here is the control " + id);
         Loggers.info("USER WITH" + id + " CALLED");
         return ResponseEntity.ok(userService.findByUserId(id));
     }
@@ -98,5 +96,29 @@ public class UserController {
         return contentType != null && contentType.startsWith("image/");
     }
 
+    @PostMapping("/forget")
+    public ResponseEntity<?> forgetPassword(@RequestBody AuthRequest request) {
+        if (!userService.checkEmail(request.getEmail())) {
+            return ResponseEntity.status(409).build();
+        }
+        userService.resetPassword(request.getEmail());
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/updatePassword")
+    public ResponseEntity<?> updatePassword(@RequestBody JSObject object) {
+        String email = null, token = null, password = null;
+        System.out.println();
+        if (!userService.checkEmail(email)) {
+            return ResponseEntity.status(409).build();
+        }
+        try {
+            userService.updatePassword(email, token, password);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(304).build();
+        }
+        return ResponseEntity.ok().build();
+    }
 
 }

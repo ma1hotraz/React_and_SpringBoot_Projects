@@ -22,4 +22,8 @@ public interface CustomUserService extends UserDetailsService{
 
     public boolean checkEmail(String email);
 
+    public void resetPassword(String email);
+
+    public void updatePassword(String email, String token, String password);
+
 }

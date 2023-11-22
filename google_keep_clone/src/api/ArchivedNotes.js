@@ -14,12 +14,14 @@ export const archivedList = async () => {
             toast.warn('Server Error!', {
                 autoClose: 2000,
             });
-            throw new Error('Network response was not ok');
+            // throw new Error('Network response was not ok');
+            return [];
         }
 
         if (response.status === 204) {
             return [];
         }
+
 
         const data = await response.json();
         return data !== null ? data : [];
@@ -44,7 +46,8 @@ export const restoreFromArchive = async (noteId) => {
             toast.warn('Server Error!', {
                 autoClose: 2000,
             });
-            throw new Error('Network response was not ok');
+            // throw new Error('Network response was not ok');
+            return [];
         }
 
 

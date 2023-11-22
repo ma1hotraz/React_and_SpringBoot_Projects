@@ -2,7 +2,8 @@ CREATE TABLE IF NOT EXISTS Admin (
     email VARCHAR(255) PRIMARY KEY,
     firstName VARCHAR(255),
     lastName VARCHAR(255),
-    roles VARCHAR(255)
+    roles VARCHAR(255),
+    password VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS User (
@@ -15,6 +16,7 @@ CREATE TABLE IF NOT EXISTS User (
     image LONGBLOB,
     fileSize BIGINT,
     date DATE,
+    resetPasswordToken VARCHAR(255),
     CONSTRAINT CK_Roles CHECK (roles IN ('ADMIN', 'USER'))
 );
 

@@ -1,5 +1,6 @@
 package com.notes.keep.service.impl;
 
+import com.mysql.cj.exceptions.PasswordExpiredException;
 import com.notes.keep.config.jwt.JwtService;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
@@ -18,10 +19,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class CustomUserServiceImpl implements CustomUserService {
@@ -110,6 +108,35 @@ public class CustomUserServiceImpl implements CustomUserService {
         return userRepository.findByEmail(email).get();
     }
 
+    @Override
+    public void resetPassword(String email) {
+        String zeros = "000000";
+        Random rnd = new Random();
+        String s = Integer.toString(rnd.nextInt(0X1000000), 16);
+        s = zeros.substring(s.length()) + s;
+        s = s.toUpperCase();
+        User user = userRepository.findByEmail(email).get();
+        user.setResetPasswordToken(s);
+        userRepository.save(user);
+    }
+
+    @Override
+    public void updatePassword(String email, String token, String password) {
+        if(userRepository.findByEmail(email).get().getResetPasswordToken() == null){
+           throw new UsernameNotFoundException("Email not found");
+        }
+        User user = userRepository.findByEmail(email).get();
+        if(user.getPassword().equals(encoder.encode(password))){
+            throw new PasswordExpiredException("Cannot Use Old Password");
+        }
+        if(!user.getResetPasswordToken().equals(token)){
+            throw new PasswordExpiredException("Invalid Token");
+        }
+        user.setPassword(encoder.encode(password));
+        userRepository.save(user);
+    }
+
     //METHODS NEEDS TO IMPLEMENT
+
 
 }

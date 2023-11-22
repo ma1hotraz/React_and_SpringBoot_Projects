@@ -27,7 +27,7 @@ export var fetchAndRefreshData = () => {
 
 export default function Note(props) {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMode, setModalMode] = useState('create');
     const [noteData, setNoteData] = useState(null);
@@ -262,8 +262,7 @@ export default function Note(props) {
         fetchAndRefreshData();
     }, [selectedNoteId]);
 
-
-
+console.log("sssss",data)
     return (
         <Box>
             <Box>
@@ -271,8 +270,8 @@ export default function Note(props) {
                 {isSearchBoxVisible && <SearchBox buttonColor={props.buttonColor} noteId={setSelectedNoteId} onItemClick={handleClick} />}
             </Box>
             <Box sx={{ width: '100%', height: '100%' }}>
-                <NoteData setData={setData} />
-                {data.length !== 0 ? (
+                <NoteData setData={data !==null ? setData : null} />
+                {data ? (
                     <Box sx={{ marginTop: '100px', width: '100%', height: '100%' }}>
                         <Grid container>
                             {data.map((item) => {

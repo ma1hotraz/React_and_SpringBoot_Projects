@@ -10,7 +10,7 @@ import LanguageSelector from '../component/LanguageSelector';
 import { useTheme } from '@mui/material/styles'; 
 
 
-export default function App() {
+export default function Home() {
   const [loading, setLoading] = useState(true);
   const [cookies, setCookie] = useCookies(['keeper', 'active']);
   const [themeType, setThemeType] = useState(cookies.keeper || false);
