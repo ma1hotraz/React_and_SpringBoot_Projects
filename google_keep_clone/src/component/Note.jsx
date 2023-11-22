@@ -82,13 +82,6 @@ export default function Note(props) {
     };
 
 
-
-    useEffect(() => {
-        setNoteTitle('');
-        setNoteDescription('');
-    }, [noteTitle, noteDescription]);
-
-
     useEffect(() => {
         const items = JSON.parse(sessionStorage.getItem('userData'));
         if (items) {
@@ -197,7 +190,6 @@ export default function Note(props) {
             if (!selectedNoteId) {
                 return;
             }
-
             updateData(selectedNoteId, newNoteData)
                 .then(() => {
                     fetchAndRefreshData();
@@ -262,7 +254,10 @@ export default function Note(props) {
         fetchAndRefreshData();
     }, [selectedNoteId]);
 
-console.log("sssss",data)
+
+    console.log('object', data);
+
+
     return (
         <Box>
             <Box>
@@ -270,8 +265,8 @@ console.log("sssss",data)
                 {isSearchBoxVisible && <SearchBox buttonColor={props.buttonColor} noteId={setSelectedNoteId} onItemClick={handleClick} />}
             </Box>
             <Box sx={{ width: '100%', height: '100%' }}>
-                <NoteData setData={data !==null ? setData : null} />
-                {data ? (
+                <NoteData setData={data !== null ? setData : null} />
+                {data && data.length > 0 ? (
                     <Box sx={{ marginTop: '100px', width: '100%', height: '100%' }}>
                         <Grid container>
                             {data.map((item) => {

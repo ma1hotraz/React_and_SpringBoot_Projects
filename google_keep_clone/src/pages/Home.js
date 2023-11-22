@@ -67,7 +67,7 @@ export default function Home() {
   }
 
   return (
-    <div style={{ backgroundColor: `${backgroundColor}`, minHeight: '100vh' }}>
+    <div style={{ backgroundColor: `${backgroundColor}` }}>
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />
       <LanguageSelector />
       <Box sx={{ padding: '15px' }}>
