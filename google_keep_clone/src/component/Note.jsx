@@ -264,7 +264,7 @@ export default function Note(props) {
                 <FontAwesomeIcon style={{ marginTop: '80px', marginBottom: '-80px', marginLeft: '10px' }} icon={faSearch} color={props.buttonColor} size='3x' onClick={toggleSearchBox} />
                 {isSearchBoxVisible && <SearchBox buttonColor={props.buttonColor} noteId={setSelectedNoteId} onItemClick={handleClick} />}
             </Box>
-            <Box sx={{ width: '100%', height: '100%' }}>
+            <Box sx={{ width: '100%', height: '100%', minHeight: '90vh' }}>
                 <NoteData setData={data !== null ? setData : null} />
                 {data && data.length > 0 ? (
                     <Box sx={{ marginTop: '100px', width: '100%', height: '100%' }}>

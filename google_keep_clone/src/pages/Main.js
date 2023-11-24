@@ -11,10 +11,6 @@ export default function Main() {
 
   const navigate = useNavigate();
 
-  const handleOnclick = () => {
-    navigate('/signin');
-  }
-
   return (
     <div>
       <MainNavBar />
@@ -97,7 +93,7 @@ export default function Main() {
 
         <Box sx={{ margin: '100px' }} display="flex" flexDirection={"column"} >
           <Box display="flex" justifyContent={"center"} >
-            <Button variant="contained" size='large' color='secondary' onClick={handleOnclick} >Get Started</Button>
+            <Button variant="contained" size='large' color='secondary' onClick={() => {navigate('/Signin');}} >Get Started</Button>
           </Box>
         </Box>
       </Box>
