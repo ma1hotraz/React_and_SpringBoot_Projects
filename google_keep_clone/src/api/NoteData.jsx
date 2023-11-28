@@ -2,6 +2,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types'
 import { serverStatus } from './AdminAPIs';
+import { useCallback } from 'react';
+import { useEffect } from 'react';
 
 
 export const getData = async (id, token) => {
@@ -51,17 +53,23 @@ export default function NoteData({ setData }) {
   const id = user?.userId;
   const token = user?.response;
 
-  if (id) {
-    getData(id, token)
-      .then((fetchedData) => {
-        setData(fetchedData);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  } else {
-    toast.error('Server is offline', 1000);
-  }
+  const memoizedSetData = useCallback((data) => {
+    setData(data);
+  }, [setData]);
+
+  useEffect(() => {
+    if (id) {
+      getData(id, token)
+        .then((fetchedData) => {
+          memoizedSetData(fetchedData);
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+        });
+    } else {
+      toast.error('Server is offline', 1000);
+    }
+  }, [memoizedSetData])
 
 }
 
