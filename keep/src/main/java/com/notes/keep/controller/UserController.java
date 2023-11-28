@@ -1,5 +1,6 @@
 package com.notes.keep.controller;
 
+import com.notes.keep.dto.PasswordRequest;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.AuthResponse;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.parameters.P;
@@ -106,17 +108,22 @@ public class UserController {
     }
 
     @PostMapping("/updatePassword")
-    public ResponseEntity<?> updatePassword(@RequestBody JSObject object) {
-        String email = null, token = null, password = null;
-        System.out.println();
-        if (!userService.checkEmail(email)) {
+    public ResponseEntity<?> updatePassword(@RequestBody PasswordRequest request) {
+        if (!userService.checkEmail(request.getEmail())) {
             return ResponseEntity.status(409).build();
         }
         try {
-            userService.updatePassword(email, token, password);
+            userService.updatePassword(request.getEmail(), request.getPassword(), request.getToken());
         } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.status(304).build();
+            System.out.println(e.getMessage());
+            switch (e.getMessage()){
+                case "Token Expired, Request new Token":
+                    return ResponseEntity.status(401).body(e.getMessage());
+                case "Cannot Use Old Password":
+                    return ResponseEntity.status(422).body(e.getMessage());
+                case "Email not found":
+                    return ResponseEntity.status(404).body(e.getMessage());
+            }
         }
         return ResponseEntity.ok().build();
     }

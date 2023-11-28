@@ -18,6 +18,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.security.auth.login.CredentialExpiredException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -121,18 +122,22 @@ public class CustomUserServiceImpl implements CustomUserService {
     }
 
     @Override
-    public void updatePassword(String email, String token, String password) {
-        if(userRepository.findByEmail(email).get().getResetPasswordToken() == null){
+    public void updatePassword(String email, String password,  String token) throws CredentialExpiredException {
+        if(!userRepository.existsByEmail(email)){
            throw new UsernameNotFoundException("Email not found");
         }
         User user = userRepository.findByEmail(email).get();
         if(user.getPassword().equals(encoder.encode(password))){
             throw new PasswordExpiredException("Cannot Use Old Password");
         }
+        if(user.getResetPasswordToken() == null){
+            throw new CredentialExpiredException("Token Expired, Request new Token");
+        }
         if(!user.getResetPasswordToken().equals(token)){
             throw new PasswordExpiredException("Invalid Token");
         }
         user.setPassword(encoder.encode(password));
+        user.setResetPasswordToken(null);
         userRepository.save(user);
     }
 

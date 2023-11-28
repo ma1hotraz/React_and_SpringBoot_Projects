@@ -7,6 +7,7 @@ import com.notes.keep.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 
+import javax.security.auth.login.CredentialExpiredException;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,6 +25,6 @@ public interface CustomUserService extends UserDetailsService{
 
     public void resetPassword(String email);
 
-    public void updatePassword(String email, String token, String password);
+    public void updatePassword(String email, String token, String password) throws CredentialExpiredException;
 
 }

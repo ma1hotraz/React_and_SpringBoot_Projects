@@ -15,6 +15,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import LoadingBar from "react-top-loading-bar";
+import { IconButton, InputAdornment } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 
 const defaultTheme = createTheme();
@@ -22,10 +24,11 @@ const defaultTheme = createTheme();
 
 export default function SignIn() {
 
-  const [errorEmail, seterrorEmail] = useState(false);
+  const [errorEmail, seterrorEmail] = useState(true);
   const [errorPassword, seterrorPassword] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -51,6 +54,10 @@ export default function SignIn() {
 
   const isSubmitDisabled = !(errorEmail && errorPassword.length >= 6);
 
+  const handleShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
 
   async function handleSignIn(data) {
     try {
@@ -68,7 +75,7 @@ export default function SignIn() {
     }
   }
 
-  
+
   return (
     <ThemeProvider theme={defaultTheme}>
       {isLoading ? <LoadingBar color="yellow" height={10} progress={progress} shadow={true} transitionTime={2000} waitingTime={1000} onLoaderFinished={() => setProgress(0)} /> : <></>}
@@ -138,12 +145,23 @@ export default function SignIn() {
                 fullWidth
                 name="password"
                 label="Password"
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 id="password"
                 autoComplete="current-password"
                 error={errorPassword.length < 6 ? true : false}
                 helperText={errorPassword.length < 6 ? 'Too Short Min. 6 ' : ''}
                 onChange={handleInputChangePassword}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={handleShowPassword}
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}

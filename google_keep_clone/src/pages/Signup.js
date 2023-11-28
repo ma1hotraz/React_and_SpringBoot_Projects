@@ -1,4 +1,3 @@
-import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,18 +15,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import LoadingBar from "react-top-loading-bar";
+import { IconButton, InputAdornment } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
 
-  const [errorFirstName, seterrorFirstName] = React.useState(false);
-  const [errorLastName, seterrorLastName] = React.useState(false);
-  const [errorEmail, seterrorEmail] = React.useState(false);
-  const [errorPassword, seterrorPassword] = React.useState(false);
+  const [errorFirstName, seterrorFirstName] = useState(false);
+  const [errorLastName, seterrorLastName] = useState(false);
+  const [errorEmail, seterrorEmail] = useState(true);
+  const [errorPassword, seterrorPassword] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -70,6 +72,10 @@ export default function SignIn() {
   const handleInputChangePassword = (event) => {
     seterrorPassword(event.target.value);
   }
+
+  const handleShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   const isSubmitDisabled = !(
     errorFirstName &&
@@ -176,12 +182,23 @@ export default function SignIn() {
                 fullWidth
                 name="password"
                 label="Password"
-                type="password"
                 id="password"
+                type={showPassword ? 'text' : 'password'}
                 autoComplete="current-password"
                 error={errorPassword.length < 6 ? true : false}
                 helperText={errorPassword.length < 6 ? 'Too Short Min. 6 ' : ''}
                 onChange={handleInputChangePassword}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={handleShowPassword}
+                      >
+                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -201,7 +218,7 @@ export default function SignIn() {
                   <Link to="/Forget" variant="body2">
                     Forgot password?
                   </Link>
-                </Grid>href
+                </Grid>
                 <Grid item>
                   <Link to="/Signin" variant="body2">
                     {"Have an account? Sign In"}
