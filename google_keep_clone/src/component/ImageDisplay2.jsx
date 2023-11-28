@@ -7,14 +7,10 @@ const ImageDisplay2 = ({ imageData }) => {
         const fetchImage = () => {
             try {
                 if (!imageData) {
-                    // console.error('Image data not found in props', imageData);
                     return;
                 }
-
                 const blob = dataURItoBlob(imageData);
-
                 const dataUrl = URL.createObjectURL(blob);
-
                 setSource(dataUrl);
             } catch (error) {
                 console.error('Error fetching image:', error);

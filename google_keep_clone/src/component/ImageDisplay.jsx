@@ -8,20 +8,12 @@ const ImageDisplay = () => {
       try {
         const dataS = sessionStorage.getItem('userData');
         const imageData = JSON.parse(dataS);
-
-         // console.log("THIS IS DATA", imageData);
-
         if (!imageData || !imageData.image) {
-          // console.error('Image data not found in sessionStorage');
           return;
         }
-
         const byteArray = new Uint8Array(atob(imageData.image).split('').map(char => char.charCodeAt(0)));
-
         const blob = new Blob([byteArray], { type: 'image/png' });
-
         const dataUrl = URL.createObjectURL(blob);
-
         setSource(dataUrl);
       } catch (error) {
         console.error('Error fetching image:', error);
