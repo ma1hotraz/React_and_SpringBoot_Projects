@@ -4,8 +4,9 @@ FROM maven:3.8.4-openjdk-17 AS build
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the project files
-COPY . .
+# Copy only the necessary files to leverage Docker layer caching
+COPY pom.xml .
+COPY src ./src
 
 # Build the application
 RUN mvn clean package -DskipTests
