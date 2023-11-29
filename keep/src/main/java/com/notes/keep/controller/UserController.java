@@ -1,25 +1,17 @@
 package com.notes.keep.controller;
 
-import com.notes.keep.dto.PasswordRequest;
+import com.notes.keep.dto.PasswordRequestDTO;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
-import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.User;
 import com.notes.keep.service.impl.CustomUserServiceImpl;
 import com.notes.keep.utils.ImageUtils;
 import com.notes.keep.utils.Loggers;
-import jakarta.annotation.security.RolesAllowed;
-import netscape.javascript.JSObject;
-import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.CredentialsExpiredException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,6 +20,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin("*")
 public class UserController {
 
     @Value("${project.image}")
@@ -98,8 +91,9 @@ public class UserController {
         return contentType != null && contentType.startsWith("image/");
     }
 
-    @PostMapping("/forget")
+    @PostMapping("/auth/forget")
     public ResponseEntity<?> forgetPassword(@RequestBody AuthRequest request) {
+        Loggers.info("Password Reset Requested By " + request.getEmail());
         if (!userService.checkEmail(request.getEmail())) {
             return ResponseEntity.status(409).build();
         }
@@ -107,8 +101,8 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/updatePassword")
-    public ResponseEntity<?> updatePassword(@RequestBody PasswordRequest request) {
+    @PostMapping("/auth/reset")
+    public ResponseEntity<?> updatePassword(@RequestBody PasswordRequestDTO request) {
         if (!userService.checkEmail(request.getEmail())) {
             return ResponseEntity.status(409).build();
         }
@@ -125,6 +119,7 @@ public class UserController {
                     return ResponseEntity.status(404).body(e.getMessage());
             }
         }
+        Loggers.info("Password Reset Successfully");
         return ResponseEntity.ok().build();
     }
 

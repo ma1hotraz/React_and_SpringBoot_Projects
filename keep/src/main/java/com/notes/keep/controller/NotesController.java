@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping("/notes")
 @PreAuthorize("USER")
+@CrossOrigin("*")
 public class NotesController {
 
     @Autowired

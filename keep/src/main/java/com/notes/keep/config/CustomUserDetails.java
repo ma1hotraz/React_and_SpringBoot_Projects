@@ -1,6 +1,5 @@
 package com.notes.keep.config;
 
-import com.notes.keep.model.Admin;
 import com.notes.keep.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

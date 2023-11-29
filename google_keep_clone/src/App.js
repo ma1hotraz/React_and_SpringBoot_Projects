@@ -8,6 +8,7 @@ import Forget from "./pages/Forget.js";
 import NotFound404 from "./pages/NotFound404.js";
 import Dashboard from "./pages/Dashboard.js";
 import AdminLogin from "./pages/AdminLogin.js";
+import ResetPassword from "./pages/ResetPassword.js";
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
           <Route path='/Forget' element={<Forget />} />
           <Route path='/admin/dashboard' element={<Dashboard />} />
           <Route path='/admin/login' element={<AdminLogin />} />
+          <Route path='/Reset' element={<ResetPassword />} />
           <Route path='*' element={<NotFound404 />} />
         </Routes>
       </Router>

@@ -2,6 +2,7 @@ package com.notes.keep.service.impl;
 
 import com.mysql.cj.exceptions.PasswordExpiredException;
 import com.notes.keep.config.jwt.JwtService;
+import com.notes.keep.dto.EmailDTO;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.AuthResponse;
@@ -10,6 +11,7 @@ import com.notes.keep.repository.UserRepository;
 import com.notes.keep.service.CustomUserService;
 import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.ImageUtils;
+import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,7 +22,11 @@ import org.springframework.stereotype.Service;
 
 import javax.security.auth.login.CredentialExpiredException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.UUID;
+import java.util.List;
+import java.util.Date;
+import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class CustomUserServiceImpl implements CustomUserService {
@@ -35,6 +41,8 @@ public class CustomUserServiceImpl implements CustomUserService {
     private JwtService jwtService;
     @Autowired
     private AuthenticationManager manager;
+    @Autowired
+    private EmailServiceImpl emailService;
 
 
     @Override
@@ -117,6 +125,16 @@ public class CustomUserServiceImpl implements CustomUserService {
         s = zeros.substring(s.length()) + s;
         s = s.toUpperCase();
         User user = userRepository.findByEmail(email).get();
+        try{
+            EmailDTO emailDTO = new EmailDTO();
+            emailDTO.setTo(email);
+            emailDTO.setSubject("VERIFICATION CODE");
+            emailDTO.setMessage("VERIFICATION CODE TO RESET PASSWORD IS : " + s);
+            emailService.sendEmail(emailDTO);
+            Loggers.info("Email with Verification Code Send Successfully to " + email);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         user.setResetPasswordToken(s);
         userRepository.save(user);
     }

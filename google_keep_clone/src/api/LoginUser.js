@@ -21,10 +21,6 @@ export const Login = async (UserInfo) => {
          body: JSON.stringify(signInObj),
       });
 
-      console.log("HERE", response);
-
-
-
       if (response.status === 500) {
          toast.warn('Server Error !', {
             autoClose: 2000,
@@ -33,7 +29,7 @@ export const Login = async (UserInfo) => {
       }
 
       if (response.status === 409) {
-         toast.warn('Email Exist, Please Login', {
+         toast.warn('User Not Exist, Please Signup', {
             autoClose: 2000,
          });
          return;

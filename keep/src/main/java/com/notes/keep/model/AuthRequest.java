@@ -1,7 +1,11 @@
 package com.notes.keep.model;
 
 
-import lombok.*;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+import lombok.Getter;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor

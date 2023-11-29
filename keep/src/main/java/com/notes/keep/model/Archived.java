@@ -12,7 +12,11 @@ import jakarta.persistence.GeneratedValue;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.ToString;
+import lombok.Builder;
 
 import java.sql.Date;
 import java.util.UUID;
