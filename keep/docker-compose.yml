@@ -22,7 +22,7 @@ services:
       MYSQL_HOST: dbservice
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-      MYSQL_DATABASE: notes_db  # Added the database name here
+      MYSQL_DATABASE: notes_db
       MYSQL_PORT: 3306
 
     ports:
