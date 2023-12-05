@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 export const getByTitle = async (userId, query) => {
-
-    const url = `notes/userId/${userId}/${query}`;
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/notes/userId/${userId}/${query}`;
 
     try {
         const response = await fetch(url, {

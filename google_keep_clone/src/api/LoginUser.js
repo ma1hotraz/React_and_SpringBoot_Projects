@@ -4,8 +4,12 @@ import getLocale from "../utils/SettingLocale";
 import { getRandomColor } from '../utils/ColorList';
 
 
+
 export const Login = async (UserInfo) => {
-   const url = 'user/auth/login';
+   const baseUrl = process.env.REACT_APP_BASE_URL;
+   console.log("this is base : ", baseUrl);
+   const url = `${baseUrl}/user/auth/login`;
+
 
    const signInObj = {
       email: UserInfo.get("email"),

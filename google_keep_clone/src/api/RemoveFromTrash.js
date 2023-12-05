@@ -2,11 +2,15 @@
 import { toast } from "react-toastify";
 
 export const deleteFromTrash = async (noteId) => {
+
     const userData = sessionStorage.getItem('userData');
     const user = JSON.parse(userData);
     const id = user?.userId;
 
-    const url = `notes/trash/userId/${id}/delete/noteId/${noteId}`;
+
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/notes/trash/userId/${id}/delete/noteId/${noteId}`;
+
     try {
         const response = await fetch(url, { method: 'DELETE' });
 

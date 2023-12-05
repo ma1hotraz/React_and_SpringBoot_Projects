@@ -8,7 +8,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Reset } from '../api/ResetUser';
+import { ResetUser } from '../api/ResetUser';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from "react-top-loading-bar";
 import { toast } from 'react-toastify';
@@ -26,12 +26,6 @@ export default function ResetPassword() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-            conpassword: data.get('conpassword'),
-            code: data.get('code'),
-        });
         handleReset(data);
     };
 
@@ -39,10 +33,10 @@ export default function ResetPassword() {
         try {
             setLoading(true);
             setProgress(35);
-            const userData = await Reset(data);
+            const userData = await ResetUser(data);
             if (userData) {
                 setProgress(100);
-                navigate("/", toast.success("Check Email"));
+                navigate("/signin", toast.success("Password Updated"));
             }
         } catch (error) {
             console.error('Login failed:', error);
@@ -119,18 +113,6 @@ export default function ResetPassword() {
                         >
                             Sign In
                         </Button>
-                        {/* <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid> */}
                     </Box>
                 </Box>
             </Container>

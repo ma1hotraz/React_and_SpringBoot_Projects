@@ -21,9 +21,9 @@ export default function App() {
           <Route path='/Signup' element={<SignUp />} />
           <Route path='/Home' element={<Home />} />
           <Route path='/Forget' element={<Forget />} />
+          <Route path='/Reset' element={<ResetPassword />} />
           <Route path='/admin/dashboard' element={<Dashboard />} />
           <Route path='/admin/login' element={<AdminLogin />} />
-          <Route path='/Reset' element={<ResetPassword />} />
           <Route path='*' element={<NotFound404 />} />
         </Routes>
       </Router>

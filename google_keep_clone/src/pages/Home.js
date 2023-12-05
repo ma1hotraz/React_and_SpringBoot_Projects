@@ -7,7 +7,7 @@ import { useCookies } from 'react-cookie';
 import 'react-toastify/dist/ReactToastify.css';
 import ErrorPage from './ErrorPage';
 import LanguageSelector from '../component/LanguageSelector';
-import { useTheme } from '@mui/material/styles'; 
+import { useTheme } from '@mui/material/styles';
 
 
 export default function Home() {

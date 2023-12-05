@@ -4,7 +4,7 @@ services:
     container_name: dbservice
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_DATABASE: notes_db
     volumes:
       - ./data:/var/lib/mysql
@@ -14,17 +14,16 @@ services:
       - springserv
 
   appservice:
-    build: ./
+    build:
+      context: ./
     depends_on:
       - dbservice
     restart: always
     environment:
       MYSQL_HOST: dbservice
       MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD: 'root'
       MYSQL_DATABASE: notes_db
-      MYSQL_PORT: 3306
-
     ports:
       - "8000-8999:8080"
     networks:
@@ -33,3 +32,6 @@ services:
 networks:
   springserv:
     driver: bridge
+
+
+

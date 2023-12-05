@@ -1,11 +1,16 @@
 import { useEffect } from "react";
 
 export const getById = async (id) => {
-    
-    const url = `notes/getNote/${id}`;
+
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/notes/getNote/${id}`;
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -14,6 +19,9 @@ export const getById = async (id) => {
 
         if (contentType && contentType.includes('application/json')) {
             const data = await response.json();
+
+            console.log('object', data);
+
             return data !== null ? data : [];
         }
         else {
@@ -29,7 +37,7 @@ export default function EditNote(props) {
     useEffect(() => {
         getById(props.id)
             .then((fetchedData) => {
-                props.setData(fetchedData); 
+                props.setData(fetchedData);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);

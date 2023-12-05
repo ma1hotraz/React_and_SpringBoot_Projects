@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 export const updateData = async (id, updatedData) => {
 
     updatedData.completed = true;
-
-    const url = `notes/noteId/${id}`;
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/notes/noteId/${id}`;
 
     try {
         const response = await fetch(url, {
@@ -49,9 +49,6 @@ const UpdateNote = (props) => {
 
         fetchData();
     }, [props.id]);
-
-     // console.log(noteData1);
-
     return noteData1 || {};
 };
 

@@ -9,8 +9,10 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Link } from "react-router-dom";
-import { Reset } from "../api/ResetUser";
+import { Link, useNavigate } from "react-router-dom";
+import LoadingBar from "react-top-loading-bar";
+import { toast } from "react-toastify";
+import { ForgetUser } from '../api/ForgetUser';
 
 
 const defaultTheme = createTheme();
@@ -19,6 +21,10 @@ const defaultTheme = createTheme();
 export default function Forget() {
 
     const [errorEmail, seterrorEmail] = useState(true);
+    const [isLoading, setLoading] = useState(false);
+    const [progress, setProgress] = useState(0);
+
+    const navigate = useNavigate();
 
     const validateEmail = (email) => {
         const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -34,14 +40,30 @@ export default function Forget() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get("email"),
-        });
-        Reset(data);
+        handleForget(data);
     };
+
+    async function handleForget(data) {
+        try {
+            setLoading(true);
+            setProgress(35);
+            const userData = await ForgetUser(data);
+            if (userData) {
+                setProgress(100);
+                navigate('/Reset');
+                toast.success("Check Email");
+            }
+        } catch (error) {
+            console.error('Login failed:', error);
+            navigate('/Reset', toast.warn("Error"));
+        } finally {
+            setLoading(false);
+        }
+    }
 
     return (
         <ThemeProvider theme={defaultTheme}>
+            {isLoading ? <LoadingBar color="yellow" height={10} progress={progress} shadow={true} transitionTime={2000} waitingTime={1000} onLoaderFinished={() => setProgress(0)} /> : <></>}
             <Grid container component="main" sx={{ height: "100vh" }}>
                 <CssBaseline />
                 <Grid
@@ -100,7 +122,7 @@ export default function Forget() {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                disabled
+                                disabled={isSubmitDisabled}
                                 sx={{ mt: 3, mb: 2 }}
                             >
                                 Send Link
@@ -108,7 +130,7 @@ export default function Forget() {
                             <Grid container>
                                 <Grid item xs>
                                     <Link to="/signin" variant="body2">
-                                        Sign In
+                                        {"Sign In"}
                                     </Link>
                                 </Grid>
                                 <Grid item>

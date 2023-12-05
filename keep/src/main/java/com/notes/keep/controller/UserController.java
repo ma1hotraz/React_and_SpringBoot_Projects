@@ -20,7 +20,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Value("${project.image}")
@@ -103,6 +103,7 @@ public class UserController {
 
     @PostMapping("/auth/reset")
     public ResponseEntity<?> updatePassword(@RequestBody PasswordRequestDTO request) {
+        System.out.println(request);
         if (!userService.checkEmail(request.getEmail())) {
             return ResponseEntity.status(409).build();
         }
@@ -122,5 +123,4 @@ public class UserController {
         Loggers.info("Password Reset Successfully");
         return ResponseEntity.ok().build();
     }
-
 }

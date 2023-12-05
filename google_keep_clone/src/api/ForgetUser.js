@@ -1,8 +1,10 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const Reset = async (UserInfo) => {
-    const url = 'user/auth/forget';
+export const ForgetUser = async (UserInfo) => {
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+
+    const url = `${baseUrl}/user/auth/forget`;
 
     const signUpObj = {
         email: UserInfo.get("email"),

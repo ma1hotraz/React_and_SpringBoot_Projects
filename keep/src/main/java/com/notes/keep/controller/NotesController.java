@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping("/notes")
 @PreAuthorize("USER")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class NotesController {
 
     @Autowired
@@ -148,6 +148,7 @@ public class NotesController {
         if (!archived) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
+        Loggers.info("NOTE WITH ID " + noteId + "IS ADDED TO ARCHIVES");
         return ResponseEntity.status(200).body("MOVED TO ARCHIVE");
     }
 
@@ -157,6 +158,7 @@ public class NotesController {
         if (!archived) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
+        Loggers.info("NOTE WITH ID " + noteId + "IS REMOVED FROM ARCHIVES");
         return ResponseEntity.status(200).body("MOVED TO ARCHIVE");
     }
 

@@ -5,7 +5,8 @@ import { getRandomColor } from '../utils/ColorList';
 
 
 export const adminLogin = async (UserInfo) => {
-    const url = 'admin/login';
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/admin/login`;
 
     const signInObj = {
         email: UserInfo.get("email"),
@@ -20,8 +21,6 @@ export const adminLogin = async (UserInfo) => {
             },
             body: JSON.stringify(signInObj),
         });
-
-        console.log("HERE", response);
 
 
         if (response.status === 500) {
@@ -75,7 +74,8 @@ export const adminLogin = async (UserInfo) => {
 
 
 export const getTotalUserSize = async () => {
-    const url = '/admin/getAllNumber';
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/admin/getAllNumber`;
 
     const response = await fetch(url);
 
@@ -98,7 +98,8 @@ export const getTotalUserSize = async () => {
 
 
 export const getDBSize = async () => {
-    const url = '/admin/getDBSize';
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/admin/getDBSize`;
 
     const response = await fetch(url);
 
@@ -120,7 +121,9 @@ export const getDBSize = async () => {
 }
 
 export const getAllUsers = async () => {
-    const url = '/admin/getAllUser';
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+
+    const url = `${baseUrl}/admin/getAllUser`;
 
     const response = await fetch(url);
 
@@ -142,10 +145,15 @@ export const getAllUsers = async () => {
 }
 
 export const serverStatus = async () => {
+    const baseUrl = process.env.REACT_APP_BASE_URL;
     try {
-        const url = '/actuator/health';
+        const url = `${baseUrl}/actuator/health`;
 
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
 
         if (response.ok) {
             const data = await response.json();

@@ -1,14 +1,24 @@
 import { toast } from "react-toastify";
 
 export const deleteById = async (id) => {
-    const url = `notes/delete/${id}`
- 
+
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/notes/delete/${id}`
+    const userData = sessionStorage.getItem('userData');
+    const user = JSON.parse(userData);
+    const token = user?.response;
+
+
     try {
         const response = await fetch(url, {
-            method: 'DELETE'
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+            method: 'DELETE',
         });
 
-        if(response.status === 204){
+        if (response.status === 204) {
             return [];
         }
 

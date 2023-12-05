@@ -2,14 +2,23 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const getDeletedNotes = async () => {
+
     const userData = sessionStorage.getItem('userData');
     const user = JSON.parse(userData);
-    const id = user?.userId;
+    const userId = user?.userId;
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/notes/trash/userId/${userId}`;
 
-    const url = `/notes/trash/userId/${id}`;
+    const token = user?.response;
+
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+            },
+        });
 
         if (!response.ok) {
             toast.warn('Server Error !', {
@@ -40,8 +49,3 @@ export const getDeletedNotes = async () => {
         throw error;
     }
 };
-
-
-// DeletedNotes.propTypes = {
-//     setData: PropTypes.func,
-// };

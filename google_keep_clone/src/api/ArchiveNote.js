@@ -1,13 +1,24 @@
 import { toast } from "react-toastify";
 
 export const archivedTo = async (noteId) => {
+
+
     const userData = sessionStorage.getItem('userData');
     const user = JSON.parse(userData);
     const id = user?.userId;
+    const token = user?.response;
 
-    const url = `notes/archive/userId/${id}/addArchive/noteId/${noteId}`;
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/notes/archive/userId/${id}/addArchive/noteId/${noteId}`;
+
     try {
-        const response = await fetch(url, { method: 'GET' });
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `${token}`
+             },
+        });
 
         console.log(response);
 

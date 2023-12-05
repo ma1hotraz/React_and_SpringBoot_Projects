@@ -254,10 +254,7 @@ export default function Note(props) {
         fetchAndRefreshData();
     }, [selectedNoteId]);
 
-
-    console.log('object', data);
-
-
+    
     return (
         <Box>
             <Box>

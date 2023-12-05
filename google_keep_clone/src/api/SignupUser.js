@@ -4,7 +4,9 @@ import getLocale from "../utils/SettingLocale";
 import { getRandomColor } from '../utils/ColorList';
 
 export const Signup = async (UserInfo) => {
-   const url = 'user/auth/add';
+
+   const baseUrl = process.env.REACT_APP_BASE_URL;
+   const url = `${baseUrl}/user/auth/add`;
 
    const signUpObj = {
       firstName: UserInfo.get("firstname"),
