@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { serverStatus } from './AdminAPIs';
 
 export const archivedList = async () => {
 
@@ -12,30 +13,29 @@ export const archivedList = async () => {
 
 
     try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `${token}`
-            },
-        });
 
-        if (!response.ok) {
-            toast.warn('Server Error!', {
-                autoClose: 2000,
+        if (await serverStatus() !== null) {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `${token}`
+                },
             });
-            // throw new Error('Network response was not ok');
-            return [];
+
+            if (!response.ok) {
+                toast.warn('Server Error!', {
+                    autoClose: 2000,
+                });
+                // throw new Error('Network response was not ok');
+                return [];
+            }
+            if (response.status === 204) {
+                return [];
+            }
+            const data = await response.json();
+            return data !== null ? data : [];
         }
-
-        if (response.status === 204) {
-            return [];
-        }
-
-
-        const data = await response.json();
-        return data !== null ? data : [];
-
     } catch (error) {
         console.error('Error:', error.message);
     }

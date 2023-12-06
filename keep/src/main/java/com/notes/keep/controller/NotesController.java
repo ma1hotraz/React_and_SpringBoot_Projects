@@ -1,24 +1,17 @@
 package com.notes.keep.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.notes.keep.model.Archived;
-import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.Notes;
 import com.notes.keep.model.Trash;
 import com.notes.keep.service.NotesService;
 import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 
 @RestController
@@ -32,7 +25,6 @@ public class NotesController {
 
     @PostMapping("/add")
     public ResponseEntity<?> createNote(@RequestBody Notes note) throws Exception {
-        Loggers.info("NOTE CREATED");
         Notes notes = null;
         try {
             notes = notesService.createNote(note);

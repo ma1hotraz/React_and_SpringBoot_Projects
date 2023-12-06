@@ -15,7 +15,7 @@ export default function TrashModal(props) {
     const [isDialogOpen, setDialogOpen] = useState(false);
     const [noteId, setNoteId] = useState('');
     const [isLoading, setLoading] = useState(false);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const [showLoader, setShowLoader] = useState(false);
 
     const style = {
@@ -93,7 +93,7 @@ export default function TrashModal(props) {
                 <Modal open={isModalOpen} onClose={onClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Box style={style}>
                         <h1 style={{ textAlign: 'center' }}>Archive</h1>
-                        {data.length !== 0 ? (
+                        {data ? (
                             <>
                                 {isLoading === true ? <Box sx={{
                                     display: 'flex',

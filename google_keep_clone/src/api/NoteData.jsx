@@ -46,17 +46,55 @@ export const getData = async (id, token) => {
   }
 };
 
-export default function NoteData({ setData }) {
+// export default function NoteData({ setData }) {
 
+//   const userData = sessionStorage.getItem('userData');
+//   const user = JSON.parse(userData);
+//   const id = user?.userId;
+//   const token = user?.response;
+
+//   const memoizedSetData = useCallback((data) => {
+//     setData(data);
+//   }, [setData]);
+
+
+//   useEffect(() => {
+//     if (id) {
+//       getData(id, token)
+//         .then((fetchedData) => {
+//           memoizedSetData(fetchedData);
+//         })
+//         .catch((error) => {
+//           console.error('Error fetching data:', error);
+//         });
+//     } else {
+//       toast.error('Server is offline', 1000);
+//     }
+//   }, [memoizedSetData])
+
+// }
+
+// NoteData.propTypes = {
+//   setData: PropTypes.func,
+// };
+
+export default function NoteData({ setData }) {
   const userData = sessionStorage.getItem('userData');
   const user = JSON.parse(userData);
   const id = user?.userId;
   const token = user?.response;
 
-  const memoizedSetData = useCallback((data) => {
-    setData(data);
-  }, [setData]);
-
+  const memoizedSetData = useCallback(
+    (data) => {
+      // Check if setData is a function before calling it
+      if (typeof setData === 'function') {
+        setData(data);
+      } else {
+        console.error('setData is not a function');
+      }
+    },
+    [setData]
+  );
 
   useEffect(() => {
     if (id) {
@@ -70,11 +108,9 @@ export default function NoteData({ setData }) {
     } else {
       toast.error('Server is offline', 1000);
     }
-  }, [memoizedSetData])
-
+  }, [memoizedSetData]);
 }
 
 NoteData.propTypes = {
   setData: PropTypes.func,
 };
-
