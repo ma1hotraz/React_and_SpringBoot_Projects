@@ -62,7 +62,6 @@ public class NotesService {
                 e.printStackTrace();
             }
 
-
             note.setTitle(encryptionUtil.encrypt(note.getTitle()));
             note.setDescription(encryptionUtil.encrypt(note.getDescription()));
         } catch (Exception e) {

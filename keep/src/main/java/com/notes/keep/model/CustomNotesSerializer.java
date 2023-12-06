@@ -17,6 +17,8 @@ public class CustomNotesSerializer extends JsonSerializer<Notes> {
         jsonGenerator.writeFieldName("date");
         jsonGenerator.writeObject(notes.getDate());
         jsonGenerator.writeStringField("color", notes.getColor());
+        jsonGenerator.writeStringField("imageBg", notes.getImageBg());
+
 
 
         User user = notes.getUser();

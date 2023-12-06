@@ -1,11 +1,11 @@
 import React from 'react'
 import MainNavBar from '../component/MainNavBar';
-import Note1 from '../images/note1.png'
-import Note2 from '../images/note2.png'
-import Note3 from '../images/note3.png'
 import { Box, Button, Divider, Grid, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import getText from '../utils/TextUtils';
+import Note1 from '../images/note1.png';
+import Note2 from '../images/note2.png';
+import Note3 from '../images/note3.png';
 
 export default function Main() {
 
@@ -93,7 +93,7 @@ export default function Main() {
 
         <Box sx={{ margin: '100px' }} display="flex" flexDirection={"column"} >
           <Box display="flex" justifyContent={"center"} >
-            <Button variant="contained" size='large' color='secondary' onClick={() => {navigate('/Signin');}} >Get Started</Button>
+            <Button variant="contained" size='large' color='secondary' onClick={() => { navigate('/Signin'); }} >Get Started</Button>
           </Box>
         </Box>
       </Box>

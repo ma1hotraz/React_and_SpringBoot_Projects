@@ -8,7 +8,6 @@ import NoteModal from './NoteModel';
 import { deleteById } from '../api/DeleteNote';
 import { addNote } from '../api/AddNote';
 import { updateData } from '../api/UpdateNote';
-import nodataImage from '../images/nodata.png';
 import '../css/NoData.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,6 +18,8 @@ import getText from '../utils/TextUtils';
 import { archivedTo } from '../api/ArchiveNote';
 import { Archive } from '@mui/icons-material';
 import Draggable from 'react-draggable';
+import { getRandomBg } from '../utils/NotesBackround';
+import nodataImage from '../images/nodata.png';
 
 export var fetchAndRefreshData = () => {
 
@@ -49,6 +50,7 @@ export default function Note(props) {
 
 
     fetchAndRefreshData = () => {
+
         const userData = sessionStorage.getItem('userData');
         const user = JSON.parse(userData);
         const id = user?.userId;
@@ -161,6 +163,8 @@ export default function Note(props) {
             description: description,
             completed: false,
             color: getRandomColor(),
+            imageBg: getRandomBg(),
+
             user: {
                 userId: currentUser.userId,
             },
@@ -254,7 +258,10 @@ export default function Note(props) {
         fetchAndRefreshData();
     }, [selectedNoteId]);
 
-    
+
+    console.log('object', data ? data : 'null hai');
+
+
     return (
         <Box>
             <Box>
@@ -271,12 +278,13 @@ export default function Note(props) {
                                     <Grid display={"flex"}
                                         justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
                                         <Draggable scale={1} grid={[25, 25]} >
-                                            <Box sx={{ height: '200px', width: '300px', marginTop: '20px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
-                                                <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, height: '100%', width: '100%', position: 'relative' }} >
+                                            <Box sx={{ height: '200px', width: '300px', marginTop: '20px', border: '1px solid grey', borderRadius: '4px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
+                                                <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`, backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative' }} >
                                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                                         <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
                                                         <Box onClick={() => {
                                                             handleClick(item.noteId);
+                                                            console.log('object', item.imageBg);
                                                         }}>
                                                             <Tooltip title='Archive'><IconButton onClick={e => e.stopPropagation()}  >
                                                                 <Archive sx={{}} className="hover-effect" onClick={() => handleArchive(item.noteId)} />
@@ -289,7 +297,7 @@ export default function Note(props) {
                                                         maxHeight: '3.6em',
                                                     }}>{item.description}</Typography>
                                                     <div style={{ height: '10px' }}></div>
-                                                    <Typography variant="body2" color={'gray'} style={{
+                                                    <Typography variant="body2" color={'white'} sx={{
                                                         position: 'absolute',
                                                         bottom: 10,
                                                         width: '100%',

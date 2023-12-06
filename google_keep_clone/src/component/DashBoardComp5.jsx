@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllUsers } from '../api/AdminAPIs';
 import ImageDisplay2 from '../component/ImageDisplay2'
 import { Table, TableCell, TableContainer, TableHead, TableRow, Paper, TableBody, Typography } from '@mui/material';
-import NoRecords from '../images/norecords.gif'
+import NoRecords from '../images/norecords.gif';
 
 export default function DashBoardComp5() {
     const [allUsers, setAllUsers] = useState([]);

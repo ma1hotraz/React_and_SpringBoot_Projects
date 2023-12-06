@@ -14,4 +14,5 @@ public class NotesDTO {
     private boolean completed;
     private String date;
     private String color;
+    private String imageBg;
 }

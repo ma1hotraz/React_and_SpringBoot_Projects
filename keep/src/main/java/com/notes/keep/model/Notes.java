@@ -44,6 +44,7 @@ public class Notes {
     private boolean deleted = false;
     private Date date;
     private String color;
+    private String imageBg;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")

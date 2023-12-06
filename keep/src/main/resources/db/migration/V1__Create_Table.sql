@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS Notes (
     deleted BOOLEAN,
     date DATE,
     color VARCHAR(255),
+    imageBg VARCHAR(255),
     userId BINARY(16),
     FOREIGN KEY (userId) REFERENCES User(userId)
 );

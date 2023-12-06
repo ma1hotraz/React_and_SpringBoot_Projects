@@ -34,7 +34,6 @@ function DrawerAppBar(props) {
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
-
   const navItems = [
     <SortingList />,
     <ArchiveModal modalBg={props.modalBg} />,
@@ -55,7 +54,7 @@ function DrawerAppBar(props) {
 
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', color: `${props.textColor}`, backgroundColor: `${props.themeColor}`, minHeight: '100vh'}}>
       <Typography variant="h6" sx={{ my: 2 }}>
         {props.name}
       </Typography>

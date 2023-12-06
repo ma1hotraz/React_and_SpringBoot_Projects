@@ -3,8 +3,8 @@ import { getByTitle } from '../api/SearchNote';
 import { Box, Container, Grid, Paper, TextField, Typography, InputAdornment } from '@mui/material';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import notfound from '../images/notfound.gif';
 import { HashLoader } from 'react-spinners';
+import notfound from '../images/notfound.gif';
 
 export default function SearchBox(props) {
     const [inputText, setInputText] = useState('');

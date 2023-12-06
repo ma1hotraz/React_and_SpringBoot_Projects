@@ -1,7 +1,7 @@
 import React from 'react'
-import sww from '../images/sww.gif'
 import '../css/ErrorPage.css'
 import { Link } from 'react-router-dom'
+import sww from '../images/sww.gif';
 
 export default function ErroPage() {
   return (
