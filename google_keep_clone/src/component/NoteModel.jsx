@@ -84,7 +84,6 @@ export default function NoteModal({
                     <Typography id="modal-title" variant='h5' sx={{margin: '10px 0 10px 0'}}>
                         {mode === 'create' ? getText('Create Note') : getText('Edit Note')}
                     </Typography>
-
                     <InputBase
                         fullWidth
                         label="Title"
@@ -92,7 +91,6 @@ export default function NoteModal({
                         value={noteTitle}
                         onChange={handleTitleChange}
                         placeholder='Title'
-                        color='white'
                     />
                     <div style={{ height: '20px' }}></div>
                     <InputBase
@@ -103,8 +101,7 @@ export default function NoteModal({
                         rows={6}
                         value={noteDescription}
                         onChange={handleDescriptionChange}
-                        // placeholder='Description'
-                        color='white'
+                        placeholder='Description'
                     />
                     <Box
                         sx={{

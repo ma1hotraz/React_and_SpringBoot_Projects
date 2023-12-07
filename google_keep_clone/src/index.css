@@ -3,18 +3,7 @@
 body {
   margin: 0;
   font-family: 'Inconsolata', monospace;
+  /* font-family: 'Open Sans', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-/* @font-face {
-  font-family: 'Capucine';
-  src: local("Capucine Web Basic Black Italic") url('../src/fonts/Capucine\ Web\ Basic\ Black\ Italic.ttf') format('truetype');
-} */
-
-

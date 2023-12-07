@@ -277,7 +277,7 @@ export default function Note(props) {
                                             <Box sx={{ height: '200px', width: '300px', marginTop: '20px', border: '1px solid grey', borderRadius: '4px' }} key={item.id} onClick={() => { handleClick(item.noteId); setCurrentNoteBg(item.imageBg) }}>
                                                 <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`, backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative' }} >
                                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                        <Typography variant="h5" sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}` }}>{item.title}</Typography>
+                                                        <Typography variant="h5" sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}`, fontFamily: "'Inconsolata', monospace", }}>{item.title}</Typography>
                                                         <Box onClick={() => {
                                                             handleClick(item.noteId);
                                                             console.log('object', item.imageBg);
@@ -291,16 +291,18 @@ export default function Note(props) {
                                                         whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
                                                         WebkitBoxOrient: 'vertical',
                                                         maxHeight: '3.6em',
-                                                        color: `${props.color}`
+                                                        color: `${props.color}`,
+                                                        fontFamily: "'Inconsolata', monospace",
                                                     }}>{item.description}</Typography>
                                                     <div style={{ height: '10px' }}></div>
                                                     <Typography variant="body2" sx={{
                                                         position: 'absolute',
                                                         bottom: 10,
                                                         width: '100%',
-                                                        color: `${props.color}`
+                                                        color: `${props.color}`,
+                                                        fontFamily: "'Inconsolata', monospace",
                                                     }}>
-                                                        {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
+                                                        {item.completed === true ? `Edited : ${item.date}` : `Created : ${item.date}`}
                                                     </Typography>
                                                 </Paper>
                                             </Box>
