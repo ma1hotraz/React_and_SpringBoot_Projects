@@ -71,7 +71,7 @@ export default function Home() {
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />
       <LanguageSelector />
       <Box sx={{ padding: '15px' }}>
-        <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} />
+        <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} modalBg={modalBg}/>
       </Box>
     </div>
   );

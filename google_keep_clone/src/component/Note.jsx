@@ -37,7 +37,7 @@ export default function Note(props) {
     const [selectedNoteId, setSelectedNoteId] = useState(null);
     const [currentUser, setCurrentUser] = useState(null);
     const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
-
+    const [currentNoteBg, setCurrentNoteBg] = useState(null);
 
     const handleCreateNote = () => {
         setModalMode('create');
@@ -47,7 +47,6 @@ export default function Note(props) {
         setNoteDescription('');
         setIsModalOpen(true);
     };
-
 
     fetchAndRefreshData = () => {
 
@@ -259,9 +258,6 @@ export default function Note(props) {
     }, [selectedNoteId]);
 
 
-    console.log('object', data ? data : 'null hai');
-
-
     return (
         <Box>
             <Box>
@@ -278,10 +274,10 @@ export default function Note(props) {
                                     <Grid display={"flex"}
                                         justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
                                         <Draggable scale={1} grid={[25, 25]} >
-                                            <Box sx={{ height: '200px', width: '300px', marginTop: '20px', border: '1px solid grey', borderRadius: '4px' }} key={item.id} onClick={() => { handleClick(item.noteId) }}>
+                                            <Box sx={{ height: '200px', width: '300px', marginTop: '20px', border: '1px solid grey', borderRadius: '4px' }} key={item.id} onClick={() => { handleClick(item.noteId); setCurrentNoteBg(item.imageBg) }}>
                                                 <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`, backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative' }} >
                                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                        <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
+                                                        <Typography variant="h5" sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}` }}>{item.title}</Typography>
                                                         <Box onClick={() => {
                                                             handleClick(item.noteId);
                                                             console.log('object', item.imageBg);
@@ -291,16 +287,18 @@ export default function Note(props) {
                                                             </IconButton></Tooltip>
                                                         </Box>
                                                     </Box>
-                                                    <Typography variant="h6" style={{
+                                                    <Typography variant="h6" sx={{
                                                         whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
                                                         WebkitBoxOrient: 'vertical',
                                                         maxHeight: '3.6em',
+                                                        color: `${props.color}`
                                                     }}>{item.description}</Typography>
                                                     <div style={{ height: '10px' }}></div>
-                                                    <Typography variant="body2" color={'white'} sx={{
+                                                    <Typography variant="body2" sx={{
                                                         position: 'absolute',
                                                         bottom: 10,
                                                         width: '100%',
+                                                        color: `${props.color}`
                                                     }}>
                                                         {item.completed === true ? `Edited On : ${item.date}` : `Created On : ${item.date}`}
                                                     </Typography>
@@ -352,6 +350,9 @@ export default function Note(props) {
                     handleDelete={handleDeleteNote}
                     mode={modalMode}
                     clearTitleAndDescription={clearTitleAndDescription}
+                    imageBg={currentNoteBg}
+                    modalColor={props.modalBg}
+                    textColor={props.color}
                 />
             </Box>
         </Box>

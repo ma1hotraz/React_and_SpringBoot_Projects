@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Box, TextField, Button, IconButton } from '@mui/material';
+import { Modal, Box, TextField, Button, IconButton, InputBase, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNote from '../api/EditNote';
 import getText from '../utils/TextUtils';
@@ -13,21 +13,27 @@ export default function NoteModal({
     handleDelete,
     mode,
     selectedId,
-    clearTitleAndDescription
+    clearTitleAndDescription,
+    imageBg,
+    modalColor
 }) {
     const [noteTitle, setNoteTitle] = useState('');
     const [noteDescription, setNoteDescription] = useState('');
     const [noteData, setNoteData] = useState([]);
+    const [modalBg, setModalBg] = useState(null);
+
 
     useEffect(() => {
         if (mode === 'edit') {
             setNoteTitle(noteData.title || '');
             setNoteDescription(noteData.description || '');
             setNoteData([]);
+            setModalBg(mode === 'edit' ? imageBg : '');
         } else {
             setNoteTitle('');
             setNoteDescription('');
             setNoteData([]);
+            setModalBg('');
         }
         setNoteData([]);
     }, [title, description, mode]);
@@ -61,33 +67,44 @@ export default function NoteModal({
                         transform: 'translate(-50%, -50%)',
                         width: 400,
                         borderRadius: '12px',
-                        padding: '16px 32px 24px 32px',
+                        padding: '20px',
                         backgroundColor: '#FFFFFF',
                         boxShadow: 16,
                         justifyContent: 'space-between',
-                        display: 'block'
+                        display: 'block',
+                        backgroundImage: `${modalBg}`,
+                        backdropFilter: 'sepia(90%)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        border: '1px solid grey',
+                        backgroundColor: `${modalColor}`,
                     }}
                 >
-                    <h2 style={{ margin: '10px', padding: '6px' }} id="modal-title">
+                    <Typography id="modal-title" variant='h5' sx={{margin: '10px 0 10px 0'}}>
                         {mode === 'create' ? getText('Create Note') : getText('Edit Note')}
-                    </h2>
+                    </Typography>
 
-                    <TextField
+                    <InputBase
                         fullWidth
                         label="Title"
                         variant="outlined"
                         value={noteTitle}
                         onChange={handleTitleChange}
+                        placeholder='Title'
+                        color='white'
                     />
                     <div style={{ height: '20px' }}></div>
-                    <TextField
+                    <InputBase
                         fullWidth
                         label="Description"
                         variant="outlined"
                         multiline
-                        rows={4}
+                        rows={6}
                         value={noteDescription}
                         onChange={handleDescriptionChange}
+                        // placeholder='Description'
+                        color='white'
                     />
                     <Box
                         sx={{
@@ -99,7 +116,7 @@ export default function NoteModal({
                     >
                         {mode === 'edit' && (
                             <IconButton aria-label="delete">
-                                <DeleteIcon sx={{ color: 'red' }} onClick={handleDelete} />
+                                <DeleteIcon sx={{ color: 'white' }} onClick={handleDelete} />
                             </IconButton>
                         )}
                         <Button variant="contained" color="success" onClick={handleSaveClick}>

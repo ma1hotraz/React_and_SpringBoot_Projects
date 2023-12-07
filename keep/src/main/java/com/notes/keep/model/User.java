@@ -1,15 +1,17 @@
 package com.notes.keep.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Transient;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Transient;
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Lob;
+import jakarta.persistence.EnumType;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -73,6 +75,8 @@ public class User implements UserDetails{
     private Date date;
 
     private String resetPasswordToken;
+
+    public boolean userVerified;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

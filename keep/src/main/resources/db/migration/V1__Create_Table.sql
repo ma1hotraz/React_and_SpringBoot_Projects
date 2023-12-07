@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS User (
     fileSize BIGINT,
     date DATE,
     resetPasswordToken VARCHAR(255),
+    userVerified BOOLEAN,
     CONSTRAINT CK_Roles CHECK (roles IN ('ADMIN', 'USER'))
 );
 

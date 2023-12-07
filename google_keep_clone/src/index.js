@@ -15,7 +15,7 @@ const theme = createTheme({
       main: '#71797E',
       navbar: '#F4B400',
       backgroundColor: '#FFFFFF',
-      textColor: '#FFFFFF',
+      textColor: '#000000',
       navMenuIconColor: '#000000',
       modalBg: '#FFFFFF',
     },
