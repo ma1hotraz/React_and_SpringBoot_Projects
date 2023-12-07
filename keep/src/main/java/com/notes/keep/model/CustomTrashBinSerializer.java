@@ -17,6 +17,7 @@ public class CustomTrashBinSerializer extends JsonSerializer<Trash> {
         jsonGenerator.writeFieldName("date");
         jsonGenerator.writeObject(notes.getDate());
         jsonGenerator.writeStringField("color", notes.getColor());
+        jsonGenerator.writeStringField("imageBg", notes.getImageBg());
 
 
         User user = notes.getUser();

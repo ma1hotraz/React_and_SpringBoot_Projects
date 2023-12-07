@@ -124,6 +124,7 @@ public class NotesService {
                         .deleted(note.isDeleted())
                         .date(note.getDate())
                         .color(note.getColor())
+                        .imageBg(note.getImageBg())
                         .user(note.getUser())
                         .build();
 
@@ -213,6 +214,7 @@ public class NotesService {
                             .deleted(false)
                             .date(trash.getDate())
                             .color(trash.getColor())
+                            .imageBg(trash.getImageBg())
                             .user(trash.getUser())
                             .build();
                     break;
@@ -221,7 +223,6 @@ public class NotesService {
             if (note == null) {
                 return false;
             }
-
             trashRepository.deleteById(noteId);
             notesRepository.save(note);
         } catch (Exception e) {
@@ -248,6 +249,7 @@ public class NotesService {
                                     .archived(true)
                                     .date(notes.getDate())
                                     .color(notes.getColor())
+                                    .imageBg(notes.getImageBg())
                                     .user(notes.getUser())
                                     .build();
                     archivedRepository.save(archive);
@@ -282,6 +284,7 @@ public class NotesService {
                             .completed(archived.isCompleted())
                             .date(archived.getDate())
                             .color(archived.getColor())
+                            .imageBg(archived.getImageBg())
                             .user(archived.getUser())
                             .build();
                     notesRepository.save(notes);

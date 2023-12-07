@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS Trash (
     deleted BOOLEAN,
     date DATE,
     color VARCHAR(255),
+    imageBg VARCHAR(255),
     userId BINARY(16),
     FOREIGN KEY (userId) REFERENCES User(userId)
 );
@@ -53,6 +54,7 @@ CREATE TABLE IF NOT EXISTS Archived (
     archived BOOLEAN,
     date DATE,
     color VARCHAR(255),
+    imageBg VARCHAR(255),
     userId BINARY(16),
     FOREIGN KEY (userId) REFERENCES User(userId)
 );

@@ -45,6 +45,8 @@ public class Trash {
     private Date date;
     private String color;
 
+    private String imageBg;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
     private User user;

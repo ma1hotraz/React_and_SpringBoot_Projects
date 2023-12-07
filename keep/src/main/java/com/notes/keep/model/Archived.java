@@ -45,6 +45,7 @@ public class Archived {
     private boolean archived = false;
     private Date date;
     private String color;
+    private String imageBg;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
