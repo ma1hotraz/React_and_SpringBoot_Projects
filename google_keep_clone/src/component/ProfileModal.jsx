@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 
 
 export default function ProfileModal() {
+
     const navigate = useNavigate();
 
     const [modalOpen, setModalOpen] = useState(false);
@@ -17,7 +18,7 @@ export default function ProfileModal() {
     const [source, setSource] = useState(null);
     const [isImageVisible, setIsImageVisible] = useState(false);
     const [isServerUp, setIsServerUp] = useState('error');
-    const [avatarCol, setAvatarCol] = useState('grey');
+    const [avtarCol, setAvatarCol] = useState('');
 
     const getStatus = async () => {
         try {
@@ -45,7 +46,6 @@ export default function ProfileModal() {
                 const imageData = JSON.parse(dataS);
 
                 if (!imageData || !imageData.image) {
-                    // console.error('Image data not found in sessionStorage');
                     return;
                 }
 
@@ -59,8 +59,8 @@ export default function ProfileModal() {
             }
         };
 
-        const storedData = localStorage.getItem('avtarCol');
-        setAvatarCol(storedData.substring(1,8) || 'grey');
+        const avtarCol = localStorage.getItem('avtarCol');
+        setAvatarCol(avtarCol.substring(1, 8));
 
         fetchImage();
     }, []);
@@ -134,7 +134,7 @@ export default function ProfileModal() {
                                 horizontal: 'right',
                             }}
                         >
-                            <Avatar sx={{ backgroundColor: avatarCol }}>
+                            <Avatar sx={{ backgroundColor: avtarCol }}>
                                 <ImageDisplay />
                             </Avatar>
                         </Badge>
@@ -149,7 +149,9 @@ export default function ProfileModal() {
                                 horizontal: 'right',
                             }}
                         >
-                            <Avatar sx={{ backgroundColor: avatarCol }}>{name.charAt(0)}</Avatar>
+                            <Avatar sx={{ backgroundColor: avtarCol }}>
+                                {name.charAt(0)}
+                            </Avatar>
                         </Badge>
                     )}
                 </Button>
@@ -174,7 +176,7 @@ export default function ProfileModal() {
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                             <Avatar
-                                sx={{ height: '108px', width: '108px' }}
+                                sx={{ height: '108px', width: '108px',backgroundColor: `${avtarCol}` }}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             >
@@ -191,14 +193,15 @@ export default function ProfileModal() {
                                         <FontAwesomeIcon icon={faCamera} />
                                     </Box>
                                 ) : (
-                                    (source === null || !source) ? (
+                                    (!source === null || !source) ? (
                                         <Avatar
                                             sx={{
                                                 transition: `opacity ${fadeDuration}`,
-                                                opacity: isImageVisible ? 1 : 0,
+                                                opacity: !isImageVisible ? 1 : 0,
+                                                backgroundColor: `${avtarCol}`
                                             }}
                                         >
-                                            {name.charAt(0)}
+                                            <Typography variant='h5'>{name.charAt(0)}</Typography>
                                         </Avatar>
                                     ) : (
                                         <Avatar sx={{ height: '108px', width: '108px' }}>
@@ -209,13 +212,13 @@ export default function ProfileModal() {
                             </Avatar>
                         </Box>
                         <Box sx={{ margin: '20px 0 20px 0' }}>
-                            <Typography variant="h6" component="div">
+                            <Typography variant="h6" component="div" sx={{fontFamily: "'Inconsolata', monospace",}}>
                                 User Profile
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body1" color="text.secondary" sx={{fontFamily: "'Inconsolata', monospace",}}>
                                 Name: {name}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body1" color="text.secondary" sx={{fontFamily: "'Inconsolata', monospace",}}>
                                 Email: {email}
                             </Typography>
                         </Box>

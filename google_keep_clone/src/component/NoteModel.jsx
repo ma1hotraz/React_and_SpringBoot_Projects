@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Box, TextField, Button, IconButton, InputBase, Typography } from '@mui/material';
+import { Modal, Box, Button, IconButton, InputBase, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNote from '../api/EditNote';
 import getText from '../utils/TextUtils';
@@ -36,7 +36,7 @@ export default function NoteModal({
             setModalBg('');
         }
         setNoteData([]);
-    }, [title, description, mode]);
+    }, [title, description, mode, noteData.title, noteData.description, imageBg]);
 
     const handleTitleChange = (e) => {
         setNoteTitle(e.target.value);
@@ -68,7 +68,6 @@ export default function NoteModal({
                         width: 400,
                         borderRadius: '12px',
                         padding: '20px',
-                        backgroundColor: '#FFFFFF',
                         boxShadow: 16,
                         justifyContent: 'space-between',
                         display: 'block',

@@ -1,6 +1,7 @@
 
 export const updateData = async (updatedData) => {
-    const url = 'user/updateUser/';
+    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const url = `${baseUrl}/user/updateUser/`;
 
     const formData = new FormData();
 
@@ -28,7 +29,7 @@ export const updateData = async (updatedData) => {
             if (data !== null) {
                 sessionStorage.setItem('userData', JSON.stringify(data));
                 return data;
-             }
+            }
             return data || {};
         } else {
             throw new Error('Response is not valid JSON');
