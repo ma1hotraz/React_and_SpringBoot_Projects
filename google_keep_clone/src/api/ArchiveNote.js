@@ -20,8 +20,6 @@ export const archivedTo = async (noteId) => {
              },
         });
 
-        console.log(response);
-
         if (!response.ok) {
             toast.warn('Server Error!', {
                 autoClose: 2000,

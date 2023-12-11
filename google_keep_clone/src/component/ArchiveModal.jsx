@@ -86,8 +86,6 @@ export default function TrashModal(props) {
         getData();
     }, [noteArchived, noteId]);
 
-    console.log('data from archive', data);
-
     return (
         <div>
             <Tooltip title={'Archive'}>

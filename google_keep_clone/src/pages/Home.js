@@ -66,8 +66,6 @@ export default function Home() {
     return <div><ErrorPage /></div>;
   }
 
-  console.log('nav menu', navMenuIconColor)
-
   return (
     <div style={{ backgroundColor: `${backgroundColor}` }}>
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />

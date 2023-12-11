@@ -169,6 +169,14 @@
             <version>6.1.5</version>
         </dependency>
 
+        <!--    FOR FIREBASE    -->
+
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>9.2.0</version>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

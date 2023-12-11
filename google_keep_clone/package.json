@@ -17,6 +17,7 @@
     "@testing-library/user-event": "^13.5.0",
     "apexcharts": "^3.43.2-0",
     "cdbreact": "^1.5.18",
+    "firebase": "^10.7.1",
     "i18n": "^0.15.1",
     "i18next": "^23.6.0",
     "json-server": "^0.17.4",
