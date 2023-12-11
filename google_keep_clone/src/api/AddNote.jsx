@@ -14,7 +14,7 @@ export const addNote = async (noteData) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization' : `${token}`
+                'Authorization': `${token}`
             },
             body: JSON.stringify(noteData),
         });

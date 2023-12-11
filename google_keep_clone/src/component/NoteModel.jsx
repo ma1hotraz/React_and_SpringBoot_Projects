@@ -22,6 +22,8 @@ export default function NoteModal({
     const [noteData, setNoteData] = useState([]);
     const [modalBg, setModalBg] = useState(null);
 
+    const isSaveDisabled = !noteTitle.trim() || !noteDescription.trim();
+
 
     useEffect(() => {
         if (mode === 'edit') {
@@ -46,9 +48,15 @@ export default function NoteModal({
         setNoteDescription(e.target.value);
     };
 
+    // const handleSaveClick = () => {
+    //     handleSaveNote(noteTitle, noteDescription);
+    //     clearTitleAndDescription();
+    // };
     const handleSaveClick = () => {
-        handleSaveNote(noteTitle, noteDescription);
-        clearTitleAndDescription();
+        if (!isSaveDisabled) {
+            handleSaveNote(noteTitle, noteDescription);
+            clearTitleAndDescription();
+        }
     };
 
     return (
@@ -116,7 +124,7 @@ export default function NoteModal({
                                 <DeleteIcon sx={{ color: 'white' }} onClick={handleDelete} />
                             </IconButton>
                         )}
-                        <Button variant="contained" color="success" onClick={handleSaveClick}>
+                        <Button disabled={isSaveDisabled} variant="contained" color="success" onClick={handleSaveClick}>
                             Save
                         </Button>
                     </Box>
