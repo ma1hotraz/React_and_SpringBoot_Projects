@@ -18,6 +18,8 @@ CREATE TABLE IF NOT EXISTS User (
     date DATE,
     resetPasswordToken VARCHAR(255),
     userVerified BOOLEAN,
+    authProvider VARCHAR(50) NOT NULL,
+    authProviderId VARCHAR(100),
     CONSTRAINT CK_Roles CHECK (roles IN ('ADMIN', 'USER'))
 );
 

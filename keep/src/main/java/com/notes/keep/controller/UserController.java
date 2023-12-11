@@ -2,6 +2,7 @@ package com.notes.keep.controller;
 
 import com.notes.keep.dto.PasswordRequestDTO;
 import com.notes.keep.dto.UserDTO;
+import com.notes.keep.enums.Provider;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.User;
 import com.notes.keep.service.impl.CustomUserServiceImpl;
@@ -41,6 +42,7 @@ public class UserController {
             return ResponseEntity.status(409).build();
         }
         Loggers.info("USER CREATED WITH EMAIL : " + user.getEmail());
+        user.setAuthProvider("LOCAL");
         UserDTO userDTO = userService.createUser(user);
         return ResponseEntity.ok(userDTO);
     }
@@ -111,7 +113,7 @@ public class UserController {
             userService.updatePassword(request.getEmail(), request.getPassword(), request.getToken());
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            switch (e.getMessage()){
+            switch (e.getMessage()) {
                 case "Token Expired, Request new Token":
                     return ResponseEntity.status(401).body(e.getMessage());
                 case "Cannot Use Old Password":

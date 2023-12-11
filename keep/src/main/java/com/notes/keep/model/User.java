@@ -1,6 +1,7 @@
 package com.notes.keep.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.notes.keep.enums.Provider;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
@@ -77,6 +78,11 @@ public class User implements UserDetails{
     private String resetPasswordToken;
 
     public boolean userVerified;
+
+    @NotNull
+    private String authProvider;
+
+    private String authProviderId;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
