@@ -17,6 +17,9 @@ import { useState } from "react";
 import LoadingBar from "react-top-loading-bar";
 import { IconButton, InputAdornment } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import github from '../images/icons/github.png';
+import google from '../images/icons/google.png';
+import okta from '../images/icons/okta.png';
 
 
 const defaultTheme = createTheme();
@@ -224,6 +227,18 @@ export default function SignIn() {
                     {"Have an account? Sign In"}
                   </Link>
                 </Grid>
+              </Grid>
+              <Typography variant="h6" align="center" py={1}>Sign Up with</Typography>
+              <Grid item sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', padding: '20px 0 0 0'}}>
+                <Button onClick={() => {console.log('github')}}>
+                  <img src={github} alt="github"/>
+                </Button>
+                <Button onClick={() => {console.log('google')}}>
+                  <img src={google} alt="google"/>
+                </Button>
+                <Button onClick={() => {console.log('okta')}}>
+                  <img src={okta} alt="okta"/>
+                </Button>
               </Grid>
             </Box>
           </Box>
