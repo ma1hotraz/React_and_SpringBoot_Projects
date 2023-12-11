@@ -47,6 +47,7 @@ export default function SignIn() {
       setLoading(true);
       setProgress(35);
       const userData = await Signup(data);
+      console.log(userData);
       if (userData) {
         setProgress(100);
         navigate("/home", toast.success("Login Successful"))

@@ -125,4 +125,9 @@ public class UserController {
         Loggers.info("Password Reset Successfully");
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/auth/github")
+    public ResponseEntity<?> githubLogin(){
+        return ResponseEntity.ok(null);
+    }
 }

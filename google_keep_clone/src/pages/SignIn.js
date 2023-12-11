@@ -70,7 +70,7 @@ export default function SignIn() {
       const userData = await Login(data);
       if (userData) {
         setProgress(100);
-        navigate("/home", toast.success("Login Successful"));
+        navigate("/home", toast.success("Welcome Back"));
       }
     } catch (error) {
       console.error('Login failed:', error);
