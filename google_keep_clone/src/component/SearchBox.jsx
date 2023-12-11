@@ -53,7 +53,7 @@ export default function SearchBox(props) {
     }, [userId]);
 
     const handleClick = (itemId) => {
-         // console.log(itemId);
+        // console.log(itemId);
         props.onItemClick(itemId);
     };
 
@@ -101,22 +101,24 @@ export default function SearchBox(props) {
                     </Box>
                 ) : data.length !== 0 ? (
                     <>
-                        <Typography variant='h5' style={{ margin: '5px', color: `${props.buttonColor}` }}>Notes with title : {inputText}</Typography>
+                        <Typography variant='h5' style={{ margin: '5px', color: `${props.buttonColor}` }}>{data.length} Notes with title : {inputText}</Typography>
                         <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                             <Grid container>
                                 {data.map((item) => {
                                     return (
-                                        <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
+                                        <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId} gap={3} sx={{display: 'flex',justifyContent: 'center', paddingBottom: '5px'}}>
                                             <Box sx={{ height: '200px', width: '300px' }} key={item.noteId} onClick={() => { handleClick(item.noteId) }}>
                                                 <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`, backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative' }} className="note">
-                                                    <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</Typography>
+                                                    <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}` }}>
+                                                        {item.title}</Typography>
                                                     <Typography variant="h6" style={{
                                                         whiteSpace: 'normal', overflow: 'hidden', textOverflow: 'ellipsis', WebkitLineClamp: 4,
                                                         WebkitBoxOrient: 'vertical',
                                                         maxHeight: '3.6em',
+                                                        color: `${props.color}`
                                                     }}>{item.description}</Typography>
                                                     <div style={{ height: '10px' }}></div>
-                                                    <Typography variant="body2" color={'gray'} style={{
+                                                    <Typography variant="body2" color={'white'} style={{
                                                         position: 'absolute',
                                                         bottom: 10,
                                                         width: '100%',

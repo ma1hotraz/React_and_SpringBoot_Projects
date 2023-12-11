@@ -220,6 +220,7 @@ export default function Note(props) {
         if (selectedNoteId !== null) {
             getById(selectedNoteId)
                 .then((data) => {
+                    console.log('object from Note : ', data);
                     setNoteData(data);
                 })
                 .catch((error) => {
@@ -227,6 +228,7 @@ export default function Note(props) {
                 });
         }
     }, [selectedNoteId]);
+
 
     const handleCloseModel = () => {
         setIsModalOpen(false);
@@ -262,7 +264,7 @@ export default function Note(props) {
         <Box>
             <Box>
                 <FontAwesomeIcon style={{ marginTop: '80px', marginBottom: '-80px', marginLeft: '10px' }} icon={faSearch} color={props.buttonColor} size='3x' onClick={toggleSearchBox} />
-                {isSearchBoxVisible && <SearchBox buttonColor={props.buttonColor} noteId={setSelectedNoteId} onItemClick={handleClick} />}
+                {isSearchBoxVisible && <SearchBox buttonColor={props.buttonColor} noteId={setSelectedNoteId} onItemClick={handleClick} color={props.color}/>}
             </Box>
             <Box sx={{ width: '100%', height: '100%', minHeight: '90vh' }}>
                 <NoteData setData={data !== null ? setData : null} />

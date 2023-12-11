@@ -36,7 +36,7 @@ export default function NoteModal({
             setModalBg('');
         }
         setNoteData([]);
-    }, [title, description, mode, noteData.title, noteData.description, imageBg]);
+    }, [title, description, mode, imageBg]);
 
     const handleTitleChange = (e) => {
         setNoteTitle(e.target.value);
@@ -65,7 +65,8 @@ export default function NoteModal({
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        width: 400,
+                        // width: 400,
+                        minWidth: 300,
                         borderRadius: '12px',
                         padding: '20px',
                         boxShadow: 16,

@@ -27,14 +27,14 @@ export const Login = async (UserInfo) => {
 
       if (response.status === 500) {
          toast.warn('Server Error !', {
-            autoClose: 2000,
+            autoClose: 1000,
          });
          return;
       }
 
       if (response.status === 409) {
          toast.warn('User Not Exist, Please Signup', {
-            autoClose: 2000,
+            autoClose: 1000,
          });
          return;
       }
@@ -48,7 +48,7 @@ export const Login = async (UserInfo) => {
 
       if (!response.ok) {
          toast.warn('Something Went Wrong', {
-            autoClose: 2000,
+            autoClose: 1000,
          });
          throw new Error('Network response was not ok');
       }

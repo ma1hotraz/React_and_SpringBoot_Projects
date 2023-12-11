@@ -48,13 +48,6 @@ public class ImageUtils {
         return multipartFile.getBytes();
     }
 
-//    public static MultipartFile convertByteArrayToMultipartFile(byte[] arr, String fileName) {
-//        ByteArrayResource resource = new ByteArrayResource(arr) {
-//            @Override
-//            public String getFilename() {
-//                return fileName;
-//            }
-//        };
-//        return new MockMultipartFile("file", fileName, null, resource);
-//    }
+
+
 }

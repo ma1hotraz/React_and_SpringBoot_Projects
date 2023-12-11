@@ -19,9 +19,7 @@ export const getById = async (id) => {
 
         if (contentType && contentType.includes('application/json')) {
             const data = await response.json();
-
-            console.log('object', data);
-
+            
             return data !== null ? data : [];
         }
         else {

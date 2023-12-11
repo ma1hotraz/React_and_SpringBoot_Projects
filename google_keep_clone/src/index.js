@@ -16,7 +16,7 @@ const theme = createTheme({
       navbar: '#F4B400',
       backgroundColor: '#FFFFFF',
       textColor: '#000000',
-      navMenuIconColor: '#000000',
+      navMenuIconColor: '#00000',
       modalBg: '#FFFFFF',
     },
     secondary: {
@@ -40,7 +40,7 @@ const renderApp = () => {
         {/* <Router> */}
           <App />
         {/* </Router> */}
-        <ToastContainer position='top-right' />
+        <ToastContainer position='bottom-right' />
       </ThemeProvider>
     </div>
   );
