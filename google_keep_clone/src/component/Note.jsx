@@ -163,7 +163,6 @@ export default function Note(props) {
             completed: false,
             color: getRandomColor(),
             imageBg: getRandomBg(),
-
             user: {
                 userId: currentUser.userId,
             },
