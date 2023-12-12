@@ -78,7 +78,6 @@ public class User implements UserDetails{
     private String resetPasswordToken;
 
     public boolean userVerified;
-
     @NotNull
     private String authProvider;
 

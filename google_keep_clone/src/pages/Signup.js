@@ -230,15 +230,15 @@ export default function SignIn() {
                 </Grid>
               </Grid>
               <Typography variant="h6" align="center" py={1}>Sign Up with</Typography>
-              <Grid item sx={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', padding: '20px 0 0 0'}}>
-                <Button onClick={() => {console.log('github')}}>
-                  <img src={github} alt="github"/>
+              <Grid item sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', padding: '20px 0 0 0' }}>
+                <Button onClick={() => { console.log('github') }}>
+                  <img src={github} alt="github" />
                 </Button>
-                <Button onClick={() => {console.log('google')}}>
-                  <img src={google} alt="google"/>
+                <Button onClick={() => { console.log('google') }}>
+                  <img src={google} alt="google" />
                 </Button>
-                <Button onClick={() => {console.log('okta')}}>
-                  <img src={okta} alt="okta"/>
+                <Button onClick={() => { console.log('okta') }}>
+                  <img src={okta} alt="okta" />
                 </Button>
               </Grid>
             </Box>

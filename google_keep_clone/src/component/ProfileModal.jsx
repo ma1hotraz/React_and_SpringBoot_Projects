@@ -166,7 +166,7 @@ export default function ProfileModal() {
                 >
                     <Box
                         sx={{
-                            width: 400,
+                            width: 300,
                             bgcolor: 'background.paper',
                             border: '2px solid #000',
                             boxShadow: 24,
