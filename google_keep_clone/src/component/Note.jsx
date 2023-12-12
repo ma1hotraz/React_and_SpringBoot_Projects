@@ -276,7 +276,7 @@ export default function Note(props) {
                                         justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
                                         <Draggable scale={1} grid={[25, 25]} >
                                             <Box sx={{ height: '200px', width: '300px', marginTop: '20px', border: '1px solid grey', borderRadius: '4px' }} key={item.id} onClick={() => { handleClick(item.noteId); setCurrentNoteBg(item.imageBg) }}>
-                                                <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`, backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative' }} >
+                                                <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`,backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative'}} >
                                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                                         <Typography variant="h5" sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}`, fontFamily: "'Inconsolata', monospace", }}>{item.title}</Typography>
                                                         <Box onClick={() => {
