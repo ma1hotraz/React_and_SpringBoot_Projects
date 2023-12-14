@@ -23,7 +23,7 @@ services:
       - spring.datasource.username=root
       - spring.datasource.password=root
     ports:
-      - "9292:8080"
+      - "8080:8080"
     networks:
       - springserv
 
