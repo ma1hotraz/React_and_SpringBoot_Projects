@@ -1,4 +1,4 @@
-package com.notes.keep.config;
+package com.notes.keep.config.sso;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -126,8 +126,8 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/auth/github")
-    public ResponseEntity<?> githubLogin(){
-        return ResponseEntity.ok(null);
+    @GetMapping("/auth/github")
+    public String githubLogin(){
+        return "redirect:/oauth2/authorization/github";
     }
 }

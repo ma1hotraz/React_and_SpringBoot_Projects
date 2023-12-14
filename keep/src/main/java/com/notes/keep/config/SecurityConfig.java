@@ -2,6 +2,9 @@ package com.notes.keep.config;
 
 import com.notes.keep.config.jwt.JwtAuthFilter;
 import com.notes.keep.config.sso.CustomOAuth2UserService;
+import com.notes.keep.config.sso.JwtAuthenticationEntryPoint;
+import com.notes.keep.config.sso.OAuth2AuthenticationFailureHandler;
+import com.notes.keep.config.sso.OAuth2AuthenticationSuccessHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

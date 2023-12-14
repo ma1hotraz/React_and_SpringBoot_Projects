@@ -7,7 +7,6 @@ import { getRandomColor } from '../utils/ColorList';
 
 export const Login = async (UserInfo) => {
    const baseUrl = process.env.REACT_APP_BASE_URL;
-   console.log("this is base : ", baseUrl);
    const url = `${baseUrl}/user/auth/login`;
 
 

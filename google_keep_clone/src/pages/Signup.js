@@ -20,6 +20,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import github from '../images/icons/github.png';
 import google from '../images/icons/google.png';
 import okta from '../images/icons/okta.png';
+import { githubLogin } from "../api/GithubLogin";
 
 
 const defaultTheme = createTheme();
@@ -87,6 +88,10 @@ export default function SignIn() {
       errorEmail &&
       errorPassword.length >= 6 ? true : false
   );
+
+  const handleGithubLogin = async () => {
+    await githubLogin();
+  }
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -231,7 +236,7 @@ export default function SignIn() {
               </Grid>
               <Typography variant="h6" align="center" py={1}>Sign Up with</Typography>
               <Grid item sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', padding: '20px 0 0 0' }}>
-                <Button onClick={() => { console.log('github') }}>
+                <Button onClick={() => { handleGithubLogin() }}>
                   <img src={github} alt="github" />
                 </Button>
                 <Button onClick={() => { console.log('google') }}>
