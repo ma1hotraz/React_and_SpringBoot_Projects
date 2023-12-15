@@ -1,31 +1,31 @@
-#version: '3'
-#services:
-#  dbservice:
-#    container_name: dbservice
-#    image: mysql:latest
-#    environment:
-#      MYSQL_ROOT_PASSWORD: root
-#    volumes:
-#      - ./data:/var/lib/mysql
-#    ports:
-#      - "3306:3306"
-#    networks:
-#      - springserv
-#
-#  appservice:
-#    build:
-#      context: ./
-#    depends_on:
-#      - dbservice
-#    restart: unless-stopped
-#    environment:
-#      - spring.datasource.url=jdbc:mysql://dbservice:3306/notes_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-#      - spring.datasource.username=root
-#      - spring.datasource.password=root
-#    ports:
-#      - "8080:8080"
-#    networks:
-#      - springserv
-#
-#networks:
-#  springserv:
+version: '3'
+services:
+  dbservice:
+    container_name: dbservice
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - springserv
+
+  appservice:
+    build:
+      context: ./
+    depends_on:
+      - dbservice
+    restart: unless-stopped
+    environment:
+      - spring.datasource.url=jdbc:mysql://dbservice:3306/notes_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+      - spring.datasource.username=root
+      - spring.datasource.password=root
+    ports:
+      - "8080:8080"
+    networks:
+      - springserv
+
+networks:
+  springserv:
