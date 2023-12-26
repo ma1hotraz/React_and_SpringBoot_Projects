@@ -44,18 +44,21 @@ export default function Forget() {
     };
 
     async function handleForget(data) {
+        
         try {
             setLoading(true);
             setProgress(35);
+            
             const userData = await ForgetUser(data);
+            console.log(userData);
             if (userData) {
                 setProgress(100);
-                navigate('/Reset');
-                toast.success("Check Email");
+                
+                navigate("/reset",toast.success("Check Email"));
             }
         } catch (error) {
             console.error('Login failed:', error);
-            navigate('/Reset', toast.warn("Error"));
+            navigate("/reset", toast.warn("Error"));
         } finally {
             setLoading(false);
         }

@@ -156,8 +156,8 @@ export default function SignIn() {
                 name="firstname"
                 autoComplete="firstname"
                 autoFocus
-                error={errorFirstName.length <= 4 ? true : false}
-                helperText={errorFirstName.length <= 4 ? 'Too Short' : ''}
+                error={errorFirstName.length <= 2 ? true : false}
+                helperText={errorFirstName.length <= 2 ? 'Too Short' : ''}
                 onChange={handleInputChangeFirstName}
               />
 
@@ -169,8 +169,8 @@ export default function SignIn() {
                 label="Last Name"
                 name="lastname"
                 autoComplete="lastname"
-                error={errorLastName.length <= 4 ? true : false}
-                helperText={errorLastName.length <= 4 ? 'Too Short' : ''}
+                error={errorLastName.length <= 2 ? true : false}
+                helperText={errorLastName.length <= 2 ? 'Too Short' : ''}
                 onChange={handleInputChangeLastName}
               />
               <TextField

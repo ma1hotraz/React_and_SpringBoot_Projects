@@ -70,7 +70,6 @@ export default function SignIn() {
       const userData = await Login(data);
       if (userData) {
         setProgress(100);
-        console.log(sessionStorage.getItem('userData'));
         navigate("/home", toast.success("Welcome Back"));
       }
     } catch (error) {

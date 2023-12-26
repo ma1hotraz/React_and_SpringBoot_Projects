@@ -40,7 +40,10 @@ export const ForgetUser = async (UserInfo) => {
             throw new Error('Network response was not ok');
         }
 
-        toast.success('Check Email', { autoClose: 1000 });
+        if(response.ok){
+            toast.success('Check Email', { autoClose: 1000 });
+            return response;
+        }
 
     } catch (e) {
         console.log('Error', e);

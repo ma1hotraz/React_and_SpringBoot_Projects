@@ -20,12 +20,9 @@ export const Signup = async (UserInfo) => {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json',
-            // 'Access-Control-Allow-Origin': '*'
          },
          body: JSON.stringify(signUpObj),
       });
-
-      console.log(response);
 
       if (response.status === 500) {
          toast.warn('Server Error !', {
