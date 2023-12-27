@@ -40,7 +40,7 @@ const renderApp = () => {
         {/* <Router> */}
           <App />
         {/* </Router> */}
-        <ToastContainer position='bottom-right' />
+        <ToastContainer position='bottom-left' />
       </ThemeProvider>
     </div>
   );

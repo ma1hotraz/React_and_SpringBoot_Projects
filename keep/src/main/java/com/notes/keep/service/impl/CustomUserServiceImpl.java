@@ -4,7 +4,6 @@ import com.mysql.cj.exceptions.PasswordExpiredException;
 import com.notes.keep.config.jwt.JwtService;
 import com.notes.keep.dto.EmailDTO;
 import com.notes.keep.dto.UserDTO;
-import com.notes.keep.enums.Provider;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.User;
