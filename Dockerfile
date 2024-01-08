@@ -6,7 +6,7 @@ FROM node:14-alpine as nodework
 
 WORKDIR /myapp
 
-COPY package*.json ./
+COPY /google_keep_clone/package*.json ./
 
 RUN npm install
 
@@ -37,8 +37,8 @@ VOLUME /var/lib/mysql
 FROM maven:3.8.4-openjdk-17 AS build
 
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
+COPY /keep/pom.xml .
+COPY /keep/src ./src
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17-alpine
