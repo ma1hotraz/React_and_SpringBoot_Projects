@@ -1,9 +1,10 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import authHeader from './authHeader';
 
 export const ForgetUser = async (UserInfo) => {
-    const baseUrl = process.env.REACT_APP_BASE_URL;
 
+    const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/user/auth/forget`;
 
     const signUpObj = {
@@ -13,9 +14,7 @@ export const ForgetUser = async (UserInfo) => {
     try {
         const response = await fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: authHeader(),
             body: JSON.stringify(signUpObj),
         });
 
@@ -40,7 +39,7 @@ export const ForgetUser = async (UserInfo) => {
             throw new Error('Network response was not ok');
         }
 
-        if(response.ok){
+        if (response.ok) {
             toast.success('Check Email', { autoClose: 1000 });
             return response;
         }

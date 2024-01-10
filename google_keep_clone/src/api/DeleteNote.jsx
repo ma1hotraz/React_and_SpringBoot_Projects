@@ -1,20 +1,15 @@
 import { toast } from "react-toastify";
+import authHeader from "./authHeader";
 
 export const deleteById = async (id) => {
 
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/delete/${id}`
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const token = user?.response;
 
 
     try {
         const response = await fetch(url, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `${token}`
-            },
+            headers: authHeader(),
             method: 'DELETE',
         });
 

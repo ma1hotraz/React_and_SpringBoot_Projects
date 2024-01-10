@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { serverStatus } from './AdminAPIs';
+import authHeader from './authHeader';
 
 export const getDeletedNotes = async () => {
 
@@ -10,27 +11,18 @@ export const getDeletedNotes = async () => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/trash/userId/${userId}`;
 
-    const token = user?.response;
-
-
     try {
 
         if (await serverStatus() !== null) {
 
-
-
             const response = await fetch(url, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `${token}`
-                },
+                headers: authHeader()
             });
 
             if (!response.ok) {
                 toast.warn('Server Error !', {
                     autoClose: 2000,
                 });
-                // throw new Error('Network response was not ok');
                 return [];
             }
 

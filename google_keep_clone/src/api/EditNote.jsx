@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import authHeader from "./authHeader";
 
 export const getById = async (id) => {
 
@@ -7,9 +8,7 @@ export const getById = async (id) => {
 
     try {
         const response = await fetch(url, {
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: authHeader()
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -19,7 +18,7 @@ export const getById = async (id) => {
 
         if (contentType && contentType.includes('application/json')) {
             const data = await response.json();
-            
+
             return data !== null ? data : [];
         }
         else {

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { serverStatus } from './AdminAPIs';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
+import authHeader from './authHeader';
 
 
 export const getData = async (id, token) => {
@@ -12,13 +13,12 @@ export const getData = async (id, token) => {
 
   const url = `${baseUrl}/notes/userId/${id}`;
 
+
+
   try {
     if (await serverStatus() !== null) {
       const response = await fetch(url, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `${token}`,
-        },
+        headers: authHeader()
       });
 
       const contentType = response.headers.get('content-type');
@@ -47,6 +47,7 @@ export const getData = async (id, token) => {
 };
 
 export default function NoteData({ setData }) {
+
   const userData = sessionStorage.getItem('userData');
   const user = JSON.parse(userData);
   const id = user?.userId;
@@ -56,7 +57,7 @@ export default function NoteData({ setData }) {
     (data) => {
       // Check if setData is a function before calling it
       // if (typeof setData === 'function') {
-        setData(data);
+      setData(data);
       // } else {
       //   // console.error('setData is not a function');
       // }

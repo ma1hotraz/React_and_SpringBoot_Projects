@@ -48,10 +48,6 @@ export default function NoteModal({
         setNoteDescription(e.target.value);
     };
 
-    // const handleSaveClick = () => {
-    //     handleSaveNote(noteTitle, noteDescription);
-    //     clearTitleAndDescription();
-    // };
     const handleSaveClick = () => {
         if (!isSaveDisabled) {
             handleSaveNote(noteTitle, noteDescription);
@@ -73,7 +69,6 @@ export default function NoteModal({
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        // width: 400,
                         minWidth: 300,
                         borderRadius: '12px',
                         padding: '20px',

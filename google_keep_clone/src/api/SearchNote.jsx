@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import authHeader from "./authHeader";
 
 export const getByTitle = async (userId, query) => {
+
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/userId/${userId}/${query}`;
 
     try {
         const response = await fetch(url, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: authHeader()
         });
 
         if (!response.ok) {
@@ -33,8 +33,6 @@ export const getByTitle = async (userId, query) => {
 };
 
 export default function SearchNote() {
-
-
 
     const [noteData, setNoteData] = useState([]);
 

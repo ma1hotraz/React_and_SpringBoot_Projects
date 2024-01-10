@@ -1,7 +1,13 @@
+import authHeader from "./authHeader";
 
 export const updateData = async (updatedData) => {
+
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/user/updateUser/`;
+
+    const userData = sessionStorage.getItem('userData');
+    const user = JSON.parse(userData);
+    const token = user?.response;
 
     const formData = new FormData();
 
@@ -16,6 +22,7 @@ export const updateData = async (updatedData) => {
         const response = await fetch(url, {
             method: 'PUT',
             body: formData,
+            headers: authHeader()
         });
 
         if (!response.ok) {

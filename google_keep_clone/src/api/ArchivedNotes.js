@@ -1,5 +1,6 @@
 import { toast } from "react-toastify";
 import { serverStatus } from './AdminAPIs';
+import authHeader from "./authHeader";
 
 export const archivedList = async () => {
 
@@ -17,10 +18,7 @@ export const archivedList = async () => {
         if (await serverStatus() !== null) {
             const response = await fetch(url, {
                 method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `${token}`
-                },
+                headers: authHeader()
             });
 
             if (!response.ok) {

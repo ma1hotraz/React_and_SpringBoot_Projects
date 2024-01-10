@@ -1,5 +1,6 @@
 
 import { toast } from "react-toastify";
+import authHeader from "./authHeader";
 
 export const restoredFromTrash = async (noteId) => {
 
@@ -7,12 +8,15 @@ export const restoredFromTrash = async (noteId) => {
     const user = JSON.parse(userData);
     const id = user?.userId;
 
+
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/trash/userId/${id}/restore/noteId/${noteId}`;
-    
+
 
     try {
-        const response = await fetch(url, { method: 'DELETE' });
+        const response = await fetch(url, {
+            method: 'DELETE', headers: authHeader()
+        });
 
         if (!response.ok) {
             toast.warn('Server Error!', {

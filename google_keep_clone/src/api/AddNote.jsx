@@ -1,21 +1,15 @@
 import { useEffect } from "react";
-
 import '../css/NoData.css';
+import authHeader from "./authHeader";
 
 export const addNote = async (noteData) => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/add`;
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const token = user?.response;
 
     try {
         const response = await fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `${token}`
-            },
+            headers: authHeader(),
             body: JSON.stringify(noteData),
         });
 
