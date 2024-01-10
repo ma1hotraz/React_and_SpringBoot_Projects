@@ -78,9 +78,9 @@ public class NotesController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/userId/{title}")
-    public ResponseEntity<?> findByTitle(@PathVariable UUID id, @PathVariable String title, @RequestHeader("Authorization") String authToken) throws Exception {
-        Loggers.info("NOTE WITH TITLE : \'" + title.trim() + "\' AND ID : " + id + " REQUESTED");
+    @GetMapping("/search/{title}")
+    public ResponseEntity<?> findByTitle(@PathVariable String title, @RequestHeader("Authorization") String authToken) throws Exception {
+        Loggers.info("NOTE WITH TITLE : \'" + title.trim() + " REQUESTED");
         if (title.isBlank() || title.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "TITLE IS EMPTY").build();
         }
@@ -94,7 +94,6 @@ public class NotesController {
 
     @GetMapping("/trash/")
     public ResponseEntity<?> getTrashByUser(@RequestHeader("Authorization") String authToken) throws Exception {
-        System.out.println("CALLED TRASH ");
         List<Trash> notesList = notesService.findAllTrashByUser(authToken);
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
@@ -103,7 +102,7 @@ public class NotesController {
     }
 
     @DeleteMapping("/trash/delete/noteId/{noteId}")
-    public ResponseEntity<?> deleteNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
+    public ResponseEntity<?> deleteNoteFromTrash(@PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
         Boolean deleted = notesService.deleteFromTrash(noteId, authToken);
         if (!deleted) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
@@ -132,7 +131,7 @@ public class NotesController {
 
 
     @GetMapping("/archive/addArchive/noteId/{noteId}")
-    public ResponseEntity<?> archiveNote(@PathVariable UUID userId, @PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
+    public ResponseEntity<?> archiveNote(@PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
         boolean archived = notesService.addToArchive(noteId, authToken);
         if (!archived) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");

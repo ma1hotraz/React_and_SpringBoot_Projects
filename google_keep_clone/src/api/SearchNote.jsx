@@ -3,9 +3,9 @@ import { toast } from "react-toastify";
 import authHeader from "./authHeader";
 
 export const getByTitle = async (query) => {
-
+    
     const baseUrl = process.env.REACT_APP_BASE_URL;
-    const url = `${baseUrl}/notes/userId/${query}`;
+    const url = `${baseUrl}/notes/search/${query}`;
 
     try {
         const response = await fetch(url, {

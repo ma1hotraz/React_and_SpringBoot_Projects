@@ -17,7 +17,7 @@ export default function SearchBox(props) {
 
     const handleSearchClick = async () => {
         try {
-            const fetchedData = await getByTitle(userId, inputText);
+            const fetchedData = await getByTitle(inputText);
             setData(fetchedData);
             setIsLoading(false);
 

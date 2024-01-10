@@ -219,7 +219,6 @@ export default function Note(props) {
         if (selectedNoteId !== null) {
             getById(selectedNoteId)
                 .then((data) => {
-                    console.log('object from Note : ', data);
                     setNoteData(data);
                 })
                 .catch((error) => {
@@ -281,7 +280,6 @@ export default function Note(props) {
                                                         <Typography variant="h5" sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}`, fontFamily: "'Inconsolata', monospace", }}>{item.title}</Typography>
                                                         <Box onClick={() => {
                                                             handleClick(item.noteId);
-                                                            console.log('object', item.imageBg);
                                                         }}>
                                                             <Tooltip title='Archive'><IconButton onClick={e => e.stopPropagation()}  >
                                                                 <Archive sx={{}} className="hover-effect" onClick={() => handleArchive(item.noteId)} />

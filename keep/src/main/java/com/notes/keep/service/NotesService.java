@@ -94,7 +94,6 @@ public class NotesService {
         if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-//        UUID uid = validateToken(authToken).get().getUserId();
         Notes note = notesRepository.findByNoteId(noteId);
         try {
             note.setTitle(encryptionUtil.decrypt(note.getTitle()));
@@ -142,10 +141,8 @@ public class NotesService {
         if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        UUID uid = validateToken(authToken).get().getUserId();
-        Notes note = notesRepository.findByNoteId(uid);
+        Notes note = notesRepository.findByNoteId(id);
         note.setDeleted(true);
-
         Trash deletedNote =
                 Trash.builder()
                         .noteId(note.getNoteId())
@@ -357,7 +354,6 @@ public class NotesService {
     }
 
     public Optional<User> validateToken(String token) {
-        System.out.println(token);
         Optional<User> user = null;
         if (token.isEmpty() || token.isBlank())
             return user;
@@ -369,7 +365,6 @@ public class NotesService {
             if(!jwtService.isTokenValid(token, user.get())){
                 throw new MalformedJwtException("INVALID TOKEN");
             }
-            System.out.println(user);
             return user;
         } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException | SignatureException |
                  IllegalArgumentException e) {

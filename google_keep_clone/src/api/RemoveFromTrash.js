@@ -4,10 +4,6 @@ import authHeader from "./authHeader";
 
 export const deleteFromTrash = async (noteId) => {
 
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const id = user?.userId;
-
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/trash/delete/noteId/${noteId}`;
 

@@ -3,11 +3,6 @@ import authHeader from "./authHeader";
 
 export const archivedTo = async (noteId) => {
 
-
-    const userData = localStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const id = user?.userId;
-
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/archive/addArchive/noteId/${noteId}`;
 

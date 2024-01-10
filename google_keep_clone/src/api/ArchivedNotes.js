@@ -37,14 +37,12 @@ export const archivedList = async () => {
 
 export const restoreFromArchive = async (noteId) => {
 
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const id = user?.userId;
     const baseUrl = process.env.REACT_APP_BASE_URL;
+
     const url = `${baseUrl}/notes/archive/removeArchive/noteId/${noteId}`;
 
     try {
-        const response = await fetch(url, { method: 'GET' });
+        const response = await fetch(url, { method: 'GET', headers : authHeader() });
 
         if (!response.ok) {
             toast.warn('Server Error!', {
