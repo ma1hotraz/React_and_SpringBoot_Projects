@@ -57,6 +57,7 @@ export const Login = async (UserInfo) => {
       if (contentType && contentType.includes('application/json')) {
          const data = await response.json();
          if (data !== null) {
+            localStorage.setItem('userData', JSON.stringify(data));
             sessionStorage.setItem('userData', JSON.stringify(data));
             const locale = navigator.language;
             const currLocale = getLocale(locale);

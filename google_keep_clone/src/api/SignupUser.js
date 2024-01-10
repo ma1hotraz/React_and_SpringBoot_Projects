@@ -2,6 +2,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import getLocale from "../utils/SettingLocale";
 import { getRandomColor } from '../utils/ColorList';
+import authHeader from './authHeader';
 
 export const Signup = async (UserInfo) => {
 
@@ -18,9 +19,7 @@ export const Signup = async (UserInfo) => {
    try {
       const response = await fetch(url, {
          method: 'POST',
-         headers: {
-            'Content-Type': 'application/json',
-         },
+         headers: authHeader(),
          body: JSON.stringify(signUpObj),
       });
 
@@ -56,8 +55,8 @@ export const Signup = async (UserInfo) => {
       if (contentType && contentType.includes('application/json')) {
          const data = await response.json();
          if (data !== null) {
-            console.log(data, "DATA FROM BACKEND ");
             sessionStorage.setItem('userData', JSON.stringify(data));
+            localStorage.setItem('userData', JSON.stringify(data));
             const locale = navigator.language;
             const currLocale = getLocale(locale);
             localStorage.setItem('lang', JSON.stringify(currLocale));

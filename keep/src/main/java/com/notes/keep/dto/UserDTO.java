@@ -12,7 +12,7 @@ import java.util.UUID;
 @ToString
 @Data
 public class UserDTO {
-    private UUID userId;
+//    private UUID userId;
     private String name;
     private String email;
     private byte[] image;

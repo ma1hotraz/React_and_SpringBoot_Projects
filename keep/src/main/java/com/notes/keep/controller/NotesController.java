@@ -25,7 +25,6 @@ public class NotesController {
 
     @PostMapping("/add")
     public ResponseEntity<?> createNote(@RequestBody Notes note, @RequestHeader("Authorization") String authToken) throws Exception {
-        System.out.println("THIS IS TOKEN : " + authToken);
         Notes notes = null;
         try {
             notes = notesService.createNote(note, authToken);
@@ -39,9 +38,9 @@ public class NotesController {
     }
 
 
-    @GetMapping("/userId/{id}")
-    public ResponseEntity<?> getAllByUserId(@PathVariable UUID id, @RequestHeader("Authorization") String authToken) throws Exception {
-        List<Notes> notesList = notesService.findAllByUserUserId(id, authToken);
+    @GetMapping("/userId/")
+    public ResponseEntity<?> getAllByUser(@RequestHeader("Authorization") String authToken) throws Exception {
+        List<Notes> notesList = notesService.findAllByUserUser(authToken);
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
         }
@@ -49,10 +48,9 @@ public class NotesController {
     }
 
 
-    @GetMapping("/getNote/{id}")
-    public ResponseEntity<?> getNoteById(@PathVariable UUID id, @RequestHeader("Authorization") String authToken) throws Exception {
-        Loggers.info("NOTE WITH ID " + id + " REQUESTED");
-        Notes note = notesService.findByNoteId(id, authToken);
+    @GetMapping("/getNote/")
+    public ResponseEntity<?> getNoteById(@RequestHeader("Authorization") String authToken) throws Exception {
+        Notes note = notesService.findByNoteId(authToken);
         if (note == null) {
             return ResponseEntity.noContent().header("msg", "NO NOTE FOUND WITH THIS ID").build();
         }
@@ -62,7 +60,7 @@ public class NotesController {
     @PutMapping("/noteId/{id}")
     public ResponseEntity<?> updateNoteById(@PathVariable UUID id, @RequestBody Notes notes, @RequestHeader("Authorization") String authToken) throws Exception {
         Loggers.info("NOTE WITH ID " + id + " UPDATED");
-        Notes note = notesService.updateNoteById(id, notes, authToken);
+        Notes note = notesService.updateNoteById(notes, authToken);
         if (note == null) {
             return ResponseEntity.status(400).header("msg", "BAD REQUEST").build();
         }
@@ -72,7 +70,7 @@ public class NotesController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable UUID id, @RequestHeader("Authorization") String authToken) throws Exception {
         Loggers.info("NOTE WITH ID " + id + " DELETED");
-        Notes note = notesService.findByNoteId(id, authToken);
+        Notes note = notesService.findByNoteId(authToken);
         if (note == null) {
             return ResponseEntity.noContent().header("msg", "NO CONTENT DELETED BECAUSE IT DOESN'T EXIST").build();
         }
@@ -80,13 +78,13 @@ public class NotesController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/userId/{id}/{title}")
+    @GetMapping("/userId/{title}")
     public ResponseEntity<?> findByTitle(@PathVariable UUID id, @PathVariable String title, @RequestHeader("Authorization") String authToken) throws Exception {
         Loggers.info("NOTE WITH TITLE : \'" + title.trim() + "\' AND ID : " + id + " REQUESTED");
         if (title.isBlank() || title.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "TITLE IS EMPTY").build();
         }
-        List<Notes> notesList = notesService.findByTitle(id, title, authToken);
+        List<Notes> notesList = notesService.findByTitle(title, authToken);
         if (notesList == null) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS TITLE").build();
         }
@@ -94,28 +92,28 @@ public class NotesController {
         return ResponseEntity.ok(notesList);
     }
 
-    @GetMapping("/trash/userId/{id}")
-    public ResponseEntity<?> getTrashByUserId(@PathVariable UUID id, @RequestHeader("Authorization") String authToken) throws Exception {
-
-        List<Trash> notesList = notesService.findAllTrashByUserId(id, authToken);
+    @GetMapping("/trash/")
+    public ResponseEntity<?> getTrashByUser(@RequestHeader("Authorization") String authToken) throws Exception {
+        System.out.println("CALLED TRASH ");
+        List<Trash> notesList = notesService.findAllTrashByUser(authToken);
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
         }
         return ResponseEntity.ok(notesList);
     }
 
-    @DeleteMapping("/trash/userId/{userId}/delete/noteId/{noteId}")
+    @DeleteMapping("/trash/delete/noteId/{noteId}")
     public ResponseEntity<?> deleteNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
-        Boolean deleted = notesService.deleteFromTrash(userId, noteId, authToken);
+        Boolean deleted = notesService.deleteFromTrash(noteId, authToken);
         if (!deleted) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
         return ResponseEntity.ok("DELETED SUCCESSFULLY");
     }
 
-    @DeleteMapping("/trash/userId/{userId}/restore/noteId/{noteId}")
-    public ResponseEntity<?> restoreNoteFromTrash(@PathVariable UUID userId, @PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
-        Boolean restored = notesService.restoredFromTrash(userId, noteId, authToken);
+    @DeleteMapping("/trash/restore/noteId/{noteId}")
+    public ResponseEntity<?> restoreNoteFromTrash(@PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
+        Boolean restored = notesService.restoredFromTrash(noteId, authToken);
         if (!restored) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
@@ -123,9 +121,9 @@ public class NotesController {
     }
 
 
-    @GetMapping("/archive/userId/{id}")
-    public ResponseEntity<?> getArchiveByUserId(@PathVariable UUID id, @RequestHeader("Authorization") String authToken) throws Exception {
-        List<Archived> notesList = notesService.findAllArchiveByUserId(id, authToken);
+    @GetMapping("/archive/")
+    public ResponseEntity<?> getArchiveByUser(@RequestHeader("Authorization") String authToken) throws Exception {
+        List<Archived> notesList = notesService.findAllArchiveByUser(authToken);
         if (notesList.isEmpty()) {
             return ResponseEntity.status(204).header("msg", "NO NOTES FOUND WITH THIS USER ID").build();
         }
@@ -133,9 +131,9 @@ public class NotesController {
     }
 
 
-    @GetMapping("/archive/userId/{userId}/addArchive/noteId/{noteId}")
+    @GetMapping("/archive/addArchive/noteId/{noteId}")
     public ResponseEntity<?> archiveNote(@PathVariable UUID userId, @PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
-        boolean archived = notesService.addToArchive(userId, noteId, authToken);
+        boolean archived = notesService.addToArchive(noteId, authToken);
         if (!archived) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }
@@ -143,9 +141,9 @@ public class NotesController {
         return ResponseEntity.status(200).body("MOVED TO ARCHIVE");
     }
 
-    @GetMapping("/archive/userId/{userId}/removeArchive/noteId/{noteId}")
-    public ResponseEntity<?> deArchiveNote(@PathVariable UUID userId, @PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
-        boolean archived = notesService.removeFromArchive(userId, noteId, authToken);
+    @GetMapping("/archive/removeArchive/noteId/{noteId}")
+    public ResponseEntity<?> deArchiveNote(@PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
+        boolean archived = notesService.removeFromArchive(noteId, authToken);
         if (!archived) {
             return ResponseEntity.status(500).body("SOMETHING WENT WRONG");
         }

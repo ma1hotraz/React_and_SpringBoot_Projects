@@ -76,7 +76,7 @@ public class AdminServiceImpl implements AdminDetailsService {
             return userDTO;
         }
         User user1 = user.get();
-        userDTO = UserDTO.builder().userId(user1.getUserId()).name(user1.getFirstName() + " " + user1.getLastName()).email(user1.getEmail()).image(user1.getImage()).build();
+        userDTO = UserDTO.builder().name(user1.getFirstName() + " " + user1.getLastName()).email(user1.getEmail()).image(user1.getImage()).build();
         return userDTO;
     }
 
@@ -86,7 +86,7 @@ public class AdminServiceImpl implements AdminDetailsService {
         if (user == null) {
             return userDTO;
         }
-        userDTO = UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
+        userDTO = UserDTO.builder().name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).build();
         return userDTO;
     }
 
@@ -100,7 +100,6 @@ public class AdminServiceImpl implements AdminDetailsService {
 
         return users.stream()
                 .map(user -> UserDTO.builder()
-                        .userId(user.getUserId())
                         .email(user.getEmail())
                         .name(user.getFirstName() + " " + user.getLastName())
                         .image(user.getImage())

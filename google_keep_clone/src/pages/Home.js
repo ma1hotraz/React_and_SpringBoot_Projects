@@ -42,13 +42,12 @@ export default function Home() {
 
 
   useEffect(() => {
-    const storedUserData = sessionStorage.getItem('userData');
+    const storedUserData = localStorage.getItem('userData');
     if (storedUserData) {
       setLoading(false);
     } else {
       setLoading(true);
     }
-
     setCookie('keeper', themeType);
     setCookie('active', isActive);
   }, [themeType, isActive, setCookie]);
@@ -71,7 +70,7 @@ export default function Home() {
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />
       <LanguageSelector />
       <Box sx={{ padding: '15px' }}>
-        <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} modalBg={modalBg}/>
+        <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} modalBg={modalBg} />
       </Box>
     </div>
   );

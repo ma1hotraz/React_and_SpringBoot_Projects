@@ -60,10 +60,11 @@ public class NotesService {
     }
 
     public Notes createNote(Notes note, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        Optional<User> user = userRepository.findById(note.getUser().getUserId());
+        UUID uid = validateToken(authToken).get().getUserId();
+        Optional<User> user = userRepository.findById(uid);
         try {
             note.setDescription(note.getDescription().replaceAll("\\s+", " "));
             note.setUser(user.get());
@@ -89,11 +90,12 @@ public class NotesService {
         return notesRepository.save(note);
     }
 
-    public Notes findByNoteId(UUID id, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+    public Notes findByNoteId(String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        Notes note = notesRepository.findByNoteId(id);
+        UUID uid = validateToken(authToken).get().getUserId();
+        Notes note = notesRepository.findByNoteId(uid);
         try {
             note.setTitle(encryptionUtil.decrypt(note.getTitle()));
             note.setDescription(encryptionUtil.decrypt(note.getDescription()));
@@ -103,11 +105,12 @@ public class NotesService {
         return note;
     }
 
-    public Notes updateNoteById(UUID id, Notes notes, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+    public Notes updateNoteById(Notes notes, String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        Notes oldNote = notesRepository.findByNoteId(id);
+        UUID uid = validateToken(authToken).get().getUserId();
+        Notes oldNote = notesRepository.findByNoteId(uid);
         if (oldNote == null) {
             return null;
         }
@@ -136,10 +139,11 @@ public class NotesService {
     }
 
     public void deleteById(UUID id, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        Notes note = notesRepository.findByNoteId(id);
+        UUID uid = validateToken(authToken).get().getUserId();
+        Notes note = notesRepository.findByNoteId(uid);
         note.setDeleted(true);
 
         Trash deletedNote =
@@ -160,19 +164,20 @@ public class NotesService {
     }
 
 
-    public List<Notes> findByTitle(UUID id, String title, String token) throws Exception {
-        return findAllByUserUserId(id, token)
+    public List<Notes> findByTitle(String title, String token) throws Exception {
+        return findAllByUserUser(token)
                 .stream()
                 .filter(notes -> notes.getTitle().toLowerCase().contains(title.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
 
-    public List<Notes> findAllByUserUserId(UUID userId, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+    public List<Notes> findAllByUserUser(String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        List<Notes> notesList = notesRepository.findAllNotesByUserId(userId);
+        UUID uid = validateToken(authToken).get().getUserId();
+        List<Notes> notesList = notesRepository.findAllNotesByUserId(uid);
         List<Notes> collected = new ArrayList<>();
 
         try {
@@ -190,11 +195,12 @@ public class NotesService {
         return collected;
     }
 
-    public List<Trash> findAllTrashByUserId(UUID userId, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+    public List<Trash> findAllTrashByUser(String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        List<Trash> notesList = trashRepository.findAllNotesByUserId(userId);
+        UUID uid = validateToken(authToken).get().getUserId();
+        List<Trash> notesList = trashRepository.findAllNotesByUserId(uid);
         List<Trash> collected;
         try {
             collected = new ArrayList<>(notesList);
@@ -206,15 +212,16 @@ public class NotesService {
         return collected;
     }
 
-    public List<Archived> findAllArchiveByUserId(UUID userId, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
-            throw new Exception("TOKEN EXPIRED");
+    public List<Archived> findAllArchiveByUser(String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
+            throw new Exception("Token Expired");
         }
+        UUID uid = validateToken(authToken).get().getUserId();
         List<Archived> notesList = archivedRepository.findAll();
         List<Archived> collected = new ArrayList<>();
         try {
             for (Archived archived : notesList) {
-                if (archived.getUser().getUserId().equals(userId)) {
+                if (archived.getUser().getUserId().equals(uid)) {
                     archived.setTitle(encryptionUtil.decrypt(archived.getTitle()));
                     archived.setDescription(encryptionUtil.decrypt(archived.getDescription()));
                     collected.add(archived);
@@ -226,8 +233,8 @@ public class NotesService {
         return collected;
     }
 
-    public Boolean deleteFromTrash(UUID userId, UUID noteId, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+    public Boolean deleteFromTrash(UUID noteId, String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
         try {
@@ -239,12 +246,13 @@ public class NotesService {
         return true;
     }
 
-    public Boolean restoredFromTrash(UUID userId, UUID noteId, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+    public Boolean restoredFromTrash(UUID noteId, String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
         try {
-            List<Trash> trashList = trashRepository.findAllNotesByUserId(userId);
+            UUID uid = validateToken(authToken).get().getUserId();
+            List<Trash> trashList = trashRepository.findAllNotesByUserId(uid);
             Notes note = null;
             for (Trash trash : trashList) {
                 if (trash.getNoteId().equals(noteId)) {
@@ -273,13 +281,14 @@ public class NotesService {
         return true;
     }
 
-    public boolean addToArchive(UUID userId, UUID noteId, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
-            throw new Exception("TOKEN EXPIRED");
+    public boolean addToArchive(UUID noteId, String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
+            throw new Exception("Token Expired");
         }
         try {
+            UUID uid = validateToken(authToken).get().getUserId();
             List<Notes> notesList = notesRepository.findAll();
-            List<Notes> notesByUserId = notesList.stream().filter(note -> note.getUser().getUserId().equals(userId)).collect(Collectors.toList());
+            List<Notes> notesByUserId = notesList.stream().filter(note -> note.getUser().getUserId().equals(uid)).collect(Collectors.toList());
 
             Iterator<Notes> it = notesByUserId.iterator();
             while (it.hasNext()) {
@@ -309,14 +318,15 @@ public class NotesService {
         return true;
     }
 
-    public boolean removeFromArchive(UUID userId, UUID noteId, String authToken) throws Exception {
-        if (!validateToken(authToken)) {
+    public boolean removeFromArchive(UUID noteId, String authToken) throws Exception {
+        if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
         try {
+            UUID uid = validateToken(authToken).get().getUserId();
             List<Archived> archivedList = archivedRepository.findAll();
             List<Archived> archivedByUserId = archivedList.stream()
-                    .filter(notes -> notes.getUser().getUserId().equals(userId))
+                    .filter(notes -> notes.getUser().getUserId().equals(uid))
                     .toList();
 
             if (archivedByUserId.isEmpty()) {
@@ -346,18 +356,24 @@ public class NotesService {
         return true;
     }
 
-    public boolean validateToken(String token) {
-        System.out.println("TOKEN IN VALIDATION" + token);
+    public Optional<User> validateToken(String token) {
+        System.out.println(token);
+        Optional<User> user = null;
+        if (token.isEmpty() || token.isBlank())
+            return user;
         try {
             token = token.replace("Bearer", "");
             token = token.trim();
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token);
-            Optional<User> user = userRepository.findByEmail(claimsJws.getBody().getSubject());
-            jwtService.isTokenValid(token, user.get());
-            return true;
+            user = userRepository.findByEmail(claimsJws.getBody().getSubject());
+            if(!jwtService.isTokenValid(token, user.get())){
+                throw new MalformedJwtException("INVALID TOKEN");
+            }
+            System.out.println(user);
+            return user;
         } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException | SignatureException |
                  IllegalArgumentException e) {
-            return false;
+            return user;
         }
     }
 }

@@ -42,7 +42,7 @@ export default function ProfileModal() {
     useEffect(() => {
         const fetchImage = () => {
             try {
-                const dataS = sessionStorage.getItem('userData');
+                const dataS = localStorage.getItem('userData');
                 const imageData = JSON.parse(dataS);
 
                 if (!imageData || !imageData.image) {
@@ -113,9 +113,10 @@ export default function ProfileModal() {
     const handleLogout = () => {
         navigate('/', toast.success('Logout Successful'));
         sessionStorage.clear();
+        localStorage.clear();
     };
 
-    const { name, email } = JSON.parse(sessionStorage.getItem('userData'));
+    const { name, email } = JSON.parse(localStorage.getItem('userData'));
 
     const fadeDuration = '1.0s';
 
@@ -176,7 +177,7 @@ export default function ProfileModal() {
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                             <Avatar
-                                sx={{ height: '108px', width: '108px',backgroundColor: `${avtarCol}` }}
+                                sx={{ height: '108px', width: '108px', backgroundColor: `${avtarCol}` }}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             >
@@ -212,13 +213,13 @@ export default function ProfileModal() {
                             </Avatar>
                         </Box>
                         <Box sx={{ margin: '20px 0 20px 0' }}>
-                            <Typography variant="h6" component="div" sx={{fontFamily: "'Inconsolata', monospace",}}>
+                            <Typography variant="h6" component="div" sx={{ fontFamily: "'Inconsolata', monospace", }}>
                                 User Profile
                             </Typography>
-                            <Typography variant="body1" color="text.secondary" sx={{fontFamily: "'Inconsolata', monospace",}}>
+                            <Typography variant="body1" color="text.secondary" sx={{ fontFamily: "'Inconsolata', monospace", }}>
                                 Name: {name}
                             </Typography>
-                            <Typography variant="body1" color="text.secondary" sx={{fontFamily: "'Inconsolata', monospace",}}>
+                            <Typography variant="body1" color="text.secondary" sx={{ fontFamily: "'Inconsolata', monospace", }}>
                                 Email: {email}
                             </Typography>
                         </Box>

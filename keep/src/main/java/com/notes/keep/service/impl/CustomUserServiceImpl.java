@@ -62,7 +62,7 @@ public class CustomUserServiceImpl implements CustomUserService {
         }
         var jwtToken = jwtService.generateToken(user);
         AuthResponse token = AuthResponse.builder().token(jwtToken).build();
-        return UserDTO.builder().userId(user.getUserId()).name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).response(token).build();
+        return UserDTO.builder().name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).response(token).build();
     }
 
     @Override
@@ -83,7 +83,7 @@ public class CustomUserServiceImpl implements CustomUserService {
         var userTemp = user1.get();
         var jwtToken = jwtService.generateToken(userTemp);
         AuthResponse token = AuthResponse.builder().token(jwtToken).build();
-        return UserDTO.builder().userId(userTemp.getUserId()).name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(userTemp.getEmail()).image(userTemp.getImage()).response(token).build();
+        return UserDTO.builder().name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(userTemp.getEmail()).image(userTemp.getImage()).response(token).build();
     }
 
     public UserDTO updateUser(User user) {
@@ -96,7 +96,7 @@ public class CustomUserServiceImpl implements CustomUserService {
         User newUser = userRepository.save(userOld);
         byte[] download = null;
         download = ImageUtils.decompressImage(newUser.getImage());
-        return UserDTO.builder().userId(newUser.getUserId()).email(newUser.getEmail()).name(newUser.getFirstName() + " " + newUser.getLastName()).image(download).build();
+        return UserDTO.builder().email(newUser.getEmail()).name(newUser.getFirstName() + " " + newUser.getLastName()).image(download).build();
     }
 
     @Override

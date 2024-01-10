@@ -4,13 +4,9 @@ import authHeader from "./authHeader";
 
 export const restoredFromTrash = async (noteId) => {
 
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const id = user?.userId;
-
 
     const baseUrl = process.env.REACT_APP_BASE_URL;
-    const url = `${baseUrl}/notes/trash/userId/${id}/restore/noteId/${noteId}`;
+    const url = `${baseUrl}/notes/trash/restore/noteId/${noteId}`;
 
 
     try {

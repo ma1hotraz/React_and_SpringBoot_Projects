@@ -4,13 +4,8 @@ import authHeader from "./authHeader";
 
 export const archivedList = async () => {
 
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const id = user?.userId;
-    const token = user?.response;
-
     const baseUrl = process.env.REACT_APP_BASE_URL;
-    const url = `${baseUrl}/notes/archive/userId/${id}`;
+    const url = `${baseUrl}/notes/archive/`;
 
 
     try {
@@ -46,7 +41,7 @@ export const restoreFromArchive = async (noteId) => {
     const user = JSON.parse(userData);
     const id = user?.userId;
     const baseUrl = process.env.REACT_APP_BASE_URL;
-    const url = `${baseUrl}/notes/archive/userId/${id}/removeArchive/noteId/${noteId}`;
+    const url = `${baseUrl}/notes/archive/removeArchive/noteId/${noteId}`;
 
     try {
         const response = await fetch(url, { method: 'GET' });

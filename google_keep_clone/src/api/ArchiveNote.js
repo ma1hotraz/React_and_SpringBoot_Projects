@@ -4,12 +4,12 @@ import authHeader from "./authHeader";
 export const archivedTo = async (noteId) => {
 
 
-    const userData = sessionStorage.getItem('userData');
+    const userData = localStorage.getItem('userData');
     const user = JSON.parse(userData);
     const id = user?.userId;
 
     const baseUrl = process.env.REACT_APP_BASE_URL;
-    const url = `${baseUrl}/notes/archive/userId/${id}/addArchive/noteId/${noteId}`;
+    const url = `${baseUrl}/notes/archive/addArchive/noteId/${noteId}`;
 
     try {
         const response = await fetch(url, {

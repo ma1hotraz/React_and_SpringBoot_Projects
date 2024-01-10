@@ -9,7 +9,7 @@ export const deleteFromTrash = async (noteId) => {
     const id = user?.userId;
 
     const baseUrl = process.env.REACT_APP_BASE_URL;
-    const url = `${baseUrl}/notes/trash/userId/${id}/delete/noteId/${noteId}`;
+    const url = `${baseUrl}/notes/trash/delete/noteId/${noteId}`;
 
     try {
         const response = await fetch(url, {

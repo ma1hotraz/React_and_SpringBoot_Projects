@@ -5,10 +5,6 @@ export const updateData = async (updatedData) => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/user/updateUser/`;
 
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const token = user?.response;
-
     const formData = new FormData();
 
     const jsonDataBlob = new Blob([JSON.stringify(updatedData)], { type: 'application/json' });

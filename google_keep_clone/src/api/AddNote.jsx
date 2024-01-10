@@ -3,6 +3,7 @@ import '../css/NoData.css';
 import authHeader from "./authHeader";
 
 export const addNote = async (noteData) => {
+    
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/add`;
 

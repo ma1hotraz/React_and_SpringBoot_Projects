@@ -7,13 +7,11 @@ import { useEffect } from 'react';
 import authHeader from './authHeader';
 
 
-export const getData = async (id, token) => {
+export const getData = async () => {
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
-  const url = `${baseUrl}/notes/userId/${id}`;
-
-
+  const url = `${baseUrl}/notes/userId/`;
 
   try {
     if (await serverStatus() !== null) {
@@ -48,10 +46,8 @@ export const getData = async (id, token) => {
 
 export default function NoteData({ setData }) {
 
-  const userData = sessionStorage.getItem('userData');
+  const userData = localStorage.getItem('userData');
   const user = JSON.parse(userData);
-  const id = user?.userId;
-  const token = user?.response;
 
   const memoizedSetData = useCallback(
     (data) => {
@@ -66,8 +62,8 @@ export default function NoteData({ setData }) {
   );
 
   useEffect(() => {
-    if (id) {
-      getData(id, token)
+    if (user) {
+      getData()
         .then((fetchedData) => {
           memoizedSetData(fetchedData);
         })

@@ -9,7 +9,6 @@ export default function SideBarComp() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    // Handle any logic you want when the sidebar is collapsed or expanded
   }, [isCollapsed, windowWidth]);
 
   const toggleSidebar = () => {
@@ -28,8 +27,6 @@ export default function SideBarComp() {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('resize', handleResize);
     };
