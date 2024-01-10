@@ -90,12 +90,12 @@ public class NotesService {
         return notesRepository.save(note);
     }
 
-    public Notes findByNoteId(String authToken) throws Exception {
+    public Notes findByNoteId(UUID noteId, String authToken) throws Exception {
         if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        UUID uid = validateToken(authToken).get().getUserId();
-        Notes note = notesRepository.findByNoteId(uid);
+//        UUID uid = validateToken(authToken).get().getUserId();
+        Notes note = notesRepository.findByNoteId(noteId);
         try {
             note.setTitle(encryptionUtil.decrypt(note.getTitle()));
             note.setDescription(encryptionUtil.decrypt(note.getDescription()));

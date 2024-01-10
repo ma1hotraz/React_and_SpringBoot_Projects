@@ -48,9 +48,9 @@ public class NotesController {
     }
 
 
-    @GetMapping("/getNote/")
-    public ResponseEntity<?> getNoteById(@RequestHeader("Authorization") String authToken) throws Exception {
-        Notes note = notesService.findByNoteId(authToken);
+    @GetMapping("/getNote/{noteId}")
+    public ResponseEntity<?> getNoteById(@PathVariable UUID noteId, @RequestHeader("Authorization") String authToken) throws Exception {
+        Notes note = notesService.findByNoteId(noteId,authToken);
         if (note == null) {
             return ResponseEntity.noContent().header("msg", "NO NOTE FOUND WITH THIS ID").build();
         }
@@ -70,7 +70,7 @@ public class NotesController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteById(@PathVariable UUID id, @RequestHeader("Authorization") String authToken) throws Exception {
         Loggers.info("NOTE WITH ID " + id + " DELETED");
-        Notes note = notesService.findByNoteId(authToken);
+        Notes note = notesService.findByNoteId(id, authToken);
         if (note == null) {
             return ResponseEntity.noContent().header("msg", "NO CONTENT DELETED BECAUSE IT DOESN'T EXIST").build();
         }

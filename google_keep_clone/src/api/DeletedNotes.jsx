@@ -5,9 +5,6 @@ import authHeader from './authHeader';
 
 export const getDeletedNotes = async () => {
 
-    const userData = localStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const userId = user?.userId;
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/trash/`;
 
