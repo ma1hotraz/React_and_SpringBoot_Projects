@@ -15,7 +15,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import LoadingBar from "react-top-loading-bar";
-import { IconButton, InputAdornment } from "@mui/material";
+import { IconButton, InputAdornment, Modal } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import github from '../images/icons/github.png';
 import google from '../images/icons/google.png';

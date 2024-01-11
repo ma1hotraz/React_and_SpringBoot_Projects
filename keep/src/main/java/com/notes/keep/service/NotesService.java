@@ -361,6 +361,7 @@ public class NotesService {
             token = token.replace("Bearer", "");
             token = token.trim();
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token);
+            System.out.println("claims : " + claimsJws);
             user = userRepository.findByEmail(claimsJws.getBody().getSubject());
             if(!jwtService.isTokenValid(token, user.get())){
                 throw new MalformedJwtException("INVALID TOKEN");

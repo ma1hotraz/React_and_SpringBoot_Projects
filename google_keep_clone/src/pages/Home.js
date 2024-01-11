@@ -2,12 +2,13 @@
 import Header from '../component/DrawerAppBar';
 import Note from '../component/Note';
 import { useState, useEffect } from 'react';
-import { Box } from '@mui/material';
+import { Box, Button, Modal, Typography } from '@mui/material';
 import { useCookies } from 'react-cookie';
 import 'react-toastify/dist/ReactToastify.css';
 import ErrorPage from './ErrorPage';
 import LanguageSelector from '../component/LanguageSelector';
 import { useTheme } from '@mui/material/styles';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function Home() {
@@ -15,6 +16,11 @@ export default function Home() {
   const [cookies, setCookie] = useCookies(['keeper', 'active']);
   const [themeType, setThemeType] = useState(cookies.keeper || false);
   const [isActive, setActive] = useState(cookies.active || false);
+  const [close, setClose] = useState(Boolean(localStorage.getItem('userData')));
+
+  const handleClose = () => {
+    setClose(false);
+  };
 
   const theme = useTheme();
   const primaryLightColor = theme.palette.primary.main;
@@ -65,6 +71,8 @@ export default function Home() {
     return <div><ErrorPage /></div>;
   }
 
+  const { name } = JSON.parse(localStorage.getItem('userData'));
+
   return (
     <div style={{ backgroundColor: `${backgroundColor}` }}>
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />
@@ -72,6 +80,35 @@ export default function Home() {
       <Box sx={{ padding: '15px' }}>
         <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} modalBg={modalBg} />
       </Box>
+      <Modal
+        open={close}
+        onClose={handleClose}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Box
+          sx={{
+            position: 'relative',
+            width: 400,
+            bgcolor: 'background.paper',
+            p: 2,
+          }}
+        >
+          <Box>
+            <Box sx={{ display: 'flex', justifyContent: 'end' }}>
+              <Button onClick={handleClose} sx={{}}>
+                <CloseIcon />
+              </Button>
+            </Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
+              <Typography variant='h5'>Good AfterNoon, {name}</Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Modal>
     </div>
   );
 }
