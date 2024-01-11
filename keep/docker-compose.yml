@@ -1,8 +1,9 @@
-version: '3'
+version: '3.8'
 services:
   dbservice:
     container_name: dbservice
     image: mysql:latest
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
@@ -19,9 +20,11 @@ services:
       - dbservice
     restart: unless-stopped
     environment:
-      - spring.datasource.url=jdbc:mysql://dbservice:3306/notes_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-      - spring.datasource.username=root
-      - spring.datasource.password=root
+#      - spring.datasource.url=jdbc:mysql://dbservice:3306/notes_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+#      - spring.datasource.username=root
+#      - spring.datasource.password=root
+      - spring.datasource.url=jdbc:mysql://dbservice:3306/notes_db?allowPublicKeyRetrieval=true
+
     ports:
       - "8080:8080"
     networks:

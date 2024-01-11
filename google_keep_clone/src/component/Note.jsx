@@ -219,6 +219,7 @@ export default function Note(props) {
         if (selectedNoteId !== null) {
             getById(selectedNoteId)
                 .then((data) => {
+                    console.log('data from getNoteById', data);
                     setNoteData(data);
                 })
                 .catch((error) => {
@@ -271,7 +272,7 @@ export default function Note(props) {
                         <Grid container>
                             {data.map((item) => {
                                 return (
-                                    <Grid sx={{width: '100vw'}} display={"flex"}
+                                    <Grid sx={{ width: '100vw' }} display={"flex"}
                                         justifyContent={"center"} item xs={12} sm={6} md={4} lg={3} key={item.noteId}>
                                         <Draggable scale={1} grid={[25, 25]} >
                                             <Box sx={{ height: '200px', width: '300px', marginTop: '20px', border: '1px solid grey', borderRadius: '4px' }} key={item.id} onClick={() => { handleClick(item.noteId); setCurrentNoteBg(item.imageBg) }}>

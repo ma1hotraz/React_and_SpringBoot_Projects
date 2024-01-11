@@ -3,6 +3,7 @@ import { Modal, Box, Button, IconButton, InputBase, Typography } from '@mui/mate
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNote from '../api/EditNote';
 import getText from '../utils/TextUtils';
+import ContentLoader from 'react-content-loader'
 
 export default function NoteModal({
     isOpen,
@@ -24,6 +25,17 @@ export default function NoteModal({
 
     const isSaveDisabled = !noteTitle.trim() || !noteDescription.trim();
 
+    const Notes_Data_Loader = () => (
+        <ContentLoader
+            speed={2}
+            height={180}
+            backgroundColor={"grey"}
+            foregroundColor={"lightgrey"}
+        >
+            <rect x="0" y="0" rx="10" ry="10" width="200" height="40" />
+            <rect x="0" y="50" rx="10" ry="10" width="200" height="100" />
+        </ContentLoader>
+    );
 
     useEffect(() => {
         if (mode === 'edit') {
@@ -84,28 +96,32 @@ export default function NoteModal({
                         backgroundColor: `${modalColor}`,
                     }}
                 >
-                    <Typography id="modal-title" variant='h5' sx={{margin: '10px 0 10px 0'}}>
+                    <Typography id="modal-title" variant='h5' sx={{ margin: '10px 0 10px 0' }}>
                         {mode === 'create' ? getText('Create Note') : getText('Edit Note')}
                     </Typography>
-                    <InputBase
-                        fullWidth
-                        label="Title"
-                        variant="outlined"
-                        value={noteTitle}
-                        onChange={handleTitleChange}
-                        placeholder='Title'
-                    />
-                    <div style={{ height: '20px' }}></div>
-                    <InputBase
-                        fullWidth
-                        label="Description"
-                        variant="outlined"
-                        multiline
-                        rows={6}
-                        value={noteDescription}
-                        onChange={handleDescriptionChange}
-                        placeholder='Description'
-                    />
+                    {noteData === undefined && mode === 'edit' || noteData.length === 0 && mode === 'edit' ?
+                        <Notes_Data_Loader /> :
+                        <>
+                            <InputBase
+                                fullWidth
+                                label="Title"
+                                variant="outlined"
+                                value={noteTitle}
+                                onChange={handleTitleChange}
+                                placeholder='Title'
+                            />
+                            <div style={{ height: '20px' }}></div>
+                            <InputBase
+                                fullWidth
+                                label="Description"
+                                variant="outlined"
+                                multiline
+                                rows={6}
+                                value={noteDescription}
+                                onChange={handleDescriptionChange}
+                                placeholder='Description'
+                            />
+                        </>}
                     <Box
                         sx={{
                             display: 'flex',
@@ -124,6 +140,7 @@ export default function NoteModal({
                         </Button>
                     </Box>
                 </Box>
+
             </Modal>
             {selectedId !== null && (
                 <>
