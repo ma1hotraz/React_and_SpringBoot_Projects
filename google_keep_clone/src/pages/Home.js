@@ -1,4 +1,3 @@
-// import { useTheme } from '@emotion/react';
 import Header from '../component/DrawerAppBar';
 import Note from '../component/Note';
 import { useState, useEffect } from 'react';
@@ -9,6 +8,8 @@ import ErrorPage from './ErrorPage';
 import LanguageSelector from '../component/LanguageSelector';
 import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
+import { time } from '../utils/GetTime';
+import greet from '../utils/Greet';
 
 
 export default function Home() {
@@ -73,6 +74,8 @@ export default function Home() {
 
   const { name } = JSON.parse(localStorage.getItem('userData'));
 
+  const message = greet(time);
+
   return (
     <div style={{ backgroundColor: `${backgroundColor}` }}>
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />
@@ -104,7 +107,7 @@ export default function Home() {
               </Button>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
-              <Typography variant='h5'>Good AfterNoon, {name}</Typography>
+              <Typography variant='h5'>{message}, {name}</Typography>
             </Box>
           </Box>
         </Box>
