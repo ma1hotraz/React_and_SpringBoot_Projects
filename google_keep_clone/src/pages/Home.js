@@ -10,18 +10,15 @@ import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
 import { time } from '../utils/GetTime';
 import greet from '../utils/Greet';
-
+import ThemeChange from '../component/ThemeChange';
+import { getIPinfo } from '../api/LogIP'
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [cookies, setCookie] = useCookies(['keeper', 'active']);
   const [themeType, setThemeType] = useState(cookies.keeper || false);
   const [isActive, setActive] = useState(cookies.active || false);
-  const [close, setClose] = useState(Boolean(localStorage.getItem('userData')));
-
-  const handleClose = () => {
-    setClose(false);
-  };
+  const [showModal, setShowModal] = useState(false);
 
   const theme = useTheme();
   const primaryLightColor = theme.palette.primary.main;
@@ -47,17 +44,29 @@ export default function Home() {
   const buttonColor = themeType ? secondaryButtonColor : primaryButtonColor;
   const modalBg = themeType ? secondaryModalBg : primaryModalBg;
 
-
   useEffect(() => {
     const storedUserData = localStorage.getItem('userData');
+    const hasModalBeenShown = localStorage.getItem('modalShown');
+
     if (storedUserData) {
       setLoading(false);
+      getIPinfo();
     } else {
       setLoading(true);
     }
     setCookie('keeper', themeType);
     setCookie('active', isActive);
+
+    if (!hasModalBeenShown) {
+      setShowModal(true);
+    }
+
   }, [themeType, isActive, setCookie]);
+
+  const handleClose = () => {
+    setShowModal(false);
+    localStorage.setItem('modalShown', 'true');
+  };
 
   const toggleMode = () => {
     setThemeType((prevThemeType) => {
@@ -72,21 +81,24 @@ export default function Home() {
     return <div><ErrorPage /></div>;
   }
 
-  const { name } = JSON.parse(localStorage.getItem('userData'));
-
+  const userData = JSON.parse(localStorage.getItem('userData'));
+  const name = userData.name;
   const message = greet(time);
 
   return (
     <div style={{ backgroundColor: `${backgroundColor}` }}>
+      {themeType && <ThemeChange value={themeType} />}
+      {!themeType && <ThemeChange value={themeType} />}
       <Header name={'Keeper'} toggleMode={toggleMode} active={isActive} themeColor={themeColor} textColor={textColor} navbar={navbarColor} navMenuIconColor={navMenuIconColor} modalBg={modalBg} />
       <LanguageSelector />
       <Box sx={{ padding: '15px' }}>
         <Note color={textColor} backgroundColor={themeColor} buttonColor={buttonColor} modalBg={modalBg} />
       </Box>
+
       <Modal
-        open={close}
+        open={showModal}
         onClose={handleClose}
-        style={{
+        sx={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -96,8 +108,10 @@ export default function Home() {
           sx={{
             position: 'relative',
             width: 400,
-            bgcolor: 'background.paper',
             p: 2,
+            borderRadius: '15px',
+            backgroundColor: `${modalBg}`,
+            color: `${!textColor}`,
           }}
         >
           <Box>
@@ -107,7 +121,9 @@ export default function Home() {
               </Button>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', margin: '20px' }}>
-              <Typography variant='h5'>{message}, {name}</Typography>
+              <Typography variant='h5' sx={{ fontFamily: "'Inconsolata', monospace" }}>
+                {message} {name.split(' ')[0]}
+              </Typography>
             </Box>
           </Box>
         </Box>

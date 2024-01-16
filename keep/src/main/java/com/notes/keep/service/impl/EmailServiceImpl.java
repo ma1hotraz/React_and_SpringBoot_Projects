@@ -31,6 +31,5 @@ public class EmailServiceImpl implements EmailService {
         helper.setSubject(em.getSubject());
         helper.setText(em.getMessage());
         mailSender.send(message);
-
     }
 }

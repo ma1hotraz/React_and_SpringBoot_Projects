@@ -16,6 +16,7 @@ export default function TranslateButton() {
     const handleClose = (selectedLocale) => {
         setLocale(selectedLocale);
         localStorage.setItem('lang', selectedLocale);
+        sessionStorage.setItem('lang', locale);
         setAnchorEl(null);
         window.location.reload();
     };

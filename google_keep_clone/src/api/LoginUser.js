@@ -6,9 +6,10 @@ import { getRandomColor } from '../utils/ColorList';
 
 
 export const Login = async (UserInfo) => {
-   
+
    const baseUrl = process.env.REACT_APP_BASE_URL;
    const url = `${baseUrl}/user/auth/login`;
+
 
 
    const signInObj = {
@@ -24,6 +25,7 @@ export const Login = async (UserInfo) => {
          },
          body: JSON.stringify(signInObj),
       });
+
 
       if (response.status === 500) {
          toast.warn('Server Error !', {

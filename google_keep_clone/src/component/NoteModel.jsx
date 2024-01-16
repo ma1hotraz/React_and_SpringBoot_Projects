@@ -67,6 +67,8 @@ export default function NoteModal({
         }
     };
 
+    if(noteTitle && noteDescription)
+
     return (
         <div>
             <Modal
@@ -99,7 +101,7 @@ export default function NoteModal({
                     <Typography id="modal-title" variant='h5' sx={{ margin: '10px 0 10px 0' }}>
                         {mode === 'create' ? getText('Create Note') : getText('Edit Note')}
                     </Typography>
-                    {noteData === undefined && mode === 'edit' || noteData.length === 0 && mode === 'edit' ?
+                    {(noteData === undefined && mode === 'edit') || (noteData.length === 0 && mode === 'edit') ?
                         <Notes_Data_Loader /> :
                         <>
                             <InputBase

@@ -1,0 +1,39 @@
+@keyframes mountainLight {
+    0% {
+        opacity: 0;
+        background-color: #313131;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: whitesmoke;
+    }
+}
+
+@keyframes mountainDark {
+    0% {
+        opacity: 0;
+        background-color: whitesmoke;
+    }
+
+    100% {
+        opacity: 1;
+        background-color: #313131;
+    }
+}
+
+.mountainLight {
+    animation: mountainLight 4s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+.mountainDark {
+    animation: mountainDark 4s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}

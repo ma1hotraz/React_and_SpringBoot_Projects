@@ -19,7 +19,7 @@ export default function NotFound404() {
                                 </h3>
                                 <p>The page you are looking for
                                     has been lost in space.</p>
-                                <Link to="/signin" className="link_404">Go to Home</Link>
+                                <Link to="/home" className="link_404">Go to Home</Link>
                             </div>
                         </div>
                     </div>

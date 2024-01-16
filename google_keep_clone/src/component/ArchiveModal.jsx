@@ -103,9 +103,9 @@ export default function TrashModal(props) {
                                 }}>
                                     <HashLoader color='#f6ed22' size={100} />
                                 </Box> : <Grid container>
-                                    {data.map((item) => {
+                                    {data.map((item, index) => {
                                         return (
-                                            <Grid item xs={12} sm={6} md={4} lg={3} spacing={1} sx={{ margin: '20px 0 20px 0' }}>
+                                            <Grid key={index} item xs={12} sm={6} md={4} lg={3}  sx={{ margin: '20px 0 20px 0' }}>
                                                 <Box sx={{ height: '150px', width: '250px' }} key={item.noteId} onClick={() => { handleClick(item.noteId) }}>
                                                     <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`, backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative' }} className="note">
                                                     <Typography variant="h5" sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}`, fontFamily: "'Inconsolata', monospace", }}>{item.title}</Typography>

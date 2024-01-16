@@ -21,7 +21,6 @@ export default function SortingList() {
         sessionStorage.setItem('view', view);
     };
 
-
     useEffect(() => {
         sessionStorage.setItem('view', view);
     })

@@ -26,6 +26,10 @@ export const getData = async () => {
         return data !== null ? data : [];
       }
 
+      if(response.status === 403){
+         
+      }
+
       if (response.status === 204) {
         return [];
       }

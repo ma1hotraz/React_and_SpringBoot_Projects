@@ -3,6 +3,7 @@ package com.notes.keep.service.impl;
 import com.mysql.cj.exceptions.PasswordExpiredException;
 import com.notes.keep.config.jwt.JwtService;
 import com.notes.keep.dto.EmailDTO;
+import com.notes.keep.dto.LoginInfoDTO;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
 import com.notes.keep.model.AuthResponse;
@@ -62,6 +63,7 @@ public class CustomUserServiceImpl implements CustomUserService {
         }
         var jwtToken = jwtService.generateToken(user);
         AuthResponse token = AuthResponse.builder().token(jwtToken).build();
+        sendVerificationMail(user.getEmail());
         return UserDTO.builder().name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).response(token).build();
     }
 
@@ -159,7 +161,44 @@ public class CustomUserServiceImpl implements CustomUserService {
         userRepository.save(user);
     }
 
+    @Override
+    public void sendVerificationMail(String email) {
+        try{
+            EmailDTO emailDTO = new EmailDTO();
+            emailDTO.setTo(email);
+            emailDTO.setSubject("Verify Email");
+            emailDTO.setMessage("Please follow this link to verify your account.");
+            emailService.sendEmail(emailDTO);
+            Loggers.info("Verification Mail send to email :" + email);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void sendLoginInfo(String email, LoginInfoDTO infoDTO) {
+        System.out.println(email + " " +infoDTO);
+        try{
+            EmailDTO emailDTO = new EmailDTO();
+            emailDTO.setTo(email);
+            emailDTO.setSubject("Login Detected");
+            emailDTO.setMessage("A login attempted with this info.");
+            emailDTO.setMessage(infoDTO.getCity());
+            emailDTO.setMessage(infoDTO.getCountry());
+            emailDTO.setMessage(infoDTO.getRegion());
+            emailDTO.setMessage(infoDTO.getTimeZone());
+            emailDTO.setMessage(infoDTO.getIpAddress());
+            emailDTO.setMessage(infoDTO.getIpAddress());
+            emailDTO.setMessage(infoDTO.getOrg());
+//            emailService.sendEmail(emailDTO);
+            Loggers.info("Login Info Mail send to email :" + email);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     //METHODS NEEDS TO IMPLEMENT
+
 
 
 }

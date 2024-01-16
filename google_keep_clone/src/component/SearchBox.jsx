@@ -27,9 +27,6 @@ export default function SearchBox(props) {
         }
     };
 
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const userId = user?.userId;
 
     useEffect(() => {
         const storedData = sessionStorage.getItem('query');
@@ -50,10 +47,9 @@ export default function SearchBox(props) {
             handleSearchClick();
             sessionStorage.clear();
         }
-    }, [userId]);
+    },);
 
     const handleClick = (itemId) => {
-        // console.log(itemId);
         props.onItemClick(itemId);
     };
 
@@ -65,7 +61,6 @@ export default function SearchBox(props) {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        // border: '2px solid green',
                         maxWidth: '50%',
                         padding: '10px',
                         borderRadius: '10px',
@@ -106,7 +101,7 @@ export default function SearchBox(props) {
                             <Grid container>
                                 {data.map((item) => {
                                     return (
-                                        <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId} gap={3} sx={{display: 'flex',justifyContent: 'center', paddingBottom: '5px'}}>
+                                        <Grid item xs={12} sm={6} md={4} lg={3} key={item.noteId} gap={3} sx={{ display: 'flex', justifyContent: 'center', paddingBottom: '5px' }}>
                                             <Box sx={{ height: '200px', width: '300px' }} key={item.noteId} onClick={() => { handleClick(item.noteId) }}>
                                                 <Paper elevation={3} style={{ padding: '20px', backgroundColor: `${item.color}`, backgroundImage: `${item.imageBg}`, backdropFilter: 'sepia(90%)', backgroundSize: 'cover', backgroundPosition: 'center', height: '100%', width: '100%', position: 'relative' }} className="note">
                                                     <Typography variant="h5" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', color: `${props.color}` }}>

@@ -1,8 +1,8 @@
 package com.notes.keep.service;
 
+import com.notes.keep.dto.LoginInfoDTO;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.model.AuthRequest;
-import com.notes.keep.model.AuthResponse;
 import com.notes.keep.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -26,5 +26,9 @@ public interface CustomUserService extends UserDetailsService{
     public void resetPassword(String email);
 
     public void updatePassword(String email, String token, String password) throws CredentialExpiredException;
+
+    public void sendVerificationMail(String email);
+
+    public void sendLoginInfo(String email, LoginInfoDTO infoDTO);
 
 }

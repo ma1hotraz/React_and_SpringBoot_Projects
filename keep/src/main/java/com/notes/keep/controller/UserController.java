@@ -1,5 +1,6 @@
 package com.notes.keep.controller;
 
+import com.notes.keep.dto.LoginInfoDTO;
 import com.notes.keep.dto.PasswordRequestDTO;
 import com.notes.keep.dto.UserDTO;
 import com.notes.keep.enums.Provider;
@@ -126,8 +127,13 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/auth/github")
-    public String githubLogin(){
-        return "redirect:/oauth2/authorization/github";
+    @PostMapping("/logInfo")
+    public ResponseEntity<?> getUserLogs(@RequestHeader String email,@RequestBody LoginInfoDTO infoDTO){
+        try{
+            userService.sendLoginInfo(email, infoDTO);
+        }catch (Exception e){
+            return ResponseEntity.status(500).body("UNABLE TO SEND LOGIN INFO");
+        }
+        return ResponseEntity.ok().body("LOGIN INFO SEND");
     }
 }
