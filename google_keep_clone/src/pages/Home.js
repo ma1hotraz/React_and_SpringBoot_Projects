@@ -13,6 +13,7 @@ import greet from '../utils/Greet';
 import ThemeChange from '../component/ThemeChange';
 
 export default function Home() {
+
   const [loading, setLoading] = useState(true);
   const [cookies, setCookie] = useCookies(['keeper', 'active']);
   const [themeType, setThemeType] = useState(cookies.keeper || false);
@@ -54,6 +55,7 @@ export default function Home() {
     }
     setCookie('keeper', themeType);
     setCookie('active', isActive);
+    localStorage.setItem('keeper', isActive);
 
     if (!hasModalBeenShown) {
       setShowModal(true);

@@ -54,9 +54,6 @@ export default function Note(props) {
         getData()
             .then((newData) => {
                 const view = localStorage.getItem('view');
-                // console.log(view);
-                // console.log('data before: ', data);
-
                 if (newData) {
                     let updatedData = [...newData];
                     switch (view) {
@@ -72,10 +69,8 @@ export default function Note(props) {
                             break;
                     }
                     setData(updatedData);
-                    // console.log('data after: ', updatedData);
                 } else {
                     setData([]);
-                    // console.log('data after: ', []);
                 }
             })
             .catch((error) => {
@@ -201,10 +196,26 @@ export default function Note(props) {
         setIsSearchBoxVisible(!isSearchBoxVisible);
     };
 
+    // const handleArchive = (noteId) => {
+    //     archivedTo(noteId);
+    //     fetchAndRefreshData();
+    // }
+
+
     const handleArchive = (noteId) => {
-        archivedTo(noteId);
-        fetchAndRefreshData();
-    }
+        archivedTo(noteId)
+            .then(() => {
+                fetchAndRefreshData();
+                setSelectedNoteId(null);
+            })
+            .catch((error) => {
+                console.error('Error deleting note:', error);
+                toast.error('Some went wrong', {
+                    autoClose: 1000,
+                });
+            });
+    };
+
 
     useEffect(() => {
         fetchAndRefreshData();

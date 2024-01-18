@@ -65,7 +65,7 @@ export default function TrashModal(props) {
             setData(noteList);
             setNoteArchived(false);
         } else {
-            toast.error('Server is offline', 1000);
+            toast.error('Server is offline', 6000);
         }
     }
 
@@ -90,7 +90,7 @@ export default function TrashModal(props) {
         <div>
             <Tooltip title={'Archive'}>
                 <FontAwesomeIcon icon={faInbox} size='2x' onClick={onOpen} />
-                <Modal open={isModalOpen} onClose={onClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Modal open={isModalOpen} onClose={onClose} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minWidth: '75%' }}>
                     <Box style={style}>
                         <h1 style={{ textAlign: 'center' }}>Archive</h1>
                         {data ? (

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -32,15 +31,16 @@ const theme = createTheme({
 
 const root = document.getElementById('root');
 
+const themeValue = localStorage.getItem('keeper') ? 'light' : 'dark';
+
+
 const renderApp = () => {
   ReactDOM.createRoot(root).render(
     <div>
       <I18nextProvider i18n={i18n} />
       <ThemeProvider theme={theme}>
-        {/* <Router> */}
-          <App />
-        {/* </Router> */}
-        <ToastContainer position='bottom-left' />
+        <App />
+        <ToastContainer position='bottom-left' theme={`${themeValue ? 'light' : 'dark'}`} hideProgressBar={true} />
       </ThemeProvider>
     </div>
   );
