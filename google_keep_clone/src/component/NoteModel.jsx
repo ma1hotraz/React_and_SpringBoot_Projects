@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Box, Button, IconButton, InputBase, Typography } from '@mui/material';
+import { Modal, Box, Button, IconButton, InputBase, Typography, Skeleton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNote from '../api/EditNote';
 import getText from '../utils/TextUtils';
@@ -18,6 +18,7 @@ export default function NoteModal({
     imageBg,
     modalColor
 }) {
+    const [isLoading, setisLoading] = useState(false);
     const [noteTitle, setNoteTitle] = useState('');
     const [noteDescription, setNoteDescription] = useState('');
     const [noteData, setNoteData] = useState([]);
@@ -40,6 +41,7 @@ export default function NoteModal({
         setNoteData([]);
     }, [title, description, mode, imageBg]);
 
+
     const handleTitleChange = (e) => {
         setNoteTitle(e.target.value);
     };
@@ -54,6 +56,15 @@ export default function NoteModal({
             clearTitleAndDescription();
         }
     };
+
+    useEffect(() => {
+        if (noteData.length > 0) {
+            setTimeout(() => {
+                setisLoading(false);
+            }, 2000);
+        }
+
+    }, [noteData]);
 
 
     return (
@@ -89,25 +100,35 @@ export default function NoteModal({
                         {mode === 'create' ? getText('Create Note') : getText('Edit Note')}
                     </Typography>
 
-                    <InputBase
-                        fullWidth
-                        label="Title"
-                        variant="outlined"
-                        value={noteTitle}
-                        onChange={handleTitleChange}
-                        placeholder='Title'
-                    />
-                    <div style={{ height: '20px' }}></div>
-                    <InputBase
-                        fullWidth
-                        label="Description"
-                        variant="outlined"
-                        multiline
-                        rows={6}
-                        value={noteDescription}
-                        onChange={handleDescriptionChange}
-                        placeholder='Description'
-                    />
+                    {isLoading ?
+                        <Skeleton
+                            variant="text"
+                            sx={{ fontSize: '1rem', bgcolor: 'grey.900' }}
+                        /> :
+                        <InputBase
+                            fullWidth
+                            label="Title"
+                            variant="outlined"
+                            value={noteTitle}
+                            onChange={handleTitleChange}
+                            placeholder='Title'
+                        />}
+                    {isLoading ? <></> : <div style={{ height: '20px' }}></div>}
+                    {isLoading ?
+                        <Skeleton
+                            variant="text"
+                            sx={{ fontSize: '10rem', bgcolor: 'grey.900' }}
+                        />
+                        : <InputBase
+                            fullWidth
+                            label="Description"
+                            variant="outlined"
+                            multiline
+                            rows={6}
+                            value={noteDescription}
+                            onChange={handleDescriptionChange}
+                            placeholder='Description'
+                        />}
                     <Box
                         sx={{
                             display: 'flex',
