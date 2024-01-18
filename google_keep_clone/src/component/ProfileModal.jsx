@@ -20,6 +20,11 @@ export default function ProfileModal() {
     const [isServerUp, setIsServerUp] = useState('error');
     const [avtarCol, setAvatarCol] = useState('');
 
+
+    const dataS = JSON.parse(localStorage.getItem('userData'));
+    const imageData = dataS.image;
+
+
     const getStatus = async () => {
         try {
             const serverResponse = await serverStatus();
@@ -35,35 +40,11 @@ export default function ProfileModal() {
 
     useEffect(() => {
         getStatus();
+        const avtrCol = localStorage.getItem('avtarCol');
+        setAvatarCol(avtrCol.substring(1, 8));
     }, []);
 
     const fileInputRef = useRef(null);
-
-    useEffect(() => {
-        const fetchImage = () => {
-            try {
-                const dataS = localStorage.getItem('userData');
-                const imageData = JSON.parse(dataS);
-
-                if (!imageData || !imageData.image) {
-                    return;
-                }
-
-                const byteArray = new Uint8Array(atob(imageData.image).split('').map(char => char.charCodeAt(0)));
-                const blob = new Blob([byteArray], { type: 'image/png' });
-                const dataUrl = URL.createObjectURL(blob);
-
-                setSource(dataUrl);
-            } catch (error) {
-                console.error('Error fetching image:', error);
-            }
-        };
-
-        const avtarCol = localStorage.getItem('avtarCol');
-        setAvatarCol(avtarCol.substring(1, 8));
-
-        fetchImage();
-    }, []);
 
     const handleClick = () => {
         setModalOpen(true);
@@ -124,7 +105,7 @@ export default function ProfileModal() {
         <Box>
             <Tooltip title={'Profile'}>
                 <Button onClick={handleClick}>
-                    {source !== null ? (
+                    {imageData !== null ? (
                         <Badge
                             color={`${isServerUp}`}
                             overlap="circular"
@@ -135,7 +116,10 @@ export default function ProfileModal() {
                                 horizontal: 'right',
                             }}
                         >
-                            <Avatar sx={{ backgroundColor: avtarCol }}>
+                            <Avatar sx={{
+                                backgroundColor: avtarCol,
+                                border: `2px solid ${isServerUp === 'error' ? 'red' : 'green'}`
+                            }}>
                                 <ImageDisplay />
                             </Avatar>
                         </Badge>
@@ -150,7 +134,10 @@ export default function ProfileModal() {
                                 horizontal: 'right',
                             }}
                         >
-                            <Avatar sx={{ backgroundColor: avtarCol }}>
+                            <Avatar sx={{
+                                backgroundColor: avtarCol,
+                                border: `2px solid ${isServerUp === 'error' ? 'red' : 'green'}`
+                            }}>
                                 {name.charAt(0)}
                             </Avatar>
                         </Badge>
@@ -177,7 +164,10 @@ export default function ProfileModal() {
                     >
                         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                             <Avatar
-                                sx={{ height: '108px', width: '108px', backgroundColor: `${avtarCol}` }}
+                                sx={{
+                                    height: '108px', width: '108px', backgroundColor: `${avtarCol}`,
+                                    border: `2px solid ${isServerUp === 'error' ? 'red' : 'green'}`
+                                }}
                                 onMouseEnter={handleMouseEnter}
                                 onMouseLeave={handleMouseLeave}
                             >
@@ -194,18 +184,19 @@ export default function ProfileModal() {
                                         <FontAwesomeIcon icon={faCamera} />
                                     </Box>
                                 ) : (
-                                    (!source === null || !source) ? (
+                                    (!imageData === null || !imageData) ? (
                                         <Avatar
                                             sx={{
                                                 transition: `opacity ${fadeDuration}`,
                                                 opacity: !isImageVisible ? 1 : 0,
-                                                backgroundColor: `${avtarCol}`
+                                                backgroundColor: `${avtarCol}`,
+                                                border: `2px solid ${isServerUp === 'error' ? 'red' : 'green'}`
                                             }}
                                         >
                                             <Typography variant='h5'>{name.charAt(0)}</Typography>
                                         </Avatar>
                                     ) : (
-                                        <Avatar sx={{ height: '108px', width: '108px' }}>
+                                        <Avatar sx={{ height: '108px', width: '108px', border: `2px solid ${isServerUp === 'error' ? 'red' : 'green'}` }}>
                                             <ImageDisplay />
                                         </Avatar>
                                     )

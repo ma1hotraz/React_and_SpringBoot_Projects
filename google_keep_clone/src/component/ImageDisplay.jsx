@@ -6,9 +6,11 @@ const ImageDisplay = () => {
   useEffect(() => {
     const fetchImage = () => {
       try {
+        
         const dataS = sessionStorage.getItem('userData');
         const imageData = JSON.parse(dataS);
-        if (!imageData || !imageData.image) {
+
+        if (!imageData) {
           return;
         }
         const byteArray = new Uint8Array(atob(imageData.image).split('').map(char => char.charCodeAt(0)));
@@ -23,7 +25,7 @@ const ImageDisplay = () => {
     fetchImage();
   }, []);
 
-  return  <img src={source}  alt='Fetched Image' />
+  return <img src={source} alt='Fetched Image' />
 };
 
 export default ImageDisplay;

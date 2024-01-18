@@ -9,7 +9,6 @@ export const updateData = async (updatedData) => {
 
     const jsonDataBlob = new Blob([JSON.stringify(updatedData)], { type: 'application/json' });
     formData.append('jsonField', jsonDataBlob);
-
     formData.append('email', updatedData.email);
     formData.append('name', updatedData.name);
     formData.append('file', updatedData.file);
@@ -17,8 +16,8 @@ export const updateData = async (updatedData) => {
     try {
         const response = await fetch(url, {
             method: 'PUT',
-            body: formData,
-            headers: authHeader()
+            body: JSON.stringify(formData),
+            headers: authHeader(),
         });
 
         if (!response.ok) {

@@ -54,8 +54,8 @@ export default function Note(props) {
         getData()
             .then((newData) => {
                 const view = localStorage.getItem('view');
-                console.log(view);
-                console.log('data before: ', data);
+                // console.log(view);
+                // console.log('data before: ', data);
 
                 if (newData) {
                     let updatedData = [...newData];
@@ -72,10 +72,10 @@ export default function Note(props) {
                             break;
                     }
                     setData(updatedData);
-                    console.log('data after: ', updatedData);
+                    // console.log('data after: ', updatedData);
                 } else {
                     setData([]);
-                    console.log('data after: ', []);
+                    // console.log('data after: ', []);
                 }
             })
             .catch((error) => {

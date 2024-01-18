@@ -85,7 +85,9 @@ public class CustomUserServiceImpl implements CustomUserService {
         var userTemp = user1.get();
         var jwtToken = jwtService.generateToken(userTemp);
         AuthResponse token = AuthResponse.builder().token(jwtToken).build();
-        return UserDTO.builder().name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(userTemp.getEmail()).image(userTemp.getImage()).response(token).build();
+        byte[] download = null;
+        download = ImageUtils.decompressImage(userTemp.getImage());
+        return UserDTO.builder().name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(userTemp.getEmail()).image(download).response(token).build();
     }
 
     public UserDTO updateUser(User user) {

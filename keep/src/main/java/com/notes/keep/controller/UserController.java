@@ -75,17 +75,14 @@ public class UserController {
     @PutMapping("/updateUser/")
     public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
         Loggers.info("UPDATE USER CALLED");
-
+        System.out.println(user);
         if (!isValidImage(user.getFile())) {
             Loggers.error("INVALID IMAGE TYPE");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid image type.");
         }
-
         byte[] arr = ImageUtils.convertMultipartFileToByteArray(user.getFile());
         user.setImage(arr);
-
         UserDTO userDTO = userService.updateUser(user);
-
         return ResponseEntity.ok(userDTO);
     }
 
