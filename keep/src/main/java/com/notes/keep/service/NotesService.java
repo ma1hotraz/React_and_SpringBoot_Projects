@@ -104,12 +104,12 @@ public class NotesService {
         return note;
     }
 
-    public Notes updateNoteById(Notes notes, String authToken) throws Exception {
+    public Notes updateNoteById(UUID noteId,Notes notes, String authToken) throws Exception {
         if (validateToken(authToken).isEmpty()) {
             throw new Exception("Token Expired");
         }
-        UUID uid = validateToken(authToken).get().getUserId();
-        Notes oldNote = notesRepository.findByNoteId(uid);
+//        UUID uid = validateToken(authToken).get().getUserId();
+        Notes oldNote = notesRepository.findByNoteId(noteId);
         if (oldNote == null) {
             return null;
         }

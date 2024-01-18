@@ -60,7 +60,7 @@ public class NotesController {
     @PutMapping("/noteId/{id}")
     public ResponseEntity<?> updateNoteById(@PathVariable UUID id, @RequestBody Notes notes, @RequestHeader("Authorization") String authToken) throws Exception {
         Loggers.info("NOTE WITH ID " + id + " UPDATED");
-        Notes note = notesService.updateNoteById(notes, authToken);
+        Notes note = notesService.updateNoteById(id, notes, authToken);
         if (note == null) {
             return ResponseEntity.status(400).header("msg", "BAD REQUEST").build();
         }

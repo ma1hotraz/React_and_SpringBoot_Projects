@@ -41,9 +41,6 @@ export const getIPinfo = async () => {
             body: JSON.stringify(userObj)
         });
 
-        console.log('userinfo send : ', response);
-        console.log(logIp);
-
     } catch (e) {
         console.log(e);
         // throw new Error('Unable to log IP');

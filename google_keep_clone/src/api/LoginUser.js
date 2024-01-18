@@ -2,6 +2,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import getLocale from "../utils/SettingLocale";
 import { getRandomColor } from '../utils/ColorList';
+import { getIPinfo } from './LogIP';
 
 
 
@@ -65,6 +66,7 @@ export const Login = async (UserInfo) => {
             const currLocale = getLocale(locale);
             localStorage.setItem('lang', JSON.stringify(currLocale));
             localStorage.setItem('avtarCol', JSON.stringify(getRandomColor()));
+            getIPinfo();
             return data;
          }
 

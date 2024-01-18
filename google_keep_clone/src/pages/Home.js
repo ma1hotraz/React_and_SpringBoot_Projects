@@ -11,7 +11,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import { time } from '../utils/GetTime';
 import greet from '../utils/Greet';
 import ThemeChange from '../component/ThemeChange';
-import { getIPinfo } from '../api/LogIP'
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -50,7 +49,6 @@ export default function Home() {
 
     if (storedUserData) {
       setLoading(false);
-      getIPinfo();
     } else {
       setLoading(true);
     }

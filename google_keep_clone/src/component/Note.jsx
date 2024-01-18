@@ -40,6 +40,7 @@ export default function Note(props) {
     const [currentNoteBg, setCurrentNoteBg] = useState(null);
 
     const handleCreateNote = () => {
+        console.log('called note')
         setModalMode('create');
         setSelectedNoteId(null);
         setNoteData(null);
@@ -89,72 +90,6 @@ export default function Note(props) {
             setCurrentUser(items);
         }
     }, []);
-
-    // const handleSaveNote = (title, description) => {
-
-    //     //TODO HERE WE NEEED TO FIX THE ISSUE 
-    //     /* issue : state variables is not updating inside the function after assigning the value */
-
-    //     // setNoteTitle(title);
-    //     // setNoteDescription(description);
-
-    //     /* WILL FIX IT LATER */
-
-
-    //     const newNoteData = {
-    //         title: title,
-    //         description: description,
-    //         completed: false,
-    //         color: getRandomColor(),
-    //         user: {
-    //             userId: currentUser.userId,
-    //         }
-    //     };
-
-    //     if (modalMode === 'create') {
-    //         addNote(newNoteData)
-    //             .then(() => {
-    //                 fetchAndRefreshData();
-    //                 setIsModalOpen(false);
-    //                 setSelectedNoteId(null);
-    //                 setNoteTitle('');
-    //                 setNoteDescription('');
-    //                 title = '';
-    //                 description = '';
-    //                 toast.success('Note added successfully!', {
-    //                     autoClose: 3000,
-    //                 });
-    //             })
-    //             .catch((error) => {
-    //                 console.error('Error creating note:', error);
-    //                 toast.error('Something went wrong', {
-    //                     autoClose: 3000,
-    //                 });
-    //             });
-    //         handleCloseModel();
-    //     } else if (modalMode === 'edit') {
-    //         updateData(selectedNoteId, newNoteData)
-    //             .then(() => {
-    //                 fetchAndRefreshData();
-    //                 setIsModalOpen(false);
-    //                 setSelectedNoteId(null);
-    //                 setNoteTitle('');
-    //                 setNoteDescription('');
-    //                 title = '';
-    //                 description = '';
-    //                 toast.success('Note Edited successfully!', {
-    //                     autoClose: 3000,
-    //                 });
-    //             })
-    //             .catch((error) => {
-    //                 console.error('Error editing note:', error);
-    //                 toast.error('Something went wrong', {
-    //                     autoClose: 3000,
-    //                 });
-    //             });
-    //         handleCloseModel();
-    //     }
-    // };
 
     const handleSaveNote = (title, description) => {
         const newNoteData = {
@@ -219,7 +154,6 @@ export default function Note(props) {
         if (selectedNoteId !== null) {
             getById(selectedNoteId)
                 .then((data) => {
-                    console.log('data from getNoteById', data);
                     setNoteData(data);
                 })
                 .catch((error) => {

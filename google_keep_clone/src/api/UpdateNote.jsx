@@ -8,10 +8,6 @@ export const updateData = async (id, updatedData) => {
     const baseUrl = process.env.REACT_APP_BASE_URL;
     const url = `${baseUrl}/notes/noteId/${id}`;
 
-    const userData = sessionStorage.getItem('userData');
-    const user = JSON.parse(userData);
-    const token = user?.response;
-
     try {
         const response = await fetch(url, {
             method: 'PUT',
