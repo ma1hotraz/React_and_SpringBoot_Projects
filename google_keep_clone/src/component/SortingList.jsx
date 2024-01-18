@@ -5,7 +5,6 @@ import { MenuItem, Tooltip, Button, Menu } from '@mui/material';
 import { fetchAndRefreshData } from './Note';
 
 export default function SortingList() {
-    // Initialize state with the value from local storage or 'Def' if not present
     const [view, setView] = useState(localStorage.getItem('view') || 'Def');
     const [anchorEl, setAnchorEl] = useState(null);
 
