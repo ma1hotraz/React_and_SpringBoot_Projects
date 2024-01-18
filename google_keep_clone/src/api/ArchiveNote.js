@@ -14,7 +14,7 @@ export const archivedTo = async (noteId) => {
 
         if (!response.ok) {
             toast.warn('Server Error!', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             // throw new Error('Network response was not ok');
             return [];
@@ -22,7 +22,7 @@ export const archivedTo = async (noteId) => {
 
         if (response.ok) {
             toast.success('Archived Successfully!', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             return true;
         }

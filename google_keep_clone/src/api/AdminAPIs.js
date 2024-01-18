@@ -25,28 +25,28 @@ export const adminLogin = async (UserInfo) => {
 
         if (response.status === 500) {
             toast.warn('Server Error !', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             return;
         }
 
         if (response.status === 409) {
             toast.warn('Email Exist, Please Login', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             return;
         }
 
         if (response.status === 401) {
             toast.warn('Email or Password Wrong', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             throw new Error('Network response was not ok');
         }
 
         if (!response.ok) {
             toast.warn('Something Went Wrong', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             throw new Error('Network response was not ok');
         }

@@ -44,7 +44,7 @@ export const Login = async (UserInfo) => {
 
       if (response.status === 401) {
          toast.warn('Email or Password Wrong', {
-            autoClose: 2000,
+            autoClose: 1000,
          });
          throw new Error('Network response was not ok');
       }

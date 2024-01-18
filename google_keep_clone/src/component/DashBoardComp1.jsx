@@ -19,7 +19,7 @@ export default function DashBoardComp1() {
             const logsData = await getLogs();
             setLogs(logsData);
         } catch (error) {
-            toast.warn(error.message, { autoClose: 2000 });
+            toast.warn(error.message, { autoClose: 1000 });
             setLoading(false);
         } finally {
             setLoading(false);

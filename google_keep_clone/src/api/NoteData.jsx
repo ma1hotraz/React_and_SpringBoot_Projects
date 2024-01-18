@@ -37,7 +37,7 @@ export const getData = async () => {
 
       if (!response.ok) {
         toast.warn('Server Error !', {
-          autoClose: 3000,
+          autoClose: 1000,
         });
         return [];
       }

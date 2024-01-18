@@ -18,7 +18,7 @@ export default function NoteModal({
     imageBg,
     modalColor
 }) {
-    const [isLoading, setisLoading] = useState(false);
+    const [isLoading, setisLoading] = useState(true);
     const [noteTitle, setNoteTitle] = useState('');
     const [noteDescription, setNoteDescription] = useState('');
     const [noteData, setNoteData] = useState([]);
@@ -59,12 +59,15 @@ export default function NoteModal({
 
     useEffect(() => {
         if (noteData.length > 0) {
+            console.log("before : ", isLoading);
             setTimeout(() => {
                 setisLoading(false);
-            }, 2000);
+            }, 1000);
+            console.log("after : ", isLoading);
         }
 
     }, [noteData]);
+
 
 
     return (
@@ -100,7 +103,7 @@ export default function NoteModal({
                         {mode === 'create' ? getText('Create Note') : getText('Edit Note')}
                     </Typography>
 
-                    {isLoading ?
+                    {/* {isLoading ?
                         <Skeleton
                             variant="text"
                             sx={{ fontSize: '1rem', bgcolor: 'grey.900' }}
@@ -128,7 +131,45 @@ export default function NoteModal({
                             value={noteDescription}
                             onChange={handleDescriptionChange}
                             placeholder='Description'
-                        />}
+                        />}*/}
+                    {isLoading && mode === 'edit' ? (
+                        <>
+                            <Skeleton
+                                variant="rounded"
+                                sx={{ bgcolor: 'grey.900', margin: '20px' }}
+                                fullWidth
+                                height={50}
+                            />
+                            <Skeleton
+                                variant="rounded"
+                                fullWidth
+                                sx={{ bgcolor: 'grey.900', margin: '20px' }}
+                                height={100}
+                            />
+                        </>
+                    ) : (
+                        <>
+                            <InputBase
+                                fullWidth
+                                label="Title"
+                                variant="outlined"
+                                value={noteTitle}
+                                onChange={handleTitleChange}
+                                placeholder='Title'
+                            />
+                            <div style={{ height: '20px' }}></div>
+                            <InputBase
+                                fullWidth
+                                label="Description"
+                                variant="outlined"
+                                multiline
+                                rows={6}
+                                value={noteDescription}
+                                onChange={handleDescriptionChange}
+                                placeholder='Description'
+                            />
+                        </>
+                    )}
                     <Box
                         sx={{
                             display: 'flex',
@@ -149,12 +190,14 @@ export default function NoteModal({
                 </Box>
 
             </Modal>
-            {selectedId !== null && (
-                <>
-                    <EditNote id={selectedId} setData={setNoteData} />
-                </>
-            )}
-        </div>
+            {
+                selectedId !== null && (
+                    <>
+                        <EditNote id={selectedId} setData={setNoteData} />
+                    </>
+                )
+            }
+        </div >
     );
 
 }

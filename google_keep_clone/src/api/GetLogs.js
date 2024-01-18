@@ -14,7 +14,7 @@ export const getLogs = async () => {
 
         if (!response.ok) {
             toast.warn('Server Error!', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             throw new Error('Network response was not ok');
         }

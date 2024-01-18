@@ -28,6 +28,7 @@ export var fetchAndRefreshData = () => {
 
 export default function Note(props) {
 
+    const [isLoading, setisLoading] = useState(false);
     const [data, setData] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalMode, setModalMode] = useState('create');
@@ -63,8 +64,6 @@ export default function Note(props) {
             });
     }
 
-
-
     const handleDeleteNote = () => {
         deleteById(selectedNoteId)
             .then(() => {
@@ -72,13 +71,13 @@ export default function Note(props) {
                 setIsModalOpen(false);
                 setSelectedNoteId(null);
                 toast.warn(getText('Note deleted!'), {
-                    autoClose: 2000,
+                    autoClose: 1000,
                 });
             })
             .catch((error) => {
                 console.error('Error deleting note:', error);
                 toast.error('Some went wrong', {
-                    autoClose: 2000,
+                    autoClose: 1000,
                 });
             });
     };
@@ -113,13 +112,13 @@ export default function Note(props) {
                     setNoteDescription('');
                     clearTitleAndDescription();
                     toast.success('Note added!', {
-                        autoClose: 2000,
+                        autoClose: 1000,
                     });
                 })
                 .catch((error) => {
                     console.error('Error creating note:', error);
                     toast.error('Something went wrong', {
-                        autoClose: 2000,
+                        autoClose: 1000,
                     });
                 });
             handleCloseModel();
@@ -136,13 +135,13 @@ export default function Note(props) {
                     setNoteDescription('');
                     clearTitleAndDescription();
                     toast.success('Note Edited!', {
-                        autoClose: 2000,
+                        autoClose: 1000,
                     });
                 })
                 .catch((error) => {
                     console.error('Error editing note:', error);
                     toast.error('Something went wrong', {
-                        autoClose: 2000,
+                        autoClose: 1000,
                     });
                 });
             handleCloseModel();
@@ -191,6 +190,17 @@ export default function Note(props) {
     useEffect(() => {
         fetchAndRefreshData();
     }, [selectedNoteId]);
+
+
+    
+    useEffect(() => {
+        if (data && data.length > 0) {
+            setTimeout(() => {
+                setisLoading(false);
+            }, 6000);
+        }
+
+    }, [noteData]);
 
 
     return (

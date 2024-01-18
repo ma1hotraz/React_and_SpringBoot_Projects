@@ -18,7 +18,7 @@ export const getDeletedNotes = async () => {
 
             if (!response.ok) {
                 toast.warn('Server Error !', {
-                    autoClose: 2000,
+                    autoClose: 1000,
                 });
                 return [];
             }

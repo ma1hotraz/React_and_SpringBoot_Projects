@@ -18,7 +18,7 @@ export const archivedList = async () => {
 
             if (!response.ok) {
                 toast.warn('Server Error!', {
-                    autoClose: 2000,
+                    autoClose: 1000,
                 });
                 // throw new Error('Network response was not ok');
                 return [];
@@ -46,15 +46,14 @@ export const restoreFromArchive = async (noteId) => {
 
         if (!response.ok) {
             toast.warn('Server Error!', {
-                autoClose: 2000,
+                autoClose: 1000,
             });
             // throw new Error('Network response was not ok');
             return [];
         }
 
-
         toast.success('Moved From Archived', {
-            autoClose: 2000,
+            autoClose: 1000,
         });
         return;
 
