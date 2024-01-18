@@ -51,18 +51,38 @@ export default function Note(props) {
     };
 
     fetchAndRefreshData = () => {
-
-        const userData = sessionStorage.getItem('userData');
-        const user = JSON.parse(userData);
-        const id = user?.userId;
-        getData(id)
+        getData()
             .then((newData) => {
-                setData(newData || []);
+                const view = localStorage.getItem('view');
+                console.log(view);
+                console.log('data before: ', data);
+
+                if (newData) {
+                    let updatedData = [...newData];
+                    switch (view) {
+                        case "Date":
+                            updatedData = updatedData.sort((a, b) => new Date(a.date) - new Date(b.date));
+                            break;
+
+                        case "Title":
+                            updatedData = updatedData.sort((a, b) => a.title.localeCompare(b.title));
+                            break;
+
+                        default:
+                            break;
+                    }
+                    setData(updatedData);
+                    console.log('data after: ', updatedData);
+                } else {
+                    setData([]);
+                    console.log('data after: ', []);
+                }
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
     }
+
 
     const handleDeleteNote = () => {
         deleteById(selectedNoteId)
@@ -81,7 +101,6 @@ export default function Note(props) {
                 });
             });
     };
-
 
     useEffect(() => {
         const items = JSON.parse(sessionStorage.getItem('userData'));
@@ -192,7 +211,6 @@ export default function Note(props) {
     }, [selectedNoteId]);
 
 
-    
     useEffect(() => {
         if (data && data.length > 0) {
             setTimeout(() => {

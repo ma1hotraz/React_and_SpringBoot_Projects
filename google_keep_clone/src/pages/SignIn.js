@@ -21,8 +21,6 @@ import github from '../images/icons/github.png';
 import google from '../images/icons/google.png';
 import okta from '../images/icons/okta.png';
 
-
-
 const defaultTheme = createTheme();
 
 
