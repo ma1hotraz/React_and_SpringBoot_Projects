@@ -70,6 +70,7 @@ public class UserController {
         Loggers.info("USER WITH" + id + " CALLED");
         return ResponseEntity.ok(userService.findByUserId(id));
     }
+    
 
 
     @PutMapping("/updateUser")
