@@ -72,8 +72,8 @@ public class UserController {
     }
 
 
-    @PutMapping("/updateUser/")
-    public ResponseEntity<?> updateUser(@ModelAttribute User user) throws IOException {
+    @PutMapping("/updateUser")
+    public ResponseEntity<?> updateUser(@ModelAttribute User user, @RequestHeader("Authorization") String authToken) throws IOException {
         System.out.println(user);
         if (!isValidImage(user.getFile())) {
             Loggers.error("INVALID IMAGE TYPE");

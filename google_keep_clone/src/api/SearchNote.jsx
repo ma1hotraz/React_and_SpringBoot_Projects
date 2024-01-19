@@ -14,7 +14,6 @@ export const getByTitle = async (query) => {
         });
 
         if (!response.ok) {
-            // throw new Error('Network response was not ok');
             toast.error('Server Error', 1000);
         }
 

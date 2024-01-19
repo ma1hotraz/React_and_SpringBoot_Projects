@@ -3,6 +3,7 @@ import { faList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { MenuItem, Tooltip, Button, Menu } from '@mui/material';
 import { fetchAndRefreshData } from './Note';
+import { toast } from 'react-toastify';
 
 export default function SortingList() {
     const [view, setView] = useState(localStorage.getItem('view') || 'Def');
@@ -46,8 +47,9 @@ export default function SortingList() {
                     }}
                 >
                     <MenuItem onClick={() => handleClose('Def')}>None</MenuItem>
-                    <MenuItem onClick={() => handleClose('Date')}>Date</MenuItem>
-                    <MenuItem onClick={() => handleClose('Title')}>Title</MenuItem>
+                    <MenuItem onClick={() => { handleClose('Date'); toast.success('Sorted By, Date', 1000); }}>Date</MenuItem>
+                    <MenuItem onClick={() => { handleClose('Title'); toast.success('Sorted By, Title', 1000); }}>Title</MenuItem>
+                    <MenuItem onClick={() => { handleClose('TitleRev'); toast.success('Sorted By, TitleRev', 1000); }}>Title Rev</MenuItem>
                 </Menu>
             </Tooltip>
         </div>

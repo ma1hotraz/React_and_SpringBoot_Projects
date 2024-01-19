@@ -35,7 +35,6 @@ export default function TrashModal(props) {
         const timer = setTimeout(() => {
             setShowLoader(true);
         }, 2000);
-
         return () => clearTimeout(timer);
     }, []);
 

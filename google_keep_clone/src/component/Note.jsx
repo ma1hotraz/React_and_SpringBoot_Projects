@@ -65,6 +65,10 @@ export default function Note(props) {
                             updatedData = updatedData.sort((a, b) => a.title.localeCompare(b.title));
                             break;
 
+                        case "TitleRev":
+                            updatedData = updatedData.sort((a, b) => b.title.localeCompare(a.title));
+                            break;
+
                         default:
                             break;
                     }
@@ -195,11 +199,6 @@ export default function Note(props) {
     const toggleSearchBox = () => {
         setIsSearchBoxVisible(!isSearchBoxVisible);
     };
-
-    // const handleArchive = (noteId) => {
-    //     archivedTo(noteId);
-    //     fetchAndRefreshData();
-    // }
 
 
     const handleArchive = (noteId) => {
