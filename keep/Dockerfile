@@ -20,11 +20,12 @@ EXPOSE 3306
 
 # Start MySQL with skip-grant-tables and update root password
 RUN service mysql start && \
-     mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'your_password' WITH GRANT OPTION;" && \
-     mysql -u root -e "FLUSH PRIVILEGES;" && \
-#     mysql -u root -e "CREATE DATABASE notes_db;"
+     mysql -u root -e "CREATE USER 'user'@'%' IDENTIFIED BY $MYSQL_PASSWORD;" && \
+     mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' IDENTIFIED BY 'user' WITH GRANT OPTION;" && \
+     mysql -u root -e 'FLUSH PRIVILEGES;' && \
+     mysql -u user -p'root' -e 'CREATE DATABASE notes_db;'
 
-
+CMD ["sleep", "20"]
 
 #Stage 2  Use a base image with JDK and Maven
 FROM maven:3.8.4-openjdk-17 AS build
