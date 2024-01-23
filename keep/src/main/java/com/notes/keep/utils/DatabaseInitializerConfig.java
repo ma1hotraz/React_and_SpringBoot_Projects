@@ -15,7 +15,7 @@ public class DatabaseInitializerConfig {
     @PostConstruct
     public void initializeDatabase() {
         // Execute your SQL queries here
-        jdbcTemplate.execute("CREATE DATABASE IF NOT EXISTS test_db");
+        jdbcTemplate.execute("CREATE DATABASE IF NOT EXISTS notes_db");
         System.out.println("Default user has been inserted into the database.");
         System.out.println("Default user exist in the database.");
     }
