@@ -1,75 +1,26 @@
 ## Stage 1: MySQL Database
 #FROM mysql:latest
 #
-## Environment variables to set the root password
-#ENV MYSQL_ROOT_PASSWORD=root
-#
-## Create a database and user
-#ENV MYSQL_DATABASE=notes_db
-#
-#ENV MYSQL_USER=root
-#ENV MYSQL_PASSWORD=root
-#
 ## Set the working directory in the container
 #WORKDIR /docker-entrypoint-initdb.d
 #
 ## Copy SQL script to initialize the database
-##COPY entrypoint.sh .
-#COPY entrypoint.sh /docker-entrypoint-initdb.d/
+#COPY entrypoint.sh .
+#
+#
+#RUN chmod +x /docker-entrypoint-initdb.d/entrypoint.sh
 #
 ## Expose the default MySQL port
 #EXPOSE 3306
-#
-#RUN sleep 10
-## Start MySQL with skip-grant-tables and update root password
-#CMD service mysql start
-#CMD sleep 10
-#CMD mysql -u $MYSQL_USER -e GRANT ALL PRIVILEGES ON *.* TO $MYSQL_USER@'localhost' IDENTIFIED BY $MYSQL_USER WITH GRANT OPTION;
-#CMD sleep 10
-#CMD mysql -u $MYSQL_USER -e FLUSH PRIVILEGES;
-#CMD sleep 10
-#CMD mysql -u $MYSQL_USER -p$MYSQL_ROOT_PASSWORD
-#CMD sleep 10
-#CMD mysql -u $MYSQL_USER -p$MYSQL_ROOT_PASSWORD -e 'CREATE DATABASE IF NOT EXISTS notes_db;'
 
-
-# Stage 1: MySQL Database
-FROM mysql:latest
-
-# Environment variables to set the root password
+#Dockerfile for MySQL
+FROM mysql
 ENV MYSQL_ROOT_PASSWORD=root
 ENV MYSQL_DATABASE=notes_db
-ENV MYSQL_USER=root
-ENV MYSQL_PASSWORD=root
+EXPOSE 3308
+RUN usermod -u 1000 mysql RUN mkdir -p /var/run/mysqld
+RUN chmod -R 777 /var/run/mysqld RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 
-# Copy SQL script to initialize the database
-COPY init.sql /docker-entrypoint-initdb.d/
-
-# Copy entrypoint script to execute additional MySQL commands
-COPY entrypoint.sh /docker-entrypoint-initdb.d/
-RUN chmod +x /docker-entrypoint-initdb.d/entrypoint.sh
-
-# Expose the default MySQL port
-EXPOSE 3306
-
-<<<<<<< HEAD
-# Start MySQL with skip-grant-tables and update root password
-RUN service mysql start && \
-     mysql -u root -e "CREATE USER 'user'@'%' IDENTIFIED BY $MYSQL_PASSWORD;" && \
-     mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'user'@'%' IDENTIFIED BY 'user' WITH GRANT OPTION;" && \
-     mysql -u root -e 'FLUSH PRIVILEGES;' && \
-     mysql -u user -p'root' -e 'CREATE DATABASE notes_db;'
-=======
-# Use the default entrypoint script provided by the MySQL image
-ENTRYPOINT ["docker-entrypoint.sh"]
-
-# Start MySQL service
-CMD ["mysqld"]
-
-
->>>>>>> 8ab491454969d2041676a36fd66b635fe493226c
-
-CMD ["sleep", "20"]
 
 #Stage 2  Use a base image with JDK and Maven
 FROM maven:3.8.4-openjdk-17 AS build
@@ -96,5 +47,3 @@ EXPOSE 8080
 
 # Command to run the application
 CMD ["java", "-jar", "app.jar"]
-
-
