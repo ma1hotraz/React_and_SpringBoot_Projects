@@ -9,6 +9,9 @@ RUN apk update && \
 # Set the working directory
 WORKDIR /docker-entrypoint-initdb.d
 
+# Copy the SQL initialization script into the Docker container
+COPY data.sql /docker-entrypoint-initdb.d/
+
 # Copy SQL script to initialize the database
 COPY entrypoint.sh /docker-entrypoint-initdb.d/entrypoint.sh
 
@@ -23,10 +26,11 @@ EXPOSE 3306
 # Start MySQL service
 CMD ["mysqld", "--user=mysql", "--console"]
 
-RUN sleep 10
-
 # Create notes_db database
 RUN mysql -u root -e "CREATE DATABASE IF NOT EXISTS notes_db;"
+
+
+
 
 
 

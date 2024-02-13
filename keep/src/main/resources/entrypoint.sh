@@ -1,0 +1,1 @@
+mysql -u root -p"root" -e "CREATE DATABASE notes_db";

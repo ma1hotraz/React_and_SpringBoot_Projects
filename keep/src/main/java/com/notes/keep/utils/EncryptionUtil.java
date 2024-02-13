@@ -44,20 +44,4 @@ public class EncryptionUtil {
         }
         return null;
     }
-
-//    public String decrypt(String encrypted) {
-//        try {
-//            IvParameterSpec iv = new IvParameterSpec(initVector.getBytes(StandardCharsets.UTF_8));
-//            SecretKeySpec skeySpec = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), "AES");
-//
-//            Cipher cipher = Cipher.getInstance(algo);
-//            cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
-//
-//            byte[] original = cipher.doFinal(Base64.decodeBase64(encrypted));
-//            return new String(original, StandardCharsets.UTF_8);
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//            return "Decryption failed: " + ex.getMessage();
-//        }
-//    }
 }

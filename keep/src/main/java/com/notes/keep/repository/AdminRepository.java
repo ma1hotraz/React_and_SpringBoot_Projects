@@ -10,7 +10,6 @@ import java.util.Optional;
 
 @EnableJpaRepositories
 public interface AdminRepository extends JpaRepository<Admin, String> {
-
     Optional<Admin> findByEmail(String email);
     Boolean existsByEmail(String email);
     @Query(nativeQuery = true, value = "SELECT SUM(data_length + index_length) / 1024 / 1024 " +
