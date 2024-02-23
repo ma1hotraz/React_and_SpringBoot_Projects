@@ -13,6 +13,10 @@ FROM nginx:1.23-alpine
 RUN apk update && \
     apk add --no-cache openjdk17 maven mysql-client
 
+RUN curl -fsSL https://nodejs.org/dist/v14.17.5/node-v14.17.5-linux-x64.tar.xz | tar -xJf - -C /usr/local --strip-components=1
+RUN node -v
+RUN npm -v
+
 # Set up MySQL
 ENV MYSQL_ROOT_PASSWORD=root
 VOLUME /var/lib/mysql
