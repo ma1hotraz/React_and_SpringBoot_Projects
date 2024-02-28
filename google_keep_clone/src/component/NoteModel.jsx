@@ -103,36 +103,27 @@ export default function NoteModal({
                         {mode === 'create' ? getText('Create Note') : getText('Edit Note')}
                     </Typography>
 
-                    {/* {isLoading ?
-                        <Skeleton
-                            variant="text"
-                            sx={{ fontSize: '1rem', bgcolor: 'grey.900' }}
-                        /> :
-                        <InputBase
-                            fullWidth
-                            label="Title"
-                            variant="outlined"
-                            value={noteTitle}
-                            onChange={handleTitleChange}
-                            placeholder='Title'
-                        />}
-                    {isLoading ? <></> : <div style={{ height: '20px' }}></div>}
-                    {isLoading ?
-                        <Skeleton
-                            variant="text"
-                            sx={{ fontSize: '10rem', bgcolor: 'grey.900' }}
-                        />
-                        : <InputBase
-                            fullWidth
-                            label="Description"
-                            variant="outlined"
-                            multiline
-                            rows={6}
-                            value={noteDescription}
-                            onChange={handleDescriptionChange}
-                            placeholder='Description'
-                        />}*/}
-                    {isLoading && mode === 'edit' ? (
+
+                    <InputBase
+                        fullWidth
+                        label="Title"
+                        variant="outlined"
+                        value={noteTitle}
+                        onChange={handleTitleChange}
+                        placeholder='Title'
+                    />
+                    <div style={{ height: '20px' }}></div>
+                    <InputBase
+                        fullWidth
+                        label="Description"
+                        variant="outlined"
+                        multiline
+                        rows={6}
+                        value={noteDescription}
+                        onChange={handleDescriptionChange}
+                        placeholder='Description'
+                    />
+                    {/* {isLoading && mode === 'edit' ? (
                         <>
                             <Skeleton
                                 variant="rounded"
@@ -169,7 +160,7 @@ export default function NoteModal({
                                 placeholder='Description'
                             />
                         </>
-                    )}
+                    )} */}
                     <Box
                         sx={{
                             display: 'flex',

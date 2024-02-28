@@ -4,7 +4,7 @@ services:
   dbservice:
     container_name: dbservice
     image: mysql:latest
-    restart: unless-stopped
+    restart: on-failure
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: notes_db
@@ -17,13 +17,12 @@ services:
 
   db_seeder:
     image: mysql:latest
-    restart: always
     volumes:
-      - ./db.sql:/db.sql
+      - "./data:/var/lib/mysql"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
       MYSQL_ROOT_PASSWORD: "root"
-    entrypoint: [ "bash", "-c", "sleep 5 && mysql --user=root --host=dbservice --port=3306 notes_db < /resources/db/migration/db.sql && exit" ]
+    entrypoint: [ "bash", "-c", "sleep 10 && mysql --user=root --host=dbservice --port=3306 notes_db < data.sql && exit" ]
     depends_on:
       - dbservice
 
@@ -32,7 +31,7 @@ services:
       context: ./
     depends_on:
       - dbservice
-    restart: unless-stopped
+    restart: always
     environment:
       spring.datasource.url: jdbc:mysql://dbservice:3306/notes_db
     ports:

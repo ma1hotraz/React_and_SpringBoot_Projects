@@ -61,7 +61,6 @@ export const updateData = async (updatedData) => {
                 formData.append(key, blob);
             }
         }
-        console.log(formData.get('email'));
         return formData;
     }
 
@@ -71,8 +70,6 @@ export const updateData = async (updatedData) => {
     formData.append('email', updatedData.email);
     formData.append('name', updatedData.name);
     formData.append('file', updatedData.file);
-
-    console.log(formData.length);
 
     try {
         const response = await fetch(url, {
