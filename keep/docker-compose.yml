@@ -4,27 +4,25 @@ services:
   dbservice:
     container_name: dbservice
     image: mysql:latest
-    restart: on-failure
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: notes_db
     volumes:
-      - "./data:/var/lib/mysql"
-    ports:
-      - "3306:3306"
+      - ./MySQL:/docker-entrypoint-initdb.d
     networks:
       - springserv
 
-  db_seeder:
-    image: mysql:latest
-    volumes:
-      - "./data:/var/lib/mysql"
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
-      MYSQL_ROOT_PASSWORD: "root"
-    entrypoint: [ "bash", "-c", "sleep 10 && mysql --user=root --host=dbservice --port=3306 notes_db < data.sql && exit" ]
-    depends_on:
-      - dbservice
+  # db_seeder:
+  #   image: mysql:latest
+  #   volumes:
+  #     - "./data:/var/lib/mysql"
+  #   environment:
+  #     MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+  #     MYSQL_ROOT_PASSWORD: "root"
+  #   entrypoint: [ "bash", "-c", "sleep 10 && mysql --user=root --host=dbservice --port=3306 notes_db < data.sql && exit" ]
+  #   depends_on:
+  #     - dbservice
 
   appservice:
     build:
