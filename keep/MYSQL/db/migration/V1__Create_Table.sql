@@ -1,5 +1,3 @@
-use notes_db;
-
 CREATE TABLE IF NOT EXISTS Admin (
     email VARCHAR(255) PRIMARY KEY,
     firstName VARCHAR(255),

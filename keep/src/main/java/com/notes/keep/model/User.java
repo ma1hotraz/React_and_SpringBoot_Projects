@@ -36,7 +36,7 @@ import java.util.List;
 @Builder
 @ToString
 @Data
-@Entity
+@Entity(name = "User")
 public class User implements UserDetails{
 
     @Id

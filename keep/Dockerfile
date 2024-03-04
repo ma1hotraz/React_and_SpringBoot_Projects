@@ -1,39 +1,3 @@
-# Stage 1: MySQL Database
-FROM alpine:latest
-
-# Install MySQL
-RUN apk update && \
-    apk add mysql mysql-client && \
-    rm -rf /var/cache/apk/*
-
-# Set the working directory
-WORKDIR /docker-entrypoint-initdb.d
-
-# Copy the SQL initialization script into the Docker container
-COPY data.sql /docker-entrypoint-initdb.d/
-
-# Copy SQL script to initialize the database
-COPY entrypoint.sh /docker-entrypoint-initdb.d/entrypoint.sh
-
-# Grant privileges
-RUN mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;"
-
-RUN mysql -u root -e "CREATE DATABASE IF NOT EXISTS notes_db;"
-
-# Expose the default MySQL port
-EXPOSE 3306
-
-# Start MySQL service
-CMD ["mysqld", "--user=mysql", "--console"]
-
-# Create notes_db database
-RUN mysql -u root -e "CREATE DATABASE IF NOT EXISTS notes_db;"
-
-
-
-
-
-
 #Stage 2  Use a base image with JDK and Maven
 FROM maven:3.8.4-openjdk-17 AS build
 
