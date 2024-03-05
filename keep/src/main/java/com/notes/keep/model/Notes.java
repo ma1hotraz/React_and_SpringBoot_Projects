@@ -42,6 +42,7 @@ public class Notes {
 
     private boolean completed;
     private boolean deleted = false;
+    private boolean archived = false;
     private Date date;
     private String color;
     private String imageBg;

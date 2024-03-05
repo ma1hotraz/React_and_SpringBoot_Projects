@@ -45,6 +45,9 @@ public class UserController {
         Loggers.info("USER CREATED WITH EMAIL : " + user.getEmail());
         user.setAuthProvider("LOCAL");
         UserDTO userDTO = userService.createUser(user);
+        if(userDTO == null){
+            return ResponseEntity.status(500).body("SERVER ERROR");
+        }
         return ResponseEntity.ok(userDTO);
     }
 

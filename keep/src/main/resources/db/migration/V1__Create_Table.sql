@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS Notes (
     description TEXT NOT NULL,
     completed BOOLEAN,
     deleted BOOLEAN,
+    archived BOOLEAN,
     date DATE,
     color VARCHAR(255),
     imageBg VARCHAR(255),

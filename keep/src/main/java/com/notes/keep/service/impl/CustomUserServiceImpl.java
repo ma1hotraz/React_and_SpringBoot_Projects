@@ -63,6 +63,7 @@ public class CustomUserServiceImpl implements CustomUserService {
             userRepository.save(user);
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
         var jwtToken = jwtService.generateToken(user);
         AuthResponse token = AuthResponse.builder().token(jwtToken).build();
