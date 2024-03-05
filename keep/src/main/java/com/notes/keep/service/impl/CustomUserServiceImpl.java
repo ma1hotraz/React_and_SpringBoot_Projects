@@ -14,6 +14,7 @@ import com.notes.keep.utils.EncryptionUtil;
 import com.notes.keep.utils.ImageUtils;
 import com.notes.keep.utils.Loggers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,10 +24,10 @@ import org.springframework.stereotype.Service;
 
 import javax.security.auth.login.CredentialExpiredException;
 import java.text.SimpleDateFormat;
-import java.util.UUID;
 import java.util.List;
-import java.util.Date;
+import java.util.UUID;
 import java.util.Optional;
+import java.util.Date;
 import java.util.Random;
 
 @Service
@@ -44,6 +45,8 @@ public class CustomUserServiceImpl implements CustomUserService {
     private AuthenticationManager manager;
     @Autowired
     private EmailServiceImpl emailService;
+    @Autowired
+    private Environment environment;
 
 
     @Override
@@ -63,7 +66,9 @@ public class CustomUserServiceImpl implements CustomUserService {
         }
         var jwtToken = jwtService.generateToken(user);
         AuthResponse token = AuthResponse.builder().token(jwtToken).build();
-        sendVerificationMail(user.getEmail());
+        if(!environment.matchesProfiles("default")){
+            sendVerificationMail(user.getEmail());
+        }
         return UserDTO.builder().name(user.getFirstName() + " " + user.getLastName()).email(user.getEmail()).image(user.getImage()).response(token).build();
     }
 
@@ -74,19 +79,21 @@ public class CustomUserServiceImpl implements CustomUserService {
 
 
     @Override
-    public UserDTO loginUser(AuthRequest user) {
-        Optional<User> user1 = userRepository.findByEmail(user.getEmail());
+    public UserDTO loginUser(AuthRequest authRequest) {
+        Optional<User> user = userRepository.findByEmail(authRequest.getEmail());
         manager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        user.getEmail(),
-                        user.getPassword()
+                        authRequest.getEmail(),
+                        authRequest.getPassword()
                 )
         );
-        var userTemp = user1.get();
+        var userTemp = user.get();
         var jwtToken = jwtService.generateToken(userTemp);
         AuthResponse token = AuthResponse.builder().token(jwtToken).build();
         byte[] download = null;
-        download = ImageUtils.decompressImage(userTemp.getImage());
+        if(user.get().getImage() != null){
+            download = ImageUtils.decompressImage(userTemp.getImage());
+        }
         return UserDTO.builder().name(userTemp.getFirstName() + " " + userTemp.getLastName()).email(userTemp.getEmail()).image(download).response(token).build();
     }
 
@@ -134,7 +141,9 @@ public class CustomUserServiceImpl implements CustomUserService {
             emailDTO.setTo(email);
             emailDTO.setSubject("VERIFICATION CODE");
             emailDTO.setMessage("VERIFICATION CODE TO RESET PASSWORD IS : " + s);
-            emailService.sendEmail(emailDTO);
+            if(!environment.matchesProfiles("default")){
+                emailService.sendEmail(emailDTO);
+            }
             Loggers.info("Email with Verification Code Send Successfully to " + email);
         }catch (Exception e){
             e.printStackTrace();
@@ -145,22 +154,25 @@ public class CustomUserServiceImpl implements CustomUserService {
 
     @Override
     public void updatePassword(String email, String password,  String token) throws CredentialExpiredException {
+        Optional<User> user = userRepository.findByEmail(email);
+        System.out.println("THIS IS " + user.get().getPassword().equals(encoder.encode(password)));
+
         if(!userRepository.existsByEmail(email)){
            throw new UsernameNotFoundException("Email not found");
         }
-        User user = userRepository.findByEmail(email).get();
-        if(user.getPassword().equals(encoder.encode(password))){
+
+        if(user.get().getPassword().equals(encoder.encode(password))){
             throw new PasswordExpiredException("Cannot Use Old Password");
         }
-        if(user.getResetPasswordToken() == null){
+        if(user.get().getResetPasswordToken() == null){
             throw new CredentialExpiredException("Token Expired, Request new Token");
         }
-        if(!user.getResetPasswordToken().equals(token)){
+        if(!user.get().getResetPasswordToken().equals(token)){
             throw new PasswordExpiredException("Invalid Token");
         }
-        user.setPassword(encoder.encode(password));
-        user.setResetPasswordToken(null);
-        userRepository.save(user);
+        user.get().setPassword(encoder.encode(password));
+        user.get().setResetPasswordToken(null);
+        userRepository.save(user.get());
     }
 
     @Override
@@ -192,7 +204,9 @@ public class CustomUserServiceImpl implements CustomUserService {
             emailDTO.setMessage(infoDTO.getIpAddress());
             emailDTO.setMessage(infoDTO.getIpAddress());
             emailDTO.setMessage(infoDTO.getOrg());
-//            emailService.sendEmail(emailDTO);
+            if(!environment.matchesProfiles("default")){
+                emailService.sendEmail(emailDTO);
+            }
             Loggers.info("Login Info Mail send to email :" + email);
         }catch (Exception e){
             e.printStackTrace();

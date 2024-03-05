@@ -52,14 +52,14 @@ public class UserController {
     public ResponseEntity<?> loginUser(@RequestBody AuthRequest user) throws InterruptedException {
         if (!userService.checkEmail(user.getEmail())) {
             Loggers.warn("EMAIL/USER NOT EXIST");
-            return ResponseEntity.status(409).header("msg", "EMAIL/USER NOT EXIST").build();
+            return ResponseEntity.status(409).body("EMAIL/USER NOT EXIST");
         }
         UserDTO userDTO = null;
         try {
             userDTO = userService.loginUser(user);
             Loggers.info("USER WITH EMAIL " + user.getEmail() + " LOGGED IN");
         } catch (Exception e) {
-            return ResponseEntity.status(401).header("msg", "INVALID EMAIL OR PASSWORD").build();
+            return ResponseEntity.status(401).body(e.getMessage());
         }
         return ResponseEntity.ok(userDTO);
     }
