@@ -52,6 +52,7 @@ public class CustomUserServiceImpl implements CustomUserService {
     @Override
     public UserDTO createUser(User user) {
         user.setRoles("USER");
+        user.setAuthProvider("LOCAL");
         user.setPassword(encoder.encode(user.getPassword()));
         Date utilDate = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");

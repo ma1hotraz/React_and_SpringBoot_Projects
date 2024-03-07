@@ -29,8 +29,6 @@ public class UserController {
     public String path;
     @Autowired
     private CustomUserServiceImpl userService;
-    @Autowired
-    private AuthenticationManager authenticationManager;
 
 
     @PostMapping("/auth/add")
@@ -43,7 +41,6 @@ public class UserController {
             return ResponseEntity.status(409).build();
         }
         Loggers.info("USER CREATED WITH EMAIL : " + user.getEmail());
-        user.setAuthProvider("LOCAL");
         UserDTO userDTO = userService.createUser(user);
         if(userDTO == null){
             return ResponseEntity.status(500).body("SERVER ERROR");
