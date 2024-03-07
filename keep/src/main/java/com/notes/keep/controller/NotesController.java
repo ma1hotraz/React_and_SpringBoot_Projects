@@ -17,7 +17,6 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/notes")
 @PreAuthorize("USER")
-@CrossOrigin(origins = "*")
 public class NotesController {
 
     @Autowired
@@ -28,11 +27,15 @@ public class NotesController {
         Notes notes = null;
         try {
             notes = notesService.createNote(note, authToken);
+
         } catch (Exception e) {
-            return ResponseEntity.status(500).header("msg", "USER NOT FOUND").build();
+            if(e.getMessage().equalsIgnoreCase("Token Expired")){
+                return ResponseEntity.status(417).body("JWT Token Expired");
+            }
+            return ResponseEntity.status(500).body(e.getMessage());
         }
         if (notes == null) {
-            return ResponseEntity.status(200).header("msg", "FIELDS ARE EMPTY").build();
+            return ResponseEntity.status(200).body("FIELDS ARE EMPTY");
         }
         return ResponseEntity.ok().body(notes);
     }
